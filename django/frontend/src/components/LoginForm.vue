@@ -1,7 +1,6 @@
 <template>
     <v-app id="inspire">
         <v-content>
-        <v-icon>home</v-icon>
             <v-container
                     class="fill-height"
                     fluid
@@ -44,7 +43,7 @@
                             </v-card-text>
                             <v-card-actions>
                                 <v-spacer/>
-                                <v-btn color="primary">Email</v-btn>
+                                <v-btn color="primary">Login</v-btn>
                             </v-card-actions>
                         </v-card>
                     </v-col>
