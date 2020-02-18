@@ -11,6 +11,15 @@
     </div>
 </template>
 
+<script>
+    export default {
+        name: 'app',
+        created() {
+            document.title = "SeaTime";
+        }
+    }
+</script>
+
 <style lang="scss">
     #app {
         font-family: Avenir, Helvetica, Arial, sans-serif;
