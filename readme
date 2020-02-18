@@ -1,1 +1,9 @@
-Activate venv: source /bin/activate
+# Activate venv
+	source /bin/activate
+# Start Django
+	python manage.py migrate
+	python manage.py runserver
+# Start Vue
+	npm run dev
+# Tunneling
+	ssh -L 80:localhost:80 192.168.0.135
