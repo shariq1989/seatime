@@ -3,8 +3,13 @@
 # Activate venv
 	source /bin/activate
 # Start Django
+	# Forward port 8000 to local machine
+	ssh -L 8000:localhost:8000 pi@192.168.0.135
+	cd ~/Documents/Development/SeaTime/django/seatime_app
 	python manage.py migrate
 	python manage.py runserver 0.0.0.0:8000
+	# view on local machine
+	localhost:8000
 # Start Vue
 	npm run dev
 # Tunneling
