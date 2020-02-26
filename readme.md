@@ -6,17 +6,15 @@
 # Start Django
 ## Forward port 8000 to local machine
 	ssh -L 8000:localhost:8000 pi@192.168.0.135
-	cd ~/Documents/Development/SeaTime/django/seatime_app
 	python manage.py migrate
-	python manage.py runserver 0.0.0.0:8000
+	cd ~/Documents/Development/SeaTime/django/seatime_app && python manage.py runserver 0.0.0.0:8000
 ## View on local machine
 	localhost:8000
 
 # Start Vue
 ## Forward port 8080 to local machine
 	ssh -L 8080:localhost:8080 pi@192.168.0.135
-	cd ~/Documents/Development/SeaTime/django/frontend
-	npm run serve
+	cd ~/Documents/Development/SeaTime/django/frontend && npm run serve
 ## View on local machine
 	localhost:8080
 # Tunneling
