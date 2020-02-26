@@ -1,7 +1,11 @@
 # Path to project on Pi
+        '''
         cd ~/Documents/Development/SeaTime/seatime/        
+        '''
 # Activate venv
+        '''
 	source /bin/activate
+        '''
 # Start Django
 	# Forward port 8000 to local machine
 	ssh -L 8000:localhost:8000 pi@192.168.0.135
