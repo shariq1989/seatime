@@ -11,7 +11,10 @@
 	# view on local machine
 	localhost:8000
 # Start Vue
-	npm run dev
+	# Forward port 8080 to local machine
+	ssh -L 8080:localhost:8080 pi@192.168.0.135
+	cd ~/Documents/Development/SeaTime/django/frontend
+        npm run serve
 # Tunneling
 	ssh -L 80:localhost:80 192.168.0.135
 # Add Python dependencies to requirements.txt
