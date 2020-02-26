@@ -16,7 +16,7 @@
                                 dark
                                 flat
                         >
-                            <v-toolbar-title>SeaTime - Create an account</v-toolbar-title>
+                            <v-toolbar-title>Create an account</v-toolbar-title>
                             <v-spacer/>
                         </v-toolbar>
                         <v-card-text>

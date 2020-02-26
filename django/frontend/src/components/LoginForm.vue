@@ -16,7 +16,7 @@
                                     dark
                                     flat
                             >
-                                <v-toolbar-title>SeaTime - Login</v-toolbar-title>
+                                <v-toolbar-title>Login</v-toolbar-title>
                                 <v-spacer/>
                             </v-toolbar>
                             <v-card-text>
