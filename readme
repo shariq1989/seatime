@@ -1,8 +1,10 @@
+# Path to project on Pi
+        cd ~/Documents/Development/SeaTime/seatime/        
 # Activate venv
 	source /bin/activate
 # Start Django
 	python manage.py migrate
-	python manage.py runserver
+	python manage.py runserver 0.0.0.0:8000
 # Start Vue
 	npm run dev
 # Tunneling
