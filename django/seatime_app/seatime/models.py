@@ -2,8 +2,28 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
-class UserProfile(models.Model):
+class MarinerProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    birth_date = models.DateField()
+    citizenship_cntry = models.CharField(255)
+    residence_state = models.CharField(255)
+    mariner_ref_num = models.PositiveIntegerField()
+
+
+class MarinerDocument(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    mmc_doc_num = models.PositiveIntegerField()
+    mmc_issue_date = models.DateField()
+    mmc_expr_date = models.DateField()
+    med_ntl_expr_date = models.DateField()
+    med_stcw_expr_date = models.DateField()
+    med_pilot_expr_date = models.DateField()
+    twic_expr_date = models.DateField()
+    basic_training_expr_date = models.DateField()
+    advanced_fire_expr_date = models.DateField()
+    first_aid_cpr_expr_date = models.DateField()
+    passport__expr_date = models.DateField()
+    drug_test_compliant = models.DateField()
 
 
 class Vessel(models.Model):
