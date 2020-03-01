@@ -5,7 +5,7 @@ from .models import MarinerProfile, MarinerDocument
 
 
 class MarinerProfileTestCase(TestCase):
-    def setup(self):
+    def setUp(self):
         self.user = User.objects.create_user(username='testuser', password='12345')
         self.client.login(username='testuser', password='12345')
         self.user2 = User.objects.create_user(username='testuser1', password='12345')
@@ -42,7 +42,7 @@ class MarinerProfileTestCase(TestCase):
 
 
 class MarinerDocumentTestCase(TestCase):
-    def setup(self):
+    def setUp(self):
         self.user = User.objects.create_user(username='testuser', password='12345')
         self.client.login(username='testuser', password='12345')
         self.user2 = User.objects.create_user(username='testuser1', password='12345')
