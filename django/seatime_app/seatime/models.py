@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
+# Extended auth user with this table
 class MarinerProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     birth_date = models.DateField()
@@ -10,6 +11,7 @@ class MarinerProfile(models.Model):
     mariner_ref_num = models.PositiveIntegerField()
 
 
+# All the document dates
 class MarinerDocument(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     mmc_doc_num = models.PositiveIntegerField()
@@ -23,9 +25,10 @@ class MarinerDocument(models.Model):
     advanced_fire_expr_date = models.DateField()
     first_aid_cpr_expr_date = models.DateField()
     passport_expr_date = models.DateField()
-    drug_test_compliant = models.DateField()
+    drug_test_compliant = models.BooleanField(default=False)
 
 
+# Ship details table. To be filled by an API
 class Vessel(models.Model):
     name = models.CharField(max_length=64)
     official_number = models.CharField(max_length=64)
@@ -37,6 +40,7 @@ class Vessel(models.Model):
         return f"{self.name}"
 
 
+# 8 hour workday, 12 hr day, etc
 class WorkdayType(models.Model):
     type = models.CharField(max_length=64)
 
@@ -44,6 +48,7 @@ class WorkdayType(models.Model):
         return f"{self.type}"
 
 
+# Inland Waterways, Coastal, Open Ocean, etc
 class VoyageType(models.Model):
     type = models.CharField(max_length=64)
 
@@ -51,6 +56,9 @@ class VoyageType(models.Model):
         return f"{self.type}"
 
 
+# Dept: Engine, Deck
+# Title: Captain
+# Rank: 1
 class StaffPosition(models.Model):
     department = models.CharField(max_length=64)
     title = models.CharField(max_length=64)
@@ -60,6 +68,7 @@ class StaffPosition(models.Model):
         return f"{self.department} - {self.title}"
 
 
+# Info for each voyage
 class Voyage(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     vessel = models.ForeignKey(Vessel, on_delete=models.CASCADE)

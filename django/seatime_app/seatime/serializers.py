@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
 
-from django.seatime_app.seatime.models import MarinerDocument, MarinerProfile, Vessel, WorkdayType, VoyageType, \
+from .models import MarinerDocument, MarinerProfile, Vessel, WorkdayType, VoyageType, \
     StaffPosition, Voyage
 
 
