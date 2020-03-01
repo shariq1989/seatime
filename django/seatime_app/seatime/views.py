@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from rest_framework import generics, viewsets
-from django.seatime_app.seatime.models import MarinerProfile
-from django.seatime_app.seatime.serializers import MarinerProfileSerializer, UserSerializer
+from .models import MarinerProfile
+from .serializers import MarinerProfileSerializer, UserSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
