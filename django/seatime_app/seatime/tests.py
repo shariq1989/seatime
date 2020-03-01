@@ -8,7 +8,7 @@ class MarinerProfileTestCase(TestCase):
     def setup(self):
         self.user = User.objects.create_user(username='testuser', password='12345')
         self.client.login(username='testuser1', password='12345')
-        self.user2 = User.objects.create_user(username='testuser2', password='12345')
+        self.user2 = User.objects.create_user(username='testuser1', password='12345')
         self.client.login(username='testuser2', password='12345')
 
     def test_mariner_profile(self):
@@ -16,14 +16,14 @@ class MarinerProfileTestCase(TestCase):
             MarinerProfile.objects.count(), 0
         )
         MarinerProfile.objects.create(
-            user=self.user,
+            user=User.objects.get(username='testuser'),
             birth_date='1989-01-01',
             citizenship_cntry='USA',
             residence_state='Colorado',
             mariner_ref_num='60771'
         )
         MarinerProfile.objects.create(
-            user=self.user2,
+            user=User.objects.get(username='testuser1'),
             birth_date='1987-09-09',
             citizenship_cntry='USA',
             residence_state='Arizona',
@@ -43,7 +43,7 @@ class MarinerDocumentTestCase(TestCase):
     def setup(self):
         self.user = User.objects.create_user(username='testuser', password='12345')
         self.client.login(username='testuser1', password='12345')
-        self.user2 = User.objects.create_user(username='testuser2', password='12345')
+        self.user2 = User.objects.create_user(username='testuser1', password='12345')
         self.client.login(username='testuser2', password='12345')
 
     def test_mariner_document(self):
@@ -51,7 +51,7 @@ class MarinerDocumentTestCase(TestCase):
             MarinerDocument.objects.count(), 0
         )
         MarinerDocument.objects.create(
-            user=self.user,
+            user=User.objects.get(username='testuser'),
             mmc_doc_num='67890',
             mmc_issue_date='2000-01-01',
             mmc_expr_date='2026-01-01',
