@@ -33,7 +33,6 @@ class MarinerProfileTestCase(TestCase):
             MarinerProfile.objects.count(), 2
         )
 
-    def tearDown(self):
         user = User.objects.get(username='testuser')
         user.delete()
         user1 = User.objects.get(username='testuser1')
@@ -78,7 +77,6 @@ class MarinerDocumentTestCase(TestCase):
             MarinerDocument.objects.count(), 0
         )
 
-    def tearDown(self):
         user = User.objects.get(username='testuser')
         user.delete()
         user1 = User.objects.get(username='testuser1')
