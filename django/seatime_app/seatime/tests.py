@@ -12,7 +12,7 @@ class MarinerProfileTestCase(TestCase):
         )
         self.user = User.objects.create_user(username='testuser', password='12345')
         self.client.login(username='testuser1', password='12345')
-        self.user2 = User.objects.create_user(username='testuser', password='12345')
+        self.user2 = User.objects.create_user(username='testuser2', password='12345')
         self.client.login(username='testuser2', password='12345')
         MarinerProfile.objects.create(
             user=self.user,
@@ -32,3 +32,4 @@ class MarinerProfileTestCase(TestCase):
             MarinerProfile.objects.count(),
             2
         )
+        self.user.delete()
