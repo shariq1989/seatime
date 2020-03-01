@@ -5,8 +5,8 @@ from django.db import models
 class MarinerProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     birth_date = models.DateField()
-    citizenship_cntry = models.CharField(255)
-    residence_state = models.CharField(255)
+    citizenship_cntry = models.CharField(max_length=255)
+    residence_state = models.CharField(max_length=255)
     mariner_ref_num = models.PositiveIntegerField()
 
 
@@ -22,7 +22,7 @@ class MarinerDocument(models.Model):
     basic_training_expr_date = models.DateField()
     advanced_fire_expr_date = models.DateField()
     first_aid_cpr_expr_date = models.DateField()
-    passport__expr_date = models.DateField()
+    passport_expr_date = models.DateField()
     drug_test_compliant = models.DateField()
 
 
