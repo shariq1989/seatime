@@ -7,8 +7,7 @@ from .models import MarinerProfile
 class MarinerProfileTestCase(TestCase):
     def test_mariner_profile(self):
         self.assertEquals(
-            MarinerProfile.objects.count(),
-            0
+            MarinerProfile.objects.count(), 0
         )
         self.user = User.objects.create_user(username='testuser', password='12345')
         self.client.login(username='testuser1', password='12345')
@@ -29,7 +28,10 @@ class MarinerProfileTestCase(TestCase):
             mariner_ref_num='59231'
         )
         self.assertEquals(
-            MarinerProfile.objects.count(),
-            2
+            MarinerProfile.objects.count(), 2
         )
         self.user.delete()
+        self.user2.delete()
+        self.assertEquals(
+            MarinerProfile.objects.count(), 0
+        )
