@@ -1,6 +1,14 @@
+from django.contrib.auth.models import User
 from rest_framework import serializers
 
-from seatime.models import MarinerDocument, MarinerProfile, Vessel, WorkdayType, VoyageType, StaffPosition, Voyage
+from django.seatime_app.seatime.models import MarinerDocument, MarinerProfile, Vessel, WorkdayType, VoyageType, \
+    StaffPosition, Voyage
+
+
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = User
+        fields = ['url', 'username', 'email', 'is_staff']
 
 
 class MarinerProfileSerializer(serializers.ModelSerializer):
