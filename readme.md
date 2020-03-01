@@ -19,7 +19,11 @@
 	localhost:8080
 # Tunneling
 	ssh -L 80:localhost:80 192.168.0.135
-
+# Django Misc
+	python manage.py makemigrations
+	python manage.py migrate
+# Django Testing
+	python manage.py test seatime
 # Add Python dependencies to requirements.txt
 	pip freeze > requirements.txt
 # Install Python dependencies
