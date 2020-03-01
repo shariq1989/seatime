@@ -7,9 +7,9 @@ from .models import MarinerProfile, MarinerDocument
 class MarinerProfileTestCase(TestCase):
     def setup(self):
         self.user = User.objects.create_user(username='testuser', password='12345')
-        self.client.login(username='testuser1', password='12345')
+        self.client.login(username='testuser', password='12345')
         self.user2 = User.objects.create_user(username='testuser1', password='12345')
-        self.client.login(username='testuser2', password='12345')
+        self.client.login(username='testuser1', password='12345')
 
     def test_mariner_profile(self):
         self.assertEquals(
@@ -32,6 +32,8 @@ class MarinerProfileTestCase(TestCase):
         self.assertEquals(
             MarinerProfile.objects.count(), 2
         )
+
+    def tearDown(self):
         self.user.delete()
         self.user2.delete()
         self.assertEquals(
@@ -42,9 +44,9 @@ class MarinerProfileTestCase(TestCase):
 class MarinerDocumentTestCase(TestCase):
     def setup(self):
         self.user = User.objects.create_user(username='testuser', password='12345')
-        self.client.login(username='testuser1', password='12345')
+        self.client.login(username='testuser', password='12345')
         self.user2 = User.objects.create_user(username='testuser1', password='12345')
-        self.client.login(username='testuser2', password='12345')
+        self.client.login(username='testuser1', password='12345')
 
     def test_mariner_document(self):
         self.assertEquals(
@@ -68,6 +70,13 @@ class MarinerDocumentTestCase(TestCase):
         self.assertEquals(
             MarinerDocument.objects.count(), 1
         )
+        self.user.delete()
+        self.user2.delete()
+        self.assertEquals(
+            MarinerDocument.objects.count(), 0
+        )
+
+    def tearDown(self):
         self.user.delete()
         self.user2.delete()
         self.assertEquals(
