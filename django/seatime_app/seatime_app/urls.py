@@ -10,6 +10,7 @@ schema_view = get_schema_view(title=API_TITLE)
 urlpatterns = [
     url(r'^', include('seatime.urls')),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^schema/$', schema_view),
+    # TODO: Figure out if schema view is really needed and fix the integration issue
+    # url(r'^schema/$', schema_view),
     url(r'^docs/', include_docs_urls(title=API_TITLE, description=API_DESCRIPTION))
 ]
