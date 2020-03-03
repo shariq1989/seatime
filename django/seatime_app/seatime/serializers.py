@@ -28,7 +28,7 @@ class MarinerDocumentSerializer(serializers.ModelSerializer):
 class VesselSerializer(serializers.ModelSerializer):
     class Meta:
         model = Vessel
-        fields = ('name', 'official_number', 'tonnage', 'mmc_expr_date', 'propulsion', 'hp')
+        fields = ('name', 'official_number', 'tonnage', 'propulsion', 'hp')
 
 
 class WorkdayTypeSerializer(serializers.ModelSerializer):
