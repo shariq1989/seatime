@@ -34,13 +34,13 @@ class VesselSerializer(serializers.ModelSerializer):
 class WorkdayTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = WorkdayType
-        fields = 'type'
+        fields = ('type',)
 
 
 class VoyageTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = VoyageType
-        fields = 'type'
+        fields = ('type',)
 
 
 class StaffPositionSerializer(serializers.ModelSerializer):
