@@ -6,12 +6,14 @@ from .serializers import MarinerProfileSerializer, UserSerializer, MarinerDocume
     WorkdayTypeSerializer, VoyageTypeSerializer, StaffPositionSerializer, VoyageSerializer
 
 
-class UserViewSet(viewsets.ReadOnlyModelViewSet):
+class UserViewSet(viewsets.ModelViewSet):
     """
-    This viewset automatically provides `list` and `detail` actions.
+    This viewset automatically provides `list`, `create`, `retrieve`,
+    `update` and `destroy` actions.
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    permission_classes = (permissions.IsAuthenticated,)
 
 
 class MarinerProfileViewSet(viewsets.ModelViewSet):
