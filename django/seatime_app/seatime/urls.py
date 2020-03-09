@@ -1,9 +1,8 @@
+import rest_framework.authtoken
 from django.conf.urls import url, include
 from django.urls import path
-
-from . import views, admin
+from . import views
 from rest_framework import routers
-from rest_framework.urlpatterns import format_suffix_patterns
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
@@ -14,8 +13,8 @@ router.register(r'workday-types', views.WorkdayTypeViewSet)
 router.register(r'voyage-types', views.VoyageTypeViewSet)
 router.register(r'staff-positions', views.StaffPositionViewSet)
 router.register(r'voyages', views.VoyageViewSet)
-router.register(r'create-user', views.CreateUserView)
 
 urlpatterns = [
     path('', include(router.urls)),
+    url(r'^create-user/', views.CreateUserView),
 ]
