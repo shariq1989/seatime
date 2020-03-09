@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import viewsets, permissions
+from rest_framework.generics import CreateAPIView
 
 from .models import MarinerProfile, MarinerDocument, Vessel, WorkdayType, VoyageType, StaffPosition, Voyage
 from .serializers import MarinerProfileSerializer, UserSerializer, MarinerDocumentSerializer, VesselSerializer, \
@@ -85,3 +86,11 @@ class VoyageViewSet(viewsets.ModelViewSet):
     """
     queryset = Voyage.objects.all()
     serializer_class = VoyageSerializer
+
+
+class CreateUserView(CreateAPIView):
+    model = User
+    permission_classes = [
+        permissions.AllowAny  # Or anon users can't register
+    ]
+    serializer_class = UserSerializer

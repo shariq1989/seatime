@@ -14,6 +14,7 @@ router.register(r'workday-types', views.WorkdayTypeViewSet)
 router.register(r'voyage-types', views.VoyageTypeViewSet)
 router.register(r'staff-positions', views.StaffPositionViewSet)
 router.register(r'voyages', views.VoyageViewSet)
+router.register(r'create-user', views.CreateUserView)
 
 urlpatterns = [
     path('', include(router.urls)),

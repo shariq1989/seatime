@@ -6,9 +6,20 @@ from .models import MarinerDocument, MarinerProfile, Vessel, WorkdayType, Voyage
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
+    password = serializers.CharField(write_only=True)
+
+    def create(self, validated_data):
+        user = User.objects.create(
+            username=validated_data['username']
+        )
+        user.set_password(validated_data['password'])
+        user.save()
+
+        return user
+
     class Meta:
         model = User
-        fields = ['url', 'username', 'email', 'is_staff']
+        fields = ['url', 'username', 'email', 'password', 'is_staff']
 
 
 class MarinerProfileSerializer(serializers.ModelSerializer):
