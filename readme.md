@@ -35,3 +35,5 @@
 	python manage.py drf_create_token jamil
 # Call API with token
 	http http://127.0.0.1:8000/hello/ 'Authorization: Token 9054f7aa9305e012b3c2300408c3dfdf390fcddf'
+# Obtain new token
+	http post http://127.0.0.1:8000/fetch-auth-token/ username=vitor password=123
