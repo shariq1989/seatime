@@ -27,7 +27,6 @@
                                         prepend-icon="person"
                                         type="text"
                                         v-model="username"
-                                        :rules="[rules.required, rules.email]"
                                 />
 
                                 <v-text-field
@@ -37,7 +36,6 @@
                                         prepend-icon="lock"
                                         type="password"
                                         v-model="password"
-                                        :rules="[rules.required, rules.password]"
                                 />
                             </v-form>
                         </v-card-text>
