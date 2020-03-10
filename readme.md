@@ -29,11 +29,7 @@
 # Install Python dependencies
 	pip install -r requirements.txt
 # User Management
-## Create new user
-	python manage.py createsuperuser --username vitor --email vitor@example.com
-## Create auth token	
-	python manage.py drf_create_token jamil
-# Call API with token
-	http http://127.0.0.1:8000/hello/ 'Authorization: Token 9054f7aa9305e012b3c2300408c3dfdf390fcddf'
-# Obtain new token
-	http post http://127.0.0.1:8000/fetch-auth-token/ username=vitor password=123
+## End points
+    http://127.0.0.1:8000/rest-auth/login/
+    http://127.0.0.1:8000/rest-auth/logout/
+    http://127.0.0.1:8000/rest-auth/registration/
