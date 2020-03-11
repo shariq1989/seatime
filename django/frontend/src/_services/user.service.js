@@ -11,9 +11,10 @@ function func_login(username, password) {
         body: JSON.stringify({username, password})
     };
 
-    return fetch(process.env.apiUrl + `/users/authenticate`, requestOptions)
+    return fetch(process.env.apiUrl + '/rest-auth/login/', requestOptions)
         .then(handleResponse)
         .then(user => {
+            console.log(user);
             // login successful if there's a jwt token in the response
             if (user.token) {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
