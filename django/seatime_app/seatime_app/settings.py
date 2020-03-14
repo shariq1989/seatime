@@ -137,7 +137,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:8080','http://192.168.0.108:8080/'
+    'http://localhost:8080','http://192.168.0.108:8080'
 )
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
