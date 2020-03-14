@@ -56,7 +56,6 @@
 
 <script>
     import {userService} from "../_services/user.service";
-    import axios from 'axios';
 
     export default {
         props: {
