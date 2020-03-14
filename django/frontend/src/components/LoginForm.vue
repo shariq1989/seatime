@@ -22,11 +22,13 @@
                         <v-form @submit.prevent="handleSubmit">
                             <v-card-text>
                                 <v-text-field
-                                        label="Login"
+                                        label="Username"
                                         name="login"
                                         prepend-icon="person"
                                         type="text"
                                         v-model="username"
+                                        :rules="[v => !!v || 'Username is required']"
+                                        required
                                 />
 
                                 <v-text-field
@@ -36,6 +38,8 @@
                                         prepend-icon="lock"
                                         type="password"
                                         v-model="password"
+                                        :rules="[v => !!v || 'Password is required']"
+                                        required
                                 />
                             </v-card-text>
                             <v-card-actions>
@@ -74,15 +78,7 @@
                 this.submitted = true;
                 const {username, password} = this;
                 if (username && password) {
-//                    userService.func_login({username, password})
-                    axios.post(process.env.VUE_APP_API_URL + '/rest-auth/login/', {
-                        username: username,
-                        password: password
-                    }).then(function (response) {
-                        console.log(response);
-                    }).catch(function (error) {
-                        console.log(error);
-                    });
+                    userService.func_login(username, password)
                 }
             }
         }

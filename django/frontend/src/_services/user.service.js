@@ -4,25 +4,17 @@ export const userService = {
 };
 
 function func_login(username, password) {
-    console.log(process.env.VUE_APP_API_URL);
-    const requestOptions = {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({username, password})
-    };
-
-    return fetch(process.env.VUE_APP_API_URL + '/rest-auth/login/', requestOptions)
-        .then(handleResponse)
-        .then(user => {
-            console.log(user);
-            // login successful if there's a jwt token in the response
-            if (user.token) {
-                // store user details and jwt token in local storage to keep user logged in between page refreshes
-                localStorage.setItem('user', JSON.stringify(user));
-            }
-
-            return user;
-        });
+    axios.post(process.env.VUE_APP_API_URL + '/rest-auth/login/', {
+        username: username,
+        password: password
+    }).then(function (response) {
+        if (response.data.key) {
+            // store user details and jwt token in local storage to keep user logged in between page refreshes
+            localStorage.setItem('user', JSON.stringify(user));
+        }
+    }).catch(function (error) {
+        console.log(error);
+    });
 }
 
 function func_logout() {
