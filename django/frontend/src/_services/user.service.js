@@ -12,6 +12,7 @@ function func_login(username, password) {
         if (response.data.key) {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
             localStorage.setItem('user', JSON.stringify(response.data.key));
+            this.router.push('/');
         }
     }).catch(function (error) {
         console.log(error);
