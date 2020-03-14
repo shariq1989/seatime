@@ -19,7 +19,7 @@
                             <v-toolbar-title>Login</v-toolbar-title>
                             <v-spacer/>
                         </v-toolbar>
-                        <v-form @submit="handleSubmit">
+                        <v-form @submit.prevent="handleSubmit">
                             <v-card-text>
                                 <v-text-field
                                         label="Login"
