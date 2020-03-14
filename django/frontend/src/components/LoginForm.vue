@@ -52,6 +52,7 @@
 
 <script>
     import {userService} from "../_services/user.service";
+    import axios from 'axios';
 
     export default {
         props: {
@@ -73,7 +74,15 @@
                 this.submitted = true;
                 const {username, password} = this;
                 if (username && password) {
-                    userService.func_login({username, password})
+//                    userService.func_login({username, password})
+                    axios.post(process.env.VUE_APP_API_URL + '/rest-auth/login/', {
+                        username: username,
+                        password: password
+                    }).then(function (response) {
+                        console.log(response);
+                    }).catch(function (error) {
+                        console.log(error);
+                    });
                 }
             }
         }
