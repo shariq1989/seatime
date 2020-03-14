@@ -3,6 +3,7 @@ export const userService = {
     func_logout,
 };
 import axios from 'axios';
+import router from '../router/index.js'
 
 function func_login(username, password) {
     axios.post(process.env.VUE_APP_API_URL + '/rest-auth/login/', {
@@ -12,7 +13,7 @@ function func_login(username, password) {
         if (response.data.key) {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
             localStorage.setItem('user', JSON.stringify(response.data.key));
-            this.router.push('/');
+            router.push('/');
         }
     }).catch(function (error) {
         console.log(error);
