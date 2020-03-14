@@ -4,14 +4,14 @@ export const userService = {
 };
 
 function func_login(username, password) {
-    console.log(process.env.apiUrl);
+    console.log(process.env.VUE_APP_API_URL);
     const requestOptions = {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({username, password})
     };
 
-    return fetch(process.env.apiUrl + '/rest-auth/login/', requestOptions)
+    return fetch(process.env.VUE_APP_API_URL + '/rest-auth/login/', requestOptions)
         .then(handleResponse)
         .then(user => {
             console.log(user);
