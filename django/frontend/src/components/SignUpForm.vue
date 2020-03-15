@@ -92,6 +92,9 @@
                 if (value.length < 8) {
                     this.submitDisabled = true;
                     return "Passwords must be at least 8 characters";
+                } else if (this.passwordConfirm.length > 1 && value !== this.passwordConfirm && this.submitDisabled === false) {
+                    this.submitDisabled = true;
+                    return "Confirm Password and Password fields do not match";
                 } else {
                     this.submitDisabled = false;
                     return true;
@@ -122,9 +125,11 @@
                         this.displayErrorMessage = true;
                         this.errorMessage = 'Error registering user';
                         if (err.response.data) {
-                            for (const error in err.response.data) {
-                                this.errorMessage += '\n';
-                                this.errorMessage += error;
+                            for (let field in err.response.data) {
+                                for (let error in field) {
+                                    this.errorMessage += '<br/>';
+                                    this.errorMessage += error;
+                                }
                             }
                         }
                     })
