@@ -125,8 +125,8 @@
                         this.displayErrorMessage = true;
                         this.errorMessage = 'Error registering user';
                         if (err.response.data) {
-                            for (let field in err.response.data) {
-                                for (let error in field) {
+                            for (const field in err.response.data) {
+                                for (const error of err.response.data[field]) {
                                     this.errorMessage += '<br/>';
                                     this.errorMessage += error;
                                 }
