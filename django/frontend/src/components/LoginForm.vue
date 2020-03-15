@@ -81,14 +81,14 @@
             handleSubmit() {
                 this.submitted = true;
                 const {username, password} = this;
-                try {
-                    if (username && password) {
+                if (username && password) {
+                    try {
                         userService.func_login(username, password)
+                    } catch (error) {
+                        this.displayErrorMessage = true;
+                        this.errorMessage = 'Incorrect username or password. Please try again.';
+                        console.log(error);
                     }
-                } catch (error) {
-                    this.displayErrorMessage = true;
-                    this.errorMessage = 'Incorrect username or password. Please try again.';
-                    console.log(error);
                 }
             }
         }
