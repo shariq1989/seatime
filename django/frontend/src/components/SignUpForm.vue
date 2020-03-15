@@ -11,16 +11,16 @@
                         md="4"
                 >
                     <v-card class="elevation-12">
-                        <v-toolbar
-                                color="primary"
-                                dark
-                                flat
-                        >
-                            <v-toolbar-title>Create an account</v-toolbar-title>
-                            <v-spacer/>
-                        </v-toolbar>
-                        <v-card-text>
-                            <v-form @submit.prevent="handleSubmit">
+                        <v-form @submit.prevent="handleSubmit">
+                            <v-toolbar
+                                    color="primary"
+                                    dark
+                                    flat
+                            >
+                                <v-toolbar-title>Create an account</v-toolbar-title>
+                                <v-spacer/>
+                            </v-toolbar>
+                            <v-card-text>
                                 <div class="pa-2">
                                     <v-alert type="error" v-if="displayErrorMessage">
                                         {{errorMessage}}
@@ -54,12 +54,12 @@
                                         :rules="[v => !!v || 'This is a required field']"
                                         required
                                 />
-                            </v-form>
-                        </v-card-text>
-                        <v-card-actions>
-                            <v-spacer/>
-                            <v-btn color="primary" type="submit">Create Account</v-btn>
-                        </v-card-actions>
+                            </v-card-text>
+                            <v-card-actions>
+                                <v-spacer/>
+                                <v-btn color="primary" type="submit">Create Account</v-btn>
+                            </v-card-actions>
+                        </v-form>
                     </v-card>
                 </v-col>
             </v-row>
