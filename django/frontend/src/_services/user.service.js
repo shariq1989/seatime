@@ -17,6 +17,7 @@ function func_login(username, password) {
         }
     }).catch(function (error) {
         console.log(error);
+        throw error;
     });
 }
 

@@ -16,6 +16,9 @@
                                 dark
                                 flat
                         >
+                            <v-alert type="error" v-if="displayErrorMessage">
+                                {{errorMessage}}
+                            </v-alert>
                             <v-toolbar-title>Login</v-toolbar-title>
                             <v-spacer/>
                         </v-toolbar>
@@ -65,7 +68,9 @@
             return {
                 username: '',
                 password: '',
-                submitted: false
+                submitted: false,
+                displayErrorMessage: false,
+                errorMessage: ''
             }
         },
         created() {
@@ -76,8 +81,14 @@
             handleSubmit() {
                 this.submitted = true;
                 const {username, password} = this;
-                if (username && password) {
-                    userService.func_login(username, password)
+                try {
+                    if (username && password) {
+                        userService.func_login(username, password)
+                    }
+                } catch (error) {
+                    this.displayErrorMessage = true;
+                    this.errorMessage = 'Incorrect username or password. Please try again.';
+                    console.log(error);
                 }
             }
         }
