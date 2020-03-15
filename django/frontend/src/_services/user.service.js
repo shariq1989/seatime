@@ -3,7 +3,6 @@ export const userService = {
     func_register
 };
 import axios from 'axios';
-import router from '../router/index.js'
 
 // Exported in a shared file
 export let funcLogin = user => new Promise((resolve, reject) => {
