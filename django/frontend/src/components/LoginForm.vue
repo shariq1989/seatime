@@ -78,11 +78,11 @@
             userService.func_logout();
         },
         methods: {
-            handleSubmit() {
+            async handleSubmit() {
                 this.submitted = true;
                 const {username, password} = this;
                 if (username && password) {
-                    var result = userService.func_login(username, password);
+                    var result = await userService.func_login(username, password);
                     if (result) {
                         this.displayErrorMessage = true;
                         this.errorMessage = result;
