@@ -1,6 +1,7 @@
 export const userService = {
     func_login,
     func_logout,
+    func_register
 };
 import axios from 'axios';
 import router from '../router/index.js'
