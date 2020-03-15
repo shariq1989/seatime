@@ -91,7 +91,12 @@
                 this.submitted = true;
                 const {username, password, passwordConfirm, emailAddr} = this;
                 if (emailAddr && username && password && passwordConfirm) {
-                    funcRegister({username, password, passwordConfirm, emailAddr}).then(() => {
+                    funcRegister({
+                        username,
+                        password1: password,
+                        password2: passwordConfirm,
+                        email: emailAddr
+                    }).then(() => {
                         router.push('/');
                     }).catch((err) => {
                         console.log(err);
