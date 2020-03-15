@@ -17,7 +17,13 @@ function func_login(username, password) {
             router.push('/');
         }
     }).catch(function (error) {
-        return error;
+        console.log(error);
+        if (error.response.status === 400) {
+            return 'Incorrect username or password. Please try again';
+        } else {
+            return 'Unexpected error occured';
+        }
+
     });
 }
 

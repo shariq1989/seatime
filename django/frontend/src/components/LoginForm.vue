@@ -83,7 +83,10 @@
                 const {username, password} = this;
                 if (username && password) {
                     var result = userService.func_login(username, password);
-                    console.log('result ' + result);
+                    if (result) {
+                        this.displayErrorMessage = true;
+                        this.errorMessage = result;
+                    }
                 }
             }
         }
