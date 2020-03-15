@@ -28,7 +28,7 @@ export let funcRegister = registrationFields => new Promise((resolve, reject) =>
         })
 });
 
-export let funcLogout = () => new Promise((resolve, reject) => {
+export function funcLogout() {
     // remove user from local storage to log user out
     localStorage.removeItem('user');
-});
+}
