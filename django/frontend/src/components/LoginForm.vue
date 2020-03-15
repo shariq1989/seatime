@@ -58,7 +58,8 @@
 </template>
 
 <script>
-    import {userService} from "../_services/user.service";
+    import router from "../router";
+    import {funcLogin, userService} from "../_services/user.service";
 
     export default {
         props: {
@@ -82,12 +83,14 @@
                 this.submitted = true;
                 const {username, password} = this;
                 if (username && password) {
-                    userService.func_login(username, password).then(this.handleSubmitCallback)
+                    funcLogin({username, password}).then((response) => {
+                        console.log(response);
+                        router.push('/');
+                    }).catch((err) => {
+                        console.log(err);
+                    })
                 }
             },
-            handleSubmitCallback: function (response) {
-                console.log(response);
-            }
         }
     };
 </script>

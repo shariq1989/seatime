@@ -1,31 +1,24 @@
 export const userService = {
-    func_login,
     func_logout,
     func_register
 };
 import axios from 'axios';
 import router from '../router/index.js'
 
-function func_login(username, password) {
-    axios.post(process.env.VUE_APP_API_URL + '/rest-auth/login/', {
-        username: username,
-        password: password
-    }).then(function (response) {
-        if (response.data.key) {
-            // store user details and jwt token in local storage to keep user logged in between page refreshes
-            localStorage.setItem('user', JSON.stringify(response.data.key));
-            router.push('/');
-        }
-    }).catch(function (error) {
-        console.log(error);
-        if (error.response.status === 400) {
-            return 'Incorrect username or password. Please try again';
-        } else {
-            return 'Unexpected error occured';
-        }
-
-    });
-}
+// Exported in a shared file
+export let funcLogin = user => new Promise((resolve, reject) => {
+    axios({url: 'auth', data: user, method: 'POST'})
+        .then(response => {
+            if (response.data.key) {
+                // store user details and jwt token in local storage to keep user logged in between page refreshes
+                localStorage.setItem('user', JSON.stringify(response.data.key));
+            }
+            resolve(response)
+        })
+        .catch(err => {
+            reject(err)
+        })
+});
 
 function func_register(emailAddr, username, password, passwordConfirm) {
     axios.post(process.env.VUE_APP_API_URL + '/rest-auth/registration/', {
