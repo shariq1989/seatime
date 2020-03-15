@@ -15,7 +15,7 @@ export let funcLogin = user => new Promise((resolve, reject) => {
 });
 
 export let funcRegister = registrationFields => new Promise((resolve, reject) => {
-    axios({url: process.env.VUE_APP_API_URL + '/rest-auth/register/', data: registrationFields, method: 'POST'})
+    axios({url: process.env.VUE_APP_API_URL + '/rest-auth/registration/', data: registrationFields, method: 'POST'})
         .then(response => {
             if (response.data.key) {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
