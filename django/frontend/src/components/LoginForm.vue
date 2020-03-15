@@ -78,16 +78,15 @@
             userService.func_logout();
         },
         methods: {
-            async handleSubmit() {
+            handleSubmit() {
                 this.submitted = true;
                 const {username, password} = this;
                 if (username && password) {
-                    var result = await userService.func_login(username, password);
-                    if (result) {
-                        this.displayErrorMessage = true;
-                        this.errorMessage = result;
-                    }
+                    userService.func_login(username, password).then(this.handleSubmitCallback)
                 }
+            },
+            handleSubmitCallback: function (response) {
+                console.log(response);
             }
         }
     };
