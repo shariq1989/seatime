@@ -43,7 +43,7 @@
                                         label="Password"
                                         v-model="password"
                                         type="password"
-                                        :rules="[v => !!v || 'This is a required field']"
+                                        :rules="[v => !!v || 'This is a required field', passwordChecks]"
                                         required
                                 />
                                 <v-text-field
@@ -51,13 +51,13 @@
                                         label="Confirm Password"
                                         v-model="passwordConfirm"
                                         type="password"
-                                        :rules="[v => !!v || 'This is a required field']"
+                                        :rules="[v => !!v || 'This is a required field', passwordConfirmCheck]"
                                         required
                                 />
                             </v-card-text>
                             <v-card-actions>
                                 <v-spacer/>
-                                <v-btn color="primary" type="submit">Create Account</v-btn>
+                                <v-btn color="primary" type="submit" :disabled="submitDisabled">Create Account</v-btn>
                             </v-card-actions>
                         </v-form>
                     </v-card>
@@ -83,10 +83,29 @@
                 passwordConfirm: '',
                 submitted: false,
                 displayErrorMessage: false,
-                errorMessage: ''
+                errorMessage: '',
+                submitDisabled: true
             }
         },
         methods: {
+            passwordChecks(value) {
+                if (value.length < 8) {
+                    this.submitDisabled = true;
+                    return "Passwords must be at least 8 characters";
+                } else {
+                    this.submitDisabled = false;
+                    return true;
+                }
+            },
+            passwordConfirmCheck(value) {
+                if (value !== this.password) {
+                    this.submitDisabled = true;
+                    return "Confirm Password and Password fields do not match";
+                } else {
+                    this.submitDisabled = false;
+                    return true;
+                }
+            },
             handleSubmit() {
                 this.submitted = true;
                 const {username, password, passwordConfirm, emailAddr} = this;
@@ -99,9 +118,15 @@
                     }).then(() => {
                         router.push('/');
                     }).catch((err) => {
-                        console.log(err);
+                        console.log(err.response.data);
                         this.displayErrorMessage = true;
-                        this.errorMessage = 'Error registering user.';
+                        this.errorMessage = 'Error registering user';
+                        if (err.response.data) {
+                            for (const error in err.response.data) {
+                                this.errorMessage += '\n';
+                                this.errorMessage += error;
+                            }
+                        }
                     })
                 }
             }
