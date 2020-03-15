@@ -22,31 +22,30 @@
                         <v-card-text>
                             <v-form>
                                 <v-text-field
-                                        label="First Name"
-                                        name="firstName"
-                                        type="text"
-                                />
-                                <v-text-field
-                                        label="Last Name"
-                                        name="lastName"
-                                        type="text"
-                                />
-                                <v-text-field
                                         label="Email"
-                                        name="emailAddr"
-                                        type="email"
+                                        v-model="emailAddr"
+                                        :rules="[v => !!v || 'This is a required field']"
+                                        required
+                                />
+                                <v-text-field
+                                        label="Username"
+                                        v-model="username"
+                                        :rules="[v => !!v || 'This is a required field']"
+                                        required
                                 />
                                 <v-text-field
                                         id="password"
                                         label="Password"
-                                        name="password"
-                                        type="password"
+                                        v-model="password"
+                                        :rules="[v => !!v || 'This is a required field']"
+                                        required
                                 />
                                 <v-text-field
                                         id="passwordConfirm"
                                         label="Confirm Password"
-                                        name="passwordConfirm"
-                                        type="password"
+                                        v-model="passwordConfirm"
+                                        :rules="[v => !!v || 'This is a required field']"
+                                        required
                                 />
                             </v-form>
                         </v-card-text>
@@ -62,9 +61,29 @@
 </template>
 
 <script>
+    import {userService} from "../_services/user.service";
+
     export default {
         props: {
             source: String,
         },
+        data() {
+            return {
+                emailAddr: '',
+                username: '',
+                password: '',
+                passwordConfirm: '',
+                submitted: false
+            }
+        },
+        methods: {
+            handleSubmit() {
+                this.submitted = true;
+                const {emailAddr, username, password, passwordConfirm} = this;
+                if (emailAddr && username && password && passwordConfirm) {
+                    userService.func_register(emailAddr, username, password, passwordConfirm)
+                }
+            }
+        }
     }
 </script>

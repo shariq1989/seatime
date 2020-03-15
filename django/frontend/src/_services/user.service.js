@@ -20,6 +20,19 @@ function func_login(username, password) {
     });
 }
 
+function func_register(emailAddr, username, password, passwordConfirm) {
+    axios.post(process.env.VUE_APP_API_URL + '/rest-auth/registration/', {
+        username: username,
+        password1: password,
+        password2: passwordConfirm,
+        email: emailAddr
+    }).then(function (response) {
+        console.log(response);
+    }).catch(function (error) {
+        console.log(error);
+    });
+}
+
 function func_logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('user');
