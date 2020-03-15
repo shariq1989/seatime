@@ -20,9 +20,11 @@
                             <v-spacer/>
                         </v-toolbar>
                         <v-form @submit.prevent="handleSubmit">
-                            <v-alert type="error" v-if="displayErrorMessage">
-                                {{errorMessage}}
-                            </v-alert>
+                            <div class="pa-2">
+                                <v-alert type="error" v-if="displayErrorMessage">
+                                    {{errorMessage}}
+                                </v-alert>
+                            </div>
                             <v-card-text>
                                 <v-text-field
                                         label="Username"
