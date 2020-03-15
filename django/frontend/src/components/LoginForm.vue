@@ -82,13 +82,8 @@
                 this.submitted = true;
                 const {username, password} = this;
                 if (username && password) {
-                    try {
-                        userService.func_login(username, password)
-                    } catch (error) {
-                        this.displayErrorMessage = true;
-                        this.errorMessage = 'Incorrect username or password. Please try again.';
-                        console.log(error);
-                    }
+                    var result = userService.func_login(username, password);
+                    console.log('result ' + result);
                 }
             }
         }

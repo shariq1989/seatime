@@ -17,8 +17,7 @@ function func_login(username, password) {
             router.push('/');
         }
     }).catch(function (error) {
-        console.log(error);
-        throw new Error(error);
+        return error;
     });
 }
 
