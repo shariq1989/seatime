@@ -42,6 +42,7 @@
                                         id="password"
                                         label="Password"
                                         v-model="password"
+                                        type="password"
                                         :rules="[v => !!v || 'This is a required field']"
                                         required
                                 />
@@ -49,6 +50,7 @@
                                         id="passwordConfirm"
                                         label="Confirm Password"
                                         v-model="passwordConfirm"
+                                        type="password"
                                         :rules="[v => !!v || 'This is a required field']"
                                         required
                                 />
@@ -56,7 +58,7 @@
                         </v-card-text>
                         <v-card-actions>
                             <v-spacer/>
-                            <v-btn color="primary">Create Account</v-btn>
+                            <v-btn color="primary" type="submit">Create Account</v-btn>
                         </v-card-actions>
                     </v-card>
                 </v-col>
