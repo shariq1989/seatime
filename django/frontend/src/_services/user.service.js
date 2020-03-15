@@ -6,14 +6,15 @@ import axios from 'axios';
 
 // Exported in a shared file
 export let funcLogin = user => new Promise((resolve, reject) => {
-    axios({url: 'auth', data: user, method: 'POST'})
-        .then(response => {
-            if (response.data.key) {
-                // store user details and jwt token in local storage to keep user logged in between page refreshes
-                localStorage.setItem('user', JSON.stringify(response.data.key));
-            }
-            resolve(response)
-        })
+    axios.post(process.env.VUE_APP_API_URL + '/rest-auth/login/', {
+        user
+    }).then(response => {
+        if (response.data.key) {
+            // store user details and jwt token in local storage to keep user logged in between page refreshes
+            localStorage.setItem('user', JSON.stringify(response.data.key));
+        }
+        resolve(response)
+    })
         .catch(err => {
             reject(err)
         })
