@@ -83,11 +83,12 @@
                 this.submitted = true;
                 const {username, password} = this;
                 if (username && password) {
-                    funcLogin({username, password}).then((response) => {
-                        console.log(response);
+                    funcLogin({username, password}).then(() => {
                         router.push('/');
                     }).catch((err) => {
                         console.log(err);
+                        this.displayErrorMessage = true;
+                        this.errorMessage = 'Invalid username or password. Please try again.';
                     })
                 }
             },

@@ -7,7 +7,6 @@ import axios from 'axios';
 // Exported in a shared file
 export let funcLogin = user => new Promise((resolve, reject) => {
     //axios.post(process.env.VUE_APP_API_URL + '/rest-auth/login/', {user})
-    console.log(user);
     axios({url: process.env.VUE_APP_API_URL + '/rest-auth/login/', data: user, method: 'POST'}).then(response => {
         if (response.data.key) {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
