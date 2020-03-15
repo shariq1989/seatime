@@ -61,7 +61,7 @@
 
 <script>
     import router from "../router";
-    import {funcLogin, userService} from "../_services/user.service";
+    import {funcLogin, funcLogout} from "../_services/user.service";
 
     export default {
         props: {
@@ -78,7 +78,7 @@
         },
         created() {
             // reset login status
-            userService.func_logout();
+            funcLogout();
         },
         methods: {
             handleSubmit() {

@@ -20,7 +20,12 @@
                             <v-spacer/>
                         </v-toolbar>
                         <v-card-text>
-                            <v-form>
+                            <v-form @submit.prevent="handleSubmit">
+                                <div class="pa-2">
+                                    <v-alert type="error" v-if="displayErrorMessage">
+                                        {{errorMessage}}
+                                    </v-alert>
+                                </div>
                                 <v-text-field
                                         label="Email"
                                         v-model="emailAddr"
@@ -61,7 +66,8 @@
 </template>
 
 <script>
-    import {userService} from "../_services/user.service";
+    import router from "../router";
+    import {funcRegister} from "../_services/user.service";
 
     export default {
         props: {
@@ -73,15 +79,23 @@
                 username: '',
                 password: '',
                 passwordConfirm: '',
-                submitted: false
+                submitted: false,
+                displayErrorMessage: false,
+                errorMessage: ''
             }
         },
         methods: {
             handleSubmit() {
                 this.submitted = true;
-                const {emailAddr, username, password, passwordConfirm} = this;
+                const {username, password, passwordConfirm, emailAddr} = this;
                 if (emailAddr && username && password && passwordConfirm) {
-                    userService.func_register(emailAddr, username, password, passwordConfirm)
+                    funcRegister({username, password, passwordConfirm, emailAddr}).then(() => {
+                        router.push('/');
+                    }).catch((err) => {
+                        console.log(err);
+                        this.displayErrorMessage = true;
+                        this.errorMessage = 'Error registering user.';
+                    })
                 }
             }
         }
