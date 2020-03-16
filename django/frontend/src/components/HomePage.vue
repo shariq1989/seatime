@@ -56,7 +56,7 @@
                 drawer: true,
                 items: [
                     {title: 'Profile', icon: 'mdi-account'},
-                    {title: 'Log Seatime', icon: 'mdi-file'},
+                    {title: 'Log Seatime', icon: 'mdi-ferry'},
                 ],
                 color: 'primary',
                 colors: [
