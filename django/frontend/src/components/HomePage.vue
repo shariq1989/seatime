@@ -11,7 +11,7 @@
                             nav
                             class="py-0"
                     >
-                        <v-list-item two-line :class="px-0">
+                        <v-list-item two-line>
                             <v-list-item-avatar>
                                 <img src="../assets/seatime.png">
                             </v-list-item-avatar>
@@ -52,17 +52,7 @@
                     {title: 'Profile', icon: 'mdi-account-box'},
                     {title: 'Log Seatime', icon: 'mdi-file-document-box'},
                 ],
-                color: 'primary',
-                right: true,
-                miniVariant: false,
-                expandOnHover: false,
-                background: false,
             }
-        },
-        computed: {
-            bg() {
-                return this.background ? 'https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg' : undefined
-            },
         },
     }
 </script>
