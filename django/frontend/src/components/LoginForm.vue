@@ -22,7 +22,7 @@
                         <v-form @submit.prevent="handleSubmit">
                             <div class="pa-2">
                                 <v-alert type="error" v-if="displayErrorMessage">
-                                    {{errorMessage}}
+                                    <span class="text-left" v-html="errorMessage"></span>
                                 </v-alert>
                             </div>
                             <v-card-text>

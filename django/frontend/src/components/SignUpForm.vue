@@ -23,7 +23,7 @@
                             <v-card-text>
                                 <div class="pa-2">
                                     <v-alert type="error" v-if="displayErrorMessage">
-                                        <span v-html="errorMessage"></span>
+                                        <span class="text-left" v-html="errorMessage"></span>
                                     </v-alert>
                                 </div>
                                 <v-text-field
