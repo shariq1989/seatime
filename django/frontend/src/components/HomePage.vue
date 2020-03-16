@@ -4,6 +4,12 @@
             <v-container>
                 <v-navigation-drawer
                         v-model="drawer"
+                        :color="color"
+                        :expand-on-hover="expandOnHover"
+                        :mini-variant="miniVariant"
+                        :right="right"
+                        :src="bg"
+                        absolute
                         dark
                 >
                     <v-list
@@ -11,14 +17,14 @@
                             nav
                             class="py-0"
                     >
-                        <v-list-item two-line>
+                        <v-list-item two-line :class="miniVariant && 'px-0'">
                             <v-list-item-avatar>
                                 <img src="../assets/seatime.png">
                             </v-list-item-avatar>
 
                             <v-list-item-content>
-                                <v-list-item-title>Seatime</v-list-item-title>
-                                <v-list-item-subtitle>User</v-list-item-subtitle>
+                                <v-list-item-title>Application</v-list-item-title>
+                                <v-list-item-subtitle>Subtext</v-list-item-subtitle>
                             </v-list-item-content>
                         </v-list-item>
 
@@ -53,7 +59,24 @@
                     {title: 'Profile', icon: 'mdi-account-box'},
                     {title: 'Log Seatime', icon: 'mdi-file-document-box'},
                 ],
+                color: 'primary',
+                colors: [
+                    'primary',
+                    'blue',
+                    'success',
+                    'red',
+                    'teal',
+                ],
+                right: false,
+                miniVariant: false,
+                expandOnHover: false,
+                background: false,
             }
+        },
+        computed: {
+            bg() {
+                return this.background ? 'https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg' : undefined
+            },
         },
     }
 </script>
