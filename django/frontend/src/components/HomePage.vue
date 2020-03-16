@@ -3,7 +3,7 @@
         <v-content>
             <v-container>
                 <v-navigation-drawer
-                        v-model="true"
+                        v-model="drawer"
                         dark
                 >
                     <v-list
@@ -48,6 +48,7 @@
     export default {
         data() {
             return {
+                drawer: true,
                 items: [
                     {title: 'Profile', icon: 'mdi-account-box'},
                     {title: 'Log Seatime', icon: 'mdi-file-document-box'},
