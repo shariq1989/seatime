@@ -23,8 +23,7 @@
                             </v-list-item-avatar>
 
                             <v-list-item-content>
-                                <v-list-item-title>Application</v-list-item-title>
-                                <v-list-item-subtitle>Subtext</v-list-item-subtitle>
+                                <v-list-item-title>Seatime</v-list-item-title>
                             </v-list-item-content>
                         </v-list-item>
 
@@ -57,7 +56,7 @@
                 drawer: true,
                 items: [
                     {title: 'Profile', icon: 'mdi-account-box'},
-                    {title: 'Log Seatime', icon: 'mdi-file-document-box'},
+                    {title: 'Log Seatime', icon: 'mdi-file-box'},
                 ],
                 color: 'primary',
                 colors: [
