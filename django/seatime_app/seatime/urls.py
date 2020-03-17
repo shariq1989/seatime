@@ -17,7 +17,8 @@ router.register(r'voyages', views.VoyageViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('rest-auth/', include('rest_auth.urls')),
-    path('rest-auth/registration/',
-         include('rest_auth.registration.urls')),
+    path('rest-auth/registration/', include('rest_auth.registration.urls')),
+    # for adding login to browsable API
+    path('api-auth/', include('rest_framework.urls')),
     path('control/', admin.site.urls),
 ]
