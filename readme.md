@@ -28,8 +28,3 @@
 	pip freeze > requirements.txt
 # Install Python dependencies
 	pip install -r requirements.txt
-# User Management
-## End points
-    http://127.0.0.1:8000/rest-auth/login/
-    http://127.0.0.1:8000/rest-auth/logout/
-    http://127.0.0.1:8000/rest-auth/registration/
