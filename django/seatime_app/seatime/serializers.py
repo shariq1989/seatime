@@ -33,7 +33,7 @@ class MarinerDocumentSerializer(serializers.ModelSerializer):
         model = MarinerDocument
         fields = ('user', 'mmc_doc_num', 'mmc_issue_date', 'mmc_expr_date', 'med_ntl_expr_date', 'med_stcw_expr_date',
                   'med_pilot_expr_date', 'twic_expr_date', 'basic_training_expr_date',
-                  'advanced_fire_expr_date', 'first_aid_cpr_expr_date', 'passport__expr_date', 'drug_test_compliant')
+                  'advanced_fire_expr_date', 'first_aid_cpr_expr_date', 'passport_expr_date', 'drug_test_compliant')
 
 
 class VesselSerializer(serializers.ModelSerializer):
