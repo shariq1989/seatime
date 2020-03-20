@@ -26,6 +26,9 @@ class MarinerProfileViewSet(viewsets.ModelViewSet):
     serializer_class = MarinerProfileSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
 
 class MarinerDocumentViewSet(viewsets.ModelViewSet):
     """
@@ -37,7 +40,7 @@ class MarinerDocumentViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
     def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
+        serializer.save(user=self.request.user)
 
 
 class VesselViewSet(viewsets.ModelViewSet):
