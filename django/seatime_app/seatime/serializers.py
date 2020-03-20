@@ -25,7 +25,9 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 class MarinerProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = MarinerProfile
-        fields = ('user', 'birth_date', 'citizenship_cntry', 'residence_state', 'mariner_ref_num')
+        fields = (
+        'user', 'first_name', 'middle_name', 'last_name', 'birth_date', 'citizenship_cntry', 'residence_state',
+        'mariner_ref_num')
 
 
 class MarinerDocumentSerializer(serializers.ModelSerializer):

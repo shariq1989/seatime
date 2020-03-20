@@ -17,6 +17,9 @@ class MarinerProfileTestCase(TestCase):
         )
         MarinerProfile.objects.create(
             user=User.objects.get(username='testuser'),
+            first_name='Will',
+            middle_name='Leslie',
+            last_name='Shatner',
             birth_date='1989-01-01',
             citizenship_cntry='USA',
             residence_state='Colorado',
@@ -24,6 +27,9 @@ class MarinerProfileTestCase(TestCase):
         )
         MarinerProfile.objects.create(
             user=User.objects.get(username='testuser1'),
+            first_name='Jon',
+            middle_name='Wiley',
+            last_name='Joseph',
             birth_date='1987-09-09',
             citizenship_cntry='USA',
             residence_state='Arizona',

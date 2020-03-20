@@ -5,6 +5,9 @@ from django.db import models
 # Extended auth user with this table
 class MarinerProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=255)
+    middle_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
     birth_date = models.DateField()
     citizenship_cntry = models.CharField(max_length=255)
     residence_state = models.CharField(max_length=255)
