@@ -50,6 +50,8 @@
 </template>
 
 <script>
+    import {getProfile} from "../_services/profile.service";
+
     export default {
         data() {
             return {
@@ -77,5 +79,19 @@
                 return this.background ? 'https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg' : undefined
             },
         },
+        methods: {
+            loadProfile: function () {
+                getProfile().then((resp) => {
+                    console.log(resp);
+                }).catch((err) => {
+                    console.log(err);
+                    this.displayErrorMessage = true;
+                    this.errorMessage = 'Error loading profile';
+                })
+            }
+        },
+        mounted() {
+            this.loadProfile();
+        }
     }
 </script>
