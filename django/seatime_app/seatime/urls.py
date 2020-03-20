@@ -5,14 +5,14 @@ from . import views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r'mariners', views.UserViewSet)
-router.register(r'mariner-profiles', views.MarinerProfileViewSet)
-router.register(r'mariner-documents', views.MarinerDocumentViewSet)
-router.register(r'vessels', views.VesselViewSet)
-router.register(r'workday-types', views.WorkdayTypeViewSet)
-router.register(r'voyage-types', views.VoyageTypeViewSet)
-router.register(r'staff-positions', views.StaffPositionViewSet)
-router.register(r'voyages', views.VoyageViewSet)
+router.register(r'mariners', views.UserViewSet, basename='Mariners')
+router.register(r'mariner-profiles', views.MarinerProfileViewSet, basename='MarinerProfile')
+router.register(r'mariner-documents', views.MarinerDocumentViewSet, basename='MarinerDocs')
+router.register(r'vessels', views.VesselViewSet, basename='Vessels')
+router.register(r'workday-types', views.WorkdayTypeViewSet, basename='WorkdayTypes')
+router.register(r'voyage-types', views.VoyageTypeViewSet, basename='VoyageTypes')
+router.register(r'staff-positions', views.StaffPositionViewSet, basename='StaffPositions')
+router.register(r'voyages', views.VoyageViewSet, basename='Voyages')
 
 urlpatterns = [
     path('', include(router.urls)),
