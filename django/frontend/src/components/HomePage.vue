@@ -1,6 +1,6 @@
 <template>
     <v-app id="inspire">
-        <v-navigation-drawer v-model="drawer" expand-on-hover permanent>
+        <v-navigation-drawer v-model="drawer" expand-on-hover permanent app>
             <v-list dense nav class="py-0">
                 <v-list-item two-line :class="miniVariant && 'px-0'">
                     <v-list-item-avatar>
