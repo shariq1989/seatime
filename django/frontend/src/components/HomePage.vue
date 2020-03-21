@@ -48,10 +48,36 @@
                             </div>
                             <div v-if="!profileLoading">
                                 <v-card-text>
-                                    <div v-for="(val, prop) in userProfile" :key="prop">
-                                        <p class="text-left subtitle-2">{{prop}}</p>
-                                        <p class="text-left">{{val}}</p>
-                                    </div>
+                                    <p class="text-left subtitle-2">
+                                        Name
+                                    </p>
+                                    <p class="text-left">{{userProfile["first_name"]}} {{userProfile["middle_name"]}}
+                                        {{userProfile["last_name"]}}</p>
+
+                                    <p class="text-left subtitle-2">
+                                        Birth Date
+                                    </p>
+                                    <p class="text-left">{{userProfile["birth_date"]}}</p>
+
+                                    <v-tooltip bottom>
+                                        <template v-slot:activator="{ on }">
+                                            <p v-on="on" class="text-left subtitle-2">
+                                                Mariner Reference Number
+                                            </p>
+                                            <p v-on="on" class="text-left">{{userProfile["mariner_ref_num"]}}</p>
+                                        </template>
+                                        <span>From your Merchant Mariner Credential</span>
+                                    </v-tooltip>
+
+                                    <p class="text-left subtitle-2">
+                                        Citizenship
+                                    </p>
+                                    <p class="text-left">{{userProfile["citizenship_cntry"]}}</p>
+
+                                    <p class="text-left subtitle-2">
+                                        Residence
+                                    </p>
+                                    <p class="text-left">{{userProfile["residence_state"]}}</p>
                                 </v-card-text>
                                 <v-card-actions>
                                     <v-btn color="primary">Edit Profile</v-btn>
