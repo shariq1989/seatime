@@ -5,7 +5,7 @@ export function getProfile() {
     axios({
         url: process.env.VUE_APP_API_URL + '/mariner-profiles/',
         method: 'GET',
-        header: {"Authorization": "Token " + token}
+        headers: {"Authorization": "Token " + token}
     })
         .then(response => {
             console.log(response);
