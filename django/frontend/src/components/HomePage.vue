@@ -2,9 +2,9 @@
     <v-app id="inspire">
         <v-navigation-drawer v-model="drawer" expand-on-hover permanent app>
             <v-list dense nav class="py-0">
-                <v-list-item two-line>
+                <v-list-item two-line :class="miniVariant && 'px-0'">
                     <v-list-item-avatar>
-                        <img style="width:35px;height:35px;" src="../assets/seatime.png" alt="">
+                        <img src="../assets/seatime.png" alt="">
                     </v-list-item-avatar>
 
                     <v-list-item-content>
@@ -48,7 +48,10 @@
                             </div>
                             <div v-if="!profileLoading">
                                 <v-card-text>
-                                    <li v-for="(prop, val) in userProfile" :key="prop">{{prop}} : {{val}}</li>
+                                    <div v-for="(val, prop) in userProfile" :key="prop">
+                                        <p class="text-left subtitle-2">{{prop}}</p>
+                                        <p class="text-left">{{val}}</p>
+                                    </div>
                                 </v-card-text>
                                 <v-card-actions>
                                     <v-btn color="primary">Edit Profile</v-btn>
