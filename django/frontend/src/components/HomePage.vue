@@ -30,29 +30,33 @@
             </v-list>
         </v-navigation-drawer>
         <v-content>
-            <v-container>
-                <v-card>
-                    <v-card-title>
-                        Profile
-                    </v-card-title>
-                    <div v-if="profileLoading">
-                        <v-progress-circular
-                                indeterminate
-                                color="primary"
-                        ></v-progress-circular>
-                        <v-card-text>
-                            User Profile Loading
-                        </v-card-text>
-                    </div>
-                    <div v-if="!profileLoading">
-                        <v-card-text>
-                            <li v-for="(prop, val) in userProfile" :key="prop">{{prop}} : {{val}}</li>
-                        </v-card-text>
-                        <v-card-actions>
-                            <v-btn color="primary">Edit Profile</v-btn>
-                        </v-card-actions>
-                    </div>
-                </v-card>
+            <v-container fluid class="grey lighten-4 fill-height">
+                <v-row>
+                    <v-col>
+                        <v-card>
+                            <v-card-title>
+                                Profile
+                            </v-card-title>
+                            <div v-if="profileLoading">
+                                <v-progress-circular
+                                        indeterminate
+                                        color="primary"
+                                ></v-progress-circular>
+                                <v-card-text>
+                                    User Profile Loading
+                                </v-card-text>
+                            </div>
+                            <div v-if="!profileLoading">
+                                <v-card-text>
+                                    <li v-for="(prop, val) in userProfile" :key="prop">{{prop}} : {{val}}</li>
+                                </v-card-text>
+                                <v-card-actions>
+                                    <v-btn color="primary">Edit Profile</v-btn>
+                                </v-card-actions>
+                            </div>
+                        </v-card>
+                    </v-col>
+                </v-row>
             </v-container>
         </v-content>
     </v-app>
