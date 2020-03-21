@@ -8,7 +8,6 @@
                         :expand-on-hover="expandOnHover"
                         :mini-variant="miniVariant"
                         :right="right"
-                        :src="bg"
                         absolute
                         dark
                 >
@@ -59,7 +58,7 @@
                     </div>
                     <div v-if="!profileLoading">
                         <v-card-text>
-                            <li v-for="{prop, val} in userProfile" :key="prop">{{prop}} : {{val}}</li>
+                            <li v-for="(prop, val) in userProfile" :key="prop">{{prop}} : {{val}}</li>
                         </v-card-text>
                         <v-card-actions>
                             <v-btn color="primary">Edit Profile</v-btn>
