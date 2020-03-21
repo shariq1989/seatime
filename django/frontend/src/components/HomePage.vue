@@ -44,6 +44,28 @@
                         </v-list-item>
                     </v-list>
                 </v-navigation-drawer>
+                <v-card>
+                    <v-card-title>
+                        Profile
+                    </v-card-title>
+                    <div v-if="profileLoading">
+                        <v-progress-circular
+                                indeterminate
+                                color="primary"
+                        ></v-progress-circular>
+                        <v-card-text>
+                            User Profile Loading
+                        </v-card-text>
+                    </div>
+                    <div v-if="!profileLoading">
+                        <v-card-text>
+                            <li v-for="attr in userProfile">{{attr}}</li>
+                        </v-card-text>
+                        <v-card-actions>
+                            <v-btn color="primary">Edit Profile</v-btn>
+                        </v-card-actions>
+                    </div>
+                </v-card>
             </v-container>
         </v-content>
     </v-app>
@@ -72,21 +94,19 @@
                 miniVariant: false,
                 expandOnHover: false,
                 background: false,
+                profileLoading: true,
+                userProfile: {}
             }
-        },
-        computed: {
-            bg() {
-                return this.background ? 'https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg' : undefined
-            },
         },
         methods: {
             loadProfile: function () {
                 getProfile().then((resp) => {
-                    console.log(resp);
+                    console.log(resp.data);
+                    this.profileLoading = false;
+                    this.userProfile = resp.data[0];
                 }).catch((err) => {
-                    console.log(err);
-                    this.displayErrorMessage = true;
-                    this.errorMessage = 'Error loading profile';
+                    this.profileLoading = false;
+                    this.userProfile = {error: 'Error loading profile'};
                 })
             }
         },
