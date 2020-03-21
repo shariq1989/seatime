@@ -1,36 +1,36 @@
 <template>
     <v-app id="inspire">
+        <v-navigation-drawer v-model="drawer" expand-on-hover permanent>
+            <v-list dense nav class="py-0">
+                <v-list-item two-line :class="miniVariant && 'px-0'">
+                    <v-list-item-avatar>
+                        <img src="../assets/seatime.png">
+                    </v-list-item-avatar>
+
+                    <v-list-item-content>
+                        <v-list-item-title>Seatime</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+
+                <v-divider></v-divider>
+
+                <v-list-item
+                        v-for="item in items"
+                        :key="item.title"
+                        link
+                >
+                    <v-list-item-icon>
+                        <v-icon>{{ item.icon }}</v-icon>
+                    </v-list-item-icon>
+
+                    <v-list-item-content>
+                        <v-list-item-title>{{ item.title }}</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+            </v-list>
+        </v-navigation-drawer>
         <v-content>
             <v-container>
-                <v-navigation-drawer v-model="drawer" expand-on-hover permanent>
-                    <v-list dense nav class="py-0">
-                        <v-list-item two-line :class="miniVariant && 'px-0'">
-                            <v-list-item-avatar>
-                                <img src="../assets/seatime.png">
-                            </v-list-item-avatar>
-
-                            <v-list-item-content>
-                                <v-list-item-title>Seatime</v-list-item-title>
-                            </v-list-item-content>
-                        </v-list-item>
-
-                        <v-divider></v-divider>
-
-                        <v-list-item
-                                v-for="item in items"
-                                :key="item.title"
-                                link
-                        >
-                            <v-list-item-icon>
-                                <v-icon>{{ item.icon }}</v-icon>
-                            </v-list-item-icon>
-
-                            <v-list-item-content>
-                                <v-list-item-title>{{ item.title }}</v-list-item-title>
-                            </v-list-item-content>
-                        </v-list-item>
-                    </v-list>
-                </v-navigation-drawer>
                 <v-card>
                     <v-card-title>
                         Profile
