@@ -59,7 +59,7 @@
                     </div>
                     <div v-if="!profileLoading">
                         <v-card-text>
-                            <li v-for="attr in userProfile">{{attr}}</li>
+                            <li v-for="{prop, val} in userProfile">{{prop}} : {{val}}</li>
                         </v-card-text>
                         <v-card-actions>
                             <v-btn color="primary">Edit Profile</v-btn>
@@ -104,7 +104,7 @@
                     console.log(resp.data);
                     this.profileLoading = false;
                     this.userProfile = resp.data[0];
-                }).catch((err) => {
+                }).catch(() => {
                     this.profileLoading = false;
                     this.userProfile = {error: 'Error loading profile'};
                 })
