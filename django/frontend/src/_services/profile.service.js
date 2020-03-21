@@ -1,18 +1,17 @@
 import axios from 'axios';
 
-export let getProfile = function () {
+export let getProfile = () => new Promise((resolve, reject) => {
     let token = JSON.parse(localStorage.getItem('user'));
-    new Promise((resolve, reject) => {
-        axios({
-            url: process.env.VUE_APP_API_URL + '/mariner-profiles/',
-            method: 'GET',
-            headers: {"Authorization": "Token " + token}
+    axios({
+        url: process.env.VUE_APP_API_URL + '/mariner-profiles/',
+        method: 'GET',
+        headers: {"Authorization": "Token " + token}
+    })
+        .then(response => {
+            resolve(response)
         })
-            .then(response => {
-                resolve(response)
-            })
-            .catch(err => {
-                reject(err)
-            })
-    });
-};
+        .catch(err => {
+            reject(err)
+        })
+});
+
