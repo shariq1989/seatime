@@ -8,6 +8,6 @@ export function getProfile() {
             console.log(response);
         })
         .catch(err => {
-            console.log(reject);
+            console.log(err);
         })
 }
