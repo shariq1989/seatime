@@ -2,9 +2,9 @@
     <v-app id="inspire">
         <v-navigation-drawer v-model="drawer" expand-on-hover permanent app>
             <v-list dense nav class="py-0">
-                <v-list-item two-line :class="miniVariant && 'px-0'">
+                <v-list-item two-line>
                     <v-list-item-avatar>
-                        <img src="../assets/seatime.png">
+                        <img style="width:35px;height:35px;" src="../assets/seatime.png" alt="">
                     </v-list-item-avatar>
 
                     <v-list-item-content>
