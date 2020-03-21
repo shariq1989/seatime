@@ -2,15 +2,7 @@
     <v-app id="inspire">
         <v-content>
             <v-container>
-                <v-navigation-drawer
-                        v-model="drawer"
-                        :color="color"
-                        :expand-on-hover="expandOnHover"
-                        :mini-variant="miniVariant"
-                        :right="right"
-                        absolute
-                        dark
-                >
+                <v-navigation-drawer permanent>
                     <v-list
                             dense
                             nav
