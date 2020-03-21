@@ -59,15 +59,10 @@
                                     </p>
                                     <p class="text-left">{{userProfile["birth_date"]}}</p>
 
-                                    <v-tooltip bottom>
-                                        <template v-slot:activator="{ on }">
-                                            <p v-on="on" class="text-left subtitle-2">
-                                                Mariner Reference Number
-                                            </p>
-                                            <p v-on="on" class="text-left">{{userProfile["mariner_ref_num"]}}</p>
-                                        </template>
-                                        <span>From your Merchant Mariner Credential</span>
-                                    </v-tooltip>
+                                    <p class="text-left subtitle-2">
+                                        Mariner Reference Number
+                                    </p>
+                                    <p class="text-left">{{userProfile["mariner_ref_num"]}}</p>
 
                                     <p class="text-left subtitle-2">
                                         Citizenship
