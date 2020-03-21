@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 export let getProfile = new Promise((resolve, reject) => {
-    axios({url: process.env.VUE_APP_API_URL + '/mariner-profiles/', data: {}, method: 'POST'})
+    let userToken = localStorage.getItem('user');
+    let headers = {"Token: ": userToken};
+    axios({url: process.env.VUE_APP_API_URL + '/mariner-profiles/', method: 'GET', header: header})
         .then(response => {
             console.log(response);
             resolve(response)
