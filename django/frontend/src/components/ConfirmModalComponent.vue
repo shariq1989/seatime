@@ -28,6 +28,11 @@
         created: function () {
             console.log('confirmDialog from parent:');
             console.log(this.confirmDialog) //prints out an empty string
+        },
+        computed: {
+            testVar: function () {
+                console.log(this.confirmDialog)
+            }
         }
     }
 </script>
