@@ -191,7 +191,8 @@
                 expandOnHover: false,
                 background: false,
                 profileLoading: true,
-                userProfile: {}
+                userProfile: {},
+                logoutDialog: false
             }
         },
         methods: {
