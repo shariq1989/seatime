@@ -27,6 +27,11 @@
                     </v-list-item-content>
                 </v-list-item>
             </v-list>
+            <template v-slot:append>
+                <div class="pa-2">
+                    <v-btn block v-on:click="logout">Logout</v-btn>
+                </div>
+            </template>
         </v-navigation-drawer>
         <v-content>
             <v-container fluid class="grey lighten-4 fill-height">
@@ -112,6 +117,7 @@
 
 <script>
     import {getProfile} from "../_services/profile.service";
+    import {funcLogout} from "../_services/user.service";
 
     export default {
         data() {
@@ -147,6 +153,9 @@
                     this.profileLoading = false;
                     this.userProfile = {error: 'Error loading profile'};
                 })
+            },
+            logout() {
+                funcLogout();
             }
         },
         mounted() {
