@@ -30,9 +30,9 @@
         </v-navigation-drawer>
         <v-content>
             <v-container fluid class="grey lighten-4 fill-height">
-                <v-row>
+                <v-row class="mb-6">
                     <v-col>
-                        <v-card>
+                        <v-card class="pa-2">
                             <v-card-title>
                                 Profile
                             </v-card-title>
@@ -74,6 +74,30 @@
                                     <p class="text-left">{{userProfile["residence_state"]}}</p>
                                 </v-card-text>
                             </div>
+                        </v-card>
+                        <v-card class="pa-2">
+                            <v-card-title>
+                                Documents
+                            </v-card-title>
+                            <v-progress-circular
+                                    indeterminate
+                                    color="primary"
+                            ></v-progress-circular>
+                            <v-card-text>
+                                User Documents Loading
+                            </v-card-text>
+                        </v-card>
+                        <v-card class="pa-2">
+                            <v-card-title>
+                                Seatime Logged
+                            </v-card-title>
+                            <v-progress-circular
+                                    indeterminate
+                                    color="primary"
+                            ></v-progress-circular>
+                            <v-card-text>
+                                Voyages Loading
+                            </v-card-text>
                         </v-card>
                     </v-col>
                 </v-row>
