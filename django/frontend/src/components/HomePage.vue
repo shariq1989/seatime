@@ -28,60 +28,13 @@
                 </v-list-item>
             </v-list>
             <template v-slot:append>
-                <template>
-                    <div class="text-center">
-                        <v-dialog
-                                v-model="logoutDialog"
-                                width="500"
-                        >
-                            <v-card>
-                                <v-card-title
-                                        class="headline grey lighten-2"
-                                        primary-title
-                                >
-                                    Confirm Logout
-                                </v-card-title>
+                <v-list-item-icon>
+                    <v-icon>mdi-logout</v-icon>
+                </v-list-item-icon>
 
-                                <v-card-text>
-                                    Are you sure you want to log out?
-                                </v-card-text>
-
-                                <v-divider></v-divider>
-
-                                <v-card-actions>
-                                    <v-spacer></v-spacer>
-                                    <v-btn
-                                            color="primary"
-                                            text
-                                            @click="logoutDialog = false"
-                                    >
-                                        Cancel
-                                    </v-btn>
-
-                                    <v-btn
-                                            color="red darken-1"
-                                            text
-                                            @click="logout"
-                                    >
-                                        Logout
-                                    </v-btn>
-                                </v-card-actions>
-                            </v-card>
-
-                            <template v-slot:activator="{ on }">
-                                <div class="pa-2" v-on="on">
-                                    <v-list-item-icon>
-                                        <v-icon>mdi-logout</v-icon>
-                                    </v-list-item-icon>
-
-                                    <v-list-item-content>
-                                        <v-list-item-title>Logout</v-list-item-title>
-                                    </v-list-item-content>
-                                </div>
-                            </template>
-                        </v-dialog>
-                    </div>
-                </template>
+                <v-list-item-content>
+                    <v-list-item-title>Logout</v-list-item-title>
+                </v-list-item-content>
             </template>
         </v-navigation-drawer>
         <v-content>
