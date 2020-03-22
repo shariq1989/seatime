@@ -25,7 +25,9 @@
 <script>
     export default {
         data() {
-            return {}
+            return {
+                confirmDialog: false
+            }
         },
     }
 </script>
