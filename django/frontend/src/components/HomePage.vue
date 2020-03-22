@@ -38,7 +38,7 @@
             </template>
         </v-navigation-drawer>
         <v-content>
-            <modal-comp v-bind:logoutDialog="confirmDialog"/>
+            <modal-comp :logoutDialog="confirmDialog"/>
             <v-container fluid class="grey lighten-4 fill-height">
                 <v-row class="mb-6">
                     <v-col>
