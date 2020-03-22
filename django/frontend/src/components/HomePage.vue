@@ -75,6 +75,8 @@
                                 </v-card-text>
                             </div>
                         </v-card>
+                    </v-col>
+                    <v-col>
                         <v-card class="pa-2">
                             <v-card-title>
                                 Documents
@@ -87,6 +89,8 @@
                                 User Documents Loading
                             </v-card-text>
                         </v-card>
+                    </v-col>
+                    <v-col>
                         <v-card class="pa-2">
                             <v-card-title>
                                 Seatime Logged
