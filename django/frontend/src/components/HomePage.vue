@@ -28,7 +28,7 @@
                 </v-list-item>
             </v-list>
             <template v-slot:append>
-                <v-list-item v-on:click="logout">
+                <v-list-item v-on:click.stop="logoutDialog=true">
                     <v-list-item-icon>
                         <v-icon style="color: #0f0f0f">mdi-logout</v-icon>
                     </v-list-item-icon>
@@ -39,7 +39,6 @@
             </template>
         </v-navigation-drawer>
         <v-content>
-            <v-btn color="accent" large @click.stop="logoutDialog=true"></v-btn>
             <ConfirmModalComponent v-model="logoutDialog"/>
             <v-container fluid class="grey lighten-4 fill-height">
                 <v-row class="mb-6">
