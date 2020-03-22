@@ -1,4 +1,8 @@
-<h1>HELLO</h1>
+<template>
+    <v-app id="modal">
+        <p>hi</p>
+    </v-app>
+</template>
 <script>
     export default {
         data() {
