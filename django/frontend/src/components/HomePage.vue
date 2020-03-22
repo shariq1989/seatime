@@ -48,28 +48,28 @@
                             </div>
                             <div v-if="!profileLoading">
                                 <v-card-text>
-                                    <p class="text-left subtitle-2">
+                                    <p class="text-left subtitle-2 tag-title">
                                         Name
                                     </p>
                                     <p class="text-left">{{userProfile["first_name"]}} {{userProfile["middle_name"]}}
                                         {{userProfile["last_name"]}}</p>
 
-                                    <p class="text-left subtitle-2">
+                                    <p class="text-left subtitle-2 tag-title">
                                         Birth Date
                                     </p>
                                     <p class="text-left">{{userProfile["birth_date"]}}</p>
 
-                                    <p class="text-left subtitle-2">
+                                    <p class="text-left subtitle-2 tag-title">
                                         Mariner Reference Number
                                     </p>
                                     <p class="text-left">{{userProfile["mariner_ref_num"]}}</p>
 
-                                    <p class="text-left subtitle-2">
+                                    <p class="text-left subtitle-2 tag-title">
                                         Citizenship
                                     </p>
                                     <p class="text-left">{{userProfile["citizenship_cntry"]}}</p>
 
-                                    <p class="text-left subtitle-2">
+                                    <p class="text-left subtitle-2 tag-title">
                                         Residence
                                     </p>
                                     <p class="text-left">{{userProfile["residence_state"]}}</p>
@@ -130,3 +130,9 @@
         }
     }
 </script>
+
+<style>
+    .tag-title {
+        color: gray;
+    }
+</style>
