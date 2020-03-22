@@ -1,3 +1,4 @@
+<!--suppress JSUnusedGlobalSymbols -->
 <template>
     <v-app id="inspire">
         <v-navigation-drawer v-model="drawer" expand-on-hover permanent app>
@@ -38,8 +39,8 @@
             </template>
         </v-navigation-drawer>
         <v-content>
-            <v-btn color="accent" large @click.stop="showScheduleForm=true"></v-btn>
-            <ConfirmModalComponent v-model="showScheduleForm"/>
+            <v-btn color="accent" large @click.stop="logoutDialog=true"></v-btn>
+            <ConfirmModalComponent v-model="logoutDialog"/>
             <v-container fluid class="grey lighten-4 fill-height">
                 <v-row class="mb-6">
                     <v-col>
@@ -151,7 +152,6 @@
                 profileLoading: true,
                 userProfile: {},
                 logoutDialog: false,
-                showScheduleForm: false,
             }
         },
         methods: {
