@@ -38,7 +38,7 @@
             </template>
         </v-navigation-drawer>
         <v-content>
-            <ConfirmModal/>
+            <ConfirmModalComponent/>
             <v-container fluid class="grey lighten-4 fill-height">
                 <v-row class="mb-6">
                     <v-col>
@@ -123,10 +123,10 @@
 <script>
     import {getProfile} from "../_services/profile.service";
     import {funcLogout} from "../_services/user.service";
-    import {confirmModal} from "/ConfirmModalComponent.vue"
+    import {ConfirmModalComponent} from "/ConfirmModalComponent.vue"
 
     export default {
-        components: {confirmModal},
+        components: {ConfirmModalComponent},
         data() {
             return {
                 drawer: true,

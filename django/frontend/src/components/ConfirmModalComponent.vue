@@ -1,3 +1,11 @@
+<h1>HELLO</h1>
+<script>
+    export default {
+        data() {
+        },
+    }
+</script>
+<!--
 <template>
     <div class="text-left">
         <v-dialog v-model="confirmDialog" width="500">
@@ -28,3 +36,4 @@
         template: '<h3>{{ title }}</h3>'
     })
 </script>
+-->
