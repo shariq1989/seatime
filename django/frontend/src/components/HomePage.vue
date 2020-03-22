@@ -38,86 +38,86 @@
             </template>
         </v-navigation-drawer>
         <v-content>
-            <v-btn color="accent" large @click.stop="showScheduleForm=true">
-                <ConfirmModalComponent v-model="showScheduleForm"/>
-                <v-container fluid class="grey lighten-4 fill-height">
-                    <v-row class="mb-6">
-                        <v-col>
-                            <v-card class="pa-2">
-                                <v-card-title>
-                                    Profile
-                                </v-card-title>
-                                <div v-if="profileLoading">
-                                    <v-progress-circular
-                                            indeterminate
-                                            color="primary"
-                                    ></v-progress-circular>
-                                    <v-card-text>
-                                        User Profile Loading
-                                    </v-card-text>
-                                </div>
-                                <div v-if="!profileLoading">
-                                    <v-card-text>
-                                        <p class="text-left subtitle-2 tag-title" style="margin: 0;">
-                                            Name
-                                        </p>
-                                        <p class="text-left">{{userProfile["first_name"]}}
-                                            {{userProfile["middle_name"]}}
-                                            {{userProfile["last_name"]}}</p>
-
-                                        <p class="text-left subtitle-2 tag-title" style="margin: 0;">
-                                            Birth Date
-                                        </p>
-                                        <p class="text-left">{{userProfile["birth_date"]}}</p>
-
-                                        <p class="text-left subtitle-2 tag-title" style="margin: 0;">
-                                            Mariner Reference Number
-                                        </p>
-                                        <p class="text-left">{{userProfile["mariner_ref_num"]}}</p>
-
-                                        <p class="text-left subtitle-2 tag-title" style="margin: 0;">
-                                            Citizenship
-                                        </p>
-                                        <p class="text-left">{{userProfile["citizenship_cntry"]}}</p>
-
-                                        <p class="text-left subtitle-2 tag-title" style="margin: 0;">
-                                            Residence
-                                        </p>
-                                        <p class="text-left">{{userProfile["residence_state"]}}</p>
-                                    </v-card-text>
-                                </div>
-                            </v-card>
-                        </v-col>
-                        <v-col>
-                            <v-card class="pa-2">
-                                <v-card-title>
-                                    Documents
-                                </v-card-title>
+            <v-btn color="accent" large @click.stop="showScheduleForm=true"></v-btn>
+            <ConfirmModalComponent v-model="showScheduleForm"/>
+            <v-container fluid class="grey lighten-4 fill-height">
+                <v-row class="mb-6">
+                    <v-col>
+                        <v-card class="pa-2">
+                            <v-card-title>
+                                Profile
+                            </v-card-title>
+                            <div v-if="profileLoading">
                                 <v-progress-circular
                                         indeterminate
                                         color="primary"
                                 ></v-progress-circular>
                                 <v-card-text>
-                                    User Documents Loading
+                                    User Profile Loading
                                 </v-card-text>
-                            </v-card>
-                        </v-col>
-                        <v-col>
-                            <v-card class="pa-2">
-                                <v-card-title>
-                                    Seatime Logged
-                                </v-card-title>
-                                <v-progress-circular
-                                        indeterminate
-                                        color="primary"
-                                ></v-progress-circular>
+                            </div>
+                            <div v-if="!profileLoading">
                                 <v-card-text>
-                                    Voyages Loading
+                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
+                                        Name
+                                    </p>
+                                    <p class="text-left">{{userProfile["first_name"]}}
+                                        {{userProfile["middle_name"]}}
+                                        {{userProfile["last_name"]}}</p>
+
+                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
+                                        Birth Date
+                                    </p>
+                                    <p class="text-left">{{userProfile["birth_date"]}}</p>
+
+                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
+                                        Mariner Reference Number
+                                    </p>
+                                    <p class="text-left">{{userProfile["mariner_ref_num"]}}</p>
+
+                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
+                                        Citizenship
+                                    </p>
+                                    <p class="text-left">{{userProfile["citizenship_cntry"]}}</p>
+
+                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
+                                        Residence
+                                    </p>
+                                    <p class="text-left">{{userProfile["residence_state"]}}</p>
                                 </v-card-text>
-                            </v-card>
-                        </v-col>
-                    </v-row>
-                </v-container>
+                            </div>
+                        </v-card>
+                    </v-col>
+                    <v-col>
+                        <v-card class="pa-2">
+                            <v-card-title>
+                                Documents
+                            </v-card-title>
+                            <v-progress-circular
+                                    indeterminate
+                                    color="primary"
+                            ></v-progress-circular>
+                            <v-card-text>
+                                User Documents Loading
+                            </v-card-text>
+                        </v-card>
+                    </v-col>
+                    <v-col>
+                        <v-card class="pa-2">
+                            <v-card-title>
+                                Seatime Logged
+                            </v-card-title>
+                            <v-progress-circular
+                                    indeterminate
+                                    color="primary"
+                            ></v-progress-circular>
+                            <v-card-text>
+                                Voyages Loading
+                            </v-card-text>
+                        </v-card>
+                    </v-col>
+                </v-row>
+            </v-container>
         </v-content>
     </v-app>
 </template>
