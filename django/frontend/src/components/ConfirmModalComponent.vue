@@ -24,10 +24,10 @@
 </template>
 <script>
     export default {
-        data() {
-            return {
-                confirmDialog: false
-            }
-        },
+        props: ['confirmDialog'],
+        created: function () {
+            console.log('confirmDialog from parent:');
+            console.log(this.confirmDialog) //prints out an empty string
+        }
     }
 </script>
