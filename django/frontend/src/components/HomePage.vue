@@ -1,12 +1,11 @@
 <template>
     <v-app id="inspire">
         <v-navigation-drawer v-model="drawer" expand-on-hover permanent app>
-            <v-list dense nav class="py-0">
-                <v-list-item two-line :class="miniVariant && 'px-0'">
+            <v-list>
+                <v-list-item class="px-2">
                     <v-list-item-avatar>
                         <img src="../assets/seatime.png" alt="">
                     </v-list-item-avatar>
-
                     <v-list-item-content>
                         <v-list-item-title>Seatime</v-list-item-title>
                     </v-list-item-content>
