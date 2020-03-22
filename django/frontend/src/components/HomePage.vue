@@ -122,7 +122,7 @@
 
 <script>
     import {getProfile} from "../_services/profile.service";
-    import {funcLogout} from "../_services/user.service";
+    //import {funcLogout} from "../_services/user.service";
     import ConfirmModalComponent from "./ConfirmModalComponent"
 
     export default {
