@@ -48,35 +48,32 @@
                             </div>
                             <div v-if="!profileLoading">
                                 <v-card-text>
-                                    <p class="text-left subtitle-2 tag-title">
+                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
                                         Name
                                     </p>
                                     <p class="text-left">{{userProfile["first_name"]}} {{userProfile["middle_name"]}}
                                         {{userProfile["last_name"]}}</p>
 
-                                    <p class="text-left subtitle-2 tag-title">
+                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
                                         Birth Date
                                     </p>
                                     <p class="text-left">{{userProfile["birth_date"]}}</p>
 
-                                    <p class="text-left subtitle-2 tag-title">
+                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
                                         Mariner Reference Number
                                     </p>
                                     <p class="text-left">{{userProfile["mariner_ref_num"]}}</p>
 
-                                    <p class="text-left subtitle-2 tag-title">
+                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
                                         Citizenship
                                     </p>
                                     <p class="text-left">{{userProfile["citizenship_cntry"]}}</p>
 
-                                    <p class="text-left subtitle-2 tag-title">
+                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
                                         Residence
                                     </p>
                                     <p class="text-left">{{userProfile["residence_state"]}}</p>
                                 </v-card-text>
-                                <v-card-actions>
-                                    <v-btn color="primary">Edit Profile</v-btn>
-                                </v-card-actions>
                             </div>
                         </v-card>
                     </v-col>
@@ -134,6 +131,5 @@
 <style>
     .tag-title {
         color: gray;
-        margin: 0;
     }
 </style>
