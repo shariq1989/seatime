@@ -1,17 +1,4 @@
 <template>
-    <v-app id="modal">
-        <p>hi</p>
-    </v-app>
-</template>
-<script>
-    export default {
-        data() {
-            return {}
-        },
-    }
-</script>
-<!--
-<template>
     <div class="text-left">
         <v-dialog v-model="confirmDialog" width="500">
             <v-card>
@@ -36,9 +23,9 @@
     </div>
 </template>
 <script>
-    Vue.component('confirmModal', {
-        props: ['title'],
-        template: '<h3>{{ title }}</h3>'
-    })
+    export default {
+        data() {
+            return {}
+        },
+    }
 </script>
--->
