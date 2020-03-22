@@ -134,5 +134,6 @@
 <style>
     .tag-title {
         color: gray;
+        margin: 0;
     }
 </style>
