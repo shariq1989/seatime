@@ -174,4 +174,8 @@
     .tag-title {
         color: gray;
     }
+
+    v-list-item-content {
+        text-align: left;
+    }
 </style>
