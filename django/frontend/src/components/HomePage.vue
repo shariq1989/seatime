@@ -38,7 +38,7 @@
             </template>
         </v-navigation-drawer>
         <v-content>
-            <ConfirmModalComponent/>
+            <modal-comp/>
             <v-container fluid class="grey lighten-4 fill-height">
                 <v-row class="mb-6">
                     <v-col>
@@ -126,7 +126,7 @@
     import ConfirmModalComponent from "./ConfirmModalComponent"
 
     export default {
-        components: {ConfirmModalComponent},
+        components: {'modal-comp': ConfirmModalComponent},
         data() {
             return {
                 drawer: true,
