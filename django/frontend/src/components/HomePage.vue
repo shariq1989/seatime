@@ -38,6 +38,7 @@
             </template>
         </v-navigation-drawer>
         <v-content>
+            <ConfirmModal/>
             <v-container fluid class="grey lighten-4 fill-height">
                 <v-row class="mb-6">
                     <v-col>
@@ -122,8 +123,10 @@
 <script>
     import {getProfile} from "../_services/profile.service";
     import {funcLogout} from "../_services/user.service";
+    import {confirmModal} from "/ConfirmModalComponent.vue"
 
     export default {
+        components: {confirmModal},
         data() {
             return {
                 drawer: true,
@@ -175,7 +178,4 @@
         color: gray;
     }
 
-    v-list-item-content {
-        text-align: left;
-    }
 </style>
