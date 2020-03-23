@@ -39,7 +39,8 @@
             </template>
         </v-navigation-drawer>
         <v-content>
-            <ConfirmModalComponent v-model="logoutDialog.displayStatus" v-bind="logoutDialog"/>
+            <ConfirmModalComponent v-model="logoutDialog.displayStatus" v-bind="logoutDialog"
+                                   @input="updateModalStatus"/>
             <v-container fluid class="grey lighten-4 fill-height">
                 <v-row class="mb-6">
                     <v-col>
@@ -172,6 +173,9 @@
                 this.logoutDialog = true;
                 //this.logoutDialog = false;
                 //funcLogout();
+            },
+            updateModalStatus(value) {
+                this.logoutDialog.displayStatus = value;
             }
         },
         mounted() {

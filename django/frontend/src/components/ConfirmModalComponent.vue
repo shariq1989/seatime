@@ -1,15 +1,17 @@
 <template>
     <v-dialog v-model="show" max-width="500px">
         <v-card>
-            <v-card-title>
+            <v-card-title class="text-left">
                 {{dialogHeader}}
             </v-card-title>
-            <v-card-text>
-                {{dialogMessage}}
+            <v-card-text class="text-left">
+                <div class="text--primary">{{dialogMessage}}</div>
             </v-card-text>
             <v-card-actions>
                 <v-spacer/>
-                <v-btn color="primary" @click.stop="displayStatus=false">Cancel</v-btn>
+                <v-btn color=" primary
+            " @click.stop="displayStatus=false">Cancel
+                </v-btn>
                 <v-btn color="error" @click.stop="displayStatus=false">Confirm</v-btn>
             </v-card-actions>
         </v-card>
