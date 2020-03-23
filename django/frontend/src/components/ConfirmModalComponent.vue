@@ -2,10 +2,10 @@
     <v-dialog v-model="show" max-width="500px">
         <v-card>
             <v-card-title>
-                {{dialogDetails.header}}
+                {{dialogHeader}}
             </v-card-title>
             <v-card-text>
-                {{dialogDetails.body}}
+                {{dialogMessage}}
             </v-card-text>
             <v-card-actions>
                 <v-btn color="primary" flat @click.stop="show=false">Cancel</v-btn>
@@ -18,10 +18,10 @@
 <script>
     export default {
         props: {
-            show: Boolean,
-            header: String,
+            displayStatus: Boolean,
+            dialogHeader: String,
             body: String,
-            value: Boolean
+            dialogMessage: Boolean
         },
         computed: {
             show: {
