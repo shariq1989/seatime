@@ -10,9 +10,9 @@
             <v-card-actions>
                 <v-spacer/>
                 <v-btn color=" primary
-            " @click.stop="displayStatus=false">Cancel
+            " @click.stop="onBtnClick(false)">Cancel
                 </v-btn>
-                <v-btn color="error" @click.stop="displayStatus=false">Confirm</v-btn>
+                <v-btn color="error" @click.stop="onBtnClick(false)">Confirm</v-btn>
             </v-card-actions>
         </v-card>
     </v-dialog>
@@ -30,9 +30,10 @@
                 get() {
                     return this.displayStatus;
                 },
-                set(value) {
-                    this.$emit('input', value)
-                }
+            }
+        }, methods: {
+            onBtnClick(value) {
+                this.$emit('input', value)
             }
         }
     }
