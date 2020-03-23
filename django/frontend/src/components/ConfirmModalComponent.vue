@@ -27,7 +27,7 @@
         computed: {
             show: {
                 get() {
-                    return this.dialogDetails.show
+                    return this.dialogDetails['show']
                 },
                 set(value) {
                     this.$emit('input', value)
