@@ -20,8 +20,7 @@
         props: {
             displayStatus: Boolean,
             dialogHeader: String,
-            body: String,
-            dialogMessage: Boolean
+            dialogMessage: String
         },
         computed: {
             show: {
