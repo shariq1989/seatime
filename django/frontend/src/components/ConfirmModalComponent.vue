@@ -22,12 +22,13 @@
                 show: Boolean,
                 header: String,
                 body: String,
-            }
+            },
+            value: Boolean
         },
         computed: {
             show: {
                 get() {
-                    return this.dialogDetails['show']
+                    return this.value
                 },
                 set(value) {
                     this.$emit('input', value)
