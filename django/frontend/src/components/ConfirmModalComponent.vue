@@ -25,7 +25,7 @@
         computed: {
             show: {
                 get() {
-                    return displayStatus
+                    return this.displayStatus;
                 },
                 set(value) {
                     this.$emit('input', value)
