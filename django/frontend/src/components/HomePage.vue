@@ -125,7 +125,7 @@
 
 <script>
     import {getProfile} from "../_services/profile.service";
-    //import {funcLogout} from "../_services/user.service";
+    import {funcLogout} from "../_services/user.service";
     import ConfirmModalComponent from "./ConfirmModalComponent"
 
     export default {
@@ -171,11 +171,12 @@
             },
             logout() {
                 this.logoutDialog = true;
-                //this.logoutDialog = false;
-                //funcLogout();
             },
             updateModalStatus(value) {
-                this.logoutDialog.displayStatus = value;
+                this.logoutDialog.displayStatus = false;
+                if (value === true) {
+                    funcLogout();
+                }
             }
         },
         mounted() {

@@ -12,7 +12,7 @@
                 <v-btn color=" primary
             " @click.stop="onBtnClick(false)">Cancel
                 </v-btn>
-                <v-btn color="error" @click.stop="onBtnClick(false)">Confirm</v-btn>
+                <v-btn color="error" @click.stop="onBtnClick(true)">Confirm</v-btn>
             </v-card-actions>
         </v-card>
     </v-dialog>
@@ -32,8 +32,8 @@
                 },
             }
         }, methods: {
-            onBtnClick(value) {
-                this.$emit('input', value)
+            onBtnClick(action) {
+                this.$emit('input', action)
             }
         }
     }
