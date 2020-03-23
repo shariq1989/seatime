@@ -18,11 +18,9 @@
 <script>
     export default {
         props: {
-            dialogDetails: {
-                show: Boolean,
-                header: String,
-                body: String,
-            },
+            show: Boolean,
+            header: String,
+            body: String,
             value: Boolean
         },
         computed: {
