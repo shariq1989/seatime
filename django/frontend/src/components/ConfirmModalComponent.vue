@@ -8,8 +8,8 @@
                 {{dialogMessage}}
             </v-card-text>
             <v-card-actions>
-                <v-btn color="primary" flat @click.stop="show=false">Cancel</v-btn>
-                <v-btn color="primary" flat @click.stop="show=false">Confirm</v-btn>
+                <v-btn color="primary" flat @click.stop="displayStatus=false">Cancel</v-btn>
+                <v-btn color="primary" flat @click.stop="displayStatus=false">Confirm</v-btn>
             </v-card-actions>
         </v-card>
     </v-dialog>
@@ -25,7 +25,7 @@
         computed: {
             show: {
                 get() {
-                    return this.value
+                    return displayStatus
                 },
                 set(value) {
                     this.$emit('input', value)
