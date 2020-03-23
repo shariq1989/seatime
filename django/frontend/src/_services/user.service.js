@@ -1,4 +1,5 @@
 import axios from 'axios';
+import router from "../router";
 
 export let funcLogin = user => new Promise((resolve, reject) => {
     axios({url: process.env.VUE_APP_API_URL + '/rest-auth/login/', data: user, method: 'POST'})
@@ -31,4 +32,5 @@ export let funcRegister = registrationFields => new Promise((resolve, reject) =>
 export function funcLogout() {
     // remove user from local storage to log user out
     localStorage.removeItem('user');
+    router.push('/login');
 }
