@@ -72,11 +72,6 @@
                                     <p class="text-left">{{userProfile["birth_date"]}}</p>
 
                                     <p class="text-left subtitle-2 tag-title" style="margin: 0;">
-                                        Mariner Reference Number
-                                    </p>
-                                    <p class="text-left">{{userProfile["mariner_ref_num"]}}</p>
-
-                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
                                         Citizenship
                                     </p>
                                     <p class="text-left">{{userProfile["citizenship_cntry"]}}</p>
