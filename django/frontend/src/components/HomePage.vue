@@ -12,7 +12,7 @@
                     </v-list-item-content>
                 </v-list-item>
 
-                <v-divider></v-divider>
+                <v-divider/>
 
                 <v-list-item
                         v-for="item in items"
@@ -39,7 +39,8 @@
             </template>
         </v-navigation-drawer>
         <v-content>
-            <ConfirmModalComponent v-model="logoutDialog.displayStatus" :data="logoutDialog"/>
+            <ConfirmModalComponent v-model="logoutDialog.displayStatus" v-bind="logoutDialog"
+                                   @input="updateModalStatus"/>
             <v-container fluid class="grey lighten-4 fill-height">
                 <v-row class="mb-6">
                     <v-col>
@@ -51,7 +52,7 @@
                                 <v-progress-circular
                                         indeterminate
                                         color="primary"
-                                ></v-progress-circular>
+                                />
                                 <v-card-text>
                                     User Profile Loading
                                 </v-card-text>
@@ -96,7 +97,7 @@
                             <v-progress-circular
                                     indeterminate
                                     color="primary"
-                            ></v-progress-circular>
+                            />
                             <v-card-text>
                                 User Documents Loading
                             </v-card-text>
@@ -110,7 +111,7 @@
                             <v-progress-circular
                                     indeterminate
                                     color="primary"
-                            ></v-progress-circular>
+                            />
                             <v-card-text>
                                 Voyages Loading
                             </v-card-text>
@@ -124,7 +125,7 @@
 
 <script>
     import {getProfile} from "../_services/profile.service";
-    //import {funcLogout} from "../_services/user.service";
+    import {funcLogout} from "../_services/user.service";
     import ConfirmModalComponent from "./ConfirmModalComponent"
 
     export default {
@@ -170,8 +171,12 @@
             },
             logout() {
                 this.logoutDialog = true;
-                //this.logoutDialog = false;
-                //funcLogout();
+            },
+            updateModalStatus(value) {
+                this.logoutDialog.displayStatus = false;
+                if (value === true) {
+                    funcLogout();
+                }
             }
         },
         mounted() {

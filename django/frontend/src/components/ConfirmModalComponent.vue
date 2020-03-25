@@ -1,15 +1,18 @@
 <template>
     <v-dialog v-model="show" max-width="500px">
         <v-card>
-            <v-card-title>
-                {{dialogDetails.header}}
+            <v-card-title class="text-left">
+                {{dialogHeader}}
             </v-card-title>
-            <v-card-text>
-                {{dialogDetails.body}}
+            <v-card-text class="text-left">
+                <div class="text--primary">{{dialogMessage}}</div>
             </v-card-text>
             <v-card-actions>
-                <v-btn color="primary" flat @click.stop="show=false">Cancel</v-btn>
-                <v-btn color="primary" flat @click.stop="show=false">Confirm</v-btn>
+                <v-spacer/>
+                <v-btn color=" primary
+            " @click.stop="onBtnClick(false)">Cancel
+                </v-btn>
+                <v-btn color="error" @click.stop="onBtnClick(true)">Confirm</v-btn>
             </v-card-actions>
         </v-card>
     </v-dialog>
@@ -18,20 +21,19 @@
 <script>
     export default {
         props: {
-            dialogDetails: {
-                show: Boolean,
-                header: String,
-                body: String,
-            }
+            displayStatus: Boolean,
+            dialogHeader: String,
+            dialogMessage: String
         },
         computed: {
             show: {
                 get() {
-                    return this.dialogDetails.show
+                    return this.displayStatus;
                 },
-                set(value) {
-                    this.$emit('input', value)
-                }
+            }
+        }, methods: {
+            onBtnClick(action) {
+                this.$emit('input', action)
             }
         }
     }
