@@ -1,11 +1,15 @@
 <template>
-    <v-app id="inspire" style="background: rgba(0,0,0,0);">
+    <v-app id="inspire">
         <v-content style="background-image: url('../assets/stock/ariel.jpg')">
             <v-row
                     align="center"
                     justify="center"
             >
-                <v-col>
+                <v-col
+                        cols="12"
+                        sm="8"
+                        md="4"
+                >
                     <v-card class="elevation-12">
                         <v-toolbar
                                 color="primary"
