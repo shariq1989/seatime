@@ -1,6 +1,6 @@
 <template>
-    <v-app id="inspire">
-        <v-content fill-height fluid style="background-image: url('../assets/stock/ariel.jpg')">
+    <v-app id="inspire" style="background: rgba(0,0,0,0);">
+        <v-content style="background-image: url('../assets/stock/ariel.jpg')">
             <v-row
                     align="center"
                     justify="center"
