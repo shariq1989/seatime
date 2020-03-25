@@ -26,15 +26,14 @@ class MarinerProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = MarinerProfile
         fields = (
-        'user', 'first_name', 'middle_name', 'last_name', 'birth_date', 'citizenship_cntry', 'residence_state',
-        'mariner_ref_num')
+            'user', 'first_name', 'middle_name', 'last_name', 'birth_date', 'citizenship_cntry', 'residence_state')
 
 
 class MarinerDocumentSerializer(serializers.ModelSerializer):
     class Meta:
         model = MarinerDocument
-        fields = ('user', 'mmc_doc_num', 'mmc_issue_date', 'mmc_expr_date', 'med_ntl_expr_date', 'med_stcw_expr_date',
-                  'med_pilot_expr_date', 'twic_expr_date', 'basic_training_expr_date',
+        fields = ('user', 'mariner_ref_num', 'mmc_doc_num', 'mmc_issue_date', 'mmc_expr_date', 'med_ntl_expr_date',
+                  'med_stcw_expr_date', 'med_pilot_expr_date', 'twic_expr_date', 'basic_training_expr_date',
                   'advanced_fire_expr_date', 'first_aid_cpr_expr_date', 'passport_expr_date', 'drug_test_compliant')
 
 
