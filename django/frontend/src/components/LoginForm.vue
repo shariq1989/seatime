@@ -1,6 +1,6 @@
 <template>
     <v-app id="inspire">
-        <v-content style="background-image: url('../assets/stock/ariel.jpg')">
+        <v-content>
             <v-row
                     align="center"
                     justify="center"
@@ -98,3 +98,8 @@
         }
     };
 </script>
+<style>
+    body {
+        background-image: url('../assets/stock/ariel.jpg');
+    }
+</style>
