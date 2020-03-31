@@ -51,7 +51,7 @@
         },
         methods: {
             onLogoutClick(action) {
-                this.$emit('logoutStatus', action)
+                this.$emit('input', action)
             }
         }
     }
