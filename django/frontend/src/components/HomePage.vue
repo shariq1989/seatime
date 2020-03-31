@@ -1,8 +1,10 @@
 <!--suppress JSUnusedGlobalSymbols -->
 <template>
     <v-app id="inspire">
-        <NavDrawerComponent/>
+        <NavDrawerComponent v-model="drawer" @input="logoutDialog.displayStatus=true"/>
         <v-content>
+            <ConfirmModalComponent v-model="logoutDialog.displayStatus" v-bind="logoutDialog"
+                                   @input="updateModalStatus"/>
             <v-container fluid class="grey lighten-4 fill-height">
                 <v-row class="mb-6">
                     <v-col>
@@ -82,15 +84,23 @@
 
 <script>
     import {getProfile} from "../_services/profile.service";
+    import {funcLogout} from "../_services/user.service";
+    import ConfirmModalComponent from "./ConfirmModalComponent"
     import NavDrawerComponent from "./NavDrawerComponent";
 
     export default {
-        components: {NavDrawerComponent},
+        components: {NavDrawerComponent, ConfirmModalComponent},
         data() {
             return {
+                drawer: 'true',
                 color: 'primary',
                 profileLoading: true,
                 userProfile: {},
+                logoutDialog: {
+                    displayStatus: false,
+                    dialogHeader: 'Confirm Logout',
+                    dialogMessage: 'Are you sure you would like to proceed?'
+                }
             }
         },
         methods: {
@@ -104,6 +114,15 @@
                     this.userProfile = {error: 'Error loading profile'};
                 })
             },
+            logout() {
+                this.logoutDialog = true;
+            },
+            updateModalStatus(value) {
+                this.logoutDialog.displayStatus = false;
+                if (value === true) {
+                    funcLogout();
+                }
+            }
         },
         mounted() {
             this.loadProfile();
