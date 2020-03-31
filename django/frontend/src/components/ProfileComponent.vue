@@ -24,27 +24,27 @@
                             <div v-if="!profileLoading">
                                 <v-card-text>
                                     <v-text-field
-                                            v-model=userProfile["first_name"]
+                                            v-model=userProfile.first_name
                                             label="First Name"
                                     ></v-text-field>
                                     <v-text-field
-                                            v-model=userProfile["middle_name"]
+                                            v-model=userProfile.middle_name
                                             label="Middle Name"
                                     ></v-text-field>
                                     <v-text-field
-                                            v-model=userProfile["last_name"]
+                                            v-model=userProfile.last_name
                                             label="Last Name"
                                     ></v-text-field>
                                     <v-text-field
-                                            v-model=userProfile["birth_date"]
+                                            v-model=userProfile.birth_date
                                             label="Birth Date"
                                     ></v-text-field>
                                     <v-text-field
-                                            v-model=userProfile["citizenship_cntry"]
+                                            v-model=userProfile.citizenship_cntry
                                             label="Citizenship"
                                     ></v-text-field>
                                     <v-text-field
-                                            v-model=userProfile[residence_state]
+                                            v-model=userProfile.residence_state
                                             label="Residence"
                                     ></v-text-field>
                                 </v-card-text>
