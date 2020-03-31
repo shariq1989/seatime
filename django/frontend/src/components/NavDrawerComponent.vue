@@ -1,7 +1,7 @@
 <template>
-    <ConfirmModalComponent v-model="logoutDialog.displayStatus" v-bind="logoutDialog"
-                           @input="updateModalStatus"/>
     <v-navigation-drawer v-model="drawer" expand-on-hover permanent app>
+        <ConfirmModalComponent v-model="logoutDialog.displayStatus" v-bind="logoutDialog"
+                               @input="updateModalStatus"/>
         <v-list>
             <v-list-item class="px-2">
                 <v-list-item-avatar>
