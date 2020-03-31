@@ -44,7 +44,7 @@
                                             label="Citizenship"
                                     ></v-text-field>
                                     <v-text-field
-                                            v-model=userProfile["residence_state"]
+                                            v-model=userProfile[residence_state]
                                             label="Residence"
                                     ></v-text-field>
                                 </v-card-text>
@@ -83,7 +83,7 @@
                 getProfile().then((resp) => {
                     console.log(resp.data);
                     this.profileLoading = false;
-                    this.userProfile = resp.data[0];
+                    this.$set(this.userProfile, resp.data[0]);
                 }).catch(() => {
                     this.profileLoading = false;
                     this.userProfile = {error: 'Error loading profile'};
