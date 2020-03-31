@@ -1,4 +1,6 @@
 <template>
+    <ConfirmModalComponent v-model="logoutDialog.displayStatus" v-bind="logoutDialog"
+                           @input="updateModalStatus"/>
     <v-navigation-drawer v-model="drawer" expand-on-hover permanent app>
         <v-list>
             <v-list-item class="px-2">
@@ -39,7 +41,11 @@
 </template>
 
 <script>
+    import {funcLogout} from "../_services/user.service";
+    import ConfirmModalComponent from "./ConfirmModalComponent";
+
     export default {
+        components: {ConfirmModalComponent},
         data() {
             return {
                 drawer: true,
@@ -48,11 +54,23 @@
                     {title: 'Log Seatime', icon: 'mdi-ferry'},
                 ],
                 color: 'primary',
+                logoutDialog: {
+                    displayStatus: false,
+                    dialogHeader: 'Confirm Logout',
+                    dialogMessage: 'Are you sure you would like to proceed?'
+                }
             }
-        }, //methods: {
-        //       onBtnClick(action) {
-        //         this.$emit('input', action)
-        //   }
-        //}
+        },
+        logout() {
+            this.logoutDialog = true;
+        },
+        methods: {
+            updateModalStatus(value) {
+                this.logoutDialog.displayStatus = false;
+                if (value === true) {
+                    funcLogout();
+                }
+            }
+        }
     }
 </script>
