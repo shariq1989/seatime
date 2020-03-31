@@ -1,7 +1,7 @@
 <!--suppress JSUnusedGlobalSymbols -->
 <template>
     <v-app id="inspire">
-        <NavDrawerComponent v-model="drawer" @input="logoutDialog.displayStatus=true"/>
+        <NavDrawerComponent v-model="drawer" @input="displayLogoutDialog"/>
         <v-content>
             <ConfirmModalComponent v-model="logoutDialog.displayStatus" v-bind="logoutDialog"
                                    @input="updateModalStatus"/>
@@ -116,6 +116,9 @@
             },
             logout() {
                 this.logoutDialog = true;
+            },
+            displayLogoutDialog() {
+                this.logoutDialog.displayStatus = true;
             },
             updateModalStatus(value) {
                 this.logoutDialog.displayStatus = false;
