@@ -49,6 +49,14 @@
                                     ></v-text-field>
                                 </v-card-text>
                             </div>
+                            <v-card-actions>
+                                <v-spacer/>
+                                <v-btn color="primary" @click.stop="editProfile">Save Changes
+                                </v-btn>
+                                <!-- TODO -- have to discuss account deletion
+                                <v-btn color="error" @click.stop="deleteAccount">Confirm</v-btn>
+                                -->
+                            </v-card-actions>
                         </v-card>
                     </v-col>
                 </v-row>
@@ -70,12 +78,20 @@
                 drawer: 'true',
                 color: 'primary',
                 profileLoading: true,
-                userProfile: {},
+                userProfile: {
+                    first_name: '',
+                    middle_name: '',
+                    last_name: '',
+                    birth_date: null,
+                    citizenship_cntry: '',
+                    residence_state: ''
+                },
                 logoutDialog: {
                     displayStatus: false,
                     dialogHeader: 'Confirm Logout',
                     dialogMessage: 'Are you sure you would like to proceed?'
                 },
+
             }
         },
         methods: {
@@ -86,7 +102,6 @@
                     this.$set(this.userProfile, resp.data[0]);
                 }).catch(() => {
                     this.profileLoading = false;
-                    this.userProfile = {error: 'Error loading profile'};
                 })
             },
             logout() {
