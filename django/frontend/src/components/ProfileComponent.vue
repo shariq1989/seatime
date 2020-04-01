@@ -54,10 +54,11 @@
                                         <v-date-picker v-model="userProfile.birth_date"
                                                        @input="dateModal = false"></v-date-picker>
                                     </v-menu>
-                                    <v-text-field
-                                            v-model=userProfile.citizenship_cntry
+                                    <v-select
+                                            v-model="userProfile.citizenship_cntry"
+                                            :items="countries"
                                             label="Citizenship"
-                                    ></v-text-field>
+                                    ></v-select>
                                     <v-text-field
                                             v-model=userProfile.residence_state
                                             label="Residence"
@@ -94,6 +95,9 @@
                 color: 'primary',
                 profileLoading: true,
                 dateModal: false,
+                countries: [
+                    'USA',
+                ],
                 userProfile: {
                     first_name: '',
                     middle_name: '',
