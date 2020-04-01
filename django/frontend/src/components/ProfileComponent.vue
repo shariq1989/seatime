@@ -99,7 +99,12 @@
                 getProfile().then((resp) => {
                     console.log(resp.data);
                     this.profileLoading = false;
-                    this.$set(this.userProfile, resp.data[0]);
+                    this.userProfile.first_name = resp.data[0]['first_name'];
+                    this.userProfile.middle_name = resp.data[0]['middle_name'];
+                    this.userProfile.last_name = resp.data[0]['last_name'];
+                    this.userProfile.birth_date = resp.data[0]['birth_date'];
+                    this.userProfile.citizenship_cntry = resp.data[0]['citizenship_cntry'];
+                    this.userProfile.residence_state = resp.data[0]['residence_state'];
                 }).catch(() => {
                     this.profileLoading = false;
                 })
