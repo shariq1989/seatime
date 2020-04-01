@@ -16,6 +16,7 @@
                     v-for="item in items"
                     :key="item.title"
                     link
+                    :to="item.link"
             >
                 <v-list-item-icon>
                     <v-icon>{{ item.icon }}</v-icon>
@@ -43,8 +44,8 @@
             return {
                 drawer: true,
                 items: [
-                    {title: 'Profile', icon: 'mdi-account'},
-                    {title: 'Log Seatime', icon: 'mdi-ferry'},
+                    {title: 'Profile', icon: 'mdi-account', link: '/profile'},
+                    {title: 'Log Seatime', icon: 'mdi-ferry', link: '/seatime'},
                 ],
                 color: 'primary',
             }
