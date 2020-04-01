@@ -35,10 +35,25 @@
                                             v-model=userProfile.last_name
                                             label="Last Name"
                                     ></v-text-field>
-                                    <v-text-field
-                                            v-model=userProfile.birth_date
-                                            label="Birth Date"
-                                    ></v-text-field>
+                                    <v-menu
+                                            v-model="dateModal"
+                                            :close-on-content-click="false"
+                                            :nudge-right="40"
+                                            transition="scale-transition"
+                                            offset-y
+                                            min-width="290px"
+                                    >
+                                        <template v-slot:activator="{ on }">
+                                            <v-text-field
+                                                    v-model="userProfile.birth_date"
+                                                    label="Birth Date"
+                                                    readonly
+                                                    v-on="on"
+                                            ></v-text-field>
+                                        </template>
+                                        <v-date-picker v-model="userProfile.birth_date"
+                                                       @input="dateModal = false"></v-date-picker>
+                                    </v-menu>
                                     <v-text-field
                                             v-model=userProfile.citizenship_cntry
                                             label="Citizenship"
@@ -78,6 +93,7 @@
                 drawer: 'true',
                 color: 'primary',
                 profileLoading: true,
+                dateModal: false,
                 userProfile: {
                     first_name: '',
                     middle_name: '',
