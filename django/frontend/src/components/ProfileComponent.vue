@@ -61,7 +61,7 @@
                                     ></v-autocomplete>
                                     <v-autocomplete
                                             v-model=userProfile.residence_state
-                                            :items="countries"
+                                            :items="us_states"
                                             label="Residence State (US)"
                                     ></v-autocomplete>
                                 </v-card-text>
