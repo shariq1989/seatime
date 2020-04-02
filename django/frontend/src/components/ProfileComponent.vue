@@ -54,11 +54,11 @@
                                         <v-date-picker v-model="userProfile.birth_date"
                                                        @input="dateModal = false"></v-date-picker>
                                     </v-menu>
-                                    <v-select
+                                    <v-autocomplete
                                             v-model="userProfile.citizenship_cntry"
                                             :items="countries"
                                             label="Citizenship"
-                                    ></v-select>
+                                    ></v-autocomplete>
                                     <v-text-field
                                             v-model=userProfile.residence_state
                                             label="Residence"
