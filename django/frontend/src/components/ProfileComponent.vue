@@ -83,7 +83,7 @@
 </template>
 
 <script>
-    import {getProfile} from "../_services/profile.service";
+    import {getProfile, updateProfile} from "../_services/profile.service";
     import {funcLogout} from "../_services/user.service";
     import ConfirmModalComponent from "./ConfirmModalComponent"
     import NavDrawerComponent from "./NavDrawerComponent";
@@ -155,11 +155,11 @@
                     "West Virginia",
                     "Wyoming"],
                 userProfile: {
-                    first_name: '',
-                    middle_name: '',
+                    first_name: null,
+                    middle_name: null,
                     last_name: '',
                     birth_date: null,
-                    citizenship_cntry: '',
+                    citizenship_cntry: null,
                     residence_state: 'N/A'
                 },
                 logoutDialog: {
@@ -196,6 +196,25 @@
                 if (value === true) {
                     funcLogout();
                 }
+            },
+            editProfile() {
+                updateProfile({
+                    first_name: this.userProfile.first_name,
+                    middle_name: this.userProfile.middle_name,
+                    last_name: this.userProfile.last_name,
+                    birth_date: this.userProfile.birth_date,
+                    citizenship_cntry: this.userProfile.citizenship_cntry,
+                    residence_state: this.userProfile.residence_state
+                }).then(
+                    resp => {
+                        console.log('profile updated');
+                        console.log(resp);
+                    }
+                ).catch(err => {
+                        console.log('profile updated failed');
+                        console.log(err);
+                    }
+                )
             }
         },
         mounted() {
