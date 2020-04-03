@@ -23,6 +23,11 @@
                             </div>
                             <div v-if="!profileLoading">
                                 <v-card-text>
+                                    <div class="pa-2">
+                                        <v-alert type="error" v-if="displayErrorMessage">
+                                            <span class="text-left" v-html="errorMessage"></span>
+                                        </v-alert>
+                                    </div>
                                     <v-text-field
                                             v-model=userProfile.first_name
                                             label="First Name"
@@ -211,8 +216,17 @@
                         console.log(resp);
                     }
                 ).catch(err => {
-                        console.log('profile updated failed');
-                        console.log(err);
+                        console.log(err.response.data);
+                        this.displayErrorMessage = true;
+                        this.errorMessage = 'Error updating profile';
+                        if (err.response.data) {
+                            for (const field in err.response.data) {
+                                for (const error of err.response.data[field]) {
+                                    this.errorMessage += '<br/>';
+                                    this.errorMessage += error;
+                                }
+                            }
+                        }
                     }
                 )
             }
