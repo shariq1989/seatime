@@ -26,9 +26,11 @@ class MarinerProfileViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticated,)
 
     def perform_create(self, serializer):
+        print('IN CREATE FOR PROFILE')
         serializer.save(user=self.request.user)
 
     def perform_update(self, serializer):
+        print('IN UPDATE FOR PROFILE')
         serializer.save(user=self.request.user)
 
     def get_queryset(self):
