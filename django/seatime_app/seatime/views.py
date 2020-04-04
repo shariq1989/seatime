@@ -22,6 +22,7 @@ class MarinerProfileViewSet(viewsets.ModelViewSet):
     This viewset automatically provides `list`, `create`, `retrieve`,
     `update` and `destroy` actions.
     """
+    queryset = MarinerProfile.objects.all()
     serializer_class = MarinerProfileSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
