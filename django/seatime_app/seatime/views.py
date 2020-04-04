@@ -34,6 +34,7 @@ class MarinerProfileViewSet(viewsets.ModelViewSet):
         serializer.save(user=self.request.user)
 
     def get_queryset(self):
+        print('IN GET FOR PROFILE')
         return MarinerProfile.objects.filter(user=self.request.user)
 
 
