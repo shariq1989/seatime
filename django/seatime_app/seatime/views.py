@@ -28,9 +28,6 @@ class MarinerProfileViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
-    def get_queryset(self):
-        return MarinerProfile.objects.filter(user=self.request.user)
-
 
 class MarinerDocumentViewSet(viewsets.ModelViewSet):
     """
