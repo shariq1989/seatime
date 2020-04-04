@@ -6,6 +6,8 @@ export let funcLogin = user => new Promise((resolve, reject) => {
         .then(response => {
             if (response.data.key) {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
+                console.log(response);
+                console.log(response.data);
                 localStorage.setItem('user', JSON.stringify(response.data.key));
             }
             resolve(response)
