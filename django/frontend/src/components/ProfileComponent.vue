@@ -181,6 +181,7 @@
                 getProfile().then((resp) => {
                     console.log(resp.data);
                     this.profileLoading = false;
+                    localStorage.setItem('userId', JSON.stringify(resp.data[0]['user']));
                     this.userProfile.first_name = resp.data[0]['first_name'];
                     this.userProfile.middle_name = resp.data[0]['middle_name'];
                     this.userProfile.last_name = resp.data[0]['last_name'];
@@ -210,7 +211,8 @@
                     last_name: this.userProfile.last_name,
                     birth_date: this.userProfile.birth_date,
                     citizenship_cntry: this.userProfile.citizenship_cntry,
-                    residence_state: this.userProfile.residence_state
+                    residence_state: this.userProfile.residence_state,
+                    user: localStorage.getItem('userId')
                 }).then(
                     resp => {
                         console.log('profile updated');
