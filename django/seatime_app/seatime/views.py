@@ -22,12 +22,17 @@ class MarinerProfileViewSet(viewsets.ModelViewSet):
     This viewset automatically provides `list`, `create`, `retrieve`,
     `update` and `destroy` actions.
     """
-    queryset = MarinerProfile.objects.all()
     serializer_class = MarinerProfileSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+
+    def perform_update(self, serializer):
+        serializer.save(user=self.request.user)
+
+    def get_queryset(self):
+        return MarinerProfile.objects.filter(user=self.request.user)
 
 
 class MarinerDocumentViewSet(viewsets.ModelViewSet):
