@@ -1,5 +1,5 @@
 #!/bin/bash
 echo 'Starting Django'
-sh runBackend.sh
+sh ~/Documents/Development/SeaTime/runBackend.sh
 echo 'Starting Vue'
-sh runVue.sh
+sh ~/Documents/Development/SeaTime/runVue.sh
