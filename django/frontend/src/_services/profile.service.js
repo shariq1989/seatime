@@ -8,8 +8,6 @@ export let getProfile = () => new Promise((resolve, reject) => {
         headers: {"Authorization": "Token " + token}
     })
         .then(response => {
-            console.log(response);
-            console.log(response.data);
             resolve(response)
         })
         .catch(err => {

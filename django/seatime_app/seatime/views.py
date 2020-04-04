@@ -1,10 +1,18 @@
 from django.contrib.auth.models import User
 from rest_framework import viewsets, permissions
+from rest_framework.decorators import api_view
 from rest_framework.generics import CreateAPIView
+from rest_framework.response import Response
 
 from .models import MarinerProfile, MarinerDocument, Vessel, WorkdayType, VoyageType, StaffPosition, Voyage
 from .serializers import MarinerProfileSerializer, UserSerializer, MarinerDocumentSerializer, VesselSerializer, \
     WorkdayTypeSerializer, VoyageTypeSerializer, StaffPositionSerializer, VoyageSerializer
+
+
+@api_view(['GET'])
+def current_user(self):
+    serializer = UserSerializer(self.request.user)
+    return Response(serializer.data)
 
 
 class UserViewSet(viewsets.ModelViewSet):
