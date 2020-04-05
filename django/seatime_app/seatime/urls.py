@@ -6,7 +6,6 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register(r'mariners', views.UserViewSet, basename='Mariners')
-router.register(r'current_mariner', views.current_user, basename='current_user')
 router.register(r'mariner-profiles', views.MarinerProfileViewSet, basename='MarinerProfile')
 router.register(r'mariner-documents', views.MarinerDocumentViewSet, basename='MarinerDocs')
 router.register(r'vessels', views.VesselViewSet, basename='Vessels')
@@ -22,4 +21,5 @@ urlpatterns = [
     # for adding login to browsable API
     path('api-auth/', include('rest_framework.urls')),
     path('control/', admin.site.urls),
+    path('current-mariner/', views.current_user)
 ]
