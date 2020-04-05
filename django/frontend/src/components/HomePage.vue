@@ -87,6 +87,7 @@
     import {funcLogout} from "../_services/user.service";
     import ConfirmModalComponent from "./ConfirmModalComponent"
     import NavDrawerComponent from "./NavDrawerComponent";
+    import axios from 'axios';
 
     export default {
         components: {NavDrawerComponent, ConfirmModalComponent},
@@ -109,6 +110,10 @@
                     console.log(resp.data);
                     this.profileLoading = false;
                     this.userProfile = resp.data[0];
+                    axios({url: process.env.VUE_APP_API_URL + '/current-mariner/', method: 'GET'}).then(response => {
+                        console.log(response);
+                        localStorage.setItem('userId', JSON.stringify(response.data));
+                    })
                 }).catch(() => {
                     this.profileLoading = false;
                     this.userProfile = {error: 'Error loading profile'};
