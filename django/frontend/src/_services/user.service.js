@@ -4,11 +4,9 @@ import router from "../router";
 export let funcLogin = user => new Promise((resolve, reject) => {
     axios({url: process.env.VUE_APP_API_URL + '/authenticate/', data: user, method: 'POST'})
         .then(response => {
-            console.log(response.data);
-            if (response.data.key) {
-                // store user details and jwt token in local storage to keep user logged in between page refreshes
-                localStorage.setItem('user', JSON.stringify(response.data.key));
-            }
+            // store user details and jwt token in local storage to keep user logged in between page refreshes
+            localStorage.setItem('user', JSON.stringify(response.data['token']));
+            localStorage.setItem('id', JSON.stringify(response.data['id']));
             resolve(response)
         })
         .catch(err => {
