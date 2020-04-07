@@ -110,7 +110,11 @@
                     console.log(resp.data);
                     this.profileLoading = false;
                     this.userProfile = resp.data[0];
-                    axios({url: process.env.VUE_APP_API_URL + '/current-mariner/', method: 'GET'}).then(response => {
+                    axios({
+                        url: process.env.VUE_APP_API_URL + '/current-mariner/',
+                        method: 'GET',
+                        headers: {"Authorization": "Token " + token}
+                    }).then(response => {
                         console.log(response);
                         localStorage.setItem('userId', JSON.stringify(response.data));
                     }).catch(() => {
