@@ -1,17 +1,20 @@
 from django.contrib.auth.models import User
 from rest_framework import viewsets, permissions
+from rest_framework.authtoken.models import Token
+from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.generics import CreateAPIView
+from rest_framework.response import Response
 
 from .models import MarinerProfile, MarinerDocument, Vessel, WorkdayType, VoyageType, StaffPosition, Voyage
 from .serializers import MarinerProfileSerializer, UserSerializer, MarinerDocumentSerializer, VesselSerializer, \
     WorkdayTypeSerializer, VoyageTypeSerializer, StaffPositionSerializer, VoyageSerializer
 
 
-class UserIdViewSet(viewsets.ModelViewSet):
-    serializer_class = UserSerializer
-
-    def get_queryset(self):
-        return User.objects.filter(id=self.request.user.id)
+class CustomObtainAuthToken(ObtainAuthToken):
+    def post(self, request, *args, **kwargs):
+        response = super(CustomObtainAuthToken, self).post(request, *args, **kwargs)
+        token = Token.objects.get(key=response.data['token'])
+        return Response({'token': token.key, 'id': token.user_id})
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -101,6 +104,7 @@ class VoyageViewSet(viewsets.ModelViewSet):
     """
     queryset = Voyage.objects.all()
     serializer_class = VoyageSerializer
+
 
 class CreateUserView(CreateAPIView):
     model = User

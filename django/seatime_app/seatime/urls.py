@@ -1,11 +1,10 @@
-from django.conf.urls import include
+from django.conf.urls import include, url
 from django.contrib import admin
 from django.urls import path
 from . import views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r'current-mariner', views.UserIdViewSet, basename='CurrentMariner')
 router.register(r'mariners', views.UserViewSet, basename='Mariners')
 router.register(r'mariner-profiles', views.MarinerProfileViewSet, basename='MarinerProfile')
 router.register(r'mariner-documents', views.MarinerDocumentViewSet, basename='MarinerDocs')
@@ -22,4 +21,5 @@ urlpatterns = [
     # for adding login to browsable API
     path('api-auth/', include('rest_framework.urls')),
     path('control/', admin.site.urls),
+    url(r'^authenticate/', views.CustomObtainAuthToken.as_view()),
 ]
