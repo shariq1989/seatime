@@ -21,12 +21,12 @@
                                     User Profile Loading
                                 </v-card-text>
                             </div>
-                            <div v-if="!profileLoading && !userProfile['first_name']">
+                            <div v-if="!profileLoading && !userProfile">
                                 <v-card-text>
                                     You need to complete this section
                                 </v-card-text>
                             </div>
-                            <div v-if="!profileLoading && userProfile['first_name']">
+                            <div v-if="!profileLoading && userProfile">
                                 <v-card-text>
                                     <p class="text-left subtitle-2 tag-title" style="margin: 0;">
                                         Name
