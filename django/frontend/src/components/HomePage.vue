@@ -113,6 +113,8 @@
                     axios({url: process.env.VUE_APP_API_URL + '/current-mariner/', method: 'GET'}).then(response => {
                         console.log(response);
                         localStorage.setItem('userId', JSON.stringify(response.data));
+                    }).catch(() => {
+                        console.log('error fetching user id');
                     })
                 }).catch(() => {
                     this.profileLoading = false;
