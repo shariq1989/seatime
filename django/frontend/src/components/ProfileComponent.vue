@@ -211,7 +211,7 @@
                     birth_date: this.userProfile.birth_date,
                     citizenship_cntry: this.userProfile.citizenship_cntry,
                     residence_state: this.userProfile.residence_state,
-                    user: localStorage.getItem('userId')
+                    user: localStorage.getItem('id')
                 }).then(
                     resp => {
                         console.log('profile updated');
