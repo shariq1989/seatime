@@ -173,13 +173,15 @@
                     dialogHeader: 'Confirm Logout',
                     dialogMessage: 'Are you sure you would like to proceed?'
                 },
-
+                profileAPIMethod: 'POST',
             }
         },
         methods: {
             loadProfile: function () {
                 getProfile().then((resp) => {
-                    console.log(resp.data);
+                    if (resp.data[0]) {
+                        this.profileAPIMethod = 'PUT';
+                    }
                     this.profileLoading = false;
                     this.userProfile.first_name = resp.data[0]['first_name'];
                     this.userProfile.middle_name = resp.data[0]['middle_name'];
@@ -204,7 +206,7 @@
                 }
             },
             editProfile() {
-                updateProfile({
+                let profileFields = {
                     first_name: this.userProfile.first_name,
                     middle_name: this.userProfile.middle_name,
                     last_name: this.userProfile.last_name,
@@ -212,7 +214,8 @@
                     citizenship_cntry: this.userProfile.citizenship_cntry,
                     residence_state: this.userProfile.residence_state,
                     user: localStorage.getItem('id')
-                }).then(
+                };
+                updateProfile([this.profileAPIMethod, profileFields]).then(
                     resp => {
                         console.log('profile updated');
                         console.log(resp);

@@ -15,12 +15,19 @@ export let getProfile = () => new Promise((resolve, reject) => {
         })
 });
 
-export let updateProfile = profileFields => new Promise((resolve, reject) => {
+export let updateProfile = input => new Promise((resolve, reject) => {
     let token = JSON.parse(localStorage.getItem('user'));
+    let apiEndpoint = '/mariner-profiles/';
+    if (input[0] === 'PUT') {
+        let id = JSON.parse(localStorage.getItem('id'));
+        apiEndpoint += id + '/'
+    }
+
+
     axios({
-        url: process.env.VUE_APP_API_URL + '/mariner-profiles/',
-        data: profileFields,
-        method: 'POST',
+        url: process.env.VUE_APP_API_URL + apiEndpoint,
+        data: input[1],
+        method: input[0],
         headers: {"Authorization": "Token " + token}
     })
         .then(response => {
