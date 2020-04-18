@@ -19,8 +19,8 @@ export let funcRegister = registrationFields => new Promise((resolve, reject) =>
         .then(response => {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
             console.log(response);
-            localStorage.setItem('user', JSON.stringify(response.data['token']));
-            localStorage.setItem('id', JSON.stringify(response.data['id']));
+            localStorage.setItem('user', JSON.stringify(response.data.key));
+            localStorage.setItem('id', JSON.stringify(response.data.user));
             resolve(response)
         })
         .catch(err => {
