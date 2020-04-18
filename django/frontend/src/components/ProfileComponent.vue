@@ -226,6 +226,7 @@
                     () => {
                         this.snackbarText = 'Profile updated successfully';
                         this.snackbar = true;
+                        this.loadProfile();
                     }
                 ).catch(err => {
                         console.log(err.response.data);
