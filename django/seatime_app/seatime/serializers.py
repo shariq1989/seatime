@@ -37,7 +37,7 @@ class MarinerProfileSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'user', 'first_name', 'middle_name', 'last_name', 'birth_date', 'citizenship_cntry',
             'residence_state')
-        extra_kwargs = {'middle_name': {'allow_blank': True}}
+        extra_kwargs = {'middle_name': {'required': False, 'allow_blank': True}}
 
 
 class MarinerProfileNoIdSerializer(serializers.ModelSerializer):
