@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "activating python env"
-source ~/Documents/Development/SeaTime/bin/activate
+cd ~/Documents/Development/SeaTime/bin/ && source activate
 echo "pulling latest code"
 git pull
 echo "starting django webservice"
