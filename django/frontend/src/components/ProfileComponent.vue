@@ -223,7 +223,7 @@
                     user: localStorage.getItem('id'),
                 };
                 updateProfile([this.profileAPIMethod, profileFields, this.userProfile.id]).then(
-                    resp => {
+                    () => {
                         this.snackbarText = 'Profile updates successfully';
                         this.snackbar = true;
                     }
