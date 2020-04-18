@@ -32,11 +32,11 @@ class MarinerProfileViewSet(viewsets.ModelViewSet):
     This viewset automatically provides `list`, `create`, `retrieve`,
     `update` and `destroy` actions.
     """
-    serializer_class = MarinerProfileSerializer
+    serializer_class = MarinerProfileNoIdSerializer
 
     action_serializers = {
-        'list': MarinerProfileNoIdSerializer,
-        'retrieve': MarinerProfileNoIdSerializer
+        'list': MarinerProfileSerializer,
+        'retrieve': MarinerProfileSerializer
     }
 
     def get_serializer_class(self):
