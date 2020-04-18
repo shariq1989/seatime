@@ -215,7 +215,7 @@
                     birth_date: this.userProfile.birth_date,
                     citizenship_cntry: this.userProfile.citizenship_cntry,
                     residence_state: this.userProfile.residence_state,
-                    user: localStorage.getItem('id')
+                    user: localStorage.getItem('id'),
                 };
                 updateProfile([this.profileAPIMethod, profileFields, this.userProfile.id]).then(
                     resp => {

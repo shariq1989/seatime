@@ -19,9 +19,10 @@ export let updateProfile = input => new Promise((resolve, reject) => {
     let token = JSON.parse(localStorage.getItem('user'));
     let apiEndpoint = '/mariner-profiles/';
     if (input[0] === 'PUT') {
-        apiEndpoint += input[2] + '/'
+        apiEndpoint += input[2] + '/';
+        // id is only needed for PUT because it doesnt exist yet for POST
+        input[1].id = input[2];
     }
-    console.log(apiEndpoint);
     axios({
         url: process.env.VUE_APP_API_URL + apiEndpoint,
         data: input[1],
