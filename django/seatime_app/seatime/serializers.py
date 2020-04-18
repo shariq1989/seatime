@@ -39,6 +39,14 @@ class MarinerProfileSerializer(serializers.ModelSerializer):
             'residence_state')
 
 
+class MarinerProfileNoIdSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MarinerProfile
+        fields = (
+            'user', 'first_name', 'middle_name', 'last_name', 'birth_date', 'citizenship_cntry',
+            'residence_state')
+
+
 class MarinerDocumentSerializer(serializers.ModelSerializer):
     class Meta:
         model = MarinerDocument
