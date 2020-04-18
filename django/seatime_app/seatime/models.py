@@ -6,11 +6,11 @@ from django.db import models
 class MarinerProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=255)
-    middle_name = models.CharField(max_length=255, null=True)
+    middle_name = models.CharField(max_length=255, blank=True)
     last_name = models.CharField(max_length=255)
-    birth_date = models.DateField(null=True)
-    citizenship_cntry = models.CharField(max_length=255, null=True)
-    residence_state = models.CharField(max_length=255, null=True)
+    birth_date = models.DateField(blank=True)
+    citizenship_cntry = models.CharField(max_length=255, blank=True)
+    residence_state = models.CharField(max_length=255, blank=True)
 
 
 # All the document dates
