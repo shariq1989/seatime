@@ -1,8 +1,15 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
+from rest_framework.authtoken.models import Token
 
 from .models import MarinerDocument, MarinerProfile, Vessel, WorkdayType, VoyageType, \
     StaffPosition, Voyage
+
+
+class TokenSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Token
+        fields = ('key', 'user')
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -24,6 +31,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
 class MarinerProfileSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField()
+
     class Meta:
         model = MarinerProfile
         fields = (

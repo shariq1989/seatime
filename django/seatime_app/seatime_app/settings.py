@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     'corsheaders',
     'seatime.apps.SeatimeConfig'
 ]
-
+REST_AUTH_SERIALIZERS = {
+    'TOKEN_SERIALIZER': 'seatime.serializers.TokenSerializer',
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -137,7 +139,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:8080','http://192.168.0.108:8080'
+    'http://localhost:8080', 'http://192.168.0.108:8080'
 )
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
