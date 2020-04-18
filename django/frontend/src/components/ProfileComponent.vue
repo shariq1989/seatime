@@ -78,9 +78,6 @@
                                 <v-spacer/>
                                 <v-btn color="primary" @click.stop="editProfile">Save Changes
                                 </v-btn>
-                                <!-- TODO -- have to discuss account deletion
-                                <v-btn color="error" @click.stop="deleteAccount">Confirm</v-btn>
-                                -->
                             </v-card-actions>
                         </v-card>
                     </v-col>
@@ -213,6 +210,7 @@
                 }
             },
             editProfile() {
+                this.displayErrorMessage = false;
                 let profileFields = {
                     first_name: this.userProfile.first_name,
                     middle_name: this.userProfile.middle_name,

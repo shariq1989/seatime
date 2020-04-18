@@ -6,7 +6,7 @@ from django.db import models
 class MarinerProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=255)
-    middle_name = models.CharField(max_length=255)
+    middle_name = models.CharField(max_length=255, null=True)
     last_name = models.CharField(max_length=255)
     birth_date = models.DateField(null=True)
     citizenship_cntry = models.CharField(max_length=255, null=True)
