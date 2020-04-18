@@ -224,7 +224,7 @@
                 };
                 updateProfile([this.profileAPIMethod, profileFields, this.userProfile.id]).then(
                     () => {
-                        this.snackbarText = 'Profile updates successfully';
+                        this.snackbarText = 'Profile updated successfully';
                         this.snackbar = true;
                     }
                 ).catch(err => {
