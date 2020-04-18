@@ -21,6 +21,7 @@ export let updateProfile = input => new Promise((resolve, reject) => {
     if (input[0] === 'PUT') {
         apiEndpoint += input[2] + '/'
     }
+    console.log(apiEndpoint);
     axios({
         url: process.env.VUE_APP_API_URL + apiEndpoint,
         data: input[1],
