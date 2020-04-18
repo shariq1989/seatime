@@ -19,7 +19,6 @@ export let updateProfile = input => new Promise((resolve, reject) => {
     let token = JSON.parse(localStorage.getItem('user'));
     let apiEndpoint = '/mariner-profiles/';
     if (input[0] === 'PUT') {
-        let id = JSON.parse(localStorage.getItem('id'));
         apiEndpoint += input[2] + '/'
     }
     axios({
