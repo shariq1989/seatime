@@ -166,7 +166,8 @@
                     last_name: '',
                     birth_date: null,
                     citizenship_cntry: null,
-                    residence_state: 'N/A'
+                    residence_state: 'N/A',
+                    id: null
                 },
                 logoutDialog: {
                     displayStatus: false,
@@ -182,8 +183,8 @@
                     if (resp.data[0]) {
                         this.profileAPIMethod = 'PUT';
                     }
-                    console.log(resp.data[0]);
                     this.profileLoading = false;
+                    this.userProfile.id = resp.data[0]['id'];
                     this.userProfile.first_name = resp.data[0]['first_name'];
                     this.userProfile.middle_name = resp.data[0]['middle_name'];
                     this.userProfile.last_name = resp.data[0]['last_name'];
@@ -216,7 +217,7 @@
                     residence_state: this.userProfile.residence_state,
                     user: localStorage.getItem('id')
                 };
-                updateProfile([this.profileAPIMethod, profileFields]).then(
+                updateProfile([this.profileAPIMethod, profileFields, this.userProfile.id]).then(
                     resp => {
                         console.log('profile updated');
                         console.log(resp);
