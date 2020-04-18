@@ -182,6 +182,7 @@
                     if (resp.data[0]) {
                         this.profileAPIMethod = 'PUT';
                     }
+                    console.log(resp.data[0]);
                     this.profileLoading = false;
                     this.userProfile.first_name = resp.data[0]['first_name'];
                     this.userProfile.middle_name = resp.data[0]['middle_name'];

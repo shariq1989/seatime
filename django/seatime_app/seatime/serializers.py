@@ -23,10 +23,11 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class MarinerProfileSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField()
     class Meta:
         model = MarinerProfile
         fields = (
-            'user', 'first_name', 'middle_name', 'last_name', 'birth_date', 'citizenship_cntry',
+            'id', 'user', 'first_name', 'middle_name', 'last_name', 'birth_date', 'citizenship_cntry',
             'residence_state')
 
 
