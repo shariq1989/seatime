@@ -38,24 +38,22 @@
                                         :rules="[v => !!v || 'This is a required field']"
                                         required
                                 />
-                                <v-row justify="space-around">
-                                    <v-text-field
-                                            id="password"
-                                            label="Password"
-                                            v-model="password"
-                                            type="password"
-                                            :rules="[v => !!v || 'This is a required field', passwordChecks]"
-                                            required
-                                    />
-                                    <v-text-field
-                                            id="passwordConfirm"
-                                            label="Confirm Password"
-                                            v-model="passwordConfirm"
-                                            type="password"
-                                            :rules="[v => !!v || 'This is a required field', passwordConfirmCheck]"
-                                            required
-                                    />
-                                </v-row>
+                                <v-text-field
+                                        id="password"
+                                        label="Password"
+                                        v-model="password"
+                                        type="password"
+                                        :rules="[v => !!v || 'This is a required field', passwordChecks]"
+                                        required
+                                />
+                                <v-text-field
+                                        id="passwordConfirm"
+                                        label="Confirm Password"
+                                        v-model="passwordConfirm"
+                                        type="password"
+                                        :rules="[v => !!v || 'This is a required field', passwordConfirmCheck]"
+                                        required
+                                />
                             </v-card-text>
                             <v-card-actions>
                                 <v-spacer/>
