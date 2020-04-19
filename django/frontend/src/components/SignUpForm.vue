@@ -38,7 +38,7 @@
                                         :rules="[v => !!v || 'This is a required field']"
                                         required
                                 />
-                                <v-row>
+                                <v-row justify="space-around">
                                     <v-text-field
                                             id="password"
                                             label="Password"
