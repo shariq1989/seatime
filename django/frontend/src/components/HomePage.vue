@@ -58,13 +58,76 @@
                             <v-card-title>
                                 Documents
                             </v-card-title>
-                            <v-progress-circular
-                                    indeterminate
-                                    color="primary"
-                            />
-                            <v-card-text>
-                                User Documents Loading
-                            </v-card-text>
+                            <div v-if="documentsLoading">
+                                <v-progress-circular
+                                        indeterminate
+                                        color="primary"
+                                />
+                                <v-card-text>
+                                    Documents Loading
+                                </v-card-text>
+                            </div>
+                            <div v-if="!documentsLoading && !documents">
+                                <v-card-text>
+                                    You need to complete this section
+                                </v-card-text>
+                            </div>
+                            <div v-if="!documentsLoading && documents">
+                                <v-card-text>
+                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
+                                        Mariner Ref
+                                    </p>
+                                    <p class="text-left">{{documents["mariner_ref_num"]}}</p>
+                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
+                                        MMC Number
+                                    </p>
+                                    <p class="text-left">{{documents["mmc_doc_num"]}}</p>
+                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
+                                        MMC Issue Date
+                                    </p>
+                                    <p class="text-left">{{documents["mmc_issue_date"]}}</p>
+                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
+                                        MMC Expiration Date
+                                    </p>
+                                    <p class="text-left">{{documents["mmc_expr_date"]}}</p>
+                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
+                                        MED National Expiration Date
+                                    </p>
+                                    <p class="text-left">{{documents["med_ntl_expr_date"]}}</p>
+                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
+                                        STCW Expiration
+                                    </p>
+                                    <p class="text-left">{{documents["med_stcw_expr_date"]}}</p>
+                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
+                                        Pilot Expiration
+                                    </p>
+                                    <p class="text-left">{{documents["med_pilot_expr_date"]}}</p>
+                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
+                                        TWIC Expiration
+                                    </p>
+                                    <p class="text-left">{{documents["twic_expr_date"]}}</p>
+                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
+                                        Basic Training Expiration
+                                    </p>
+                                    <p class="text-left">{{documents["basic_training_expr_date"]}}</p>
+                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
+                                        Advanced Firefighting Expiration
+                                    </p>
+                                    <p class="text-left">{{documents["advanced_fire_expr_date"]}}</p>
+                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
+                                        First Aid Expiration
+                                    </p>
+                                    <p class="text-left">{{documents["first_aid_cpr_expr_date"]}}</p>
+                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
+                                        Passport Expiration
+                                    </p>
+                                    <p class="text-left">{{documents["passport_expr_date"]}}</p>
+                                    <p class="text-left subtitle-2 tag-title" style="margin: 0;">
+                                        Drug Test Expiration
+                                    </p>
+                                    <p class="text-left">{{documents["drug_test_compliant"]}}</p>
+                                </v-card-text>
+                            </div>
                         </v-card>
                     </v-col>
                     <v-col>
@@ -88,7 +151,7 @@
 </template>
 
 <script>
-    import {getProfile} from "../_services/profile.service";
+    import {getDocuments, getProfile} from "../_services/profile.service";
     import {funcLogout} from "../_services/user.service";
     import ConfirmModalComponent from "./ConfirmModalComponent"
     import NavDrawerComponent from "./NavDrawerComponent";
@@ -100,7 +163,9 @@
                 drawer: 'true',
                 color: 'primary',
                 profileLoading: true,
+                documentsLoading: true,
                 userProfile: {},
+                documents: {},
                 logoutDialog: {
                     displayStatus: false,
                     dialogHeader: 'Confirm Logout',
@@ -117,6 +182,16 @@
                 }).catch(() => {
                     this.profileLoading = false;
                     this.userProfile = {error: 'Error loading profile'};
+                })
+            },
+            loadDocuments: function () {
+                getDocuments().then((resp) => {
+                    console.log(resp.data);
+                    this.documentsLoading = false;
+                    this.documents = resp.data[0];
+                }).catch(() => {
+                    this.documentsLoading = false;
+                    this.documents = {error: 'Error loading profile'};
                 })
             },
             logout() {

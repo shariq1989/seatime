@@ -37,3 +37,17 @@ export let updateProfile = input => new Promise((resolve, reject) => {
         })
 });
 
+export let getDocuments = () => new Promise((resolve, reject) => {
+    let token = JSON.parse(localStorage.getItem('user'));
+    axios({
+        url: process.env.VUE_APP_API_URL + '/mariner-documents/',
+        method: 'GET',
+        headers: {"Authorization": "Token " + token}
+    })
+        .then(response => {
+            resolve(response)
+        })
+        .catch(err => {
+            reject(err)
+        })
+});
