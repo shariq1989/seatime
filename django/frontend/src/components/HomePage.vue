@@ -174,7 +174,7 @@
             }
         },
         methods: {
-            loadProfile: function () {
+            loadData: function () {
                 getProfile().then((resp) => {
                     console.log(resp.data);
                     this.profileLoading = false;
@@ -182,9 +182,7 @@
                 }).catch(() => {
                     this.profileLoading = false;
                     this.userProfile = {error: 'Error loading profile'};
-                })
-            },
-            loadDocuments: function () {
+                });
                 getDocuments().then((resp) => {
                     console.log(resp.data);
                     this.documentsLoading = false;
@@ -192,7 +190,7 @@
                 }).catch(() => {
                     this.documentsLoading = false;
                     this.documents = {error: 'Error loading profile'};
-                })
+                });
             },
             logout() {
                 this.logoutDialog = true;
@@ -208,7 +206,7 @@
             }
         },
         mounted() {
-            this.loadProfile();
+            this.loadData();
         }
     }
 </script>
