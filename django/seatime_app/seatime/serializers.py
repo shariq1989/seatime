@@ -37,6 +37,7 @@ class MarinerProfileSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'user', 'first_name', 'middle_name', 'last_name', 'birth_date', 'citizenship_cntry',
             'residence_state')
+        # this was needed to allow blank on middle name
         extra_kwargs = {'middle_name': {'required': False, 'allow_blank': True}}
 
 
@@ -49,11 +50,22 @@ class MarinerProfileNoIdSerializer(serializers.ModelSerializer):
 
 
 class MarinerDocumentSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField()
+
     class Meta:
         model = MarinerDocument
-        fields = ('user', 'mariner_ref_num', 'mmc_doc_num', 'mmc_issue_date', 'mmc_expr_date', 'med_ntl_expr_date',
-                  'med_stcw_expr_date', 'med_pilot_expr_date', 'twic_expr_date', 'basic_training_expr_date',
-                  'advanced_fire_expr_date', 'first_aid_cpr_expr_date', 'passport_expr_date', 'drug_test_compliant')
+        fields = (
+        'id', 'user', 'mariner_ref_num', 'mmc_doc_num', 'mmc_issue_date', 'mmc_expr_date', 'med_ntl_expr_date',
+        'med_stcw_expr_date', 'med_pilot_expr_date', 'twic_expr_date', 'basic_training_expr_date',
+        'advanced_fire_expr_date', 'first_aid_cpr_expr_date', 'passport_expr_date', 'drug_test_compliant')
+
+
+class MarinerDocumentNoIdSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MarinerDocument
+        fields = (
+            'user', 'first_name', 'middle_name', 'last_name', 'birth_date', 'citizenship_cntry',
+            'residence_state')
 
 
 class VesselSerializer(serializers.ModelSerializer):

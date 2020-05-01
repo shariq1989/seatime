@@ -7,7 +7,8 @@ from rest_framework.response import Response
 
 from .models import MarinerProfile, MarinerDocument, Vessel, WorkdayType, VoyageType, StaffPosition, Voyage
 from .serializers import MarinerProfileSerializer, UserSerializer, MarinerDocumentSerializer, VesselSerializer, \
-    WorkdayTypeSerializer, VoyageTypeSerializer, StaffPositionSerializer, VoyageSerializer, MarinerProfileNoIdSerializer
+    WorkdayTypeSerializer, VoyageTypeSerializer, StaffPositionSerializer, VoyageSerializer, \
+    MarinerProfileNoIdSerializer, MarinerDocumentNoIdSerializer
 
 
 class CustomObtainAuthToken(ObtainAuthToken):
@@ -61,11 +62,24 @@ class MarinerDocumentViewSet(viewsets.ModelViewSet):
     This viewset automatically provides `list`, `create`, `retrieve`,
     `update` and `destroy` actions.
     """
-    queryset = MarinerDocument.objects.all()
-    serializer_class = MarinerDocumentSerializer
+    serializer_class = MarinerDocumentNoIdSerializer
+
+    action_serializers = {
+        'list': MarinerDocumentSerializer,
+        'retrieve': MarinerDocumentSerializer
+    }
+
+    def get_serializer_class(self):
+        if hasattr(self, 'action_serializers'):
+            return self.action_serializers.get(self.action, self.serializer_class)
+        return super(MarinerDocumentViewSet, self).get_serializer_class()
+
     permission_classes = (permissions.IsAuthenticated,)
 
     def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+    def perform_update(self, serializer):
         serializer.save(user=self.request.user)
 
     def get_queryset(self):
