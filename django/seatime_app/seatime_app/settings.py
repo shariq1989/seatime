@@ -24,7 +24,7 @@ SECRET_KEY = '1c*3djyuzul-oyp%3*+8z%(n^+(#nk+cs+)d6#9u+74l%#_&ev'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '192.168.0.108']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '192.168.0.109']
 
 # Application definition
 
@@ -139,7 +139,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:8080', 'http://192.168.0.108:8080'
+    'http://localhost:8080', 'http://192.168.0.109:8080'
 )
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
