@@ -9,21 +9,22 @@ const routes = [
         path: '/',
         name: 'Home',
         component: Home
-    },
-    {
+    }, {
         path: '/login',
         name: 'Login',
         component: () => import('../views/Login.vue')
-    },
-    {
+    }, {
         path: '/signup',
         name: 'SignUp',
         component: () => import('../views/SignUp')
-    },
-    {
+    }, {
         path: '/profile',
         name: 'Profile',
         component: () => import('../views/Profile')
+    }, {
+        path: '/document',
+        name: 'Document',
+        component: () => import('../views/Document')
     }
 ];
 
