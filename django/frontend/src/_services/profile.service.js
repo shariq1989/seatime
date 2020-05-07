@@ -16,16 +16,13 @@ export let getProfile = () => new Promise((resolve, reject) => {
 });
 
 export let updateProfile = input => new Promise((resolve, reject) => {
-    let token = JSON.parse(localStorage.getItem('user'));
     let apiEndpoint = '/mariner-profiles/';
-    callAPI(input[0], input[1], input[2], endpoint);
+    callAPI(input[0], input[1], input[2], apiEndpoint).then(response => {
+        resolve(response)
+    }).catch(err => {
+        reject(err)
+    });
 });
-
-export let updateDocuments = input => new Promise((resolve, reject) => {
-    let apiEndpoint = '/mariner-documents/';
-    callAPI(input[0], input[1], input[2], endpoint);
-});
-
 
 export let getDocuments = () => new Promise((resolve, reject) => {
     let token = JSON.parse(localStorage.getItem('user'));
@@ -33,13 +30,20 @@ export let getDocuments = () => new Promise((resolve, reject) => {
         url: process.env.VUE_APP_API_URL + '/mariner-documents/',
         method: 'GET',
         headers: {"Authorization": "Token " + token}
+    }).then(response => {
+        resolve(response)
+    }).catch(err => {
+        reject(err)
     })
-        .then(response => {
-            resolve(response)
-        })
-        .catch(err => {
-            reject(err)
-        })
+});
+
+export let updateDocuments = input => new Promise((resolve, reject) => {
+    let apiEndpoint = '/mariner-documents/';
+    callAPI(input[0], input[1], input[2], apiEndpoint).then(response => {
+        resolve(response)
+    }).catch(err => {
+        reject(err)
+    });
 });
 
 function callAPI(method, object, id, endpoint) {
@@ -49,16 +53,10 @@ function callAPI(method, object, id, endpoint) {
         // id is only needed for PUT because it doesnt exist yet for POST
         object.id = id;
     }
-    axios({
+    return axios({
         url: process.env.VUE_APP_API_URL + endpoint,
         data: object,
         method: method,
         headers: {"Authorization": "Token " + authToken}
-    })
-        .then(response => {
-            resolve(response)
-        })
-        .catch(err => {
-            reject(err)
-        })
+    });
 }
