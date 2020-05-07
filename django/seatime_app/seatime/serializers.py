@@ -51,7 +51,6 @@ class MarinerProfileNoIdSerializer(serializers.ModelSerializer):
 
 class MarinerDocumentSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField()
-
     class Meta:
         model = MarinerDocument
         fields = (

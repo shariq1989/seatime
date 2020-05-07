@@ -79,27 +79,27 @@
                                     </p>
                                     <p class="text-left">{{documents["mariner_ref_num"]}}</p>
                                     <p class="text-left subtitle-2 tag-title" style="margin: 0;">
-                                        MMC Number
+                                        MMC Document Number
                                     </p>
                                     <p class="text-left">{{documents["mmc_doc_num"]}}</p>
                                     <p class="text-left subtitle-2 tag-title" style="margin: 0;">
-                                        MMC Issue Date
+                                        MMC Issue
                                     </p>
                                     <p class="text-left">{{documents["mmc_issue_date"]}}</p>
                                     <p class="text-left subtitle-2 tag-title" style="margin: 0;">
-                                        MMC Expiration Date
+                                        MMC Expiration
                                     </p>
                                     <p class="text-left">{{documents["mmc_expr_date"]}}</p>
                                     <p class="text-left subtitle-2 tag-title" style="margin: 0;">
-                                        MED National Expiration Date
+                                        Medical National Expiration
                                     </p>
                                     <p class="text-left">{{documents["med_ntl_expr_date"]}}</p>
                                     <p class="text-left subtitle-2 tag-title" style="margin: 0;">
-                                        STCW Expiration
+                                        Medical STCW Expiration
                                     </p>
                                     <p class="text-left">{{documents["med_stcw_expr_date"]}}</p>
                                     <p class="text-left subtitle-2 tag-title" style="margin: 0;">
-                                        Pilot Expiration
+                                        Medical Pilot Expiration
                                     </p>
                                     <p class="text-left">{{documents["med_pilot_expr_date"]}}</p>
                                     <p class="text-left subtitle-2 tag-title" style="margin: 0;">
@@ -115,7 +115,7 @@
                                     </p>
                                     <p class="text-left">{{documents["advanced_fire_expr_date"]}}</p>
                                     <p class="text-left subtitle-2 tag-title" style="margin: 0;">
-                                        First Aid Expiration
+                                        First Aid & CPR Expiration
                                     </p>
                                     <p class="text-left">{{documents["first_aid_cpr_expr_date"]}}</p>
                                     <p class="text-left subtitle-2 tag-title" style="margin: 0;">

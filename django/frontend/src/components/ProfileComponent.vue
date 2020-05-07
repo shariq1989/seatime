@@ -102,6 +102,7 @@
                 profileLoading: true,
                 dateModal: false,
                 displayErrorMessage: false,
+                errorMessage: '',
                 snackbar: false,
                 snackbarText: null,
                 countries: [
