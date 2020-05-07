@@ -88,7 +88,7 @@
                             <v-card-actions>
                                 <v-spacer/>
                                 editDocs
-                                <v-btn color="primary" @click.stop="editDocs">Save Changes</v-btn>
+                                <v-btn color="primary" @click.stop="editDocuments">Save Changes</v-btn>
                             </v-card-actions>
                         </v-card>
                     </v-col>
@@ -102,7 +102,7 @@
     import {funcLogout} from "../_services/user.service";
     import ConfirmModalComponent from "./ConfirmModalComponent"
     import NavDrawerComponent from "./NavDrawerComponent";
-    import {getDocuments, updateDocuments, updateProfile} from "../_services/profile.service";
+    import {getDocuments, updateDocuments} from "../_services/profile.service";
 
     export default {
         components: {NavDrawerComponent, ConfirmModalComponent},
@@ -175,7 +175,7 @@
                     funcLogout();
                 }
             },
-            editDocs() {
+            editDocuments() {
                 this.displayErrorMessage = false;
                 let documentFields = {
                     mariner_ref_num: this.documents.mariner_ref_num,
