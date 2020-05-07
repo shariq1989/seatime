@@ -45,7 +45,7 @@
                 drawer: true,
                 items: [
                     {title: 'Profile', icon: 'mdi-account', link: '/profile'},
-                    {title: 'Documents', icon: 'mdi-account', link: '/document'},
+                    {title: 'Documents', icon: 'mdi-file-document', link: '/document'},
                     {title: 'Log Seatime', icon: 'mdi-ferry', link: '/seatime'},
                 ],
                 color: 'primary',

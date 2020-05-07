@@ -87,7 +87,8 @@
                             </div>
                             <v-card-actions>
                                 <v-spacer/>
-                                <v-btn color="primary">Save</v-btn>
+                                editDocs
+                                <v-btn color="primary" @click.stop="editDocs">Save Changes</v-btn>
                             </v-card-actions>
                         </v-card>
                     </v-col>
@@ -101,6 +102,7 @@
     import {funcLogout} from "../_services/user.service";
     import ConfirmModalComponent from "./ConfirmModalComponent"
     import NavDrawerComponent from "./NavDrawerComponent";
+    import {getDocuments, updateDocuments, updateProfile} from "../_services/profile.service";
 
     export default {
         components: {NavDrawerComponent, ConfirmModalComponent},
@@ -126,7 +128,8 @@
                     basic_training_expr_date: null,
                     advanced_fire_expr_date: null,
                     first_aid_cpr_expr_date: null,
-                    passport_expr_date: null, drug_test_compliant: null,
+                    passport_expr_date: null,
+                    drug_test_compliant: null,
                     id: null
                 },
                 logoutDialog: {
@@ -139,6 +142,26 @@
         },
         methods: {
             loadPage: function () {
+                getDocuments().then((resp) => {
+                    if (resp.data[0]) {
+                        this.profileAPIMethod = 'PUT';
+                    }
+                    this.pageLoading = false;
+                    this.documents.mariner_ref_num = resp.data[0]['mariner_ref_num'];
+                    this.documents.mmc_doc_num = resp.data[0]['mmc_doc_num'];
+                    this.documents.mmc_issue_date = resp.data[0]['mmc_issue_date'];
+                    this.documents.mmc_expr_date = resp.data[0]['mmc_expr_date'];
+                    this.documents.med_ntl_expr_date = resp.data[0]['med_ntl_expr_date'];
+                    this.documents.med_stcw_expr_date = resp.data[0]['med_stcw_expr_date'];
+                    this.documents.med_pilot_expr_date = resp.data[0]['med_pilot_expr_date'];
+                    this.documents.twic_expr_date = resp.data[0]['twic_expr_date'];
+                    this.documents.basic_training_expr_date = resp.data[0]['basic_training_expr_date'];
+                    this.documents.advanced_fire_expr_date = resp.data[0]['advanced_fire_expr_date'];
+                    this.documents.first_aid_cpr_expr_date = resp.data[0]['first_aid_cpr_expr_date'];
+                    this.documents.passport_expr_date = resp.data[0]['passport_expr_date'];
+                }).catch(() => {
+                    this.pageLoading = false;
+                })
             },
             logout() {
                 this.logoutDialog = true;
@@ -152,6 +175,45 @@
                     funcLogout();
                 }
             },
+            editDocs() {
+                this.displayErrorMessage = false;
+                let documentFields = {
+                    mariner_ref_num: this.documents.mariner_ref_num,
+                    mmc_doc_num: this.documents.mmc_doc_num,
+                    mmc_issue_date: this.documents.mmc_issue_date,
+                    mmc_expr_date: this.documents.mmc_expr_date,
+                    med_ntl_expr_date: this.documents.med_ntl_expr_date,
+                    med_stcw_expr_date: this.documents.med_stcw_expr_date,
+                    med_pilot_expr_date: this.documents.med_pilot_expr_date,
+                    twic_expr_date: this.documents.twic_expr_date,
+                    basic_training_expr_date: this.documents.basic_training_expr_date,
+                    advanced_fire_expr_date: this.documents.advanced_fire_expr_date,
+                    first_aid_cpr_expr_date: this.documents.first_aid_cpr_expr_date,
+                    passport_expr_date: this.documents.passport_expr_date,
+                    drug_test_compliant: this.documents.drug_test_compliant,
+                    user: localStorage.getItem('id'),
+                };
+                updateDocuments([this.profileAPIMethod, documentFields, this.documents.id]).then(
+                    () => {
+                        this.snackbarText = 'Profile updated successfully';
+                        this.snackbar = true;
+                        this.loadProfile();
+                    }
+                ).catch(err => {
+                        console.log(err.response.data);
+                        this.displayErrorMessage = true;
+                        this.errorMessage = 'Error updating documents';
+                        if (err.response.data) {
+                            for (const field in err.response.data) {
+                                for (const error of err.response.data[field]) {
+                                    this.errorMessage += '<br/>';
+                                    this.errorMessage += error;
+                                }
+                            }
+                        }
+                    }
+                )
+            }
         },
         mounted() {
             this.loadPage();

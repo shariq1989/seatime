@@ -18,24 +18,14 @@ export let getProfile = () => new Promise((resolve, reject) => {
 export let updateProfile = input => new Promise((resolve, reject) => {
     let token = JSON.parse(localStorage.getItem('user'));
     let apiEndpoint = '/mariner-profiles/';
-    if (input[0] === 'PUT') {
-        apiEndpoint += input[2] + '/';
-        // id is only needed for PUT because it doesnt exist yet for POST
-        input[1].id = input[2];
-    }
-    axios({
-        url: process.env.VUE_APP_API_URL + apiEndpoint,
-        data: input[1],
-        method: input[0],
-        headers: {"Authorization": "Token " + token}
-    })
-        .then(response => {
-            resolve(response)
-        })
-        .catch(err => {
-            reject(err)
-        })
+    callAPI(input[0], input[1], input[2], endpoint);
 });
+
+export let updateDocuments = input => new Promise((resolve, reject) => {
+    let apiEndpoint = '/mariner-documents/';
+    callAPI(input[0], input[1], input[2], endpoint);
+});
+
 
 export let getDocuments = () => new Promise((resolve, reject) => {
     let token = JSON.parse(localStorage.getItem('user'));
@@ -51,3 +41,24 @@ export let getDocuments = () => new Promise((resolve, reject) => {
             reject(err)
         })
 });
+
+function callAPI(method, object, id, endpoint) {
+    let authToken = JSON.parse(localStorage.getItem('user'));
+    if (method === 'PUT') {
+        endpoint += id + '/';
+        // id is only needed for PUT because it doesnt exist yet for POST
+        object.id = id;
+    }
+    axios({
+        url: process.env.VUE_APP_API_URL + endpoint,
+        data: object,
+        method: method,
+        headers: {"Authorization": "Token " + authToken}
+    })
+        .then(response => {
+            resolve(response)
+        })
+        .catch(err => {
+            reject(err)
+        })
+}

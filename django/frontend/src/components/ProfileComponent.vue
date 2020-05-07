@@ -76,8 +76,7 @@
                             </div>
                             <v-card-actions>
                                 <v-spacer/>
-                                <v-btn color="primary" @click.stop="editProfile">Save Changes
-                                </v-btn>
+                                <v-btn color="primary" @click.stop="editProfile">Save Changes</v-btn>
                             </v-card-actions>
                         </v-card>
                     </v-col>
