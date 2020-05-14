@@ -1,4 +1,4 @@
-<!--suppress JSUnusedGlobalSymbols -->
+<!--suppress JSUnusedGlobalSymbols, JSUnfilteredForInLoop -->
 <template>
     <v-app id="inspire">
         <NavDrawerComponent v-model="drawer" @input="displayLogoutDialog"/>
@@ -32,18 +32,24 @@
                                         </v-snackbar>
                                     </div>
                                     <v-row>
-                                        <v-text-field
-                                                v-model=userProfile.first_name
-                                                label="First Name"
-                                        ></v-text-field>
-                                        <v-text-field
-                                                v-model=userProfile.middle_name
-                                                label="Middle Name"
-                                        ></v-text-field>
-                                        <v-text-field
-                                                v-model=userProfile.last_name
-                                                label="Last Name"
-                                        ></v-text-field>
+                                        <v-col>
+                                            <v-text-field
+                                                    v-model=userProfile.first_name
+                                                    label="First Name"
+                                            ></v-text-field>
+                                        </v-col>
+                                        <v-col>
+                                            <v-text-field
+                                                    v-model=userProfile.middle_name
+                                                    label="Middle Name"
+                                            ></v-text-field>
+                                        </v-col>
+                                        <v-col>
+                                            <v-text-field
+                                                    v-model=userProfile.last_name
+                                                    label="Last Name"
+                                            ></v-text-field>
+                                        </v-col>
                                     </v-row>
                                     <v-menu
                                             v-model="dateModal"
