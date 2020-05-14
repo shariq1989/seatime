@@ -87,7 +87,6 @@
                             </div>
                             <v-card-actions>
                                 <v-spacer/>
-                                editDocs
                                 <v-btn color="primary" @click.stop="editDocuments">Save Changes</v-btn>
                             </v-card-actions>
                         </v-card>

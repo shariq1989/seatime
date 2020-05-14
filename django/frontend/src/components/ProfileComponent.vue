@@ -31,18 +31,20 @@
                                             {{ snackbarText }}
                                         </v-snackbar>
                                     </div>
-                                    <v-text-field
-                                            v-model=userProfile.first_name
-                                            label="First Name"
-                                    ></v-text-field>
-                                    <v-text-field
-                                            v-model=userProfile.middle_name
-                                            label="Middle Name"
-                                    ></v-text-field>
-                                    <v-text-field
-                                            v-model=userProfile.last_name
-                                            label="Last Name"
-                                    ></v-text-field>
+                                    <v-row>
+                                        <v-text-field
+                                                v-model=userProfile.first_name
+                                                label="First Name"
+                                        ></v-text-field>
+                                        <v-text-field
+                                                v-model=userProfile.middle_name
+                                                label="Middle Name"
+                                        ></v-text-field>
+                                        <v-text-field
+                                                v-model=userProfile.last_name
+                                                label="Last Name"
+                                        ></v-text-field>
+                                    </v-row>
                                     <v-menu
                                             v-model="dateModal"
                                             :close-on-content-click="false"
