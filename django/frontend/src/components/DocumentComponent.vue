@@ -31,22 +31,32 @@
                                             {{ snackbarText }}
                                         </v-snackbar>
                                     </div>
-                                    <v-text-field
-                                            v-model=documents.mariner_ref_num
-                                            label="Mariner Reference Number"
-                                    ></v-text-field>
-                                    <v-text-field
-                                            v-model=documents.mmc_doc_num
-                                            label="MMC Document Number"
-                                    ></v-text-field>
-                                    <v-text-field
-                                            v-model=documents.mmc_issue_date
-                                            label="MMC Issue"
-                                    ></v-text-field>
-                                    <v-text-field
-                                            v-model=documents.mmc_expr_date
-                                            label="MMC Expiration"
-                                    ></v-text-field>
+                                    <v-row>
+                                        <v-col>
+                                            <v-text-field
+                                                    v-model=documents.mariner_ref_num
+                                                    label="Mariner Reference Number"
+                                            ></v-text-field>
+                                        </v-col>
+                                        <v-col>
+                                            <v-text-field
+                                                    v-model=documents.mmc_doc_num
+                                                    label="MMC Document Number"
+                                            ></v-text-field>
+                                        </v-col>
+                                        <v-col>
+                                            <v-text-field
+                                                    v-model=documents.mmc_issue_date
+                                                    label="MMC Issue"
+                                            ></v-text-field>
+                                        </v-col>
+                                        <v-col>
+                                            <v-text-field
+                                                    v-model=documents.mmc_expr_date
+                                                    label="MMC Expiration"
+                                            ></v-text-field>
+                                        </v-col>
+                                    </v-row>
                                     <v-text-field
                                             v-model=documents.med_ntl_expr_date
                                             label="Medical National Expiration"
