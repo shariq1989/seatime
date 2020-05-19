@@ -156,6 +156,7 @@
                         this.profileAPIMethod = 'PUT';
                     }
                     this.pageLoading = false;
+                    this.documents.id = resp.data[0]['id'];
                     this.documents.mariner_ref_num = resp.data[0]['mariner_ref_num'];
                     this.documents.mmc_doc_num = resp.data[0]['mmc_doc_num'];
                     this.documents.mmc_issue_date = resp.data[0]['mmc_issue_date'];
