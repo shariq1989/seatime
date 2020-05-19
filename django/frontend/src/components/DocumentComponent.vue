@@ -89,10 +89,8 @@
                                             v-model=documents.passport_expr_date
                                             label="Passport Expiration"
                                     ></v-text-field>
-                                    <v-text-field
-                                            v-model=documents.drug_test_compliant
-                                            label="Drug Test Compliance"
-                                    ></v-text-field>
+                                    <v-checkbox v-model="documents.drug_test_compliant"
+                                                label="Drug Test Compliance"></v-checkbox>
                                 </v-card-text>
                             </div>
                             <v-card-actions>
