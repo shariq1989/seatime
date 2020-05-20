@@ -167,6 +167,7 @@
                     this.documents.advanced_fire_expr_date = resp.data[0]['advanced_fire_expr_date'];
                     this.documents.first_aid_cpr_expr_date = resp.data[0]['first_aid_cpr_expr_date'];
                     this.documents.passport_expr_date = resp.data[0]['passport_expr_date'];
+                    this.documents.drug_test_compliant = resp.data[0]['drug_test_compliant'];
                 }).catch(() => {
                     this.pageLoading = false;
                 })
