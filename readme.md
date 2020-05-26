@@ -28,3 +28,11 @@
 	pip freeze > requirements.txt
 # Install Python dependencies
 	pip install -r requirements.txt
+# Building
+	cd ~/home
+	mkdir development
+	cd development
+
+	sudo apt install git
+	git clone https://github.com/shariq1989/seatime.git
+
