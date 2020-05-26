@@ -1,4 +1,4 @@
-<!--suppress JSUnusedGlobalSymbols -->
+<!--suppress JSUnusedGlobalSymbols, JSUnfilteredForInLoop -->
 <template>
     <v-app id="inspire">
         <NavDrawerComponent v-model="drawer" @input="displayLogoutDialog"/>
@@ -47,7 +47,7 @@
                                         <v-col>
                                             <v-text-field
                                                     v-model=documents.mmc_issue_date
-                                                    label="MMC Issue"
+                                                    label="MMC Issue Date"
                                             ></v-text-field>
                                         </v-col>
                                         <v-col>
