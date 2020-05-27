@@ -28,14 +28,14 @@
 	pip freeze > requirements.txt
 # Install Python dependencies
 	pip install -r requirements.txt
-# Building
-	cd ~/home
-	mkdir development
-	cd development
+	
+# Set up remote server
+	cd /var/www/html
+	mkdir vue
+	cd vue
 
 	sudo apt install git
-	git clone https://github.com/shariq1989/seatime.git
-	
+	git clone git@github.com:shariq1989/seatime.git	
 	cd seatime
 	cd bin/ && source activate
 	cd ..
@@ -46,3 +46,7 @@
 	npm install
 	npm run build
 	
+# Building
+	cd /var/www/html/vue/seatime/django/frontend
+	npm run build
+	sudo service nginx restart
