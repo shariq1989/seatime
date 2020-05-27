@@ -35,4 +35,14 @@
 
 	sudo apt install git
 	git clone https://github.com/shariq1989/seatime.git
+	
+	cd seatime
+	cd bin/ && source activate
+	cd ..
+	pip3 install -r requirements.txt
 
+	cd django/frontend
+	sudo apt install nodejs npm
+	npm install
+	npm run build
+	
