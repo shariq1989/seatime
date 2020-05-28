@@ -12,7 +12,6 @@ httpie==2.0.0
 idna==2.9
 Markdown==3.2.1
 oauthlib==3.1.0
-pkg-resources==0.0.0
 Pygments==2.5.2
 python3-openid==3.1.0
 pytz==2019.3
