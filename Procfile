@@ -1,0 +1,1 @@
+web: gunicorn seatime_app.wsgi
