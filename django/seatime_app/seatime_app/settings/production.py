@@ -4,7 +4,7 @@ from seatime_app.settings.common import *
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'Optional default value')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '45.33.106.171', '127.0.0.1', 'warm-ocean-91075.herokuapp.com']
 
