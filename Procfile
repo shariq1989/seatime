@@ -1,1 +1,1 @@
-web: gunicorn django.seatime_app:seatime_app
+web: gunicorn --pythonpath django/seatime_app seatime_app.wsgi
