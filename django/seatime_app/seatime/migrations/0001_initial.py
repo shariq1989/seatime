@@ -87,7 +87,7 @@ class Migration(migrations.Migration):
                 ('advanced_fire_expr_date', models.DateField()),
                 ('first_aid_cpr_expr_date', models.DateField()),
                 ('passport_expr_date', models.DateField()),
-                ('drug_test_compliant', models.DateField()),
+                ('drug_test_compliant', models.BooleanField()),
                 ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
