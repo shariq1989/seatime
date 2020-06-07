@@ -11,5 +11,5 @@ DEBUG = False
 ALLOWED_HOSTS = ['localhost', '45.33.106.171', '127.0.0.1', 'warm-ocean-91075.herokuapp.com']
 
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:8080', 'http://45.33.106.171:8080'
+    'http://localhost:8080', 'http://45.33.106.171:8080', 'http://45.33.106.171'
 )
