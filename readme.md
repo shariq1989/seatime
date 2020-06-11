@@ -151,8 +151,8 @@
 		    server_name 96.126.97.44;
 
 		    location = /favicon.ico { access_log off; log_not_found off; }
-		    location /static/ {
-			root /home/development/seatime/django/seatime_app/seatime_app/static;
+		    location /staticfiles/ {
+			root /home/development/seatime/django/seatime_app/seatime_app;
 		    }
 
 		    location / {
