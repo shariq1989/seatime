@@ -16,5 +16,5 @@ if not SERVER_IP:
     )
 else:
     CORS_ORIGIN_WHITELIST = (
-        'http://localhost:8080', SERVER_IP, SERVER_IP + ':8000'
+        'http://localhost:8080', 'http://' + SERVER_IP, 'http://' + SERVER_IP + ':8000'
     )
