@@ -57,9 +57,9 @@
 	sudo apt-get install ufw
 	sudo ufw allow 8000
 	
+	python3 manage.py runserver 0.0.0.0:8000
 	// accessible at http://<SERVER_IP>:8000/
 	// admin accessible at /control
-	python3 manage.py runserver 0.0.0.0:8000
 	ctrl+c
 	
 	gunicorn --bind 0.0.0.0:8000 seatime_app.wsgi
