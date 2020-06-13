@@ -43,9 +43,9 @@
 	source bin/activate
 	pip3 install -r requirements.txt
 	export DJANGO_SECRET_KEY="1c*3djyuzul-oyp%3*+8z%(n^+(#nk+cs+)d6#9u+74l%#_&ev"	
-	export DJANGO_SETTINGS_MODULE='seatime_app.settings.production'
+	export DJANGO_SETTINGS_MODULE="seatime_app.settings.production"
 	// insert server_ip here
-	export DJANGO_SERVER_IP='96.126.97.44'
+	export DJANGO_SERVER_IP="96.126.97.44"
 	
 	cd django/seatime_app
 	python3 manage.py makemigrations
