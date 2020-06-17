@@ -141,6 +141,9 @@
 	sudo systemctl restart nginx
 	sudo ufw delete allow 8000
 	sudo ufw allow 'Nginx Full'
+	
+# Dokku
+    ssh dokku@96.126.97.44 config:set seatime_app DJANGO_SETTINGS_MODULE=seatime_app.settings.production DJANGO_SECRET_KEY="1c*3djyuzul-oyp%3*+8z%(n^+(#nk+cs+)d6#9u+74l%#_&ev" DJANGO_SERVER_IP="96.126.97.44"
 
 # Building
 	cd /var/www/html/vue/seatime/django/frontend
