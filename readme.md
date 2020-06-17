@@ -1,34 +1,9 @@
-# Path to project on Pi
-	cd ~/Documents/Development/SeaTime/seatime/        
-# Activate venv
-	source /bin/activate
-
-# Start Django
-## Forward port 8000 to local machine
-	ssh -L 8000:localhost:8000 pi@192.168.0.135
-	python manage.py migrate
-	cd ~/Documents/Development/SeaTime/django/seatime_app && python manage.py runserver 0.0.0.0:8000
-## View on local machine
-	localhost:8000
-
-# Start Vue
-## Forward port 8080 to local machine
-	ssh -L 8080:localhost:8080 pi@192.168.0.135
-	cd ~/Documents/Development/SeaTime/django/frontend && npm run serve
-## View on local machine
-	localhost:8080
 # Tunneling
 	ssh -L 80:localhost:80 192.168.0.135
-# Django Misc
-	python manage.py makemigrations
-	python manage.py migrate
 # Django Testing
 	python manage.py test seatime
 # Add Python dependencies to requirements.txt
-	pip freeze > requirements.txt
-# Install Python dependencies
-	pip install -r requirements.txt
-	
+	pip freeze > requirements.txt	
 # Vue - Set up remote server
 	cd /var/www/html
 	mkdir vue
@@ -58,19 +33,19 @@
 	cd ~/../home/development
 	sudo apt-get update && sudo apt-get upgrade
 	sudo apt-get install git
-	git clone git@github.com:shariq1989/seatime.git
 	ssh-keygen -t rsa -b 4096
-	cat ../root/.ssh/id_rsa.pub
+	cat /root/.ssh/id_rsa.pub
 	// copy public key to github settings for shariq1989
-	sudo apt-get install python3-pip
+	git clone git@github.com:shariq1989/seatime.git
 	
+	sudo apt-get install python3-pip
 	cd seatime
 	source bin/activate
 	pip3 install -r requirements.txt
 	export DJANGO_SECRET_KEY="1c*3djyuzul-oyp%3*+8z%(n^+(#nk+cs+)d6#9u+74l%#_&ev"	
-	export DJANGO_SETTINGS_MODULE='seatime_app.settings.production'
+	export DJANGO_SETTINGS_MODULE="seatime_app.settings.production"
 	// insert server_ip here
-	export DJANGO_SERVER_IP='96.126.97.44'
+	export DJANGO_SERVER_IP="96.126.97.44"
 	
 	cd django/seatime_app
 	python3 manage.py makemigrations
@@ -82,9 +57,9 @@
 	sudo apt-get install ufw
 	sudo ufw allow 8000
 	
+	python3 manage.py runserver 0.0.0.0:8000
 	// accessible at http://<SERVER_IP>:8000/
 	// admin accessible at /control
-	python3 manage.py runserver 0.0.0.0:8000
 	ctrl+c
 	
 	gunicorn --bind 0.0.0.0:8000 seatime_app.wsgi
