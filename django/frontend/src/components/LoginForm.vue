@@ -1,5 +1,5 @@
 <template>
-    <v-app id="inspire">
+    <v-app id="inspire" style="background-color: #bbdefb;">
         <v-content>
             <v-row
                     align="center"
