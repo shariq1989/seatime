@@ -60,9 +60,9 @@
                                 />
                             </v-card-text>
                             <v-card-actions>
-                                <v-btn color="primary" to="/signup">Create an account</v-btn>
+                                <v-btn to="/signup">Create an account</v-btn>
                                 <v-spacer/>
-                                <v-btn color="primary" type="submit">Login</v-btn>
+                                <v-btn type="submit">Login</v-btn>
                             </v-card-actions>
                         </v-form>
                     </v-card>
