@@ -7,13 +7,16 @@
             >
                 <v-col
                         cols="12"
-                        sm="4"
+                        sm="8"
                 >
-                </v-col>
-                <v-col
-                        cols="12"
-                        sm="4"
-                >
+                    <h1>SeaTime.</h1>
+                    <p>A toolkit that allows mariners to manage various aspects of work life</p>
+                    <ul>
+                        <li>Mariner Profile</li>
+                        <li>Documents</li>
+                        <li>Voyages</li>
+                        <li>...etc...</li>
+                    </ul>
                 </v-col>
                 <v-col
                         cols="12"
