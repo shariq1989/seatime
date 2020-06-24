@@ -1,11 +1,7 @@
 <template>
     <v-app id="inspire" style="background-color: #bbdefb;">
-        <v-content>
-            <v-row></v-row>
-            <v-row
-                    align="center"
-                    justify="center"
-            >
+        <v-content align="center">
+            <v-row>
                 <v-col
                         cols="12"
                         sm="2"
