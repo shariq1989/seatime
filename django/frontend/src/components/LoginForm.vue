@@ -1,13 +1,19 @@
 <template>
     <v-app id="inspire" style="background-color: #bbdefb;">
         <v-content>
+            <v-row></v-row>
             <v-row
                     align="center"
                     justify="center"
             >
                 <v-col
                         cols="12"
-                        sm="8"
+                        sm="2"
+                >
+                </v-col>
+                <v-col
+                        cols="12"
+                        sm="5"
                 >
                     <h1>SeaTime.</h1>
                     <p>A toolkit that allows mariners to manage various aspects of work life</p>
@@ -20,17 +26,9 @@
                 </v-col>
                 <v-col
                         cols="12"
-                        sm="4"
+                        sm="3"
                 >
                     <v-card class="elevation-12">
-                        <v-toolbar
-                                color="primary"
-                                dark
-                                flat
-                        >
-                            <v-toolbar-title>Login</v-toolbar-title>
-                            <v-spacer/>
-                        </v-toolbar>
                         <v-form @submit.prevent="handleSubmit">
                             <div class="pa-2">
                                 <v-alert type="error" v-if="displayErrorMessage">
@@ -66,6 +64,11 @@
                             </v-card-actions>
                         </v-form>
                     </v-card>
+                </v-col>
+                <v-col
+                        cols="12"
+                        sm="2"
+                >
                 </v-col>
             </v-row>
         </v-content>
