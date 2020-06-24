@@ -35,6 +35,9 @@
                                             <span class="text-left" v-html="errorMessage"></span>
                                         </v-alert>
                                     </div>
+                                    <v-card-title>
+                                        Sign in or Create an Account
+                                    </v-card-title>
                                     <v-card-text>
                                         <v-text-field
                                                 label="Username"
