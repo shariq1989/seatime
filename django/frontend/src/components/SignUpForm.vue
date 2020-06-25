@@ -2,7 +2,7 @@
     <v-app id="inspire" style="background-color: #bbdefb;">
         <v-content>
             <v-container fill-height fluid>
-                <v-row align="center">
+                <v-row align="center" justify="center">
                     <v-row>
                         <v-col
                                 cols="12"
