@@ -1,68 +1,70 @@
 <template>
-    <v-app id="inspire">
+    <v-app id="inspire" style="background-color: #bbdefb;">
         <v-content>
-            <v-row
-                    align="center"
-                    justify="center"
-            >
-                <v-col
-                        cols="12"
-                        sm="8"
-                        md="4"
-                >
-                    <v-card class="elevation-12">
-                        <v-form @submit.prevent="handleSubmit">
-                            <v-toolbar
-                                    color="primary"
-                                    dark
-                                    flat
-                            >
-                                <v-toolbar-title>Create an account</v-toolbar-title>
-                                <v-spacer/>
-                            </v-toolbar>
-                            <v-card-text>
-                                <div class="pa-2">
-                                    <v-alert type="error" v-if="displayErrorMessage">
-                                        <span class="text-left" v-html="errorMessage"></span>
-                                    </v-alert>
-                                </div>
-                                <v-text-field
-                                        label="Email"
-                                        v-model="emailAddr"
-                                        :rules="[v => !!v || 'This is a required field']"
-                                        required
-                                />
-                                <v-text-field
-                                        label="Username"
-                                        v-model="username"
-                                        :rules="[v => !!v || 'This is a required field']"
-                                        required
-                                />
-                                <v-text-field
-                                        id="password"
-                                        label="Password"
-                                        v-model="password"
-                                        type="password"
-                                        :rules="[v => !!v || 'This is a required field', passwordChecks]"
-                                        required
-                                />
-                                <v-text-field
-                                        id="passwordConfirm"
-                                        label="Confirm Password"
-                                        v-model="passwordConfirm"
-                                        type="password"
-                                        :rules="[v => !!v || 'This is a required field', passwordConfirmCheck]"
-                                        required
-                                />
-                            </v-card-text>
-                            <v-card-actions>
-                                <v-spacer/>
-                                <v-btn color="primary" type="submit" :disabled="submitDisabled">Create Account</v-btn>
-                            </v-card-actions>
-                        </v-form>
-                    </v-card>
-                </v-col>
-            </v-row>
+            <v-container fill-height fluid>
+                <v-row align="center">
+                    <v-row>
+                        <v-col
+                                cols="12"
+                                sm="8"
+                                md="4"
+                        >
+                            <v-card class="elevation-12">
+                                <v-form @submit.prevent="handleSubmit">
+                                    <v-toolbar
+                                            color="primary"
+                                            dark
+                                            flat
+                                    >
+                                        <v-toolbar-title>Create an account</v-toolbar-title>
+                                        <v-spacer/>
+                                    </v-toolbar>
+                                    <v-card-text>
+                                        <div class="pa-2">
+                                            <v-alert type="error" v-if="displayErrorMessage">
+                                                <span class="text-left" v-html="errorMessage"></span>
+                                            </v-alert>
+                                        </div>
+                                        <v-text-field
+                                                label="Email"
+                                                v-model="emailAddr"
+                                                :rules="[v => !!v || 'This is a required field']"
+                                                required
+                                        />
+                                        <v-text-field
+                                                label="Username"
+                                                v-model="username"
+                                                :rules="[v => !!v || 'This is a required field']"
+                                                required
+                                        />
+                                        <v-text-field
+                                                id="password"
+                                                label="Password"
+                                                v-model="password"
+                                                type="password"
+                                                :rules="[v => !!v || 'This is a required field', passwordChecks]"
+                                                required
+                                        />
+                                        <v-text-field
+                                                id="passwordConfirm"
+                                                label="Confirm Password"
+                                                v-model="passwordConfirm"
+                                                type="password"
+                                                :rules="[v => !!v || 'This is a required field', passwordConfirmCheck]"
+                                                required
+                                        />
+                                    </v-card-text>
+                                    <v-card-actions>
+                                        <v-spacer/>
+                                        <v-btn color="primary" type="submit" :disabled="submitDisabled">Create Account
+                                        </v-btn>
+                                    </v-card-actions>
+                                </v-form>
+                            </v-card>
+                        </v-col>
+                    </v-row>
+                </v-row>
+            </v-container>
         </v-content>
     </v-app>
 </template>
