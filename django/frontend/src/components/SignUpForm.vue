@@ -2,8 +2,8 @@
     <v-app id="inspire" style="background-color: #bbdefb;">
         <v-content>
             <v-container fill-height fluid>
-                <v-row align="center" justify="center">
-                    <v-row>
+                <v-row align="center">
+                    <v-row justify="center">
                         <v-col
                                 cols="12"
                                 sm="8"
