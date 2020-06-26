@@ -16,21 +16,18 @@
                             <h1 class="primary--text">Welcome to SeaTime.</h1>
                             <p class="primary--text">A toolkit that allows mariners to manage various aspects of work
                                 life</p>
-                            <v-chip color="primary">
+                            <v-chip class="mb-1" color="primary">
                                 Manage Document and Certs
                             </v-chip>
-                            <v-chip color="accent">
+                            <v-chip class="mb-1" color="accent">
                                 Track Voyages
                             </v-chip>
-                            <v-chip color="primary">
+                            <v-chip class="mb-1" color="primary">
                                 Training Discounts
                             </v-chip>
-                            <v-chip color="accent">
+                            <v-chip class="mb-1" color="accent">
                                 Autofilled Forms
                             </v-chip>
-
-                            <v-img height="500" src="../assets/stock/tomas-williams-p-_RJY6hN3E-unsplash.jpg" aspect-ratio="1.7"
-                                   contain></v-img>
                         </v-col>
                         <v-col
                                 cols="12"
