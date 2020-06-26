@@ -6,12 +6,12 @@
                     <v-row>
                         <v-col
                                 cols="12"
-                                sm="2"
+                                sm="1"
                         >
                         </v-col>
                         <v-col
                                 cols="12"
-                                sm="5"
+                                sm="7"
                         >
                             <h1 class="primary--text">Welcome to SeaTime.</h1>
                             <p class="primary--text">A toolkit that allows mariners to manage various aspects of work life</p>
@@ -90,7 +90,7 @@
                         </v-col>
                         <v-col
                                 cols="12"
-                                sm="2"
+                                sm="1"
                         >
                         </v-col>
                     </v-row>
