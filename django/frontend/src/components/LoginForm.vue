@@ -29,8 +29,8 @@
                                 Autofilled Forms
                             </v-chip>
 
-                            <v-img max-height="12" contain
-                                   src="../assets/stock/tomas-williams-p-_RJY6hN3E-unsplash.jpg"></v-img>
+                            <v-img src="../assets/stock/tomas-williams-p-_RJY6hN3E-unsplash.jpg" aspect-ratio="1.7"
+                                   contain></v-img>
                         </v-col>
                         <v-col
                                 cols="12"
