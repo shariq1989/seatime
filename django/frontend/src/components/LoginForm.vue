@@ -13,7 +13,7 @@
                                 cols="12"
                                 sm="7"
                         >
-                            <h1 class="primary--text">Welcome to SeaTime.</h1>
+                            <h1 style="font-family: serif" class="primary--text">Welcome to SeaTime.</h1>
                             <p class="primary--text">A toolkit that allows mariners to manage various aspects of work
                                 life</p>
                             <v-chip class="mb-1" color="primary">
