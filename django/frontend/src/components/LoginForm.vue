@@ -29,7 +29,7 @@
                                 Autofilled Forms
                             </v-chip>
 
-                            <v-img src="../assets/stock/tomas-williams-p-_RJY6hN3E-unsplash.jpg" aspect-ratio="1.7"
+                            <v-img height="500" src="../assets/stock/tomas-williams-p-_RJY6hN3E-unsplash.jpg" aspect-ratio="1.7"
                                    contain></v-img>
                         </v-col>
                         <v-col
