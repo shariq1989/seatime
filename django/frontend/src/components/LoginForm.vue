@@ -19,18 +19,18 @@
                             <v-chip color="primary">
                                 Manage Document and Certs
                             </v-chip>
-                            <v-chip color="primary">
+                            <v-chip color="accent">
                                 Track Voyages
                             </v-chip>
                             <v-chip color="primary">
                                 Training Discounts
                             </v-chip>
-                            <v-chip color="primary">
+                            <v-chip color="accent">
                                 Autofilled Forms
                             </v-chip>
-                            
-                            <v-img src="../assets/stock/tomas-williams-p-_RJY6hN3E-unsplash.jpg" aspect-ratio="1.7"
-                                   contain></v-img>
+
+                            <v-img max-height="125" contain
+                                   src="../assets/stock/tomas-williams-p-_RJY6hN3E-unsplash.jpg"></v-img>
                         </v-col>
                         <v-col
                                 cols="12"
@@ -69,7 +69,7 @@
                                         />
                                     </v-card-text>
                                     <v-card-actions>
-                                        <v-btn color="primary" to="/signup">Create an account</v-btn>
+                                        <v-btn color="accent" to="/signup">Create an account</v-btn>
                                         <v-spacer/>
                                         <v-btn color="primary" type="submit">Login</v-btn>
                                     </v-card-actions>
