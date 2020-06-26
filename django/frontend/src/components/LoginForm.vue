@@ -28,45 +28,43 @@
                                 cols="12"
                                 sm="3"
                         >
-                            <v-card class="elevation-12">
-                                <v-form @submit.prevent="handleSubmit">
-                                    <div class="pa-2">
-                                        <v-alert type="error" v-if="displayErrorMessage">
-                                            <span class="text-left" v-html="errorMessage"></span>
-                                        </v-alert>
-                                    </div>
-                                    <v-card-title>
-                                        Sign in or Create an Account
-                                    </v-card-title>
-                                    <v-card-text>
-                                        <v-text-field
-                                                label="Username"
-                                                name="login"
-                                                prepend-icon="person"
-                                                type="text"
-                                                v-model="username"
-                                                :rules="[v => !!v || 'Username is required']"
-                                                required
-                                        />
+                            <v-form @submit.prevent="handleSubmit">
+                                <div class="pa-2">
+                                    <v-alert type="error" v-if="displayErrorMessage">
+                                        <span class="text-left" v-html="errorMessage"></span>
+                                    </v-alert>
+                                </div>
+                                <v-card-title>
+                                    Sign in or Create an Account
+                                </v-card-title>
+                                <v-card-text>
+                                    <v-text-field
+                                            label="Username"
+                                            name="login"
+                                            prepend-icon="person"
+                                            type="text"
+                                            v-model="username"
+                                            :rules="[v => !!v || 'Username is required']"
+                                            required
+                                    />
 
-                                        <v-text-field
-                                                id="password"
-                                                label="Password"
-                                                name="password"
-                                                prepend-icon="lock"
-                                                type="password"
-                                                v-model="password"
-                                                :rules="[v => !!v || 'Password is required']"
-                                                required
-                                        />
-                                    </v-card-text>
-                                    <v-card-actions>
-                                        <v-btn to="/signup">Create an account</v-btn>
-                                        <v-spacer/>
-                                        <v-btn type="submit">Login</v-btn>
-                                    </v-card-actions>
-                                </v-form>
-                            </v-card>
+                                    <v-text-field
+                                            id="password"
+                                            label="Password"
+                                            name="password"
+                                            prepend-icon="lock"
+                                            type="password"
+                                            v-model="password"
+                                            :rules="[v => !!v || 'Password is required']"
+                                            required
+                                    />
+                                </v-card-text>
+                                <v-card-actions>
+                                    <v-btn to="/signup">Create an account</v-btn>
+                                    <v-spacer/>
+                                    <v-btn type="submit">Login</v-btn>
+                                </v-card-actions>
+                            </v-form>
                         </v-col>
                         <v-col
                                 cols="12"
