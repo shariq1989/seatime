@@ -13,14 +13,34 @@
                                 cols="12"
                                 sm="5"
                         >
-                            <h1 class="primary --text">Welcome to SeaTime.</h1>
-                            <p>A toolkit that allows mariners to manage various aspects of work life</p>
-                            <ul>
-                                <li>Mariner Profile</li>
-                                <li>Documents</li>
-                                <li>Voyages</li>
-                                <li>...etc...</li>
-                            </ul>
+                            <h1 class="primary--text">Welcome to SeaTime.</h1>
+                            <p class="primary--text">A toolkit that allows mariners to manage various aspects of work life</p>
+                            <v-chip
+                                    class="ma-2"
+                                    color="primary"
+                            >
+                                Manage Document and Certs
+                            </v-chip>
+                            <v-chip
+                                    class="ma-2"
+                                    color="primary"
+                            >
+                                Track Voyages
+                            </v-chip>
+                            <v-chip
+                                    class="ma-2"
+                                    color="accent"
+                            >
+                                Training Discounts
+                            </v-chip>
+                            <v-chip
+                                    class="ma-2"
+                                    color="accent"
+                            >
+                                Autofilled Forms
+                            </v-chip>
+
+
                             <v-img src="../assets/stock/tomas-williams-p-_RJY6hN3E-unsplash.jpg" aspect-ratio="1.7"
                                    contain></v-img>
                         </v-col>
