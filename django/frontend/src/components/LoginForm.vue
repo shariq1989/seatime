@@ -13,7 +13,7 @@
                                 cols="12"
                                 sm="5"
                         >
-                            <h1>Welcome to SeaTime.</h1>
+                            <h1 class="primary --text">Welcome to SeaTime.</h1>
                             <p>A toolkit that allows mariners to manage various aspects of work life</p>
                             <ul>
                                 <li>Mariner Profile</li>
@@ -35,7 +35,7 @@
                                             <span class="text-left" v-html="errorMessage"></span>
                                         </v-alert>
                                     </div>
-                                    <v-card-title>
+                                    <v-card-title class="text-center">
                                         Lets Set Sail
                                     </v-card-title>
                                     <v-card-text>
@@ -61,9 +61,9 @@
                                         />
                                     </v-card-text>
                                     <v-card-actions>
-                                        <v-btn to="/signup">Create an account</v-btn>
+                                        <v-btn color="primary" to="/signup">Create an account</v-btn>
                                         <v-spacer/>
-                                        <v-btn type="submit">Login</v-btn>
+                                        <v-btn color="primary" type="submit">Login</v-btn>
                                     </v-card-actions>
                                 </v-form>
                             </v-card>
