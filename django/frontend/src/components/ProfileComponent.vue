@@ -35,7 +35,9 @@
                                         <v-col>
                                             <v-text-field
                                                     v-model=userProfile.first_name
-                                                    label="First Name" required
+                                                    label="First Name"
+                                                    :rules="[v => !!v || 'This is a required field']"
+                                                    required
                                             ></v-text-field>
                                         </v-col>
                                         <v-col>
@@ -47,7 +49,9 @@
                                         <v-col>
                                             <v-text-field
                                                     v-model=userProfile.last_name
-                                                    label="Last Name" required
+                                                    label="Last Name"
+                                                    :rules="[v => !!v || 'This is a required field']"
+                                                    required
                                             ></v-text-field>
                                         </v-col>
                                     </v-row>
@@ -63,7 +67,9 @@
                                             <v-text-field
                                                     v-model="userProfile.birth_date"
                                                     label="Birth Date"
-                                                    readonly required
+                                                    readonly
+                                                    :rules="[v => !!v || 'This is a required field']"
+                                                    required
                                                     v-on="on"
                                             ></v-text-field>
                                         </template>
@@ -73,12 +79,16 @@
                                     <v-autocomplete
                                             v-model="userProfile.citizenship_cntry"
                                             :items="countries"
-                                            label="Citizenship" required
+                                            label="Citizenship"
+                                            :rules="[v => !!v || 'This is a required field']"
+                                            required
                                     ></v-autocomplete>
                                     <v-autocomplete
                                             v-model=userProfile.residence_state
                                             :items="us_states"
-                                            label="Residence State (US)" required
+                                            label="Residence State (US)"
+                                            :rules="[v => !!v || 'This is a required field']"
+                                            required
                                     ></v-autocomplete>
                                 </v-card-text>
                                 <v-card-actions>
