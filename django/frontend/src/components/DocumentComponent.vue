@@ -115,7 +115,6 @@
         components: {NavDrawerComponent, ConfirmModalComponent},
         data() {
             return {
-                profileAPIMethod: 'POST',
                 drawer: 'true',
                 color: 'primary',
                 pageLoading: true,
@@ -152,7 +151,7 @@
             loadPage: function () {
                 getDocuments().then((resp) => {
                     if (resp.data[0]) {
-                        this.profileAPIMethod = 'PUT';
+                        this.APIMethod = 'PUT';
                     }
                     this.pageLoading = false;
                     this.documents.id = resp.data[0]['id'];
@@ -203,7 +202,7 @@
                     drug_test_compliant: this.documents.drug_test_compliant,
                     user: localStorage.getItem('id'),
                 };
-                updateDocuments([this.profileAPIMethod, documentFields, this.documents.id]).then(
+                updateDocuments([this.APIMethod, documentFields, this.documents.id]).then(
                     () => {
                         this.snackbarText = 'Profile updated successfully';
                         this.snackbar = true;
