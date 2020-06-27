@@ -41,7 +41,7 @@
                                         </v-alert>
                                     </div>
                                     <v-card-title class="text-center">
-                                        Lets Set Sail
+                                        Let's Set Sail
                                     </v-card-title>
                                     <v-card-text>
                                         <v-text-field

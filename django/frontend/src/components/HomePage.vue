@@ -1,6 +1,6 @@
 <!--suppress JSUnusedGlobalSymbols -->
 <template>
-    <v-app id="inspire">
+    <v-app id="inspire" style="background-color: #bbdefb;">
         <NavDrawerComponent v-model="drawer" @input="displayLogoutDialog"/>
         <v-content>
             <ConfirmModalComponent v-model="logoutDialog.displayStatus" v-bind="logoutDialog"

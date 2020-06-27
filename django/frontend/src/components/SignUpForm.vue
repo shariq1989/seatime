@@ -56,7 +56,7 @@
                                     </v-card-text>
                                     <v-card-actions>
                                         <v-spacer/>
-                                        <v-btn color="primary" type="submit" :disabled="submitDisabled">Create Account
+                                        <v-btn color="primary" type="submit" :disabled="submitDisabled">Register
                                         </v-btn>
                                     </v-card-actions>
                                 </v-form>
