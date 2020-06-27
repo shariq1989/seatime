@@ -137,7 +137,7 @@
                     advanced_fire_expr_date: null,
                     first_aid_cpr_expr_date: null,
                     passport_expr_date: null,
-                    drug_test_compliant: null,
+                    drug_test_compliant: false,
                     id: null
                 },
                 logoutDialog: {
