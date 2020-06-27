@@ -204,9 +204,9 @@
                 };
                 updateDocuments([this.APIMethod, documentFields, this.documents.id]).then(
                     () => {
-                        this.snackbarText = 'Profile updated successfully';
+                        this.snackbarText = 'Documents updated successfully';
                         this.snackbar = true;
-                        this.loadProfile();
+                        this.loadPage();
                     }
                 ).catch(err => {
                         console.log(err.response.data);
