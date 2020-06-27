@@ -81,11 +81,11 @@
                                             label="Residence State (US)"
                                     ></v-autocomplete>
                                 </v-card-text>
+                                <v-card-actions>
+                                    <v-spacer/>
+                                    <v-btn color="primary" @click.stop="editProfile">Save Changes</v-btn>
+                                </v-card-actions>
                             </div>
-                            <v-card-actions>
-                                <v-spacer/>
-                                <v-btn color="primary" @click.stop="editProfile">Save Changes</v-btn>
-                            </v-card-actions>
                         </v-card>
                     </v-col>
                 </v-row>

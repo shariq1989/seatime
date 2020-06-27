@@ -92,11 +92,11 @@
                                     <v-checkbox v-model="documents.drug_test_compliant"
                                                 label="Drug Test Compliance"></v-checkbox>
                                 </v-card-text>
+                                <v-card-actions>
+                                    <v-spacer/>
+                                    <v-btn color="primary" @click.stop="editDocuments">Save Changes</v-btn>
+                                </v-card-actions>
                             </div>
-                            <v-card-actions>
-                                <v-spacer/>
-                                <v-btn color="primary" @click.stop="editDocuments">Save Changes</v-btn>
-                            </v-card-actions>
                         </v-card>
                     </v-col>
                 </v-row>
