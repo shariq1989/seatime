@@ -124,7 +124,4 @@
     };
 </script>
 <style>
-    body {
-        background-image: url('../assets/stock/ariel.jpg');
-    }
 </style>
