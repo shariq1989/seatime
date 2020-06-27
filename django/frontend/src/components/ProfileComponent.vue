@@ -182,8 +182,8 @@
                     "Wyoming"],
                 userProfile: {
                     first_name: null,
-                    middle_name: null,
-                    last_name: '',
+                    middle_name: '',
+                    last_name: null,
                     birth_date: null,
                     citizenship_cntry: null,
                     residence_state: 'N/A',
