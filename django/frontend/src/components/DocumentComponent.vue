@@ -115,6 +115,7 @@
         components: {NavDrawerComponent, ConfirmModalComponent},
         data() {
             return {
+                profileAPIMethod: 'POST',
                 drawer: 'true',
                 color: 'primary',
                 pageLoading: true,
