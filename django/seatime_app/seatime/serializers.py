@@ -47,7 +47,8 @@ class MarinerProfileNoIdSerializer(serializers.ModelSerializer):
         fields = (
             'user', 'first_name', 'middle_name', 'last_name', 'birth_date', 'citizenship_cntry',
             'residence_state')
-
+        # this was needed to allow blank on middle name
+        extra_kwargs = {'middle_name': {'required': False, 'allow_blank': True}}
 
 class MarinerDocumentSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField()

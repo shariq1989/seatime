@@ -123,6 +123,7 @@
                     }).then(() => {
                         router.push('/');
                     }).catch((err) => {
+                        console.log(err);
                         console.log(err.response.data);
                         this.displayErrorMessage = true;
                         this.errorMessage = 'Error registering user';
