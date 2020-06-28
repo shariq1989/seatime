@@ -45,16 +45,50 @@
                                             ></v-text-field>
                                         </v-col>
                                         <v-col>
-                                            <v-text-field
-                                                    v-model=documents.mmc_issue_date
-                                                    label="MMC Issue Date"
-                                            ></v-text-field>
+                                            <v-menu
+                                                    v-model="dateModal"
+                                                    :close-on-content-click="false"
+                                                    :nudge-right="40"
+                                                    transition="scale-transition"
+                                                    offset-y
+                                                    min-width="290px"
+                                            >
+                                                <template v-slot:activator="{ on }">
+                                                    <v-text-field
+                                                            v-model="documents.mmc_issue_date"
+                                                            label="MMC Issue Date"
+                                                            readonly
+                                                            :rules="[v => !!v || 'This is a required field']"
+                                                            required
+                                                            v-on="on"
+                                                    ></v-text-field>
+                                                </template>
+                                                <v-date-picker v-model="documents.mmc_issue_date"
+                                                               @input="dateModal = false"></v-date-picker>
+                                            </v-menu>
                                         </v-col>
                                         <v-col>
-                                            <v-text-field
-                                                    v-model=documents.mmc_expr_date
-                                                    label="MMC Expiration"
-                                            ></v-text-field>
+                                            <v-menu
+                                                    v-model="dateModal"
+                                                    :close-on-content-click="false"
+                                                    :nudge-right="40"
+                                                    transition="scale-transition"
+                                                    offset-y
+                                                    min-width="290px"
+                                            >
+                                                <template v-slot:activator="{ on }">
+                                                    <v-text-field
+                                                            v-model="documents.mmc_expr_date"
+                                                            label="MMC Expiration"
+                                                            readonly
+                                                            :rules="[v => !!v || 'This is a required field']"
+                                                            required
+                                                            v-on="on"
+                                                    ></v-text-field>
+                                                </template>
+                                                <v-date-picker v-model="documents.mmc_expr_date"
+                                                               @input="dateModal = false"></v-date-picker>
+                                            </v-menu>
                                         </v-col>
                                     </v-row>
                                     <v-text-field
