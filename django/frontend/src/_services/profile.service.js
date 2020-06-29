@@ -1,33 +1,9 @@
 import axios from 'axios';
 
-export let getProfile = () => new Promise((resolve, reject) => {
+export let getSeatimeEntries = () => new Promise((resolve, reject) => {
     let token = JSON.parse(localStorage.getItem('user'));
     axios({
-        url: process.env.VUE_APP_API_URL + '/mariner-profiles/',
-        method: 'GET',
-        headers: {"Authorization": "Token " + token}
-    })
-        .then(response => {
-            resolve(response)
-        })
-        .catch(err => {
-            reject(err)
-        })
-});
-
-export let updateProfile = input => new Promise((resolve, reject) => {
-    let apiEndpoint = '/mariner-profiles/';
-    callAPI(input[0], input[1], input[2], apiEndpoint).then(response => {
-        resolve(response)
-    }).catch(err => {
-        reject(err)
-    });
-});
-
-export let getDocuments = () => new Promise((resolve, reject) => {
-    let token = JSON.parse(localStorage.getItem('user'));
-    axios({
-        url: process.env.VUE_APP_API_URL + '/mariner-documents/',
+        url: process.env.VUE_APP_API_URL + '/voyages/',
         method: 'GET',
         headers: {"Authorization": "Token " + token}
     }).then(response => {
@@ -37,8 +13,8 @@ export let getDocuments = () => new Promise((resolve, reject) => {
     })
 });
 
-export let updateDocuments = input => new Promise((resolve, reject) => {
-    let apiEndpoint = '/mariner-documents/';
+export let updateSeatimeEntries = input => new Promise((resolve, reject) => {
+    let apiEndpoint = '/voyages/';
     callAPI(input[0], input[1], input[2], apiEndpoint).then(response => {
         resolve(response)
     }).catch(err => {
