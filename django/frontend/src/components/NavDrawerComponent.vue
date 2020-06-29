@@ -46,7 +46,7 @@
                 items: [
                     {title: 'Profile', icon: 'mdi-account', link: '/profile'},
                     {title: 'Documents', icon: 'mdi-file-document', link: '/document'},
-                    {title: 'Log Seatime', icon: 'mdi-ferry', link: '/seatime'},
+                    {title: 'Log Seatime', icon: 'mdi-ferry', link: '/seatime_entry'},
                 ],
                 color: 'primary',
             }
