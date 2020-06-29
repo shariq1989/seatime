@@ -69,11 +69,6 @@
                                             ></v-text-field>
                                         </v-col>
                                     </v-row>
-                                    <v-text-field
-                                            label="Passport Expiration"
-                                    ></v-text-field>
-                                    <v-checkbox
-                                            label="Drug Test Compliance"></v-checkbox>
                                 </v-card-text>
                                 <v-card-actions>
                                     <v-spacer/>
