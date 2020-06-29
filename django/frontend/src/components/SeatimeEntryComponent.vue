@@ -34,8 +34,38 @@
                                     <v-row>
                                         <v-col>
                                             <v-text-field
+                                                    v-model="seatime_entries.vessel"
+                                                    label="Vessel"
+                                            ></v-text-field>
+                                        </v-col>
+                                        <v-col>
+                                            <v-text-field
+                                                    v-model="seatime_entries.depart_date"
+                                                    label="Departure Date"
+                                            ></v-text-field>
+                                        </v-col>
+                                        <v-col>
+                                            <v-text-field
                                                     v-model="seatime_entries.arrival_date"
                                                     label="Arrival Date"
+                                            ></v-text-field>
+                                        </v-col>
+                                        <v-col>
+                                            <v-text-field
+                                                    v-model="seatime_entries.position"
+                                                    label="Position"
+                                            ></v-text-field>
+                                        </v-col>
+                                        <v-col>
+                                            <v-text-field
+                                                    v-model="seatime_entries.voyage_type"
+                                                    label="Voyage Type"
+                                            ></v-text-field>
+                                        </v-col>
+                                        <v-col>
+                                            <v-text-field
+                                                    v-model="seatime_entries.workday_type"
+                                                    label="Workday Type"
                                             ></v-text-field>
                                         </v-col>
                                     </v-row>
