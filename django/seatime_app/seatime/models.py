@@ -35,9 +35,6 @@ class MarinerDocument(models.Model):
 class Vessel(models.Model):
     name = models.CharField(max_length=64)
     official_number = models.CharField(max_length=64)
-    tonnage = models.CharField(max_length=64)
-    propulsion = models.CharField(max_length=64)
-    hp = models.CharField(max_length=64)
 
     def __str__(self):
         return f"{self.name}"

@@ -4,7 +4,7 @@ from django.db import migrations
 
 
 def load_data(apps, schema_editor):
-    VoyageType = apps.get_model('seatime_app', 'VoyageType')
+    VoyageType = apps.get_model('seatime', 'VoyageType')
     inland_waterways = VoyageType(type='Inland Waterways')
     inland_waterways.save()
     coastal = VoyageType(type='Coastal')
@@ -16,13 +16,13 @@ def load_data(apps, schema_editor):
     other = VoyageType(type='Other/Unknown')
     other.save()
 
-    WorkdayType = apps.get_model('seatime_app', 'WorkdayType')
+    WorkdayType = apps.get_model('seatime', 'WorkdayType')
     eight = WorkdayType(type='8 Hour Workday (Straight Time)')
     eight.save()
     twelve = WorkdayType(type='12 Hour Workday (Time and One Half)')
     twelve.save()
 
-    StaffPosition = apps.get_model('seatime_app', 'StaffPosition')
+    StaffPosition = apps.get_model('seatime', 'StaffPosition')
     chiefeng = StaffPosition(department='Engine', title='Chief Engineer', rank='1')
     chiefeng.save()
     firsteng = StaffPosition(department='Engine', title='First Engineer', rank='2')
@@ -53,7 +53,7 @@ def load_data(apps, schema_editor):
     studentdeck = StaffPosition(department='Deck', title='Student or Apprentice', rank='8')
     studentdeck.save()
 
-    Vessel = apps.get_model('seatime_app', 'Vessel')
+    Vessel = apps.get_model('seatime', 'Vessel')
     aplChina = Vessel(name='APL China', official_number='9074389')
     aplChina.save()
 
