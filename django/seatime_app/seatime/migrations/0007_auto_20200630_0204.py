@@ -3,11 +3,66 @@
 from django.db import migrations
 
 
-class Migration(migrations.Migration):
+def load_data(apps, schema_editor):
+    VoyageType = apps.get_model('seatime_app', 'VoyageType')
+    inland_waterways = VoyageType(type='Inland Waterways')
+    inland_waterways.save()
+    coastal = VoyageType(type='Coastal')
+    coastal.save()
+    open_ocean = VoyageType(type='Open Ocean')
+    open_ocean.save()
+    near_ocean = VoyageType(type='Near Coastal')
+    near_ocean.save()
+    other = VoyageType(type='Other/Unknown')
+    other.save()
 
+    WorkdayType = apps.get_model('seatime_app', 'WorkdayType')
+    eight = WorkdayType(type='8 Hour Workday (Straight Time)')
+    eight.save()
+    twelve = WorkdayType(type='12 Hour Workday (Time and One Half)')
+    twelve.save()
+
+    StaffPosition = apps.get_model('seatime_app', 'StaffPosition')
+    chiefeng = StaffPosition(department='Engine', title='Chief Engineer', rank='1')
+    chiefeng.save()
+    firsteng = StaffPosition(department='Engine', title='First Engineer', rank='2')
+    firsteng.save()
+    secondeng = StaffPosition(department='Engine', title='Second Engineer', rank='3')
+    secondeng.save()
+    thirdeng = StaffPosition(department='Engine', title='Third Engineer', rank='4')
+    thirdeng.save()
+    qmed = StaffPosition(department='Engine', title='QMED', rank='5')
+    qmed.save()
+    studenteng = StaffPosition(department='Engine', title='Student or Apprentice', rank='6')
+    studenteng.save()
+
+    captain = StaffPosition(department='Deck', title='Master', rank='1')
+    captain.save()
+    chiefmate = StaffPosition(department='Deck', title='Chief Mate', rank='2')
+    chiefmate.save()
+    secondmate = StaffPosition(department='Deck', title='Second Mate', rank='3')
+    secondmate.save()
+    thirdmate = StaffPosition(department='Deck', title='Third Mate', rank='4')
+    thirdmate.save()
+    ableseaman = StaffPosition(department='Deck', title='Able Seaman', rank='5')
+    ableseaman.save()
+    ordinaryseaman = StaffPosition(department='Deck', title='Ordinary Seaman', rank='6')
+    ordinaryseaman.save()
+    tankerman = StaffPosition(department='Deck', title='Tankerman', rank='7')
+    tankerman.save()
+    studentdeck = StaffPosition(department='Deck', title='Student or Apprentice', rank='8')
+    studentdeck.save()
+
+    Vessel = apps.get_model('seatime_app', 'Vessel')
+    aplChina = Vessel(name='APL China', official_number='9074389')
+    aplChina.save()
+
+
+class Migration(migrations.Migration):
     dependencies = [
         ('seatime', '0006_auto_20200418_1414'),
     ]
 
     operations = [
+        migrations.RunPython(load_data),
     ]
