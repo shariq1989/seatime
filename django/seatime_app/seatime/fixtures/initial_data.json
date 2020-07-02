@@ -166,8 +166,8 @@
     "model": "seatime.staffratingcombinations",
     "pk": 1,
     "fields": {
-      "staff_position": 1,
-      "position_rating": 1
+      "staff_position": [1],
+      "position_rating": [1]
     }
   }
 ]
