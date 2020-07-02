@@ -69,8 +69,8 @@ class Rating(models.Model):
 
 
 class StaffRatingCombinations(models.Model):
-    staffPosition = models.ManyToManyField(StaffPosition)
-    positionRating = models.ManyToManyField(Rating)
+    staff_position = models.ManyToManyField(StaffPosition)
+    position_rating = models.ManyToManyField(Rating)
 
 
 # Info for each voyage
