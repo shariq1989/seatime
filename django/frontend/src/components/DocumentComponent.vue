@@ -31,6 +31,7 @@
                                             {{ snackbarText }}
                                         </v-snackbar>
                                     </div>
+                                    <v-subheader>Merchant Mariner Credential</v-subheader>
                                     <v-row>
                                         <v-col>
                                             <v-text-field
@@ -57,40 +58,49 @@
                                             ></v-text-field>
                                         </v-col>
                                     </v-row>
-                                    <v-text-field
-                                            v-model=documents.med_ntl_expr_date
-                                            label="Medical National Expiration"
-                                    ></v-text-field>
-                                    <v-text-field
-                                            v-model=documents.med_stcw_expr_date
-                                            label="Medical STCW Expiration"
-                                    ></v-text-field>
-                                    <v-text-field
-                                            v-model=documents.med_pilot_expr_date
-                                            label="Medical Pilot Expiration"
-                                    ></v-text-field>
-                                    <v-text-field
-                                            v-model=documents.twic_expr_date
-                                            label="TWIC Expiration"
-                                    ></v-text-field>
-                                    <v-text-field
-                                            v-model=documents.basic_training_expr_date
-                                            label="Basic Training Expiration"
-                                    ></v-text-field>
-                                    <v-text-field
-                                            v-model=documents.advanced_fire_expr_date
-                                            label="Advanced Firefighting Expiration"
-                                    ></v-text-field>
-                                    <v-text-field
-                                            v-model=documents.first_aid_cpr_expr_date
-                                            label="First Aid & CPR Expiration"
-                                    ></v-text-field>
-                                    <v-text-field
-                                            v-model=documents.passport_expr_date
-                                            label="Passport Expiration"
-                                    ></v-text-field>
-                                    <v-checkbox v-model="documents.drug_test_compliant"
-                                                label="Drug Test Compliance"></v-checkbox>
+                                    <v-subheader>Medical</v-subheader>
+                                    <v-row>
+                                        <v-text-field
+                                                v-model=documents.med_ntl_expr_date
+                                                label="Medical National Expiration"
+                                        ></v-text-field>
+                                        <v-text-field
+                                                v-model=documents.med_stcw_expr_date
+                                                label="Medical STCW Expiration"
+                                        ></v-text-field>
+                                        <v-text-field
+                                                v-model=documents.med_pilot_expr_date
+                                                label="Medical Pilot Expiration"
+                                        ></v-text-field>
+                                    </v-row>
+                                    <v-subheader>Misc.</v-subheader>
+                                    <v-row>
+                                        <v-text-field
+                                                v-model=documents.twic_expr_date
+                                                label="TWIC Expiration"
+                                        ></v-text-field>
+                                        <v-text-field
+                                                v-model=documents.passport_expr_date
+                                                label="Passport Expiration"
+                                        ></v-text-field>
+                                        <v-checkbox v-model="documents.drug_test_compliant"
+                                                    label="Drug Test Compliance"></v-checkbox>
+                                    </v-row>
+                                    <v-subheader>Training</v-subheader>
+                                    <v-row>
+                                        <v-text-field
+                                                v-model=documents.basic_training_expr_date
+                                                label="Basic Training Expiration"
+                                        ></v-text-field>
+                                        <v-text-field
+                                                v-model=documents.advanced_fire_expr_date
+                                                label="Advanced Firefighting Expiration"
+                                        ></v-text-field>
+                                        <v-text-field
+                                                v-model=documents.first_aid_cpr_expr_date
+                                                label="First Aid & CPR Expiration"
+                                        ></v-text-field>
+                                    </v-row>
                                 </v-card-text>
                                 <v-card-actions>
                                     <v-spacer/>
