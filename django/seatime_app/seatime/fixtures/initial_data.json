@@ -175,12 +175,5 @@
     "fields": {
       "title": "Tankerman"
     }
-  },
-  {
-    "model": "seatime.staffposition",
-    "pk": 17,
-    "fields": {
-      "title": "Student or Apprentice"
-    }
   }
 ]
