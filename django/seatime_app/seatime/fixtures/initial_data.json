@@ -1,0 +1,186 @@
+[
+  {
+    "model": "seatime.vessel",
+    "pk": 1,
+    "fields": {
+      "name": "APL China",
+      "official_number": "9074389"
+    }
+  },
+  {
+    "model": "seatime.vessel",
+    "pk": 2,
+    "fields": {
+      "name": "Golden Bear",
+      "official_number": "8834407"
+    }
+  },
+  {
+    "model": "seatime.workdaytype",
+    "pk": 1,
+    "fields": {
+      "type": "8 Hour Workday (Straight Time)"
+    }
+  },
+  {
+    "model": "seatime.workdaytype",
+    "pk": 2,
+    "fields": {
+      "type": "12 Hour Workday (Time and One Half)"
+    }
+  },
+  {
+    "model": "seatime.voyagetype",
+    "pk": 1,
+    "fields": {
+      "type": "Inland Waterways"
+    }
+  },
+  {
+    "model": "seatime.voyagetype",
+    "pk": 2,
+    "fields": {
+      "type": "Coastal"
+    }
+  },
+  {
+    "model": "seatime.voyagetype",
+    "pk": 3,
+    "fields": {
+      "type": "Open Ocean"
+    }
+  },
+  {
+    "model": "seatime.voyagetype",
+    "pk": 4,
+    "fields": {
+      "type": "Near Coastal"
+    }
+  },
+  {
+    "model": "seatime.voyagetype",
+    "pk": 5,
+    "fields": {
+      "type": "Other/Unknown"
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 1,
+    "fields": {
+      "title": "Chief Engineer"
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 2,
+    "fields": {
+      "title": "Chief Engineer MODU"
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 3,
+    "fields": {
+      "title": "Chief Engineer UFIV"
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 4,
+    "fields": {
+      "title": "Chief Engineer OSV"
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 5,
+    "fields": {
+      "title": "First Engineer"
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 6,
+    "fields": {
+      "title": "Second Engineer"
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 7,
+    "fields": {
+      "title": "Third Engineer"
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 8,
+    "fields": {
+      "title": "QMED"
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 9,
+    "fields": {
+      "title": "Student or Apprentice"
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 10,
+    "fields": {
+      "title": "Master"
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 11,
+    "fields": {
+      "title": "Chief Mate"
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 12,
+    "fields": {
+      "title": "Second Mate"
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 13,
+    "fields": {
+      "title": "Third Mate"
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 14,
+    "fields": {
+      "title": "Able Seaman"
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 15,
+    "fields": {
+      "title": "Ordinary Seaman"
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 16,
+    "fields": {
+      "title": "Tankerman"
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 17,
+    "fields": {
+      "title": "Student or Apprentice"
+    }
+  }
+]
