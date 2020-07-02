@@ -161,13 +161,5 @@
     "fields": {
       "title": "MODU"
     }
-  },
-  {
-    "model": "seatime.staffratingcombinations",
-    "pk": 1,
-    "fields": {
-      "staffPosition": 1,
-      "positionRating": 1
-    }
   }
 ]
