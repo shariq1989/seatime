@@ -57,12 +57,20 @@ class VoyageType(models.Model):
 
 
 # Title: Captain
-# Rank: 1
 class StaffPosition(models.Model):
     title = models.CharField(max_length=64)
 
     def __str__(self):
         return f"{self.department} - {self.title}"
+
+# Title: MODU, OSV, etc
+class Rating(models.Model):
+    title = models.CharField(max_length=64)
+
+
+class StaffRatingCombinations(models.Model):
+    staffPosition = models.ManytoManyField(StaffPosition)
+    positionRating = models.ManytoManyField(Rating)
 
 
 # Info for each voyage
