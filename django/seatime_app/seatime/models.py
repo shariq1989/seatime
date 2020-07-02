@@ -56,13 +56,10 @@ class VoyageType(models.Model):
         return f"{self.type}"
 
 
-# Dept: Engine, Deck
 # Title: Captain
 # Rank: 1
 class StaffPosition(models.Model):
-    department = models.CharField(max_length=64)
     title = models.CharField(max_length=64)
-    rank = models.PositiveIntegerField()
 
     def __str__(self):
         return f"{self.department} - {self.title}"
