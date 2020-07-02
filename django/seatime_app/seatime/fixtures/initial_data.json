@@ -75,105 +75,99 @@
     "model": "seatime.staffposition",
     "pk": 2,
     "fields": {
-      "title": "Chief Engineer MODU"
+      "title": "First Engineer"
     }
   },
   {
     "model": "seatime.staffposition",
     "pk": 3,
     "fields": {
-      "title": "Chief Engineer UFIV"
+      "title": "Second Engineer"
     }
   },
   {
     "model": "seatime.staffposition",
     "pk": 4,
     "fields": {
-      "title": "Chief Engineer OSV"
+      "title": "Third Engineer"
     }
   },
   {
     "model": "seatime.staffposition",
     "pk": 5,
     "fields": {
-      "title": "First Engineer"
+      "title": "QMED"
     }
   },
   {
     "model": "seatime.staffposition",
     "pk": 6,
     "fields": {
-      "title": "Second Engineer"
+      "title": "Student or Apprentice"
     }
   },
   {
     "model": "seatime.staffposition",
     "pk": 7,
     "fields": {
-      "title": "Third Engineer"
+      "title": "Master"
     }
   },
   {
     "model": "seatime.staffposition",
     "pk": 8,
     "fields": {
-      "title": "QMED"
+      "title": "Chief Mate"
     }
   },
   {
     "model": "seatime.staffposition",
     "pk": 9,
     "fields": {
-      "title": "Student or Apprentice"
+      "title": "Second Mate"
     }
   },
   {
     "model": "seatime.staffposition",
     "pk": 10,
     "fields": {
-      "title": "Master"
+      "title": "Third Mate"
     }
   },
   {
     "model": "seatime.staffposition",
     "pk": 11,
     "fields": {
-      "title": "Chief Mate"
+      "title": "Able Seaman"
     }
   },
   {
     "model": "seatime.staffposition",
     "pk": 12,
     "fields": {
-      "title": "Second Mate"
+      "title": "Ordinary Seaman"
     }
   },
   {
     "model": "seatime.staffposition",
     "pk": 13,
     "fields": {
-      "title": "Third Mate"
-    }
-  },
-  {
-    "model": "seatime.staffposition",
-    "pk": 14,
-    "fields": {
-      "title": "Able Seaman"
-    }
-  },
-  {
-    "model": "seatime.staffposition",
-    "pk": 15,
-    "fields": {
-      "title": "Ordinary Seaman"
-    }
-  },
-  {
-    "model": "seatime.staffposition",
-    "pk": 16,
-    "fields": {
       "title": "Tankerman"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 1,
+    "fields": {
+      "title": "MODU"
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": 1,
+    "fields": {
+      "staffPosition": 1,
+      "positionRating": 1
     }
   }
 ]
