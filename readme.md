@@ -1,9 +1,3 @@
-# Tunneling
-	ssh -L 80:localhost:80 192.168.0.135
-# Django Testing
-	python manage.py test seatime
-# Add Python dependencies to requirements.txt
-	pip freeze > requirements.txt	
 # Vue - Set up remote server
 	cd /var/www/html
 	mkdir vue
@@ -149,3 +143,15 @@
 	cd /var/www/html/vue/seatime/django/frontend
 	npm run build
 	sudo service nginx restart
+# Misc. Operations
+#### Tunneling
+	ssh -L 80:localhost:80 192.168.0.135
+#### Django Testing
+	python manage.py test seatime
+#### Add Python dependencies to requirements.txt
+	pip freeze > requirements.txt	
+## DB Ops
+#### Dump DB to console 
+    python3 manage.py dumpdata seatime
+#### Load fixture
+    python3 manage.py loaddata initial_data.json
