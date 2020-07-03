@@ -31,31 +31,35 @@
                                             {{ snackbarText }}
                                         </v-snackbar>
                                     </div>
-                                    <v-subheader>Merchant Mariner Credential</v-subheader>
                                     <v-row>
                                         <v-col>
-                                            <v-text-field
-                                                    v-model=documents.mariner_ref_num
-                                                    label="Mariner Reference Number"
-                                            ></v-text-field>
+                                            <v-subheader>Merchant Mariner Credential</v-subheader>
                                         </v-col>
                                         <v-col>
-                                            <v-text-field
-                                                    v-model=documents.mmc_doc_num
-                                                    label="MMC Document Number"
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col>
-                                            <v-text-field
-                                                    v-model=documents.mmc_issue_date
-                                                    label="MMC Issue Date"
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col>
-                                            <v-text-field
-                                                    v-model=documents.mmc_expr_date
-                                                    label="MMC Expiration"
-                                            ></v-text-field>
+                                            <v-row>
+                                                <v-text-field
+                                                        v-model=documents.mariner_ref_num
+                                                        label="Mariner Reference Number"
+                                                ></v-text-field>
+                                            </v-row>
+                                            <v-row>
+                                                <v-text-field
+                                                        v-model=documents.mmc_doc_num
+                                                        label="MMC Document Number"
+                                                ></v-text-field>
+                                            </v-row>
+                                            <v-row>
+                                                <v-text-field
+                                                        v-model=documents.mmc_issue_date
+                                                        label="MMC Issue Date"
+                                                ></v-text-field>
+                                            </v-row>
+                                            <v-row>
+                                                <v-text-field
+                                                        v-model=documents.mmc_expr_date
+                                                        label="MMC Expiration"
+                                                ></v-text-field>
+                                            </v-row>
                                         </v-col>
                                     </v-row>
                                     <v-subheader>Medical</v-subheader>
