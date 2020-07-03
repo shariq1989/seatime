@@ -5,7 +5,7 @@
         <v-content>
             <ConfirmModalComponent v-model="logoutDialog.displayStatus" v-bind="logoutDialog"
                                    @input="updateModalStatus"/>
-            <v-container fluid class="grey lighten-4 fill-height">
+            <v-container fluid class="#bbdefb lighten-4 fill-height">
                 <v-row class="mb-6">
                     <v-col>
                         <v-card class="pa-2">
