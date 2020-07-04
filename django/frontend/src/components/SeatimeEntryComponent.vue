@@ -92,7 +92,7 @@
     import {
         getSeatimeEntries,
         getStaffPositions,
-        getVessels, getVoyageTypes,
+        getVessels, getVoyageTypes, getWorkdayType,
         updateSeatimeEntries
     } from "../_services/seatime_entry.service";
 
