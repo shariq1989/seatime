@@ -89,7 +89,12 @@
     import {funcLogout} from "../_services/user.service";
     import ConfirmModalComponent from "./ConfirmModalComponent"
     import NavDrawerComponent from "./NavDrawerComponent";
-    import {getSeatimeEntries, updateSeatimeEntries} from "../_services/seatime_entry.service";
+    import {
+        getSeatimeEntries,
+        getStaffPositions,
+        getVessels, getVoyageTypes,
+        updateSeatimeEntries
+    } from "../_services/seatime_entry.service";
 
     export default {
         components: {NavDrawerComponent, ConfirmModalComponent},
@@ -122,6 +127,18 @@
         },
         methods: {
             loadPage: function () {
+                getVessels().then((resp) => {
+                    console.log(resp);
+                })
+                getStaffPositions().then((resp) => {
+                    console.log(resp);
+                })
+                getVoyageTypes().then((resp) => {
+                    console.log(resp);
+                })
+                getWorkdayType().then((resp) => {
+                    console.log(resp);
+                })
                 getSeatimeEntries().then((resp) => {
                     if (resp.data[0]) {
                         this.APIMethod = 'PUT';

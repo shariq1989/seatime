@@ -15,6 +15,66 @@ export let getSeatimeEntries = () => new Promise((resolve, reject) => {
     })
 });
 
+export let getVessels = () => new Promise((resolve, reject) => {
+    let token = JSON.parse(localStorage.getItem('user'));
+    axios({
+        url: process.env.VUE_APP_API_URL + '/vessels/',
+        method: 'GET',
+        headers: {"Authorization": "Token " + token}
+    }).then(response => {
+        console.log(response);
+        resolve(response)
+    }).catch(err => {
+        console.log(err);
+        reject(err)
+    })
+});
+
+export let getStaffPositions = () => new Promise((resolve, reject) => {
+    let token = JSON.parse(localStorage.getItem('user'));
+    axios({
+        url: process.env.VUE_APP_API_URL + '/staff-positions/',
+        method: 'GET',
+        headers: {"Authorization": "Token " + token}
+    }).then(response => {
+        console.log(response);
+        resolve(response)
+    }).catch(err => {
+        console.log(err);
+        reject(err)
+    })
+});
+
+export let getVoyageTypes = () => new Promise((resolve, reject) => {
+    let token = JSON.parse(localStorage.getItem('user'));
+    axios({
+        url: process.env.VUE_APP_API_URL + '/voyage-types/',
+        method: 'GET',
+        headers: {"Authorization": "Token " + token}
+    }).then(response => {
+        console.log(response);
+        resolve(response)
+    }).catch(err => {
+        console.log(err);
+        reject(err)
+    })
+});
+
+export let getWorkdayType = () => new Promise((resolve, reject) => {
+    let token = JSON.parse(localStorage.getItem('user'));
+    axios({
+        url: process.env.VUE_APP_API_URL + '/workday-types/',
+        method: 'GET',
+        headers: {"Authorization": "Token " + token}
+    }).then(response => {
+        console.log(response);
+        resolve(response)
+    }).catch(err => {
+        console.log(err);
+        reject(err)
+    })
+});
+
 export let updateSeatimeEntries = input => new Promise((resolve, reject) => {
     let apiEndpoint = '/voyages/';
     callAPI(input[0], input[1], input[2], apiEndpoint).then(response => {
