@@ -7,8 +7,10 @@ export let getSeatimeEntries = () => new Promise((resolve, reject) => {
         method: 'GET',
         headers: {"Authorization": "Token " + token}
     }).then(response => {
+        console.log(response);
         resolve(response)
     }).catch(err => {
+        console.log(err);
         reject(err)
     })
 });
