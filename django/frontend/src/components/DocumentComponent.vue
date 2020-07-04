@@ -7,7 +7,8 @@
                                    @input="updateModalStatus"/>
             <v-container fluid class="#bbdefb lighten-4 fill-height">
                 <v-row class="mb-6">
-                    <v-col>
+                    <v-col cols="12" sm="3"></v-col>
+                    <v-col cols="12" sm="6">
                         <v-card class="pa-2">
                             <v-card-title>
                                 Documents
@@ -143,6 +144,7 @@
                             </div>
                         </v-card>
                     </v-col>
+                    <v-col cols="12" sm="3"></v-col>
                 </v-row>
             </v-container>
         </v-content>
