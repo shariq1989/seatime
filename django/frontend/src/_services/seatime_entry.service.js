@@ -1,78 +1,52 @@
 import axios from 'axios';
 
-export let getSeatimeEntries = () => new Promise((resolve, reject) => {
+function getRequest(endpoint) {
     let token = JSON.parse(localStorage.getItem('user'));
-    axios({
-        url: process.env.VUE_APP_API_URL + '/voyages/',
+    return axios({
+        url: process.env.VUE_APP_API_URL + endpoint,
         method: 'GET',
         headers: {"Authorization": "Token " + token}
-    }).then(response => {
-        console.log(response);
+    });
+}
+
+export let getSeatimeEntries = () => new Promise((resolve, reject) => {
+    getRequest('/voyages/').then(response => {
         resolve(response)
     }).catch(err => {
-        console.log(err);
         reject(err)
-    })
+    });
 });
 
 export let getVessels = () => new Promise((resolve, reject) => {
-    let token = JSON.parse(localStorage.getItem('user'));
-    axios({
-        url: process.env.VUE_APP_API_URL + '/vessels/',
-        method: 'GET',
-        headers: {"Authorization": "Token " + token}
-    }).then(response => {
-        console.log(response);
+    getRequest('/vessels/').then(response => {
         resolve(response)
     }).catch(err => {
-        console.log(err);
         reject(err)
-    })
+    });
 });
 
 export let getStaffPositions = () => new Promise((resolve, reject) => {
-    let token = JSON.parse(localStorage.getItem('user'));
-    axios({
-        url: process.env.VUE_APP_API_URL + '/staff-positions/',
-        method: 'GET',
-        headers: {"Authorization": "Token " + token}
-    }).then(response => {
-        console.log(response);
+    getRequest('/staff-positions/').then(response => {
         resolve(response)
     }).catch(err => {
-        console.log(err);
         reject(err)
-    })
+    });
 });
 
 export let getVoyageTypes = () => new Promise((resolve, reject) => {
-    let token = JSON.parse(localStorage.getItem('user'));
-    axios({
-        url: process.env.VUE_APP_API_URL + '/voyage-types/',
-        method: 'GET',
-        headers: {"Authorization": "Token " + token}
-    }).then(response => {
-        console.log(response);
+    getRequest('/voyage-types/').then(response => {
         resolve(response)
     }).catch(err => {
-        console.log(err);
         reject(err)
-    })
+    });
 });
 
 export let getWorkdayType = () => new Promise((resolve, reject) => {
-    let token = JSON.parse(localStorage.getItem('user'));
-    axios({
-        url: process.env.VUE_APP_API_URL + '/workday-types/',
-        method: 'GET',
-        headers: {"Authorization": "Token " + token}
-    }).then(response => {
-        console.log(response);
+    getRequest('/workday-types/').then(response => {
         resolve(response)
     }).catch(err => {
-        console.log(err);
         reject(err)
-    })
+    });
 });
 
 export let updateSeatimeEntries = input => new Promise((resolve, reject) => {

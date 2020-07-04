@@ -63,6 +63,7 @@ class StaffPosition(models.Model):
     def __str__(self):
         return f"{self.department} - {self.title}"
 
+
 # Title: MODU, OSV, etc
 class Rating(models.Model):
     title = models.CharField(max_length=64)
