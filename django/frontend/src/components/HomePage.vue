@@ -9,9 +9,9 @@
                 <v-row class="mb-6">
                     <v-col>
                         <v-card class="pa-2">
-                            <v-card-title>
+                            <h1 style="font-family: serif" class="primary--text">
                                 Profile
-                            </v-card-title>
+                            </h1>
                             <div v-if="profileLoading">
                                 <v-progress-circular
                                         indeterminate
@@ -55,9 +55,9 @@
                     </v-col>
                     <v-col>
                         <v-card class="pa-2">
-                            <v-card-title>
+                            <h1 style="font-family: serif" class="primary--text">
                                 Documents
-                            </v-card-title>
+                            </h1>
                             <div v-if="documentsLoading">
                                 <v-progress-circular
                                         indeterminate
@@ -132,9 +132,9 @@
                     </v-col>
                     <v-col>
                         <v-card class="pa-2">
-                            <v-card-title>
+                            <h1 style="font-family: serif" class="primary--text">
                                 Seatime Logged
-                            </v-card-title>
+                            </h1>
                             <v-progress-circular
                                     indeterminate
                                     color="primary"

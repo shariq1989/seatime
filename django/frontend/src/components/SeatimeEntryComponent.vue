@@ -10,9 +10,9 @@
                     <v-col cols="12" sm="2"></v-col>
                     <v-col cols="12" sm="8">
                         <v-card class="pa-2">
-                            <v-card-title>
+                            <h1 style="font-family: serif" class="primary--text">
                                 Seatime Log
-                            </v-card-title>
+                            </h1>
                             <div v-if="pageLoading">
                                 <v-progress-circular
                                         indeterminate

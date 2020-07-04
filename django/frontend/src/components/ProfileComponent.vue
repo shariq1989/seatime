@@ -10,9 +10,9 @@
                     <v-col cols="12" sm="3"></v-col>
                     <v-col cols="12" sm="6">
                         <v-card class="pa-2">
-                            <v-card-title>
+                            <h1 style="font-family: serif" class="primary--text">
                                 Profile
-                            </v-card-title>
+                            </h1>
                             <div v-if="profileLoading">
                                 <v-progress-circular
                                         indeterminate
