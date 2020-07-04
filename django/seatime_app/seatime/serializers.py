@@ -72,7 +72,7 @@ class MarinerDocumentNoIdSerializer(serializers.ModelSerializer):
 class VesselSerializer(serializers.ModelSerializer):
     class Meta:
         model = Vessel
-        fields = ('name', 'official_number', 'tonnage', 'propulsion', 'hp')
+        fields = ('name', 'official_number')
 
 
 class WorkdayTypeSerializer(serializers.ModelSerializer):
@@ -90,7 +90,7 @@ class VoyageTypeSerializer(serializers.ModelSerializer):
 class StaffPositionSerializer(serializers.ModelSerializer):
     class Meta:
         model = StaffPosition
-        fields = ('department', 'title', 'rank')
+        fields = ('title',)
 
 
 class VoyageSerializer(serializers.ModelSerializer):
