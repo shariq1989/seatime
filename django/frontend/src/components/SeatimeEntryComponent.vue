@@ -40,13 +40,27 @@
                                             ></v-text-field>
                                         </v-row>
                                         <v-row>
-                                            <div id="box">
-                                                <input type="date" v-model="seatime_entries.depart_date">
-                                            </div>
-                                            <v-text-field
-                                                    v-model="seatime_entries.depart_date"
-                                                    label="Departure Date"
-                                            ></v-text-field>
+                                            <v-menu
+                                                    v-model="dateModal_depart"
+                                                    :close-on-content-click="false"
+                                                    :nudge-right="40"
+                                                    transition="scale-transition"
+                                                    offset-y
+                                                    min-width="290px"
+                                            >
+                                                <template v-slot:activator="{ on }">
+                                                    <v-text-field
+                                                            v-model="seatime_entries.depart_date"
+                                                            label="Departure Date"
+                                                            readonly
+                                                            :rules="[v => !!v || 'This is a required field']"
+                                                            required
+                                                            v-on="on"
+                                                    ></v-text-field>
+                                                </template>
+                                                <v-date-picker v-model="seatime_entries.depart_date"
+                                                               @input="dateModal_depart = false"></v-date-picker>
+                                            </v-menu>
                                         </v-row>
                                         <v-row>
                                             <v-text-field
@@ -106,7 +120,7 @@
                 drawer: 'true',
                 color: 'primary',
                 pageLoading: true,
-                dateModal: false,
+                dateModal_depart: false,
                 displayErrorMessage: false,
                 errorMessage: '',
                 snackbar: false,
