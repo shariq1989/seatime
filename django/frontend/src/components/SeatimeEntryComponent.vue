@@ -38,6 +38,15 @@
                                                     v-model="seatime_entries.vessel"
                                                     label="Vessel"
                                             ></v-text-field>
+                                            <v-autocomplete
+                                                    :items="vessel_list"
+                                                    hide-no-data
+                                                    item-text="name"
+                                                    item-value="id"
+                                                    label="Vessel"
+                                                    placeholder="Start typing to Search"
+                                                    return-object
+                                            ></v-autocomplete>
                                         </v-row>
                                         <v-row>
                                             <v-menu
@@ -143,6 +152,7 @@
                 errorMessage: '',
                 snackbar: false,
                 snackbarText: null,
+                vessel_list: null,
                 seatime_entries: {
                     vessel: null,
                     depart_date: null,
@@ -164,6 +174,7 @@
             loadPage: function () {
                 getVessels().then((resp) => {
                     console.log(resp);
+                    this.vessel_list = resp.data;
                 })
                 getStaffPositions().then((resp) => {
                     console.log(resp);
