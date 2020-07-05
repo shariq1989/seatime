@@ -129,7 +129,7 @@
                                 </v-card-text>
                                 <v-card-actions>
                                     <v-spacer/>
-                                    <v-btn color="primary" @click.stop="editSeatime">Save Changes</v-btn>
+                                    <v-btn color="primary" type="submit" @click.stop="editSeatime">Save Changes</v-btn>
                                 </v-card-actions>
                             </div>
                         </v-card>
