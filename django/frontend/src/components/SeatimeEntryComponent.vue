@@ -63,10 +63,6 @@
                                             </v-menu>
                                         </v-row>
                                         <v-row>
-                                            <v-text-field
-                                                    v-model="seatime_entries.arrival_date"
-                                                    label="Arrival Date"
-                                            ></v-text-field>
                                             <v-menu
                                                     v-model="dateModal_arrival"
                                                     :close-on-content-click="false"
@@ -92,7 +88,7 @@
                                         <v-row>
                                             <v-text-field
                                                     v-model="seatime_entries.position"
-                                                    label="Position"
+                                                    label="Rank"
                                             ></v-text-field>
                                         </v-row>
                                         <v-row>

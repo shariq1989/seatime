@@ -50,16 +50,50 @@
                                                 ></v-text-field>
                                             </v-row>
                                             <v-row>
-                                                <v-text-field
-                                                        v-model=documents.mmc_issue_date
-                                                        label="MMC Issue Date"
-                                                ></v-text-field>
+                                                <v-menu
+                                                        v-model="dateModal_mmc_issue"
+                                                        :close-on-content-click="false"
+                                                        :nudge-right="40"
+                                                        transition="scale-transition"
+                                                        offset-y
+                                                        min-width="290px"
+                                                >
+                                                    <template v-slot:activator="{ on }">
+                                                        <v-text-field
+                                                                v-model="documents.mmc_issue_date"
+                                                                label="MMC Issue Date"
+                                                                readonly
+                                                                :rules="[v => !!v || 'This is a required field']"
+                                                                required
+                                                                v-on="on"
+                                                        ></v-text-field>
+                                                    </template>
+                                                    <v-date-picker v-model="documents.mmc_issue_date"
+                                                                   @input="dateModal_mmc_issue = false"></v-date-picker>
+                                                </v-menu>
                                             </v-row>
                                             <v-row>
-                                                <v-text-field
-                                                        v-model=documents.mmc_expr_date
-                                                        label="MMC Expiration"
-                                                ></v-text-field>
+                                                <v-menu
+                                                        v-model="dateModal_mmc_exp"
+                                                        :close-on-content-click="false"
+                                                        :nudge-right="40"
+                                                        transition="scale-transition"
+                                                        offset-y
+                                                        min-width="290px"
+                                                >
+                                                    <template v-slot:activator="{ on }">
+                                                        <v-text-field
+                                                                v-model="documents.mmc_expr_date"
+                                                                label="MMC Expiration"
+                                                                readonly
+                                                                :rules="[v => !!v || 'This is a required field']"
+                                                                required
+                                                                v-on="on"
+                                                        ></v-text-field>
+                                                    </template>
+                                                    <v-date-picker v-model="documents.mmc_expr_date"
+                                                                   @input="dateModal_mmc_exp = false"></v-date-picker>
+                                                </v-menu>
                                             </v-row>
                                         </v-col>
                                     </v-row>
@@ -69,22 +103,73 @@
                                         </v-col>
                                         <v-col>
                                             <v-row>
-                                                <v-text-field
-                                                        v-model=documents.med_ntl_expr_date
-                                                        label="Medical National Expiration"
-                                                ></v-text-field>
+                                                <v-menu
+                                                        v-model="dateModal_med_ntl_exp"
+                                                        :close-on-content-click="false"
+                                                        :nudge-right="40"
+                                                        transition="scale-transition"
+                                                        offset-y
+                                                        min-width="290px"
+                                                >
+                                                    <template v-slot:activator="{ on }">
+                                                        <v-text-field
+                                                                v-model="documents.med_ntl_expr_date"
+                                                                label="Medical National Expiration"
+                                                                readonly
+                                                                :rules="[v => !!v || 'This is a required field']"
+                                                                required
+                                                                v-on="on"
+                                                        ></v-text-field>
+                                                    </template>
+                                                    <v-date-picker v-model="documents.med_ntl_expr_date"
+                                                                   @input="dateModal_med_ntl_exp = false"></v-date-picker>
+                                                </v-menu>
                                             </v-row>
                                             <v-row>
-                                                <v-text-field
-                                                        v-model=documents.med_stcw_expr_date
-                                                        label="Medical STCW Expiration"
-                                                ></v-text-field>
+                                                <v-menu
+                                                        v-model="dateModal_med_stcw_exp"
+                                                        :close-on-content-click="false"
+                                                        :nudge-right="40"
+                                                        transition="scale-transition"
+                                                        offset-y
+                                                        min-width="290px"
+                                                >
+                                                    <template v-slot:activator="{ on }">
+                                                        <v-text-field
+                                                                v-model="documents.med_stcw_expr_date"
+                                                                label="Medical STCW Expiration"
+                                                                readonly
+                                                                :rules="[v => !!v || 'This is a required field']"
+                                                                required
+                                                                v-on="on"
+                                                        ></v-text-field>
+                                                    </template>
+                                                    <v-date-picker v-model="documents.med_stcw_expr_date"
+                                                                   @input="dateModal_med_stcw_exp = false"></v-date-picker>
+                                                </v-menu>
                                             </v-row>
                                             <v-row>
-                                                <v-text-field
-                                                        v-model=documents.med_pilot_expr_date
-                                                        label="Medical Pilot Expiration"
-                                                ></v-text-field>
+                                                <v-menu
+                                                        v-model="dateModal_med_pilot_exp"
+                                                        :close-on-content-click="false"
+                                                        :nudge-right="40"
+                                                        transition="scale-transition"
+                                                        offset-y
+                                                        min-width="290px"
+                                                >
+                                                    <template v-slot:activator="{ on }">
+                                                        <v-text-field
+                                                                v-model="documents.med_pilot_expr_date"
+                                                                label="Medical Pilot Expiration"
+                                                                readonly
+                                                                :rules="[v => !!v || 'This is a required field']"
+                                                                required
+                                                                v-on="on"
+                                                        ></v-text-field>
+                                                    </template>
+                                                    <v-date-picker v-model="documents.med_pilot_expr_date"
+                                                                   @input="dateModal_med_pilot_exp = false"></v-date-picker>
+                                                </v-menu>
                                             </v-row>
                                         </v-col>
                                     </v-row>
@@ -94,16 +179,50 @@
                                         </v-col>
                                         <v-col>
                                             <v-row>
-                                                <v-text-field
-                                                        v-model=documents.twic_expr_date
-                                                        label="TWIC Expiration"
-                                                ></v-text-field>
+                                                <v-menu
+                                                        v-model="dateModal_twic_exp"
+                                                        :close-on-content-click="false"
+                                                        :nudge-right="40"
+                                                        transition="scale-transition"
+                                                        offset-y
+                                                        min-width="290px"
+                                                >
+                                                    <template v-slot:activator="{ on }">
+                                                        <v-text-field
+                                                                v-model="documents.twic_expr_date"
+                                                                label="TWIC Expiration"
+                                                                readonly
+                                                                :rules="[v => !!v || 'This is a required field']"
+                                                                required
+                                                                v-on="on"
+                                                        ></v-text-field>
+                                                    </template>
+                                                    <v-date-picker v-model="documents.twic_expr_date"
+                                                                   @input="dateModal_twic_exp = false"></v-date-picker>
+                                                </v-menu>
                                             </v-row>
                                             <v-row>
-                                                <v-text-field
-                                                        v-model=documents.passport_expr_date
-                                                        label="Passport Expiration"
-                                                ></v-text-field>
+                                                <v-menu
+                                                        v-model="dateModal_passport_exp"
+                                                        :close-on-content-click="false"
+                                                        :nudge-right="40"
+                                                        transition="scale-transition"
+                                                        offset-y
+                                                        min-width="290px"
+                                                >
+                                                    <template v-slot:activator="{ on }">
+                                                        <v-text-field
+                                                                v-model="documents.passport_expr_date"
+                                                                label="Passport Expiration"
+                                                                readonly
+                                                                :rules="[v => !!v || 'This is a required field']"
+                                                                required
+                                                                v-on="on"
+                                                        ></v-text-field>
+                                                    </template>
+                                                    <v-date-picker v-model="documents.passport_expr_date"
+                                                                   @input="dateModal_passport_exp = false"></v-date-picker>
+                                                </v-menu>
                                             </v-row>
                                             <v-row>
                                                 <v-checkbox v-model="documents.drug_test_compliant"
@@ -117,22 +236,73 @@
                                         </v-col>
                                         <v-col>
                                             <v-row>
-                                                <v-text-field
-                                                        v-model=documents.basic_training_expr_date
-                                                        label="Basic Training Expiration"
-                                                ></v-text-field>
+                                                <v-menu
+                                                        v-model="dateModal_basic_trng_exp"
+                                                        :close-on-content-click="false"
+                                                        :nudge-right="40"
+                                                        transition="scale-transition"
+                                                        offset-y
+                                                        min-width="290px"
+                                                >
+                                                    <template v-slot:activator="{ on }">
+                                                        <v-text-field
+                                                                v-model="documents.basic_training_expr_date"
+                                                                label="Basic Training Expiration"
+                                                                readonly
+                                                                :rules="[v => !!v || 'This is a required field']"
+                                                                required
+                                                                v-on="on"
+                                                        ></v-text-field>
+                                                    </template>
+                                                    <v-date-picker v-model="documents.basic_training_expr_date"
+                                                                   @input="dateModal_basic_trng_exp = false"></v-date-picker>
+                                                </v-menu>
                                             </v-row>
                                             <v-row>
-                                                <v-text-field
-                                                        v-model=documents.advanced_fire_expr_date
-                                                        label="Advanced Firefighting Expiration"
-                                                ></v-text-field>
+                                                <v-menu
+                                                        v-model="dateModal_adv_fire_exp"
+                                                        :close-on-content-click="false"
+                                                        :nudge-right="40"
+                                                        transition="scale-transition"
+                                                        offset-y
+                                                        min-width="290px"
+                                                >
+                                                    <template v-slot:activator="{ on }">
+                                                        <v-text-field
+                                                                v-model="documents.advanced_fire_expr_date"
+                                                                label="Advanced Firefighting Expiration"
+                                                                readonly
+                                                                :rules="[v => !!v || 'This is a required field']"
+                                                                required
+                                                                v-on="on"
+                                                        ></v-text-field>
+                                                    </template>
+                                                    <v-date-picker v-model="documents.advanced_fire_expr_date"
+                                                                   @input="dateModal_adv_fire_exp = false"></v-date-picker>
+                                                </v-menu>
                                             </v-row>
                                             <v-row>
-                                                <v-text-field
-                                                        v-model=documents.first_aid_cpr_expr_date
-                                                        label="First Aid & CPR Expiration"
-                                                ></v-text-field>
+                                                <v-menu
+                                                        v-model="dateModal_first_aid"
+                                                        :close-on-content-click="false"
+                                                        :nudge-right="40"
+                                                        transition="scale-transition"
+                                                        offset-y
+                                                        min-width="290px"
+                                                >
+                                                    <template v-slot:activator="{ on }">
+                                                        <v-text-field
+                                                                v-model="documents.first_aid_cpr_expr_date"
+                                                                label="First Aid & CPR Expiration"
+                                                                readonly
+                                                                :rules="[v => !!v || 'This is a required field']"
+                                                                required
+                                                                v-on="on"
+                                                        ></v-text-field>
+                                                    </template>
+                                                    <v-date-picker v-model="documents.first_aid_cpr_expr_date"
+                                                                   @input="dateModal_first_aid = false"></v-date-picker>
+                                                </v-menu>
                                             </v-row>
                                         </v-col>
                                     </v-row>
@@ -164,7 +334,18 @@
                 drawer: 'true',
                 color: 'primary',
                 pageLoading: true,
-                dateModal: false,
+
+                dateModal_mmc_issue: false,
+                dateModal_mmc_exp: false,
+                dateModal_med_ntl_exp: false,
+                dateModal_med_stcw_exp: false,
+                dateModal_med_pilot_exp: false,
+                dateModal_twic_exp: false,
+                dateModal_passport_exp: false,
+                dateModal_basic_trng_exp: false,
+                dateModal_adv_fire_exp: false,
+                dateModal_first_aid: false,
+
                 displayErrorMessage: false,
                 errorMessage: '',
                 snackbar: false,
