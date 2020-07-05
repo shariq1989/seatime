@@ -80,23 +80,23 @@ class VesselSerializer(serializers.ModelSerializer):
 class WorkdayTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = WorkdayType
-        fields = ('type',)
+        fields = ('id', 'type',)
 
 
 class VoyageTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = VoyageType
-        fields = ('type',)
+        fields = ('id', 'type',)
 
 
 class StaffPositionSerializer(serializers.ModelSerializer):
     class Meta:
         model = StaffPosition
-        fields = ('title',)
+        fields = ('id', 'title',)
 
 
 class VoyageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Voyage
-        fields = ('user', 'vessel', 'depart_date', 'arrival_date', 'voyage_type', 'workday_type',
+        fields = ('id', 'user', 'vessel', 'depart_date', 'arrival_date', 'voyage_type', 'workday_type',
                   'position')
