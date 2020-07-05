@@ -50,8 +50,10 @@ class MarinerProfileNoIdSerializer(serializers.ModelSerializer):
         # this was needed to allow blank on middle name
         extra_kwargs = {'middle_name': {'required': False, 'allow_blank': True}}
 
+
 class MarinerDocumentSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField()
+
     class Meta:
         model = MarinerDocument
         fields = (
@@ -72,7 +74,7 @@ class MarinerDocumentNoIdSerializer(serializers.ModelSerializer):
 class VesselSerializer(serializers.ModelSerializer):
     class Meta:
         model = Vessel
-        fields = ('name', 'official_number')
+        fields = ('id', 'name', 'official_number')
 
 
 class WorkdayTypeSerializer(serializers.ModelSerializer):
