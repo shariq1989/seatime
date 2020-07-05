@@ -40,6 +40,9 @@
                                             ></v-text-field>
                                         </v-row>
                                         <v-row>
+                                            <div id="box">
+                                                <input type="date" v-model="seatime_entries.depart_date">
+                                            </div>
                                             <v-text-field
                                                     v-model="seatime_entries.depart_date"
                                                     label="Departure Date"
