@@ -67,6 +67,27 @@
                                                     v-model="seatime_entries.arrival_date"
                                                     label="Arrival Date"
                                             ></v-text-field>
+                                            <v-menu
+                                                    v-model="dateModal_arrival"
+                                                    :close-on-content-click="false"
+                                                    :nudge-right="40"
+                                                    transition="scale-transition"
+                                                    offset-y
+                                                    min-width="290px"
+                                            >
+                                                <template v-slot:activator="{ on }">
+                                                    <v-text-field
+                                                            v-model="seatime_entries.arrival_date"
+                                                            label="Arrival Date"
+                                                            readonly
+                                                            :rules="[v => !!v || 'This is a required field']"
+                                                            required
+                                                            v-on="on"
+                                                    ></v-text-field>
+                                                </template>
+                                                <v-date-picker v-model="seatime_entries.arrival_date"
+                                                               @input="dateModal_arrival = false"></v-date-picker>
+                                            </v-menu>
                                         </v-row>
                                         <v-row>
                                             <v-text-field
@@ -121,6 +142,7 @@
                 color: 'primary',
                 pageLoading: true,
                 dateModal_depart: false,
+                dateModal_arrival: false,
                 displayErrorMessage: false,
                 errorMessage: '',
                 snackbar: false,
