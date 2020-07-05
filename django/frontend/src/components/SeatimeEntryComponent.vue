@@ -96,7 +96,7 @@
                                             <v-autocomplete
                                                     v-model="seatime_entries.position"
                                                     :items="positions_list"
-                                                    item-text="name"
+                                                    item-text="title"
                                                     item-value="id"
                                                     label="Sailing Position"
                                                     :rules="[v => !!v || 'This is a required field']"
@@ -107,7 +107,7 @@
                                             <v-autocomplete
                                                     v-model="seatime_entries.voyage_type"
                                                     :items="voyage_type_list"
-                                                    item-text="name"
+                                                    item-text="type"
                                                     item-value="id"
                                                     label="Voyage Type"
                                                     :rules="[v => !!v || 'This is a required field']"
@@ -118,7 +118,7 @@
                                             <v-autocomplete
                                                     v-model="seatime_entries.workday_type"
                                                     :items="workday_type_list"
-                                                    item-text="name"
+                                                    item-text="type"
                                                     item-value="id"
                                                     label="Workday Type"
                                                     :rules="[v => !!v || 'This is a required field']"
