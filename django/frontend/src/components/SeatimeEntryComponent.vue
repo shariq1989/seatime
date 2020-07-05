@@ -149,7 +149,7 @@
         getSeatimeEntries,
         getStaffPositions,
         getVessels, getVoyageTypes, getWorkdayType,
-        updateSeatimeEntries
+        //updateSeatimeEntries
     } from "../_services/seatime_entry.service";
 
     export default {
