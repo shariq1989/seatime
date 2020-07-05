@@ -34,11 +34,8 @@
                                     </div>
                                     <v-col>
                                         <v-row>
-                                            <v-text-field
-                                                    v-model="seatime_entries.vessel"
-                                                    label="Vessel"
-                                            ></v-text-field>
                                             <v-autocomplete
+                                                    v-model="seatime_entries.vessel"
                                                     :items="vessel_list"
                                                     hide-no-data
                                                     item-text="name"
