@@ -42,7 +42,8 @@
                                                     item-value="id"
                                                     label="Vessel"
                                                     placeholder="Start typing to Search"
-                                                    return-object
+                                                    :rules="[v => !!v || 'This is a required field']"
+                                                    required
                                             ></v-autocomplete>
                                         </v-row>
                                         <v-row>
@@ -92,22 +93,37 @@
                                             </v-menu>
                                         </v-row>
                                         <v-row>
-                                            <v-text-field
+                                            <v-autocomplete
                                                     v-model="seatime_entries.position"
-                                                    label="Rank"
-                                            ></v-text-field>
+                                                    :items="positions_list"
+                                                    item-text="name"
+                                                    item-value="id"
+                                                    label="Sailing Position"
+                                                    :rules="[v => !!v || 'This is a required field']"
+                                                    required
+                                            ></v-autocomplete>
                                         </v-row>
                                         <v-row>
-                                            <v-text-field
+                                            <v-autocomplete
                                                     v-model="seatime_entries.voyage_type"
+                                                    :items="voyage_type_list"
+                                                    item-text="name"
+                                                    item-value="id"
                                                     label="Voyage Type"
-                                            ></v-text-field>
+                                                    :rules="[v => !!v || 'This is a required field']"
+                                                    required
+                                            ></v-autocomplete>
                                         </v-row>
                                         <v-row>
-                                            <v-text-field
+                                            <v-autocomplete
                                                     v-model="seatime_entries.workday_type"
+                                                    :items="workday_type_list"
+                                                    item-text="name"
+                                                    item-value="id"
                                                     label="Workday Type"
-                                            ></v-text-field>
+                                                    :rules="[v => !!v || 'This is a required field']"
+                                                    required
+                                            ></v-autocomplete>
                                         </v-row>
                                     </v-col>
                                 </v-card-text>
@@ -150,6 +166,9 @@
                 snackbar: false,
                 snackbarText: null,
                 vessel_list: null,
+                positions_list: null,
+                voyage_type_list: null,
+                workday_type_list: null,
                 seatime_entries: {
                     vessel: null,
                     depart_date: null,
@@ -175,12 +194,15 @@
                 })
                 getStaffPositions().then((resp) => {
                     console.log(resp);
+                    this.positions_list = resp.data;
                 })
                 getVoyageTypes().then((resp) => {
                     console.log(resp);
+                    this.voyage_type_list = resp.data;
                 })
                 getWorkdayType().then((resp) => {
                     console.log(resp);
+                    this.workday_type_list = resp.data;
                 })
                 getSeatimeEntries().then((resp) => {
                     if (resp.data[0]) {
@@ -208,14 +230,22 @@
                 this.displayErrorMessage = false;
                 let seatimeFields = {
                     user: localStorage.getItem('id'),
+                    vessel: this.seatime_entries.vessel,
+                    depart_date: this.seatime_entries.depart_date,
+                    arrival_date: this.seatime_entries.arrival_date,
+                    voyage_type: this.seatime_entries.voyage_type,
+                    workday_type: this.seatime_entries.workday_type,
+                    position: this.seatime_entries.position,
                 };
-                updateSeatimeEntries([this.APIMethod, seatimeFields, this.seatime_entries.id]).then(
-                    () => {
+                console.log(seatimeFields);
+                /**
+                 updateSeatimeEntries([this.APIMethod, seatimeFields, this.seatime_entries.id]).then(
+                 () => {
                         this.snackbarText = 'Seatime updated successfully';
                         this.snackbar = true;
                         this.loadPage();
                     }
-                ).catch(err => {
+                 ).catch(err => {
                         console.log(err.response.data);
                         this.displayErrorMessage = true;
                         this.errorMessage = 'Error updating documents';
@@ -228,8 +258,9 @@
                             }
                         }
                     }
-                )
+                 )**/
             }
+
         },
         mounted() {
             this.loadPage();
