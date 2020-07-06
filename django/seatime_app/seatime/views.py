@@ -137,7 +137,7 @@ class VoyageViewSet(viewsets.ModelViewSet):
         serializer.save(user=self.request.user)
 
     def get_queryset(self):
-        return Voyages.objects.filter(user=self.request.user)
+        return Voyage.objects.filter(user=self.request.user)
 
 
 class CreateUserView(CreateAPIView):
