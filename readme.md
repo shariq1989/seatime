@@ -155,3 +155,5 @@
     python3 manage.py dumpdata seatime
 #### Load fixture
     python3 manage.py loaddata initial_data.json
+#### Log into heroku managed DB
+    heroku pg:psql postgresql-contoured-81635 --app seatime-django
