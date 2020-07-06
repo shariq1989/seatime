@@ -148,7 +148,7 @@
     import {
         getSeatimeEntries,
         getStaffPositions,
-        getVessels, getVoyageTypes, getWorkdayType,
+        getVessels, getVoyageTypes, getWorkdayType, updateSeatimeEntries,
         //updateSeatimeEntries
     } from "../_services/seatime_entry.service";
 
@@ -205,9 +205,6 @@
                     this.workday_type_list = resp.data;
                 })
                 getSeatimeEntries().then((resp) => {
-                    if (resp.data[0]) {
-                        this.APIMethod = 'PUT';
-                    }
                     this.pageLoading = false;
                     this.seatime_entries.id = resp.data[0]['id'];
                 }).catch(() => {
@@ -238,14 +235,13 @@
                     position: this.seatime_entries.position,
                 };
                 console.log(seatimeFields);
-                /**
-                 updateSeatimeEntries([this.APIMethod, seatimeFields, this.seatime_entries.id]).then(
-                 () => {
+                updateSeatimeEntries([this.APIMethod, seatimeFields, this.seatime_entries.id]).then(
+                    () => {
                         this.snackbarText = 'Seatime updated successfully';
                         this.snackbar = true;
                         this.loadPage();
                     }
-                 ).catch(err => {
+                ).catch(err => {
                         console.log(err.response.data);
                         this.displayErrorMessage = true;
                         this.errorMessage = 'Error updating documents';
@@ -258,7 +254,7 @@
                             }
                         }
                     }
-                 )**/
+                )
             }
 
         },
