@@ -11,7 +11,6 @@ function getRequest(endpoint) {
 
 export let getSeatimeEntries = () => new Promise((resolve, reject) => {
     getRequest('/voyages/').then(response => {
-        console.log(resp);
         resolve(response)
     }).catch(err => {
         console.log(err);
