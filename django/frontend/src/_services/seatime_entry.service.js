@@ -11,8 +11,10 @@ function getRequest(endpoint) {
 
 export let getSeatimeEntries = () => new Promise((resolve, reject) => {
     getRequest('/voyages/').then(response => {
+        console.log(resp);
         resolve(response)
     }).catch(err => {
+        console.log(err);
         reject(err)
     });
 });
@@ -21,6 +23,7 @@ export let getVessels = () => new Promise((resolve, reject) => {
     getRequest('/vessels/').then(response => {
         resolve(response)
     }).catch(err => {
+        console.log(err);
         reject(err)
     });
 });
@@ -29,6 +32,7 @@ export let getStaffPositions = () => new Promise((resolve, reject) => {
     getRequest('/staff-positions/').then(response => {
         resolve(response)
     }).catch(err => {
+        console.log(err);
         reject(err)
     });
 });
@@ -37,6 +41,7 @@ export let getVoyageTypes = () => new Promise((resolve, reject) => {
     getRequest('/voyage-types/').then(response => {
         resolve(response)
     }).catch(err => {
+        console.log(err);
         reject(err)
     });
 });
@@ -45,6 +50,7 @@ export let getWorkdayType = () => new Promise((resolve, reject) => {
     getRequest('/workday-types/').then(response => {
         resolve(response)
     }).catch(err => {
+        console.log(err);
         reject(err)
     });
 });
@@ -54,6 +60,7 @@ export let updateSeatimeEntries = input => new Promise((resolve, reject) => {
     callAPI(input[0], input[1], input[2], apiEndpoint).then(response => {
         resolve(response)
     }).catch(err => {
+        console.log(err);
         reject(err)
     });
 });

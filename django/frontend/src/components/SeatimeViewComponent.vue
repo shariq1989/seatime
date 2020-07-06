@@ -7,9 +7,6 @@
                                    @input="updateModalStatus"/>
             <v-container fluid class="#bbdefb lighten-4 fill-height">
                 <v-row class="mb-6">
-
-                </v-row>
-                <v-row class="mb-6">
                     <v-col cols="12" sm="2"></v-col>
                     <v-col cols="12" sm="8">
                         <v-card class="pa-2">
@@ -192,19 +189,22 @@
         methods: {
             loadPage: function () {
                 getVessels().then((resp) => {
+                    console.log(resp);
                     this.vessel_list = resp.data;
                 })
                 getStaffPositions().then((resp) => {
+                    console.log(resp);
                     this.positions_list = resp.data;
                 })
                 getVoyageTypes().then((resp) => {
+                    console.log(resp);
                     this.voyage_type_list = resp.data;
                 })
                 getWorkdayType().then((resp) => {
+                    console.log(resp);
                     this.workday_type_list = resp.data;
                 })
                 getSeatimeEntries().then((resp) => {
-                    console.log(resp);
                     this.pageLoading = false;
                     this.seatime_entries.id = resp.data[0]['id'];
                 }).catch(() => {
