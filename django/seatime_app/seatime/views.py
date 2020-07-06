@@ -130,6 +130,15 @@ class VoyageViewSet(viewsets.ModelViewSet):
     queryset = Voyage.objects.all()
     serializer_class = VoyageSerializer
 
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+    def perform_update(self, serializer):
+        serializer.save(user=self.request.user)
+
+    def get_queryset(self):
+        return Voyages.objects.filter(user=self.request.user)
+
 
 class CreateUserView(CreateAPIView):
     model = User
