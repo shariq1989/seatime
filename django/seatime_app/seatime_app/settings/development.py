@@ -19,7 +19,7 @@ DATABASES = {
         'NAME': 'd2kest6kdunkuj',
         'USER': 'sbyptxvmletdyt',
         'PASSWORD': '69d9cfd041db710853eda525a99bda6fc82b9f7f8a7508596f39dc7aafee34d1',
-        'HOST': '    ec2-52-204-20-42.compute-1.amazonaws.com',
+        'HOST': 'ec2-52-204-20-42.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
