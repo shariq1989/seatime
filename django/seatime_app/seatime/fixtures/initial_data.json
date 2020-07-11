@@ -156,18 +156,148 @@
     }
   },
   {
+    "model": "seatime.staffposition",
+    "pk": 14,
+    "fields": {
+      "title": "DDE"
+    }
+  },
+  {
     "model": "seatime.rating",
     "pk": 1,
     "fields": {
+      "title": "Unlimited"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 2,
+    "fields": {
+      "title": "Limited"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 3,
+    "fields": {
+      "title": "OSV"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 4,
+    "fields": {
       "title": "MODU"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 5,
+    "fields": {
+      "title": "UFIV"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 6,
+    "fields": {
+      "title": "OSV Limited"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 7,
+    "fields": {
+      "title": "OSV 4000"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 8,
+    "fields": {
+      "title": "OSV 1000"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 9,
+    "fields": {
+      "title": "UFIV Unlimited"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 10,
+    "fields": {
+      "title": "UFIV Limited"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 11,
+    "fields": {
+      "title": "4000 hp"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 12,
+    "fields": {
+      "title": "1000 hp"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 13,
+    "fields": {
+      "title": "Any Rating"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 14,
+    "fields": {
+      "title": "Electrician/Refrigeration Engineer"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 15,
+    "fields": {
+      "title": "Oiler"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 16,
+    "fields": {
+      "title": "Fireman/Watertender"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 17,
+    "fields": {
+      "title": "Junior Engineer"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 18,
+    "fields": {
+      "title": "Pumpman/Machinist"
     }
   },
   {
     "model": "seatime.staffratingcombinations",
     "pk": 1,
     "fields": {
-      "staff_position": [1],
-      "position_rating": [1]
+      "staff_position": [
+        1
+      ],
+      "position_rating": [
+        1
+      ]
     }
   }
 ]
