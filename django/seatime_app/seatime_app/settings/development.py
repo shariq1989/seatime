@@ -33,5 +33,5 @@ DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '192.168.0.105']
 
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:8080', 'http://192.168.0.109:8080'
+    'http://localhost:8080', 'http://192.168.0.105:8080'
 )
