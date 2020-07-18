@@ -8,6 +8,7 @@ heroku pg:psql postgresql-contoured-81635 --app seatime-django --command "DELETE
 heroku pg:psql postgresql-contoured-81635 --app seatime-django --command "DELETE FROM seatime_staffposition;"
 heroku pg:psql postgresql-contoured-81635 --app seatime-django --command "DELETE FROM seatime_rating;"
 
-python3 ~/Documents/Development/SeaTime/django/seatime_app/manage.py loaddata seatime_app/seatime/fixtures/initial_data.json
-python3 ~/Documents/Development/SeaTime/django/seatime_app/manage.py loaddata seatime_app/seatime/fixtures/deck_ratings_data.json
-python3 ~/Documents/Development/SeaTime/django/seatime_app/manage.py loaddata seatime_app/seatime/fixtures/engine_ratings_data.json
+cd ~/Documents/Development/SeaTime/django/seatime_app
+python3 manage.py loaddata seatime/fixtures/initial_data.json
+python3 manage.py loaddata seatime/fixtures/deck_ratings_data.json
+python3 manage.py loaddata seatime/fixtures/engine_ratings_data.json
