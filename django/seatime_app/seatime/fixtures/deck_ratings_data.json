@@ -1,0 +1,322 @@
+[
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 7,
+      "position_rating": 1
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 7,
+      "position_rating": 19
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 7,
+      "position_rating": 20
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 7,
+      "position_rating": 21
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 7,
+      "position_rating": 22
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 7,
+      "position_rating": 23
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 7,
+      "position_rating": 24
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 7,
+      "position_rating": 25
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 7,
+      "position_rating": 26
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 7,
+      "position_rating": 27
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 8,
+      "position_rating": 1
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 8,
+      "position_rating": 19
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 8,
+      "position_rating": 20
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 8,
+      "position_rating": 21
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 8,
+      "position_rating": 22
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 8,
+      "position_rating": 23
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 8,
+      "position_rating": 24
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 8,
+      "position_rating": 25
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 8,
+      "position_rating": 26
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 8,
+      "position_rating": 27
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 9,
+      "position_rating": 1
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 9,
+      "position_rating": 19
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 9,
+      "position_rating": 20
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 9,
+      "position_rating": 21
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 9,
+      "position_rating": 22
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 9,
+      "position_rating": 23
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 9,
+      "position_rating": 24
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 9,
+      "position_rating": 25
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 9,
+      "position_rating": 26
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 9,
+      "position_rating": 27
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 10,
+      "position_rating": 1
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 10,
+      "position_rating": 19
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 10,
+      "position_rating": 20
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 10,
+      "position_rating": 21
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 10,
+      "position_rating": 22
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 10,
+      "position_rating": 23
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 10,
+      "position_rating": 24
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 10,
+      "position_rating": 25
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 10,
+      "position_rating": 26
+    }
+  },
+  {
+    "model": "seatime.staffratingcombinations",
+    "pk": null,
+    "fields": {
+      "staff_position": 10,
+      "position_rating": 27
+    }
+  }
+]
