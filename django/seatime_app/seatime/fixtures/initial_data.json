@@ -159,7 +159,14 @@
     "model": "seatime.staffposition",
     "pk": 14,
     "fields": {
-      "title": "DDE"
+      "title": "Designated Duty Engineer"
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 15,
+    "fields": {
+      "title": "Wiper"
     }
   },
   {
@@ -201,7 +208,7 @@
     "model": "seatime.rating",
     "pk": 6,
     "fields": {
-      "title": "OSV Limited"
+      "title": "OSV Unlimited"
     }
   },
   {
@@ -286,6 +293,69 @@
     "pk": 18,
     "fields": {
       "title": "Pumpman/Machinist"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 19,
+    "fields": {
+      "title": "Oceans 1600 GRT"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 20,
+    "fields": {
+      "title": "Oceans 500 GRT"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 21,
+    "fields": {
+      "title": "Near Coastal 1600 GRT"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 22,
+    "fields": {
+      "title": "Near Coastal 500 GRT"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 23,
+    "fields": {
+      "title": "Near Coastal 200 GRT"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 24,
+    "fields": {
+      "title": "Great Lakes & Inland Waters Unlimited"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 25,
+    "fields": {
+      "title": "Great Lakes & Inland Waters 1600 GRT"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 26,
+    "fields": {
+      "title": "Great Lakes & Inland Waters 500 GRT"
+    }
+  },
+  {
+    "model": "seatime.rating",
+    "pk": 27,
+    "fields": {
+      "title": "Great Lakes & Inland Waters 200 GRT"
     }
   }
 ]
