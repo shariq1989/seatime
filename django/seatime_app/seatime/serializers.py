@@ -95,13 +95,19 @@ class StaffPositionSerializer(serializers.ModelSerializer):
         fields = ('id', 'title',)
 
 
+class StaffRatingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Rating
+        fields = ('id', 'title',)
+
+
 class StaffRatingCombinationsSerializer(serializers.ModelSerializer):
-    staff_position = serializers.PrimaryKeyRelatedField(read_only=True)
-    position_rating = serializers.PrimaryKeyRelatedField(read_only=True)
+    positions = StaffPositionSerializer(read_only=True)
+    ratings = StaffRatingSerializer(read_only=True)
 
     class Meta:
         model = StaffRatingCombinations
-        fields = ['staff_position', 'position_rating']
+        fields = ['positions', 'ratings']
 
 
 class VoyageSerializer(serializers.ModelSerializer):

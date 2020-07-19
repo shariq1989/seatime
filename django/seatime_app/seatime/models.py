@@ -70,8 +70,8 @@ class Rating(models.Model):
 
 
 class StaffRatingCombinations(models.Model):
-    staff_position = models.ForeignKey(StaffPosition, on_delete=models.CASCADE)
-    position_rating = models.ForeignKey(Rating, on_delete=models.CASCADE)
+    staff_position = models.ForeignKey(StaffPosition, related_name='positions', on_delete=models.CASCADE)
+    position_rating = models.ForeignKey(Rating, related_name='ratings', on_delete=models.CASCADE)
 
 
 # Info for each voyage
