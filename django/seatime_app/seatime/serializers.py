@@ -95,12 +95,6 @@ class StaffPositionSerializer(serializers.ModelSerializer):
         fields = ('id', 'title',)
 
 
-class RatingSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Rating
-        fields('id', 'title', )
-
-
 class StaffRatingCombinationsSerializer(serializers.ModelSerializer):
     position_rating = serializers.StringRelatedField(many=True)
 
