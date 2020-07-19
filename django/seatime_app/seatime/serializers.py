@@ -106,7 +106,7 @@ class StaffRatingCombinationsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = StaffRatingCombinations
-        fields('staff_position', 'position_rating')
+        fields = ['staff_position', 'position_rating']
 
 
 class VoyageSerializer(serializers.ModelSerializer):
