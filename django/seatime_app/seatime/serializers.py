@@ -103,7 +103,7 @@ class StaffRatingSerializer(serializers.ModelSerializer):
 
 class StaffRatingCombinationsSerializer(serializers.ModelSerializer):
     positions = StaffPositionSerializer(read_only=True)
-    ratings = StaffRatingSerializer(read_only=True)
+    ratings = StaffRatingSerializer(many=True, read_only=True)
 
     class Meta:
         model = StaffRatingCombinations
