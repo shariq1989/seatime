@@ -96,7 +96,7 @@ class StaffPositionSerializer(serializers.ModelSerializer):
 
 
 class StaffRatingCombinationsSerializer(serializers.ModelSerializer):
-    staff_position = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+    staff_position = serializers.PrimaryKeyRelatedField(read_only=True)
     position_rating = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
 
     class Meta:
