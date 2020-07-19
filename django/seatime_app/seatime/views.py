@@ -8,7 +8,7 @@ from rest_framework.response import Response
 from .models import MarinerProfile, MarinerDocument, Vessel, WorkdayType, VoyageType, StaffPosition, Voyage
 from .serializers import MarinerProfileSerializer, UserSerializer, MarinerDocumentSerializer, VesselSerializer, \
     WorkdayTypeSerializer, VoyageTypeSerializer, StaffPositionSerializer, VoyageSerializer, \
-    MarinerProfileNoIdSerializer, MarinerDocumentNoIdSerializer
+    MarinerProfileNoIdSerializer, MarinerDocumentNoIdSerializer, StaffRatingCombinationsSerializer
 
 
 class CustomObtainAuthToken(ObtainAuthToken):
@@ -120,6 +120,15 @@ class StaffPositionViewSet(viewsets.ModelViewSet):
     """
     queryset = StaffPosition.objects.all()
     serializer_class = StaffPositionSerializer
+
+
+class StaffRatingViewSet(viewsets.ModelViewSet):
+    """
+    This viewset automatically provides `list`, `create`, `retrieve`,
+    `update` and `destroy` actions.
+    """
+    queryset = StaffPosition.objects.all()
+    serializer_class = StaffRatingCombinationsSerializer
 
 
 class VoyageViewSet(viewsets.ModelViewSet):

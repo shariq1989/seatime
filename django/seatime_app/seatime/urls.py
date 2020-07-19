@@ -12,6 +12,7 @@ router.register(r'vessels', views.VesselViewSet, basename='Vessels')
 router.register(r'workday-types', views.WorkdayTypeViewSet, basename='WorkdayTypes')
 router.register(r'voyage-types', views.VoyageTypeViewSet, basename='VoyageTypes')
 router.register(r'staff-positions', views.StaffPositionViewSet, basename='StaffPositions')
+router.register(r'staff-ratings', views.StaffRatingViewSet, basename='StaffRatingViewSet')
 router.register(r'voyages', views.VoyageViewSet, basename='Voyages')
 
 urlpatterns = [
