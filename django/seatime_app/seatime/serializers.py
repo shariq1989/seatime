@@ -3,7 +3,7 @@ from rest_framework import serializers
 from rest_framework.authtoken.models import Token
 
 from .models import MarinerDocument, MarinerProfile, Vessel, WorkdayType, VoyageType, \
-    StaffPosition, Voyage, Rating, StaffRatingCombinations
+    StaffPosition, Voyage, Rating, StaffRatingCombinations, Album
 
 
 class TokenSerializer(serializers.ModelSerializer):
@@ -89,6 +89,13 @@ class VoyageTypeSerializer(serializers.ModelSerializer):
         fields = ('id', 'type',)
 
 
+class VoyageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Voyage
+        fields = ('id', 'user', 'vessel', 'depart_date', 'arrival_date', 'voyage_type', 'workday_type',
+                  'position')
+
+
 class StaffPositionSerializer(serializers.ModelSerializer):
     class Meta:
         model = StaffPosition
@@ -110,8 +117,9 @@ class StaffRatingCombinationsSerializer(serializers.ModelSerializer):
         fields = ['positions', 'ratings']
 
 
-class VoyageSerializer(serializers.ModelSerializer):
+class AlbumSerializer(serializers.ModelSerializer):
+    tracks = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+
     class Meta:
-        model = Voyage
-        fields = ('id', 'user', 'vessel', 'depart_date', 'arrival_date', 'voyage_type', 'workday_type',
-                  'position')
+        model = Album
+        fields = ['album_name', 'artist', 'tracks']

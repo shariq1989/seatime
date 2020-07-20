@@ -14,6 +14,7 @@ router.register(r'voyage-types', views.VoyageTypeViewSet, basename='VoyageTypes'
 router.register(r'staff-positions', views.StaffPositionViewSet, basename='StaffPositions')
 router.register(r'staff-ratings', views.StaffRatingViewSet, basename='StaffRatingViewSet')
 router.register(r'voyages', views.VoyageViewSet, basename='Voyages')
+router.register(r'albums', views.AlbumViewSet, basename='Album')
 
 urlpatterns = [
     path('', include(router.urls)),

@@ -6,10 +6,10 @@ from rest_framework.generics import CreateAPIView
 from rest_framework.response import Response
 
 from .models import MarinerProfile, MarinerDocument, Vessel, WorkdayType, VoyageType, StaffPosition, Voyage, \
-    StaffRatingCombinations
+    StaffRatingCombinations, Album
 from .serializers import MarinerProfileSerializer, UserSerializer, MarinerDocumentSerializer, VesselSerializer, \
     WorkdayTypeSerializer, VoyageTypeSerializer, StaffPositionSerializer, VoyageSerializer, \
-    MarinerProfileNoIdSerializer, MarinerDocumentNoIdSerializer, StaffRatingCombinationsSerializer
+    MarinerProfileNoIdSerializer, MarinerDocumentNoIdSerializer, StaffRatingCombinationsSerializer, AlbumSerializer
 
 
 class CustomObtainAuthToken(ObtainAuthToken):
@@ -130,6 +130,15 @@ class StaffRatingViewSet(viewsets.ModelViewSet):
     """
     queryset = StaffRatingCombinations.objects.all()
     serializer_class = StaffRatingCombinationsSerializer
+
+
+class AlbumViewSet(viewsets.ModelViewSet):
+    """
+    This viewset automatically provides `list`, `create`, `retrieve`,
+    `update` and `destroy` actions.
+    """
+    queryset = Album.objects.all()
+    serializer_class = AlbumSerializer
 
 
 class VoyageViewSet(viewsets.ModelViewSet):
