@@ -113,7 +113,7 @@ class VoyageTypeViewSet(viewsets.ModelViewSet):
     serializer_class = VoyageTypeSerializer
 
 
-class StaffPositionViewSet(viewsets.ModelViewSet):
+class StaffPositionViewSet(viewsets.ReadOnlyModelViewSet):
     """
     This viewset automatically provides `list`, `create`, `retrieve`,
     `update` and `destroy` actions.
