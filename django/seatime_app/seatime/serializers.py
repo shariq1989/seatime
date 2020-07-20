@@ -102,21 +102,6 @@ class StaffPositionSerializer(serializers.ModelSerializer):
         fields = ('id', 'title',)
 
 
-class StaffRatingSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Rating
-        fields = ('id', 'title',)
-
-
-class StaffRatingCombinationsSerializer(serializers.ModelSerializer):
-    positions = StaffPositionSerializer(read_only=True)
-    ratings = StaffRatingSerializer(many=True, read_only=True)
-
-    class Meta:
-        model = StaffRatingCombinations
-        fields = ['positions', 'ratings']
-
-
 class AlbumSerializer(serializers.ModelSerializer):
     tracks = serializers.StringRelatedField(many=True)
 

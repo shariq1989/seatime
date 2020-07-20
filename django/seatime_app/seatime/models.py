@@ -56,14 +56,6 @@ class VoyageType(models.Model):
         return f"{self.type}"
 
 
-# Title: Captain
-class StaffPosition(models.Model):
-    title = models.CharField(max_length=64)
-
-    def __str__(self):
-        return f"{self.title}"
-
-
 # Title: MODU, OSV, etc
 class Rating(models.Model):
     title = models.CharField(max_length=64)
@@ -72,12 +64,13 @@ class Rating(models.Model):
         return f"{self.title}"
 
 
-class StaffRatingCombinations(models.Model):
-    staff_position = models.ForeignKey(StaffPosition, related_name='positions', on_delete=models.CASCADE)
-    position_rating = models.ForeignKey(Rating, related_name='ratings', on_delete=models.CASCADE)
+# Title: Captain
+class StaffPosition(models.Model):
+    title = models.CharField(max_length=64)
+    ratings = models.ManyToManyField(Rating)
 
     def __str__(self):
-        return f"{self.staff_position} - {self.position_rating}"
+        return f"{self.title}"
 
 
 # Info for each voyage

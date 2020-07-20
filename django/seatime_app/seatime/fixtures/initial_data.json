@@ -65,111 +65,6 @@
     }
   },
   {
-    "model": "seatime.staffposition",
-    "pk": 1,
-    "fields": {
-      "title": "Chief Engineer"
-    }
-  },
-  {
-    "model": "seatime.staffposition",
-    "pk": 2,
-    "fields": {
-      "title": "First Engineer"
-    }
-  },
-  {
-    "model": "seatime.staffposition",
-    "pk": 3,
-    "fields": {
-      "title": "Second Engineer"
-    }
-  },
-  {
-    "model": "seatime.staffposition",
-    "pk": 4,
-    "fields": {
-      "title": "Third Engineer"
-    }
-  },
-  {
-    "model": "seatime.staffposition",
-    "pk": 5,
-    "fields": {
-      "title": "QMED"
-    }
-  },
-  {
-    "model": "seatime.staffposition",
-    "pk": 6,
-    "fields": {
-      "title": "Student or Apprentice"
-    }
-  },
-  {
-    "model": "seatime.staffposition",
-    "pk": 7,
-    "fields": {
-      "title": "Master"
-    }
-  },
-  {
-    "model": "seatime.staffposition",
-    "pk": 8,
-    "fields": {
-      "title": "Chief Mate"
-    }
-  },
-  {
-    "model": "seatime.staffposition",
-    "pk": 9,
-    "fields": {
-      "title": "Second Mate"
-    }
-  },
-  {
-    "model": "seatime.staffposition",
-    "pk": 10,
-    "fields": {
-      "title": "Third Mate"
-    }
-  },
-  {
-    "model": "seatime.staffposition",
-    "pk": 11,
-    "fields": {
-      "title": "Able Seaman"
-    }
-  },
-  {
-    "model": "seatime.staffposition",
-    "pk": 12,
-    "fields": {
-      "title": "Ordinary Seaman"
-    }
-  },
-  {
-    "model": "seatime.staffposition",
-    "pk": 13,
-    "fields": {
-      "title": "Tankerman"
-    }
-  },
-  {
-    "model": "seatime.staffposition",
-    "pk": 14,
-    "fields": {
-      "title": "Designated Duty Engineer"
-    }
-  },
-  {
-    "model": "seatime.staffposition",
-    "pk": 15,
-    "fields": {
-      "title": "Wiper"
-    }
-  },
-  {
     "model": "seatime.rating",
     "pk": 1,
     "fields": {
@@ -356,6 +251,226 @@
     "pk": 27,
     "fields": {
       "title": "Great Lakes & Inland Waters 200 GRT"
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 1,
+    "fields": {
+      "title": "Chief Engineer",
+      "ratings": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 2,
+    "fields": {
+      "title": "First Engineer",
+      "ratings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 3,
+    "fields": {
+      "title": "Second Engineer",
+      "ratings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 4,
+    "fields": {
+      "title": "Third Engineer",
+      "ratings": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 5,
+    "fields": {
+      "title": "QMED",
+      "ratings": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 6,
+    "fields": {
+      "title": "Student or Apprentice",
+      "ratings": []
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 7,
+    "fields": {
+      "title": "Master",
+      "ratings": [
+        1,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ]
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 8,
+    "fields": {
+      "title": "Chief Mate",
+      "ratings": [
+        1,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ]
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 9,
+    "fields": {
+      "title": "Second Mate",
+      "ratings": [
+        1,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ]
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 10,
+    "fields": {
+      "title": "Third Mate",
+      "ratings": [
+        1,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ]
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 11,
+    "fields": {
+      "title": "Able Seaman",
+      "ratings": []
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 12,
+    "fields": {
+      "title": "Ordinary Seaman",
+      "ratings": []
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 13,
+    "fields": {
+      "title": "Tankerman",
+      "ratings": []
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 14,
+    "fields": {
+      "title": "Designated Duty Engineer",
+      "ratings": [
+        1,
+        7,
+        8
+      ]
+    }
+  },
+  {
+    "model": "seatime.staffposition",
+    "pk": 15,
+    "fields": {
+      "title": "Wiper",
+      "ratings": []
     }
   }
 ]

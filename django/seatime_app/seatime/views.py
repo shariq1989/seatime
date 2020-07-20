@@ -123,15 +123,6 @@ class StaffPositionViewSet(viewsets.ModelViewSet):
     serializer_class = StaffPositionSerializer
 
 
-class StaffRatingViewSet(viewsets.ModelViewSet):
-    """
-    This viewset automatically provides `list`, `create`, `retrieve`,
-    `update` and `destroy` actions.
-    """
-    queryset = StaffRatingCombinations.objects.all()
-    serializer_class = StaffRatingCombinationsSerializer
-
-
 class AlbumViewSet(viewsets.ModelViewSet):
     """
     This viewset automatically provides `list`, `create`, `retrieve`,
