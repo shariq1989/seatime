@@ -118,7 +118,7 @@ class StaffRatingCombinationsSerializer(serializers.ModelSerializer):
 
 
 class AlbumSerializer(serializers.ModelSerializer):
-    tracks = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+    tracks = serializers.StringRelatedField(many=True)
 
     class Meta:
         model = Album
