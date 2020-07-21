@@ -8,7 +8,7 @@ from rest_framework.response import Response
 from .models import MarinerProfile, MarinerDocument, Vessel, WorkdayType, VoyageType, Voyage, Post, Rank
 from .serializers import MarinerProfileSerializer, UserSerializer, MarinerDocumentSerializer, VesselSerializer, \
     WorkdayTypeSerializer, VoyageTypeSerializer, VoyageSerializer, \
-    MarinerProfileNoIdSerializer, MarinerDocumentNoIdSerializer, RankSerializer
+    MarinerProfileNoIdSerializer, MarinerDocumentNoIdSerializer, RankSerializer, RanksOnlySerializer
 
 
 class CustomObtainAuthToken(ObtainAuthToken):
@@ -142,3 +142,8 @@ class CreateUserView(CreateAPIView):
 class RankViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Rank.objects.all()
     serializer_class = RankSerializer
+
+
+class RankOnlyViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Rank.objects.all()
+    serializer_class = RanksOnlySerializer
