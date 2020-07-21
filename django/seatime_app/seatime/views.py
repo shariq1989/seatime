@@ -8,7 +8,7 @@ from rest_framework.response import Response
 from .models import MarinerProfile, MarinerDocument, Vessel, WorkdayType, VoyageType, StaffPosition, Voyage, Post
 from .serializers import MarinerProfileSerializer, UserSerializer, MarinerDocumentSerializer, VesselSerializer, \
     WorkdayTypeSerializer, VoyageTypeSerializer, StaffPositionSerializer, VoyageSerializer, \
-    MarinerProfileNoIdSerializer, MarinerDocumentNoIdSerializer
+    MarinerProfileNoIdSerializer, MarinerDocumentNoIdSerializer, PostSerializer
 
 
 class CustomObtainAuthToken(ObtainAuthToken):
