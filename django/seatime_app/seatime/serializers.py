@@ -99,7 +99,7 @@ class VoyageSerializer(serializers.ModelSerializer):
 class DesignationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Designation
-        fields = ('name',)
+        fields = (id, 'name')
 
 
 class RankSerializer(serializers.ModelSerializer):
@@ -107,4 +107,4 @@ class RankSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Rank
-        fields = ('designation', 'name')
+        fields = ('designation', 'id', 'name')
