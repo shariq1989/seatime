@@ -28,7 +28,7 @@ export let getVessels = () => new Promise((resolve, reject) => {
 });
 
 export let getStaffPositions = () => new Promise((resolve, reject) => {
-    getRequest('/staff-positions/').then(response => {
+    getRequest('/ranks/').then(response => {
         resolve(response)
     }).catch(err => {
         console.log(err);
