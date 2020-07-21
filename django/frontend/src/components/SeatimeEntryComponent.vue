@@ -169,7 +169,7 @@
                 snackbar: false,
                 snackbarText: null,
                 vessel_list: null,
-                positions_list: null,
+                positions_list: [],
                 voyage_type_list: null,
                 workday_type_list: null,
                 seatime_entries: {
@@ -195,6 +195,7 @@
                     this.vessel_list = resp.data;
                 })
                 getStaffPositions().then((resp) => {
+                    console.log(resp);
                     this.positions_list = resp.data;
                 })
                 getVoyageTypes().then((resp) => {
