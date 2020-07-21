@@ -11,9 +11,8 @@ router.register(r'mariner-documents', views.MarinerDocumentViewSet, basename='Ma
 router.register(r'vessels', views.VesselViewSet, basename='Vessels')
 router.register(r'workday-types', views.WorkdayTypeViewSet, basename='WorkdayTypes')
 router.register(r'voyage-types', views.VoyageTypeViewSet, basename='VoyageTypes')
-router.register(r'staff-positions', views.StaffPositionViewSet, basename='StaffPositions')
+router.register(r'ranks', views.RankViewSet, basename='Rank')
 router.register(r'voyages', views.VoyageViewSet, basename='Voyages')
-router.register(r'posts', views.PostViewSet, basename='Posts')
 
 urlpatterns = [
     path('', include(router.urls)),
