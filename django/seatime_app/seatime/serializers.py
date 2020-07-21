@@ -107,7 +107,7 @@ class RankSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Rank
-        fields = ('designation', 'id', 'name')
+        fields = ('id', 'name', 'designation')
 
 
 class RanksOnlySerializer(serializers.ModelSerializer):
