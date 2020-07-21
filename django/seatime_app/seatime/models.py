@@ -85,3 +85,12 @@ class Voyage(models.Model):
 
     def __str__(self):
         return f"{self.user} - {self.vessel} - {self.depart_date}"
+
+
+class Tag(models.Model):
+    title = models.CharField(max_length=100)
+
+
+class Post(models.Model):
+    tag = models.ManyToManyField(Tag)
+    text = models.CharField(max_length=100)

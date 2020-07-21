@@ -13,6 +13,7 @@ router.register(r'workday-types', views.WorkdayTypeViewSet, basename='WorkdayTyp
 router.register(r'voyage-types', views.VoyageTypeViewSet, basename='VoyageTypes')
 router.register(r'staff-positions', views.StaffPositionViewSet, basename='StaffPositions')
 router.register(r'voyages', views.VoyageViewSet, basename='Voyages')
+router.register(r'posts', views.PostViewSet, basename='Posts')
 
 urlpatterns = [
     path('', include(router.urls)),
