@@ -65,200 +65,200 @@
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 1,
     "fields": {
-      "title": "Unlimited"
+      "name": "Unlimited"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 2,
     "fields": {
-      "title": "Limited"
+      "name": "Limited"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 3,
     "fields": {
-      "title": "OSV"
+      "name": "OSV"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 4,
     "fields": {
-      "title": "MODU"
+      "name": "MODU"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 5,
     "fields": {
-      "title": "UFIV"
+      "name": "UFIV"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 6,
     "fields": {
-      "title": "OSV Unlimited"
+      "name": "OSV Unlimited"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 7,
     "fields": {
-      "title": "OSV 4000"
+      "name": "OSV 4000"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 8,
     "fields": {
-      "title": "OSV 1000"
+      "name": "OSV 1000"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 9,
     "fields": {
-      "title": "UFIV Unlimited"
+      "name": "UFIV Unlimited"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 10,
     "fields": {
-      "title": "UFIV Limited"
+      "name": "UFIV Limited"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 11,
     "fields": {
-      "title": "4000 hp"
+      "name": "4000 hp"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 12,
     "fields": {
-      "title": "1000 hp"
+      "name": "1000 hp"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 13,
     "fields": {
-      "title": "Any Rating"
+      "name": "Any Rating"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 14,
     "fields": {
-      "title": "Electrician/Refrigeration Engineer"
+      "name": "Electrician/Refrigeration Engineer"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 15,
     "fields": {
-      "title": "Oiler"
+      "name": "Oiler"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 16,
     "fields": {
-      "title": "Fireman/Watertender"
+      "name": "Fireman/Watertender"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 17,
     "fields": {
-      "title": "Junior Engineer"
+      "name": "Junior Engineer"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 18,
     "fields": {
-      "title": "Pumpman/Machinist"
+      "name": "Pumpman/Machinist"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 19,
     "fields": {
-      "title": "Oceans 1600 GRT"
+      "name": "Oceans 1600 GRT"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 20,
     "fields": {
-      "title": "Oceans 500 GRT"
+      "name": "Oceans 500 GRT"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 21,
     "fields": {
-      "title": "Near Coastal 1600 GRT"
+      "name": "Near Coastal 1600 GRT"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 22,
     "fields": {
-      "title": "Near Coastal 500 GRT"
+      "name": "Near Coastal 500 GRT"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 23,
     "fields": {
-      "title": "Near Coastal 200 GRT"
+      "name": "Near Coastal 200 GRT"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 24,
     "fields": {
-      "title": "Great Lakes & Inland Waters Unlimited"
+      "name": "Great Lakes & Inland Waters Unlimited"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 25,
     "fields": {
-      "title": "Great Lakes & Inland Waters 1600 GRT"
+      "name": "Great Lakes & Inland Waters 1600 GRT"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 26,
     "fields": {
-      "title": "Great Lakes & Inland Waters 500 GRT"
+      "name": "Great Lakes & Inland Waters 500 GRT"
     }
   },
   {
-    "model": "seatime.rating",
+    "model": "seatime.designation",
     "pk": 27,
     "fields": {
-      "title": "Great Lakes & Inland Waters 200 GRT"
+      "name": "Great Lakes & Inland Waters 200 GRT"
     }
   },
   {
-    "model": "seatime.staffposition",
+    "model": "seatime.rank",
     "pk": 1,
     "fields": {
-      "title": "Chief Engineer",
-      "ratings": [
+      "name": "Chief Engineer",
+      "designation": [
         1,
         2,
         3,
@@ -268,11 +268,11 @@
     }
   },
   {
-    "model": "seatime.staffposition",
+    "model": "seatime.rank",
     "pk": 2,
     "fields": {
-      "title": "First Engineer",
-      "ratings": [
+      "name": "First Engineer",
+      "designation": [
         1,
         2,
         3,
@@ -289,11 +289,11 @@
     }
   },
   {
-    "model": "seatime.staffposition",
+    "model": "seatime.rank",
     "pk": 3,
     "fields": {
-      "title": "Second Engineer",
-      "ratings": [
+      "name": "Second Engineer",
+      "designation": [
         1,
         2,
         3,
@@ -310,11 +310,11 @@
     }
   },
   {
-    "model": "seatime.staffposition",
+    "model": "seatime.rank",
     "pk": 4,
     "fields": {
-      "title": "Third Engineer",
-      "ratings": [
+      "name": "Third Engineer",
+      "designation": [
         1,
         2,
         3,
@@ -331,11 +331,11 @@
     }
   },
   {
-    "model": "seatime.staffposition",
+    "model": "seatime.rank",
     "pk": 5,
     "fields": {
-      "title": "QMED",
-      "ratings": [
+      "name": "QMED",
+      "designation": [
         13,
         14,
         15,
@@ -346,19 +346,19 @@
     }
   },
   {
-    "model": "seatime.staffposition",
+    "model": "seatime.rank",
     "pk": 6,
     "fields": {
-      "title": "Student or Apprentice",
-      "ratings": []
+      "name": "Student or Apprentice",
+      "designation": []
     }
   },
   {
-    "model": "seatime.staffposition",
+    "model": "seatime.rank",
     "pk": 7,
     "fields": {
-      "title": "Master",
-      "ratings": [
+      "name": "Master",
+      "designation": [
         1,
         19,
         20,
@@ -373,11 +373,11 @@
     }
   },
   {
-    "model": "seatime.staffposition",
+    "model": "seatime.rank",
     "pk": 8,
     "fields": {
-      "title": "Chief Mate",
-      "ratings": [
+      "name": "Chief Mate",
+      "designation": [
         1,
         19,
         20,
@@ -392,11 +392,11 @@
     }
   },
   {
-    "model": "seatime.staffposition",
+    "model": "seatime.rank",
     "pk": 9,
     "fields": {
-      "title": "Second Mate",
-      "ratings": [
+      "name": "Second Mate",
+      "designation": [
         1,
         19,
         20,
@@ -411,11 +411,11 @@
     }
   },
   {
-    "model": "seatime.staffposition",
+    "model": "seatime.rank",
     "pk": 10,
     "fields": {
-      "title": "Third Mate",
-      "ratings": [
+      "name": "Third Mate",
+      "designation": [
         1,
         19,
         20,
@@ -430,35 +430,35 @@
     }
   },
   {
-    "model": "seatime.staffposition",
+    "model": "seatime.rank",
     "pk": 11,
     "fields": {
-      "title": "Able Seaman",
-      "ratings": []
+      "name": "Able Seaman",
+      "designation": []
     }
   },
   {
-    "model": "seatime.staffposition",
+    "model": "seatime.rank",
     "pk": 12,
     "fields": {
-      "title": "Ordinary Seaman",
-      "ratings": []
+      "name": "Ordinary Seaman",
+      "designation": []
     }
   },
   {
-    "model": "seatime.staffposition",
+    "model": "seatime.rank",
     "pk": 13,
     "fields": {
-      "title": "Tankerman",
-      "ratings": []
+      "name": "Tankerman",
+      "designation": []
     }
   },
   {
-    "model": "seatime.staffposition",
+    "model": "seatime.rank",
     "pk": 14,
     "fields": {
-      "title": "Designated Duty Engineer",
-      "ratings": [
+      "name": "Designated Duty Engineer",
+      "designation": [
         1,
         7,
         8
@@ -466,11 +466,11 @@
     }
   },
   {
-    "model": "seatime.staffposition",
+    "model": "seatime.rank",
     "pk": 15,
     "fields": {
-      "title": "Wiper",
-      "ratings": []
+      "name": "Wiper",
+      "designation": []
     }
   }
 ]

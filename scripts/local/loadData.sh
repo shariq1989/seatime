@@ -4,9 +4,9 @@ cd ~/Documents/Development/SeaTime/bin/ && source activate
 echo "pulling latest code"
 git pull
 
-heroku pg:psql postgresql-contoured-81635 --app seatime-django --command "DELETE FROM seatime_staffposition_ratings;"
-heroku pg:psql postgresql-contoured-81635 --app seatime-django --command "DELETE FROM seatime_staffposition;"
-heroku pg:psql postgresql-contoured-81635 --app seatime-django --command "DELETE FROM seatime_rating;"
+heroku pg:psql postgresql-contoured-81635 --app seatime-django --command "DELETE FROM seatime_rank_designation;"
+heroku pg:psql postgresql-contoured-81635 --app seatime-django --command "DELETE FROM seatime_designation;"
+heroku pg:psql postgresql-contoured-81635 --app seatime-django --command "DELETE FROM seatime_rank;"
 
 cd ~/Documents/Development/SeaTime/django/seatime_app || exit
 python3 manage.py loaddata seatime/fixtures/initial_data.json
