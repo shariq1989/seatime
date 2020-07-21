@@ -98,7 +98,7 @@
                                         <v-row>
                                             <v-autocomplete
                                                     v-model="seatime_entries.position"
-                                                    :items="positions_list['name']"
+                                                    :items="positions_list"
                                                     item-text="title"
                                                     item-value="id"
                                                     label="Sailing Position"
