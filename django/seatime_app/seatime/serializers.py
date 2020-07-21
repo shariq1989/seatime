@@ -99,15 +99,15 @@ class VoyageSerializer(serializers.ModelSerializer):
 class RatingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Rating
-        fields = ('id', 'title',)
+        fields = ('title',)
 
 
 class StaffPositionSerializer(serializers.ModelSerializer):
-    rating = RatingSerializer(many=True, read_only=True)
+    rating = RatingSerializer(read_only=True, many=True, )
 
     class Meta:
         model = StaffPosition
-        fields = ('rating', 'id', 'title')
+        fields = ('rating', 'title')
 
 
 class TagSerializer(serializers.ModelSerializer):
