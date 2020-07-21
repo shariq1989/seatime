@@ -76,7 +76,7 @@ class Voyage(models.Model):
     voyage_type = models.ForeignKey(VoyageType, on_delete=models.CASCADE)
     workday_type = models.ForeignKey(WorkdayType, on_delete=models.CASCADE)
     rank = models.ForeignKey(Rank, on_delete=models.CASCADE)
-    designation = models.ForeignKey(Designation, on_delete=models.CASCADE)
+    designation = models.ForeignKey(Designation, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return f"{self.user} - {self.vessel} - {self.depart_date}"
