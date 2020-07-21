@@ -3,7 +3,7 @@ from rest_framework import serializers
 from rest_framework.authtoken.models import Token
 
 from .models import MarinerDocument, MarinerProfile, Vessel, WorkdayType, VoyageType, \
-    StaffPosition, Voyage, Rating, Tag, Post
+    Voyage, Rank, Designation
 
 
 class TokenSerializer(serializers.ModelSerializer):
@@ -96,29 +96,15 @@ class VoyageSerializer(serializers.ModelSerializer):
                   'position')
 
 
-class RatingSerializer(serializers.ModelSerializer):
+class DesignationSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Rating
-        fields = ('title',)
+        model = Designation
+        fields = ('name',)
 
 
-class StaffPositionSerializer(serializers.ModelSerializer):
-    rating = RatingSerializer(read_only=True, many=True, )
-
-    class Meta:
-        model = StaffPosition
-        fields = ('rating', 'title')
-
-
-class TagSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Tag
-        fields = ('title',)
-
-
-class PostSerializer(serializers.ModelSerializer):
-    tag = TagSerializer(read_only=True, many=True)
+class RankSerializer(serializers.ModelSerializer):
+    designation = DesignationSerializer(read_only=True, many=True)
 
     class Meta:
-        model = Post
-        fields = ('tag', 'text')
+        model = Rank
+        fields = ('designation', 'name')

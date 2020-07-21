@@ -57,20 +57,14 @@ class VoyageType(models.Model):
 
 
 # Title: MODU, OSV, etc
-class Rating(models.Model):
-    title = models.CharField(max_length=64)
-
-    def __str__(self):
-        return f"{self.title}"
+class Designation(models.Model):
+    name = models.CharField(max_length=64)
 
 
 # Title: Captain
-class StaffPosition(models.Model):
-    title = models.CharField(max_length=64)
-    ratings = models.ManyToManyField(Rating)
-
-    def __str__(self):
-        return f"{self.title}"
+class Rank(models.Model):
+    designation = models.ManyToManyField(Designation)
+    name = models.CharField(max_length=64)
 
 
 # Info for each voyage
@@ -81,7 +75,8 @@ class Voyage(models.Model):
     arrival_date = models.DateField()
     voyage_type = models.ForeignKey(VoyageType, on_delete=models.CASCADE)
     workday_type = models.ForeignKey(WorkdayType, on_delete=models.CASCADE)
-    position = models.ForeignKey(StaffPosition, on_delete=models.CASCADE)
+    rank = models.ForeignKey(Rank, on_delete=models.CASCADE)
+    designation = models.ForeignKey(Designation, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.user} - {self.vessel} - {self.depart_date}"

@@ -5,10 +5,10 @@ from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.generics import CreateAPIView
 from rest_framework.response import Response
 
-from .models import MarinerProfile, MarinerDocument, Vessel, WorkdayType, VoyageType, StaffPosition, Voyage, Post
+from .models import MarinerProfile, MarinerDocument, Vessel, WorkdayType, VoyageType, Voyage, Post, Rank
 from .serializers import MarinerProfileSerializer, UserSerializer, MarinerDocumentSerializer, VesselSerializer, \
-    WorkdayTypeSerializer, VoyageTypeSerializer, StaffPositionSerializer, VoyageSerializer, \
-    MarinerProfileNoIdSerializer, MarinerDocumentNoIdSerializer, PostSerializer
+    WorkdayTypeSerializer, VoyageTypeSerializer, VoyageSerializer, \
+    MarinerProfileNoIdSerializer, MarinerDocumentNoIdSerializer, RankSerializer
 
 
 class CustomObtainAuthToken(ObtainAuthToken):
@@ -113,15 +113,6 @@ class VoyageTypeViewSet(viewsets.ModelViewSet):
     serializer_class = VoyageTypeSerializer
 
 
-class StaffPositionViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    This viewset automatically provides `list`, `create`, `retrieve`,
-    `update` and `destroy` actions.
-    """
-    queryset = StaffPosition.objects.all()
-    serializer_class = StaffPositionSerializer
-
-
 class VoyageViewSet(viewsets.ModelViewSet):
     """
     This viewset automatically provides `list`, `create`, `retrieve`,
@@ -148,6 +139,6 @@ class CreateUserView(CreateAPIView):
     serializer_class = UserSerializer
 
 
-class PostViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Post.objects.all()
-    serializer_class = PostSerializer
+class RankViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Rank.objects.all()
+    serializer_class = RankSerializer
