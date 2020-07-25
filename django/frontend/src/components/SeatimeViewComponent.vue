@@ -232,7 +232,8 @@
                     arrival_date: this.seatime_entries.arrival_date,
                     voyage_type: this.seatime_entries.voyage_type,
                     workday_type: this.seatime_entries.workday_type,
-                    position: this.seatime_entries.position,
+                    rank: this.seatime_entries.position.id,
+                    designation: this.seatime_entries.rating
                 };
                 console.log(seatimeFields);
                 updateSeatimeEntries([this.APIMethod, seatimeFields, this.seatime_entries.id]).then(
