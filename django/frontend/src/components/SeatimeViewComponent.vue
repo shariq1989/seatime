@@ -1,262 +1,49 @@
 <!--suppress JSUnusedGlobalSymbols, JSUnfilteredForInLoop -->
 <template>
-    <v-app id="inspire" style="background-color: #bbdefb;">
-        <NavDrawerComponent v-model="drawer" @input="displayLogoutDialog"/>
-        <v-content>
-            <ConfirmModalComponent v-model="logoutDialog.displayStatus" v-bind="logoutDialog"
-                                   @input="updateModalStatus"/>
-            <v-container fluid class="#bbdefb lighten-4 fill-height">
-                <v-row class="mb-6">
-                    <v-col cols="12" sm="2"></v-col>
-                    <v-col cols="12" sm="8">
-                        <v-card class="pa-2">
-                            <h1 style="font-family: serif" class="primary--text">
-                                Seatime Log
-                            </h1>
-                            <div v-if="pageLoading">
-                                <v-progress-circular
-                                        indeterminate
-                                        color="primary"
-                                />
-                                <v-card-text>
-                                    Loading
-                                </v-card-text>
-                            </div>
-                            <div v-if="!pageLoading">
-                                <v-card-text>
-                                    <div class="pa-2">
-                                        <v-alert type="error" v-if="displayErrorMessage">
-                                            <span class="text-left" v-html="errorMessage"></span>
-                                        </v-alert>
-                                        <v-snackbar v-model="snackbar">
-                                            {{ snackbarText }}
-                                        </v-snackbar>
-                                    </div>
-                                    <v-col>
-                                        <v-row>
-                                            <v-autocomplete
-                                                    v-model="seatime_entries.vessel"
-                                                    :items="vessel_list"
-                                                    hide-no-data
-                                                    item-text="name"
-                                                    item-value="id"
-                                                    label="Vessel"
-                                                    placeholder="Start typing to Search"
-                                                    :rules="[v => !!v || 'This is a required field']"
-                                                    required
-                                            ></v-autocomplete>
-                                        </v-row>
-                                        <v-row>
-                                            <v-menu
-                                                    v-model="dateModal_depart"
-                                                    :close-on-content-click="false"
-                                                    :nudge-right="40"
-                                                    transition="scale-transition"
-                                                    offset-y
-                                                    min-width="290px"
-                                            >
-                                                <template v-slot:activator="{ on }">
-                                                    <v-text-field
-                                                            v-model="seatime_entries.depart_date"
-                                                            label="Departure Date"
-                                                            readonly
-                                                            :rules="[v => !!v || 'This is a required field']"
-                                                            required
-                                                            v-on="on"
-                                                    ></v-text-field>
-                                                </template>
-                                                <v-date-picker v-model="seatime_entries.depart_date"
-                                                               @input="dateModal_depart = false"></v-date-picker>
-                                            </v-menu>
-                                        </v-row>
-                                        <v-row>
-                                            <v-menu
-                                                    v-model="dateModal_arrival"
-                                                    :close-on-content-click="false"
-                                                    :nudge-right="40"
-                                                    transition="scale-transition"
-                                                    offset-y
-                                                    min-width="290px"
-                                            >
-                                                <template v-slot:activator="{ on }">
-                                                    <v-text-field
-                                                            v-model="seatime_entries.arrival_date"
-                                                            label="Arrival Date"
-                                                            readonly
-                                                            :rules="[v => !!v || 'This is a required field']"
-                                                            required
-                                                            v-on="on"
-                                                    ></v-text-field>
-                                                </template>
-                                                <v-date-picker v-model="seatime_entries.arrival_date"
-                                                               @input="dateModal_arrival = false"></v-date-picker>
-                                            </v-menu>
-                                        </v-row>
-                                        <v-row>
-                                            <v-autocomplete
-                                                    v-model="seatime_entries.position"
-                                                    :items="positions_list['name']"
-                                                    item-text="title"
-                                                    item-value="id"
-                                                    label="Sailing Position"
-                                                    :rules="[v => !!v || 'This is a required field']"
-                                                    required
-                                            ></v-autocomplete>
-                                        </v-row>
-                                        <v-row>
-                                            <v-autocomplete
-                                                    v-model="seatime_entries.voyage_type"
-                                                    :items="voyage_type_list"
-                                                    item-text="type"
-                                                    item-value="id"
-                                                    label="Voyage Type"
-                                                    :rules="[v => !!v || 'This is a required field']"
-                                                    required
-                                            ></v-autocomplete>
-                                        </v-row>
-                                        <v-row>
-                                            <v-autocomplete
-                                                    v-model="seatime_entries.workday_type"
-                                                    :items="workday_type_list"
-                                                    item-text="type"
-                                                    item-value="id"
-                                                    label="Workday Type"
-                                                    :rules="[v => !!v || 'This is a required field']"
-                                                    required
-                                            ></v-autocomplete>
-                                        </v-row>
-                                    </v-col>
-                                </v-card-text>
-                                <v-card-actions>
-                                    <v-spacer/>
-                                    <v-btn color="primary" type="submit" @click.stop="editSeatime">Save Changes</v-btn>
-                                </v-card-actions>
-                            </div>
-                        </v-card>
-                    </v-col>
-                    <v-col cols="12" sm="2"></v-col>
-                </v-row>
-            </v-container>
-        </v-content>
-    </v-app>
+    <v-content>
+        <v-row class="mb-6">
+            <v-col cols="12" sm="2"></v-col>
+            <v-col cols="12" sm="8">
+                <v-card class="pa-2">
+                    <v-data-table
+                            :headers="table_headers"
+                            :items="voyage_list"
+                            :items-per-page="10"
+                            class="elevation-1"
+                    ></v-data-table>
+                </v-card>
+            </v-col>
+            <v-col cols="12" sm="2"></v-col>
+        </v-row>
+    </v-content>
 </template>
 
 <script>
-    import {funcLogout} from "../_services/user.service";
-    import ConfirmModalComponent from "./ConfirmModalComponent"
-    import NavDrawerComponent from "./NavDrawerComponent";
-    import {
-        getSeatimeEntries,
-        getStaffPositions,
-        getVessels, getVoyageTypes, getWorkdayType, updateSeatimeEntries
-    } from "../_services/seatime_entry.service";
+    import {getVoyages} from "../_services/seatime_entry.service";
 
     export default {
-        components: {NavDrawerComponent, ConfirmModalComponent},
         data() {
             return {
-                drawer: 'true',
-                color: 'primary',
-                pageLoading: true,
-                dateModal_depart: false,
-                dateModal_arrival: false,
-                displayErrorMessage: false,
-                errorMessage: '',
-                snackbar: false,
-                snackbarText: null,
-                vessel_list: null,
-                positions_list: null,
-                voyage_type_list: null,
-                workday_type_list: null,
-                seatime_entries: {
-                    vessel: null,
-                    depart_date: null,
-                    arrival_date: null,
-                    voyage_type: null,
-                    workday_type: null,
-                    position: null,
-                    id: null
-                },
-                logoutDialog: {
-                    displayStatus: false,
-                    dialogHeader: 'Confirm Logout',
-                    dialogMessage: 'Are you sure you would like to proceed?'
-                },
                 APIMethod: 'POST',
+                voyage_list: null,
+                table_headers: [
+                    {text: 'Vessel', value: 'vessel'},
+                    {text: 'Departure', value: 'depart_date'},
+                    {text: 'Arrival', value: 'arrival_date'},
+                    {text: 'Voyage', value: 'voyage_type'},
+                    {text: 'Workday', value: 'workday_type'},
+                    {text: 'Position', value: 'rank'},
+                    {text: 'Rating', value: 'designation'}
+                ]
             }
         },
         methods: {
             loadPage: function () {
-                getVessels().then((resp) => {
+                getVoyages().then((resp) => {
                     console.log(resp);
-                    this.vessel_list = resp.data;
-                })
-                getStaffPositions().then((resp) => {
-                    console.log(resp);
-                    this.positions_list = resp.data;
-                })
-                getVoyageTypes().then((resp) => {
-                    console.log(resp);
-                    this.voyage_type_list = resp.data;
-                })
-                getWorkdayType().then((resp) => {
-                    console.log(resp);
-                    this.workday_type_list = resp.data;
-                })
-                getSeatimeEntries().then((resp) => {
-                    this.pageLoading = false;
-                    this.seatime_entries.id = resp.data[0]['id'];
-                }).catch(() => {
-                    this.pageLoading = false;
+                    this.voyage_list = resp.data;
                 })
             },
-            logout() {
-                this.logoutDialog = true;
-            },
-            displayLogoutDialog() {
-                this.logoutDialog.displayStatus = true;
-            },
-            updateModalStatus(value) {
-                this.logoutDialog.displayStatus = false;
-                if (value === true) {
-                    funcLogout();
-                }
-            },
-            editSeatime() {
-                this.displayErrorMessage = false;
-                let seatimeFields = {
-                    user: localStorage.getItem('id'),
-                    vessel: this.seatime_entries.vessel,
-                    depart_date: this.seatime_entries.depart_date,
-                    arrival_date: this.seatime_entries.arrival_date,
-                    voyage_type: this.seatime_entries.voyage_type,
-                    workday_type: this.seatime_entries.workday_type,
-                    rank: this.seatime_entries.position.id,
-                    designation: this.seatime_entries.rating
-                };
-                console.log(seatimeFields);
-                updateSeatimeEntries([this.APIMethod, seatimeFields, this.seatime_entries.id]).then(
-                    () => {
-                        this.snackbarText = 'Seatime updated successfully';
-                        this.snackbar = true;
-                        this.loadPage();
-                    }
-                ).catch(err => {
-                        console.log(err.response.data);
-                        this.displayErrorMessage = true;
-                        this.errorMessage = 'Error updating documents';
-                        if (err.response.data) {
-                            for (const field in err.response.data) {
-                                for (const error of err.response.data[field]) {
-                                    this.errorMessage += '<br/>';
-                                    this.errorMessage += error;
-                                }
-                            }
-                        }
-                    }
-                )
-            }
-
         },
         mounted() {
             this.loadPage();

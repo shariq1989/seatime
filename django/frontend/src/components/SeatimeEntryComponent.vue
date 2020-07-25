@@ -7,9 +7,6 @@
                                    @input="updateModalStatus"/>
             <v-container fluid class="#bbdefb lighten-4 fill-height">
                 <v-row class="mb-6">
-
-                </v-row>
-                <v-row class="mb-6">
                     <v-col cols="12" sm="2"></v-col>
                     <v-col cols="12" sm="8">
                         <v-card class="pa-2">
@@ -152,6 +149,9 @@
                     </v-col>
                     <v-col cols="12" sm="2"></v-col>
                 </v-row>
+                <v-row class="mb-6">
+                    <SeatimeViewComponent/>
+                </v-row>
             </v-container>
         </v-content>
     </v-app>
@@ -164,9 +164,10 @@
     import {
         getSeatimeEntries, getStaffPositions, getVessels, getVoyageTypes, getWorkdayType, updateSeatimeEntries
     } from "../_services/seatime_entry.service";
+    import SeatimeViewComponent from "./SeatimeViewComponent";
 
     export default {
-        components: {NavDrawerComponent, ConfirmModalComponent},
+        components: {SeatimeViewComponent, NavDrawerComponent, ConfirmModalComponent},
         data() {
             return {
                 drawer: 'true',

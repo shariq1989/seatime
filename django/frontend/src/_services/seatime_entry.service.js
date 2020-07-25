@@ -45,6 +45,16 @@ export let getVoyageTypes = () => new Promise((resolve, reject) => {
     });
 });
 
+export let getVoyages = () => new Promise((resolve, reject) => {
+    getRequest('/voyages/').then(response => {
+        resolve(response)
+    }).catch(err => {
+        console.log(err);
+        reject(err)
+    });
+});
+
+
 export let getWorkdayType = () => new Promise((resolve, reject) => {
     getRequest('/workday-types/').then(response => {
         resolve(response)
