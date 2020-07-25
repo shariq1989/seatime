@@ -133,14 +133,14 @@
                     <v-col>
                         <v-card class="pa-2">
                             <h1 style="font-family: serif" class="primary--text">
-                                Seatime Logged
+                                Trips
                             </h1>
                             <v-progress-circular
                                     indeterminate
                                     color="primary"
                             />
                             <v-card-text>
-                                Voyages Loading
+                                Loading Trips
                             </v-card-text>
                         </v-card>
                     </v-col>

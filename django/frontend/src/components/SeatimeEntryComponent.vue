@@ -11,7 +11,7 @@
                     <v-col cols="12" sm="8">
                         <v-card class="pa-2">
                             <h1 style="font-family: serif" class="primary--text">
-                                Seatime Log
+                                Add New Trip
                             </h1>
                             <div v-if="pageLoading">
                                 <v-progress-circular
@@ -255,7 +255,7 @@
                 console.log(seatimeFields);
                 updateSeatimeEntries([this.APIMethod, seatimeFields, this.seatime_entries.id]).then(
                     () => {
-                        this.snackbarText = 'Seatime updated successfully';
+                        this.snackbarText = 'Trip saved successfully';
                         this.snackbar = true;
                         this.loadPage();
                     }
