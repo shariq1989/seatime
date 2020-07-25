@@ -162,10 +162,7 @@
     import ConfirmModalComponent from "./ConfirmModalComponent"
     import NavDrawerComponent from "./NavDrawerComponent";
     import {
-        getSeatimeEntries,
-        getStaffPositions,
-        getVessels, getVoyageTypes, getWorkdayType, updateSeatimeEntries,
-        //updateSeatimeEntries
+        getSeatimeEntries, getStaffPositions, getVessels, getVoyageTypes, getWorkdayType, updateSeatimeEntries
     } from "../_services/seatime_entry.service";
 
     export default {
@@ -248,6 +245,8 @@
                     voyage_type: this.seatime_entries.voyage_type,
                     workday_type: this.seatime_entries.workday_type,
                     position: this.seatime_entries.position,
+                    rank: this.seatime_entries.position.id,
+                    designation: this.seatime_entries.rating
                 };
                 console.log(seatimeFields);
                 updateSeatimeEntries([this.APIMethod, seatimeFields, this.seatime_entries.id]).then(
