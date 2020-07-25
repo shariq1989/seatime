@@ -93,7 +93,7 @@ class VoyageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Voyage
         fields = ('id', 'user', 'vessel', 'depart_date', 'arrival_date', 'voyage_type', 'workday_type',
-                  'position')
+                  'rank', 'designation')
 
 
 class DesignationSerializer(serializers.ModelSerializer):
