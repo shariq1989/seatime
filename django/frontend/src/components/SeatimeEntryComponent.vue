@@ -101,7 +101,19 @@
                                                     :items="positions_list"
                                                     item-text="name"
                                                     item-value="id"
+                                                    return-object
                                                     label="Sailing Position"
+                                                    :rules="[v => !!v || 'This is a required field']"
+                                                    required
+                                            ></v-autocomplete>
+                                        </v-row>
+                                        <v-row>
+                                            <v-autocomplete
+                                                    v-model="seatime_entries.rating"
+                                                    :items="seatime_entries.position['designation']"
+                                                    item-text="name"
+                                                    item-value="id"
+                                                    label="Rating"
                                                     :rules="[v => !!v || 'This is a required field']"
                                                     required
                                             ></v-autocomplete>
@@ -179,6 +191,7 @@
                     voyage_type: null,
                     workday_type: null,
                     position: null,
+                    rating: null,
                     id: null
                 },
                 logoutDialog: {
