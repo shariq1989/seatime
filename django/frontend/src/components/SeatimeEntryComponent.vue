@@ -237,6 +237,9 @@
             },
             editSeatime() {
                 this.displayErrorMessage = false;
+                if (this.seatime_entries.position.designation.length === 0) {
+                    this.seatime_entries.rating = null;
+                }
                 let seatimeFields = {
                     user: localStorage.getItem('id'),
                     vessel: this.seatime_entries.vessel,
