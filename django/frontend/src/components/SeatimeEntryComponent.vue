@@ -110,7 +110,7 @@
                                         <v-row>
                                             <v-autocomplete
                                                     v-model="seatime_entries.rating"
-                                                    v-if="seatime_entries.position"
+                                                    v-if="seatime_entries.position && seatime_entries.position['designation']"
                                                     :items="seatime_entries.position['designation']"
                                                     item-text="name"
                                                     item-value="id"
