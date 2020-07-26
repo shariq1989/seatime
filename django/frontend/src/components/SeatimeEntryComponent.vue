@@ -56,7 +56,7 @@
                                                 </v-card-title>
 
                                                 <v-card-text>
-                                                    <v-container>
+                                                    <v-row>
                                                         <v-col cols="12" sm="6">
                                                             <v-row>
                                                                 <v-autocomplete
@@ -166,7 +166,7 @@
                                                                 ></v-autocomplete>
                                                             </v-row>
                                                         </v-col>
-                                                    </v-container>
+                                                    </v-row>
                                                 </v-card-text>
                                                 <v-card-actions>
                                                     <v-spacer></v-spacer>
