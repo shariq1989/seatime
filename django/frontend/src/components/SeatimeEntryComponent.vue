@@ -321,19 +321,19 @@
             },
             editSeatime() {
                 this.displayErrorMessage = false;
-                if (this.seatime_entries.position.designation.length === 0) {
-                    this.seatime_entries.rating = null;
+                if (this.editedItem.position.designation.length === 0) {
+                    this.editedItem.rating = null;
                 }
                 let seatimeFields = {
                     user: localStorage.getItem('id'),
-                    vessel: this.seatime_entries.vessel,
-                    depart_date: this.seatime_entries.depart_date,
-                    arrival_date: this.seatime_entries.arrival_date,
-                    voyage_type: this.seatime_entries.voyage_type,
-                    workday_type: this.seatime_entries.workday_type,
-                    position: this.seatime_entries.position,
-                    rank: this.seatime_entries.position.id,
-                    designation: this.seatime_entries.rating
+                    vessel: this.editedItem.vessel,
+                    depart_date: this.editedItem.depart_date,
+                    arrival_date: this.editedItem.arrival_date,
+                    voyage_type: this.editedItem.voyage_type,
+                    workday_type: this.editedItem.workday_type,
+                    position: this.editedItem.position,
+                    rank: this.editedItem.position.id,
+                    designation: this.editedItem.rating
                 };
                 console.log(seatimeFields);
                 updateSeatimeEntries([this.APIMethod, seatimeFields, this.seatime_entries.id]).then(
