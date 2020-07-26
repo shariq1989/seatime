@@ -321,7 +321,7 @@
                     this.editedItem.position !== null &&
                     this.editedItem.vessel !== null &&
                     this.editedItem.voyage_type !== null &&
-                    this.editedItem.workday_type === null
+                    this.editedItem.workday_type !== null
                 ) {
                     if (this.editedItem.position.designation.length === 0) {
                         this.editedItem.rating = null;
