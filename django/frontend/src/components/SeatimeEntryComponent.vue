@@ -30,11 +30,6 @@
                                         <h1 style="font-family: serif" class="primary--text">
                                             Trip Log
                                         </h1>
-                                        <v-divider
-                                                class="mx-4"
-                                                inset
-                                                vertical
-                                        ></v-divider>
                                         <v-spacer></v-spacer>
                                         <v-dialog v-model="dialog" max-width="500px">
                                             <template v-slot:activator="{ on, attrs }">
@@ -359,13 +354,13 @@
                 )
             },
             editItem(item) {
-                this.editedIndex = this.desserts.indexOf(item)
+                this.editedIndex = this.trip_list.indexOf(item)
                 this.editedItem = Object.assign({}, item)
                 this.dialog = true
             },
             deleteItem(item) {
-                const index = this.desserts.indexOf(item)
-                confirm('Are you sure you want to delete this item?') && this.desserts.splice(index, 1)
+                const index = this.trip_list.indexOf(item)
+                confirm('Are you sure you want to delete this item?') && this.trip_list.splice(index, 1)
             },
             close() {
                 this.dialog = false
