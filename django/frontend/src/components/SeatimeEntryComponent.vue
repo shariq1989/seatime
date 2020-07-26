@@ -321,7 +321,7 @@
                     this.editedItem.position !== null &&
                     this.editedItem.vessel !== null &&
                     this.editedItem.voyage_type !== null &&
-                    this.editedItem.workday_type !== null
+                    this.editedItem.workday_type === null
                 ) {
                     if (this.editedItem.position.designation.length === 0) {
                         this.editedItem.rating = null;
@@ -360,43 +360,41 @@
                         }
                     )
                 }
+            }
             ,
-                editItem(item)
-                {
-                    this.editedIndex = this.trip_list.indexOf(item)
-                    this.editedItem = Object.assign({}, item)
-                    this.dialog = true
-                }
+            editItem(item) {
+                this.editedIndex = this.trip_list.indexOf(item)
+                this.editedItem = Object.assign({}, item)
+                this.dialog = true
+            }
             ,
-                deleteItem(item)
-                {
-                    const index = this.trip_list.indexOf(item)
-                    confirm('Are you sure you want to delete this item?') && this.trip_list.splice(index, 1)
-                }
+            deleteItem(item) {
+                const index = this.trip_list.indexOf(item)
+                confirm('Are you sure you want to delete this item?') && this.trip_list.splice(index, 1)
+            }
             ,
-                close()
-                {
-                    this.dialog = false
-                    this.$nextTick(() => {
-                        this.editedItem = Object.assign({}, this.defaultItem)
-                        this.editedIndex = -1
-                    })
-                }
+            close() {
+                this.dialog = false
+                this.$nextTick(() => {
+                    this.editedItem = Object.assign({}, this.defaultItem)
+                    this.editedIndex = -1
+                })
+            }
             ,
+        },
+        mounted() {
+            this.loadPage();
+        },
+        computed: {
+            formTitle() {
+                return this.editedIndex === -1 ? 'New Trip' : 'Edit Trip'
             },
-            mounted() {
-                this.loadPage();
+        },
+        watch: {
+            dialog(val) {
+                val || this.close()
             },
-            computed: {
-                formTitle() {
-                    return this.editedIndex === -1 ? 'New Trip' : 'Edit Trip'
-                },
-            },
-            watch: {
-                dialog(val) {
-                    val || this.close()
-                },
-            },
+        },
 
-        }
+    }
 </script>
