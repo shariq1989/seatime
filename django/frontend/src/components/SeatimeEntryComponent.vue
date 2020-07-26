@@ -316,15 +316,13 @@
             },
             editSeatime() {
                 this.displayErrorMessage = false;
-                if (this.editedItem.depart_date === null ||
-                    this.editedItem.arrival_date === null ||
-                    this.editedItem.position === null ||
-                    this.editedItem.vessel === null ||
-                    this.editedItem.voyage_type === null ||
-                    this.editedItem.workday_type === null
+                if (this.editedItem.depart_date !== null &&
+                    this.editedItem.arrival_date !== null &&
+                    this.editedItem.position !== null &&
+                    this.editedItem.vessel !== null &&
+                    this.editedItem.voyage_type !== null &&
+                    this.editedItem.workday_type !== null
                 ) {
-
-                } else {
                     if (this.editedItem.position.designation.length === 0) {
                         this.editedItem.rating = null;
                     }
@@ -362,37 +360,43 @@
                         }
                     )
                 }
+            ,
+                editItem(item)
+                {
+                    this.editedIndex = this.trip_list.indexOf(item)
+                    this.editedItem = Object.assign({}, item)
+                    this.dialog = true
+                }
+            ,
+                deleteItem(item)
+                {
+                    const index = this.trip_list.indexOf(item)
+                    confirm('Are you sure you want to delete this item?') && this.trip_list.splice(index, 1)
+                }
+            ,
+                close()
+                {
+                    this.dialog = false
+                    this.$nextTick(() => {
+                        this.editedItem = Object.assign({}, this.defaultItem)
+                        this.editedIndex = -1
+                    })
+                }
+            ,
             },
-            editItem(item) {
-                this.editedIndex = this.trip_list.indexOf(item)
-                this.editedItem = Object.assign({}, item)
-                this.dialog = true
+            mounted() {
+                this.loadPage();
             },
-            deleteItem(item) {
-                const index = this.trip_list.indexOf(item)
-                confirm('Are you sure you want to delete this item?') && this.trip_list.splice(index, 1)
+            computed: {
+                formTitle() {
+                    return this.editedIndex === -1 ? 'New Trip' : 'Edit Trip'
+                },
             },
-            close() {
-                this.dialog = false
-                this.$nextTick(() => {
-                    this.editedItem = Object.assign({}, this.defaultItem)
-                    this.editedIndex = -1
-                })
+            watch: {
+                dialog(val) {
+                    val || this.close()
+                },
             },
-        },
-        mounted() {
-            this.loadPage();
-        },
-        computed: {
-            formTitle() {
-                return this.editedIndex === -1 ? 'New Trip' : 'Edit Trip'
-            },
-        },
-        watch: {
-            dialog(val) {
-                val || this.close()
-            },
-        },
 
-    }
+        }
 </script>
