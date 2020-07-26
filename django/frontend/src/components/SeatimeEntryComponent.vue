@@ -362,6 +362,9 @@
                             }
                         }
                     )
+                } else {
+                    this.displayErrorMessage = true;
+                    this.errorMessage = 'Please complete all fields before saving.';
                 }
             }
             ,
