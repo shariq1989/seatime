@@ -301,8 +301,8 @@
                 })
                 getSeatimeEntries().then((resp) => {
                     console.log(resp);
+                    this.trip_list = resp.data;
                     this.pageLoading = false;
-                    this.seatime_entries.id = resp.data[0]['id'];
                 }).catch(() => {
                     this.pageLoading = false;
                 })
