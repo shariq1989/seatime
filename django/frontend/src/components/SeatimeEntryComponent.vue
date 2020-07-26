@@ -8,7 +8,7 @@
             <v-container fluid class="#bbdefb lighten-4 fill-height">
                 <v-row class="mb-6">
                     <v-col cols="12" sm="2"></v-col>
-                    <v-col cols="12" sm="2">
+                    <v-col cols="12" sm="8">
                         <div v-if="pageLoading">
                             <v-progress-circular
                                     indeterminate
