@@ -72,6 +72,32 @@
                                                                 ></v-autocomplete>
                                                             </v-row>
                                                             <v-row>
+                                                                <v-autocomplete
+                                                                        v-model="editedItem.position"
+                                                                        :items="positions_list"
+                                                                        item-text="name"
+                                                                        item-value="id"
+                                                                        return-object
+                                                                        label="Sailing Position"
+                                                                        :rules="[v => !!v || 'This is a required field']"
+                                                                        required
+                                                                ></v-autocomplete>
+                                                            </v-row>
+                                                            <v-row>
+                                                                <v-autocomplete
+                                                                        v-model="editedItem.rating"
+                                                                        v-if="editedItem.position && editedItem.position['designation'].length > 0"
+                                                                        :items="editedItem.position['designation']"
+                                                                        item-text="name"
+                                                                        item-value="id"
+                                                                        label="Rating"
+                                                                        :rules="[v => !!v || 'This is a required field']"
+                                                                        required
+                                                                ></v-autocomplete>
+                                                            </v-row>
+                                                        </v-col>
+                                                        <v-col>
+                                                            <v-row>
                                                                 <v-menu
                                                                         v-model="dateModal_depart"
                                                                         :close-on-content-click="false"
@@ -116,30 +142,6 @@
                                                                     <v-date-picker v-model="editedItem.arrival_date"
                                                                                    @input="dateModal_arrival = false"></v-date-picker>
                                                                 </v-menu>
-                                                            </v-row>
-                                                            <v-row>
-                                                                <v-autocomplete
-                                                                        v-model="editedItem.position"
-                                                                        :items="positions_list"
-                                                                        item-text="name"
-                                                                        item-value="id"
-                                                                        return-object
-                                                                        label="Sailing Position"
-                                                                        :rules="[v => !!v || 'This is a required field']"
-                                                                        required
-                                                                ></v-autocomplete>
-                                                            </v-row>
-                                                            <v-row>
-                                                                <v-autocomplete
-                                                                        v-model="editedItem.rating"
-                                                                        v-if="editedItem.position && editedItem.position['designation'].length > 0"
-                                                                        :items="editedItem.position['designation']"
-                                                                        item-text="name"
-                                                                        item-value="id"
-                                                                        label="Rating"
-                                                                        :rules="[v => !!v || 'This is a required field']"
-                                                                        required
-                                                                ></v-autocomplete>
                                                             </v-row>
                                                             <v-row>
                                                                 <v-autocomplete
