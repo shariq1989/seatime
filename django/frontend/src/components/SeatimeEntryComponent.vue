@@ -171,7 +171,6 @@
                                                         </v-col>
                                                     </v-container>
                                                 </v-card-text>
-
                                                 <v-card-actions>
                                                     <v-spacer></v-spacer>
                                                     <v-btn color="primary" type="submit" @click.stop="editSeatime">Save
@@ -261,7 +260,8 @@
                     {text: 'Voyage', value: 'voyage_type'},
                     {text: 'Workday', value: 'workday_type'},
                     {text: 'Position', value: 'rank'},
-                    {text: 'Rating', value: 'designation'}
+                    {text: 'Rating', value: 'designation'},
+                    {text: 'Actions', value: 'actions', sortable: false},
                 ],
                 editedIndex: -1,
                 editedItem: {
