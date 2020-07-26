@@ -316,42 +316,52 @@
             },
             editSeatime() {
                 this.displayErrorMessage = false;
-                if (this.editedItem.position.designation.length === 0) {
-                    this.editedItem.rating = null;
-                }
-                let seatimeFields = {
-                    user: localStorage.getItem('id'),
-                    vessel: this.editedItem.vessel,
-                    depart_date: this.editedItem.depart_date,
-                    arrival_date: this.editedItem.arrival_date,
-                    voyage_type: this.editedItem.voyage_type,
-                    workday_type: this.editedItem.workday_type,
-                    position: this.editedItem.position,
-                    rank: this.editedItem.position.id,
-                    designation: this.editedItem.rating
-                };
-                console.log(seatimeFields);
-                updateSeatimeEntries([this.APIMethod, seatimeFields, this.seatime_entries.id]).then(
-                    () => {
-                        this.snackbarText = 'Trip saved successfully';
-                        this.snackbar = true;
-                        this.dialog = false
-                        this.loadPage();
+                if (this.editedItem.depart_date === null ||
+                    this.editedItem.arrival_date === null ||
+                    this.editedItem.position === null ||
+                    this.editedItem.vessel === null ||
+                    this.editedItem.voyage_type === null ||
+                    this.editedItem.workday_type === null
+                ) {
+
+                } else {
+                    if (this.editedItem.position.designation.length === 0) {
+                        this.editedItem.rating = null;
                     }
-                ).catch(err => {
-                        console.log(err.response.data);
-                        this.displayErrorMessage = true;
-                        this.errorMessage = 'Error updating documents';
-                        if (err.response.data) {
-                            for (const field in err.response.data) {
-                                for (const error of err.response.data[field]) {
-                                    this.errorMessage += '<br/>';
-                                    this.errorMessage += error;
+                    let seatimeFields = {
+                        user: localStorage.getItem('id'),
+                        vessel: this.editedItem.vessel,
+                        depart_date: this.editedItem.depart_date,
+                        arrival_date: this.editedItem.arrival_date,
+                        voyage_type: this.editedItem.voyage_type,
+                        workday_type: this.editedItem.workday_type,
+                        position: this.editedItem.position,
+                        rank: this.editedItem.position.id,
+                        designation: this.editedItem.rating
+                    };
+                    console.log(seatimeFields);
+                    updateSeatimeEntries([this.APIMethod, seatimeFields, this.seatime_entries.id]).then(
+                        () => {
+                            this.snackbarText = 'Trip saved successfully';
+                            this.snackbar = true;
+                            this.dialog = false
+                            this.loadPage();
+                        }
+                    ).catch(err => {
+                            console.log(err.response.data);
+                            this.displayErrorMessage = true;
+                            this.errorMessage = 'Error updating documents';
+                            if (err.response.data) {
+                                for (const field in err.response.data) {
+                                    for (const error of err.response.data[field]) {
+                                        this.errorMessage += '<br/>';
+                                        this.errorMessage += error;
+                                    }
                                 }
                             }
                         }
-                    }
-                )
+                    )
+                }
             },
             editItem(item) {
                 this.editedIndex = this.trip_list.indexOf(item)
