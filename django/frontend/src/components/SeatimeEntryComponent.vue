@@ -57,7 +57,7 @@
 
                                                 <v-card-text>
                                                     <v-row>
-                                                        <v-col cols="12" sm="6">
+                                                        <v-col cols="12" sm="5">
                                                             <v-row>
                                                                 <v-autocomplete
                                                                         v-model="editedItem.vessel"
@@ -96,7 +96,8 @@
                                                                 ></v-autocomplete>
                                                             </v-row>
                                                         </v-col>
-                                                        <v-col cols="12" sm="6">
+                                                        <v-col cols="12" sm="2"></v-col>
+                                                        <v-col cols="12" sm="5">
                                                             <v-row>
                                                                 <v-menu
                                                                         v-model="dateModal_depart"
