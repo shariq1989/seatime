@@ -378,10 +378,30 @@
             }
             ,
             deleteItem(item) {
-                const index = this.trip_list.indexOf(item)
-                confirm('Are you sure you want to delete this item?') && this.trip_list.splice(index, 1)
-            }
-            ,
+                const itemToDelete = this.trip_list.indexOf(item)
+                if (confirm('Are you sure you want to delete this trip?')) {
+                    updateSeatimeEntries(['DELETE', seatimeFields, itemToDelete.id]).then(
+                        () => {
+                            this.snackbarText = 'Trip deleted';
+                            this.snackbar = true;
+                            this.loadPage();
+                        }
+                    ).catch(err => {
+                            console.log(err.response.data);
+                            this.displayErrorMessage = true;
+                            this.errorMessage = 'Error updating documents';
+                            if (err.response.data) {
+                                for (const field in err.response.data) {
+                                    for (const error of err.response.data[field]) {
+                                        this.errorMessage += '<br/>';
+                                        this.errorMessage += error;
+                                    }
+                                }
+                            }
+                        }
+                    )
+                }
+            },
             close() {
                 this.dialog = false
                 this.$nextTick(() => {

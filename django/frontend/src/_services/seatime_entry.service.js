@@ -45,16 +45,6 @@ export let getVoyageTypes = () => new Promise((resolve, reject) => {
     });
 });
 
-export let getVoyages = () => new Promise((resolve, reject) => {
-    getRequest('/voyages/').then(response => {
-        resolve(response)
-    }).catch(err => {
-        console.log(err);
-        reject(err)
-    });
-});
-
-
 export let getWorkdayType = () => new Promise((resolve, reject) => {
     getRequest('/workday-types/').then(response => {
         resolve(response)
@@ -80,6 +70,12 @@ function callAPI(method, object, id, endpoint) {
         endpoint += id + '/';
         // id is only needed for PUT because it doesnt exist yet for POST
         object.id = id;
+    } else if (method === 'DELETE') {
+        return axios({
+            url: process.env.VUE_APP_API_URL + endpoint + id + '/',
+            method: method,
+            headers: {"Authorization": "Token " + authToken}
+        });
     }
     return axios({
         url: process.env.VUE_APP_API_URL + endpoint,
