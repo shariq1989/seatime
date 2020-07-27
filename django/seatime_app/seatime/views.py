@@ -8,7 +8,8 @@ from rest_framework.response import Response
 from .models import MarinerProfile, MarinerDocument, Vessel, WorkdayType, VoyageType, Voyage, Post, Rank
 from .serializers import MarinerProfileSerializer, UserSerializer, MarinerDocumentSerializer, VesselSerializer, \
     WorkdayTypeSerializer, VoyageTypeSerializer, VoyageSerializer, \
-    MarinerProfileNoIdSerializer, MarinerDocumentNoIdSerializer, RankSerializer, RanksOnlySerializer
+    MarinerProfileNoIdSerializer, MarinerDocumentNoIdSerializer, RankSerializer, \
+    VoyagePostSerializer
 
 
 class CustomObtainAuthToken(ObtainAuthToken):
@@ -119,7 +120,18 @@ class VoyageViewSet(viewsets.ModelViewSet):
     `update` and `destroy` actions.
     """
     queryset = Voyage.objects.all()
-    serializer_class = VoyageSerializer
+
+    def get_serializer_class(self):
+        # Define your HTTP method-to-serializer mapping freely.
+        # This also works with CoreAPI and Swagger documentation,
+        # which produces clean and readable API documentation,
+        # so I have chosen to believe this is the way the
+        # Django REST Framework author intended things to work:
+        if self.request.method in ['GET']:
+            # Since the ReadSerializer does nested lookups
+            # in multiple tables, only use it when necessary
+            return VoyageSerializer
+        return VoyagePostSerializer
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
@@ -142,8 +154,3 @@ class CreateUserView(CreateAPIView):
 class RankViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Rank.objects.all()
     serializer_class = RankSerializer
-
-
-class RankOnlyViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Rank.objects.all()
-    serializer_class = RanksOnlySerializer

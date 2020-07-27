@@ -12,7 +12,6 @@ router.register(r'vessels', views.VesselViewSet, basename='Vessels')
 router.register(r'workday-types', views.WorkdayTypeViewSet, basename='WorkdayTypes')
 router.register(r'voyage-types', views.VoyageTypeViewSet, basename='VoyageTypes')
 router.register(r'ranks', views.RankViewSet, basename='Rank')
-router.register(r'ranks-only', views.RankOnlyViewSet, basename='RanksOnly')
 router.register(r'voyages', views.VoyageViewSet, basename='Voyages')
 
 urlpatterns = [

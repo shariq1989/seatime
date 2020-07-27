@@ -103,12 +103,6 @@ class RankSerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'designation')
 
 
-class RanksOnlySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Rank
-        fields = ('id', 'name')
-
-
 class VoyageSerializer(serializers.ModelSerializer):
     vessel = VesselSerializer()
     voyage_type = VoyageTypeSerializer()
@@ -116,6 +110,13 @@ class VoyageSerializer(serializers.ModelSerializer):
     rank = RankSerializer()
     designation = DesignationSerializer()
 
+    class Meta:
+        model = Voyage
+        fields = ('id', 'user', 'vessel', 'depart_date', 'arrival_date', 'voyage_type', 'workday_type',
+                  'rank', 'designation')
+
+
+class VoyagePostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Voyage
         fields = ('id', 'user', 'vessel', 'depart_date', 'arrival_date', 'voyage_type', 'workday_type',
