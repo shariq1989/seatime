@@ -255,13 +255,13 @@
 
                 dialog: false,
                 headers: [
-                    {text: 'Vessel', value: 'vessel'},
+                    {text: 'Vessel', value: 'vessel.name'},
                     {text: 'Departure', value: 'depart_date'},
                     {text: 'Arrival', value: 'arrival_date'},
-                    {text: 'Voyage', value: 'voyage_type'},
-                    {text: 'Workday', value: 'workday_type'},
-                    {text: 'Position', value: 'rank'},
-                    {text: 'Rating', value: 'designation'},
+                    {text: 'Voyage', value: 'voyage_type.type'},
+                    {text: 'Workday', value: 'workday_type.type'},
+                    {text: 'Position', value: 'rank.name'},
+                    {text: 'Rating', value: 'designation.name'},
                     {text: 'Actions', value: 'actions', sortable: false},
                 ],
                 editedIndex: -1,
