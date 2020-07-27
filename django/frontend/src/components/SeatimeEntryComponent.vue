@@ -67,7 +67,6 @@
                                                                         hide-no-data
                                                                         item-text="name"
                                                                         item-value="id"
-                                                                        return-object
                                                                         label="Vessel"
                                                                         placeholder="Start typing to Search"
                                                                         :rules="[v => !!v || 'This is a required field']"
@@ -80,7 +79,6 @@
                                                                         :items="positions_list"
                                                                         item-text="name"
                                                                         item-value="id"
-                                                                        return-object
                                                                         label="Sailing Position"
                                                                         :rules="[v => !!v || 'This is a required field']"
                                                                         required
@@ -93,7 +91,6 @@
                                                                         :items="editedItem.position['designation']"
                                                                         item-text="name"
                                                                         item-value="id"
-                                                                        return-object
                                                                         label="Rating"
                                                                         :rules="[v => !!v || 'This is a required field']"
                                                                         required
@@ -154,7 +151,6 @@
                                                                         :items="voyage_type_list"
                                                                         item-text="type"
                                                                         item-value="id"
-                                                                        return-object
                                                                         label="Voyage Type"
                                                                         :rules="[v => !!v || 'This is a required field']"
                                                                         required
@@ -167,7 +163,6 @@
                                                                         item-text="type"
                                                                         item-value="id"
                                                                         label="Workday Type"
-                                                                        return-object
                                                                         :rules="[v => !!v || 'This is a required field']"
                                                                         required
                                                                 ></v-autocomplete>
@@ -343,7 +338,7 @@
                         arrival_date: this.editedItem.arrival_date,
                         voyage_type: this.editedItem.voyage_type,
                         workday_type: this.editedItem.workday_type,
-                        rank: this.editedItem.position,
+                        rank: this.editedItem.position.id,
                         designation: this.editedItem.rating
                     };
                     console.log(seatimeFields);
