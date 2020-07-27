@@ -343,8 +343,7 @@
                         arrival_date: this.editedItem.arrival_date,
                         voyage_type: this.editedItem.voyage_type,
                         workday_type: this.editedItem.workday_type,
-                        position: this.editedItem.position,
-                        rank: this.editedItem.position.id,
+                        rank: this.editedItem.position,
                         designation: this.editedItem.rating
                     };
                     console.log(seatimeFields);
