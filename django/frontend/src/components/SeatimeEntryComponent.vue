@@ -27,6 +27,9 @@
                             >
                                 <template v-slot:top>
                                     <v-toolbar flat color="white">
+                                        <v-snackbar v-model="snackbar">
+                                            {{ snackbarText }}
+                                        </v-snackbar>
                                         <h1 style="font-family: serif" class="primary--text">
                                             Trip Log
                                         </h1>
@@ -47,9 +50,6 @@
                                                     <v-alert type="error" v-if="displayErrorMessage">
                                                         <span class="text-left" v-html="errorMessage"></span>
                                                     </v-alert>
-                                                    <v-snackbar v-model="snackbar">
-                                                        {{ snackbarText }}
-                                                    </v-snackbar>
                                                 </div>
                                                 <v-card-title>
                                                     <h1 style="font-family: serif" class="primary--text">
@@ -345,7 +345,7 @@
                     };
                     console.log(seatimeFields);
                     this.pageLoading = true;
-                    if (this.editedItem === -1) {
+                    if (this.editedIndex === -1) {
                         this.APIMethod = 'POST';
                     } else {
                         this.APIMethod = 'PUT';
@@ -391,8 +391,9 @@
                         () => {
                             this.snackbarText = 'Trip deleted';
                             this.snackbar = true;
-                            this.loadPage();
-                            this.pageLoading = false;
+                            this.loadPage().then(
+                                this.pageLoading = false
+                            );
                         }
                     ).catch(err => {
                             this.pageLoading = false;
