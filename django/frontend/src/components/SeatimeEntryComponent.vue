@@ -349,7 +349,7 @@
                     } else {
                         this.APIMethod = 'PUT';
                     }
-                    updateSeatimeEntries([this.APIMethod, seatimeFields, this.seatime_entries.id]).then(
+                    updateSeatimeEntries([this.APIMethod, seatimeFields, this.editedItem.id]).then(
                         () => {
                             this.snackbarText = 'Trip saved successfully';
                             this.snackbar = true;
