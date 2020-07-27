@@ -332,16 +332,27 @@
                     if (this.editedItem.position.designation.length === 0) {
                         this.editedItem.rating = null;
                     }
-                    let seatimeFields = {
-                        user: localStorage.getItem('id'),
-                        vessel: this.editedItem.vessel,
-                        depart_date: this.editedItem.depart_date,
-                        arrival_date: this.editedItem.arrival_date,
-                        voyage_type: this.editedItem.voyage_type,
-                        workday_type: this.editedItem.workday_type,
-                        rank: this.editedItem.position.id,
-                        designation: this.editedItem.rating
-                    };
+                    if (this.editedIndex === -1) {
+                        const seatimeFields = {
+                            user: localStorage.getItem('id'),
+                            vessel: this.editedItem.vessel,
+                            depart_date: this.editedItem.depart_date,
+                            arrival_date: this.editedItem.arrival_date,
+                            voyage_type: this.editedItem.voyage_type,
+                            workday_type: this.editedItem.workday_type,
+                            rank: this.editedItem.position.id,
+                            designation: this.editedItem.rating
+                        };
+                    }
+                    if (!Number.isInteger(seatimeFields.voyage_type)) {
+                        seatimeFields.voyage_type = this.editedItem.voyage_type.id;
+                    }
+                    if (!Number.isInteger(seatimeFields.workday_type)) {
+                        seatimeFields.workday_type = this.editedItem.workday_type.id;
+                    }
+                    if (!Number.isInteger(seatimeFields.vessel)) {
+                        seatimeFields.vessel = this.editedItem.vessel.id;
+                    }
                     console.log(seatimeFields);
                     this.pageLoading = true;
                     if (this.editedIndex === -1) {
@@ -396,7 +407,7 @@
                         }
                     ).catch(err => {
                             this.pageLoading = false;
-                            console.log(err.response.data);
+                            console.log(err.response);
                             this.displayErrorMessage = true;
                             this.errorMessage = 'Error updating documents';
                             if (err.response.data) {
