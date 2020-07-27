@@ -434,6 +434,8 @@
         },
         computed: {
             formTitle() {
+                this.displayErrorMessage = false;
+                this.errorMessage = '';
                 return this.editedIndex === -1 ? 'New Trip' : 'Edit Trip'
             },
         },
