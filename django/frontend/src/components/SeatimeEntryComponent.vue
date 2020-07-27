@@ -52,12 +52,14 @@
                                                     </v-snackbar>
                                                 </div>
                                                 <v-card-title>
-                                                    <span class="headline">{{ formTitle }}</span>
+                                                    <h1 style="font-family: serif" class="primary--text">
+                                                        {{ formTitle }}</h1>
                                                 </v-card-title>
 
                                                 <v-card-text>
                                                     <v-row>
-                                                        <v-col cols="12" sm="5">
+                                                        <v-col cols="12" sm="1"></v-col>
+                                                        <v-col cols="12" sm="4">
                                                             <v-row>
                                                                 <v-autocomplete
                                                                         v-model="editedItem.vessel"
@@ -97,7 +99,7 @@
                                                             </v-row>
                                                         </v-col>
                                                         <v-col cols="12" sm="2"></v-col>
-                                                        <v-col cols="12" sm="5">
+                                                        <v-col cols="12" sm="4">
                                                             <v-row>
                                                                 <v-menu
                                                                         v-model="dateModal_depart"
@@ -167,6 +169,7 @@
                                                                 ></v-autocomplete>
                                                             </v-row>
                                                         </v-col>
+                                                        <v-col cols="12" sm="1"></v-col>
                                                     </v-row>
                                                 </v-card-text>
                                                 <v-card-actions>
