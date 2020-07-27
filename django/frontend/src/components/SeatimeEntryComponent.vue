@@ -378,9 +378,8 @@
             }
             ,
             deleteItem(item) {
-                const itemToDelete = this.trip_list.indexOf(item)
                 if (confirm('Are you sure you want to delete this trip?')) {
-                    updateSeatimeEntries(['DELETE', null, itemToDelete.id]).then(
+                    updateSeatimeEntries(['DELETE', item, item.id]).then(
                         () => {
                             this.snackbarText = 'Trip deleted';
                             this.snackbar = true;
