@@ -34,7 +34,7 @@
                                             Trip Log
                                         </h1>
                                         <v-spacer></v-spacer>
-                                        <v-dialog v-model="dialog" max-width="500px">
+                                        <v-dialog v-model="dialog" max-width="800px">
                                             <template v-slot:activator="{ on, attrs }">
                                                 <v-btn
                                                         color="primary"
@@ -67,6 +67,7 @@
                                                                         hide-no-data
                                                                         item-text="name"
                                                                         item-value="id"
+                                                                        return-object
                                                                         label="Vessel"
                                                                         placeholder="Start typing to Search"
                                                                         :rules="[v => !!v || 'This is a required field']"
@@ -92,6 +93,7 @@
                                                                         :items="editedItem.position['designation']"
                                                                         item-text="name"
                                                                         item-value="id"
+                                                                        return-object
                                                                         label="Rating"
                                                                         :rules="[v => !!v || 'This is a required field']"
                                                                         required
@@ -152,6 +154,7 @@
                                                                         :items="voyage_type_list"
                                                                         item-text="type"
                                                                         item-value="id"
+                                                                        return-object
                                                                         label="Voyage Type"
                                                                         :rules="[v => !!v || 'This is a required field']"
                                                                         required
@@ -164,6 +167,7 @@
                                                                         item-text="type"
                                                                         item-value="id"
                                                                         label="Workday Type"
+                                                                        return-object
                                                                         :rules="[v => !!v || 'This is a required field']"
                                                                         required
                                                                 ></v-autocomplete>
@@ -362,6 +366,7 @@
                             console.log(err.response.data);
                             this.displayErrorMessage = true;
                             this.errorMessage = 'Error updating documents';
+                            this.pageLoading = false;
                             if (err.response.data) {
                                 for (const field in err.response.data) {
                                     for (const error of err.response.data[field]) {
@@ -370,7 +375,6 @@
                                     }
                                 }
                             }
-                            this.pageLoading = false;
                         }
                     )
                 } else {
