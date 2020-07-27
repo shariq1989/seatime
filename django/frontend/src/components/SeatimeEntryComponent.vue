@@ -9,6 +9,9 @@
                 <v-row class="mb-6">
                     <v-col cols="12" sm="1"></v-col>
                     <v-col cols="12" sm="10">
+                        <v-snackbar v-model="snackbar">
+                            {{ snackbarText }}
+                        </v-snackbar>
                         <div v-if="pageLoading">
                             <v-progress-circular
                                     indeterminate
@@ -27,9 +30,6 @@
                             >
                                 <template v-slot:top>
                                     <v-toolbar flat color="white">
-                                        <v-snackbar v-model="snackbar">
-                                            {{ snackbarText }}
-                                        </v-snackbar>
                                         <h1 style="font-family: serif" class="primary--text">
                                             Trip Log
                                         </h1>
