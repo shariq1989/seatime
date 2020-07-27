@@ -79,6 +79,7 @@
                                                                         :items="positions_list"
                                                                         item-text="name"
                                                                         item-value="id"
+                                                                        return-object
                                                                         label="Sailing Position"
                                                                         :rules="[v => !!v || 'This is a required field']"
                                                                         required
