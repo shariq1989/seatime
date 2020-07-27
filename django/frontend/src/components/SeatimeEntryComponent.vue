@@ -344,12 +344,19 @@
                         designation: this.editedItem.rating
                     };
                     console.log(seatimeFields);
+                    this.pageLoading = true;
+                    if (this.editedItem === -1) {
+                        this.APIMethod = 'POST';
+                    } else {
+                        this.APIMethod = 'PUT';
+                    }
                     updateSeatimeEntries([this.APIMethod, seatimeFields, this.seatime_entries.id]).then(
                         () => {
                             this.snackbarText = 'Trip saved successfully';
                             this.snackbar = true;
                             this.dialog = false
                             this.loadPage();
+                            this.pageLoading = false;
                         }
                     ).catch(err => {
                             console.log(err.response.data);
@@ -363,14 +370,14 @@
                                     }
                                 }
                             }
+                            this.pageLoading = false;
                         }
                     )
                 } else {
                     this.displayErrorMessage = true;
                     this.errorMessage = 'Please complete all fields before saving.';
                 }
-            }
-            ,
+            },
             editItem(item) {
                 this.editedIndex = this.trip_list.indexOf(item)
                 this.editedItem = Object.assign({}, item)
@@ -379,13 +386,16 @@
             ,
             deleteItem(item) {
                 if (confirm('Are you sure you want to delete this trip?')) {
+                    this.pageLoading = true;
                     updateSeatimeEntries(['DELETE', item, item.id]).then(
                         () => {
                             this.snackbarText = 'Trip deleted';
                             this.snackbar = true;
                             this.loadPage();
+                            this.pageLoading = false;
                         }
                     ).catch(err => {
+                            this.pageLoading = false;
                             console.log(err.response.data);
                             this.displayErrorMessage = true;
                             this.errorMessage = 'Error updating documents';
