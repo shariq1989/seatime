@@ -413,6 +413,7 @@
             },
             editDocuments() {
                 this.displayErrorMessage = false;
+                this.pageLoading = true;
                 let documentFields = {
                     mariner_ref_num: this.documents.mariner_ref_num,
                     mmc_doc_num: this.documents.mmc_doc_num,
@@ -433,9 +434,12 @@
                     () => {
                         this.snackbarText = 'Documents updated successfully';
                         this.snackbar = true;
-                        this.loadPage();
+                        this.loadPage().then(() => {
+                            this.pageLoading = false;
+                        })
                     }
                 ).catch(err => {
+                        this.pageLoading = false;
                         console.log(err.response.data);
                         this.displayErrorMessage = true;
                         this.errorMessage = 'Error updating documents';

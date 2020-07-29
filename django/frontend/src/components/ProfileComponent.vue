@@ -231,6 +231,7 @@
             },
             editProfile() {
                 this.displayErrorMessage = false;
+                this.pageLoading = true;
                 let profileFields = {
                     first_name: this.userProfile.first_name,
                     middle_name: this.userProfile.middle_name,
@@ -244,10 +245,13 @@
                     () => {
                         this.snackbarText = 'Profile updated successfully';
                         this.snackbar = true;
-                        this.loadProfile();
+                        this.loadPage().then(() => {
+                            this.pageLoading = false;
+                        })
                     }
                 ).catch(err => {
                         console.log(err.response.data);
+                        this.pageLoading = false;
                         this.displayErrorMessage = true;
                         this.errorMessage = 'Error updating profile';
                         if (err.response.data) {
