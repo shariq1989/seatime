@@ -236,16 +236,6 @@
                 voyage_type_list: null,
                 workday_type_list: null,
                 trip_list: null,
-                seatime_entries: {
-                    vessel: null,
-                    depart_date: null,
-                    arrival_date: null,
-                    voyage_type: null,
-                    workday_type: null,
-                    position: null,
-                    rating: null,
-                    id: null
-                },
                 logoutDialog: {
                     displayStatus: false,
                     dialogHeader: 'Confirm Logout',
