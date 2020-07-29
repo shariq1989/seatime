@@ -75,7 +75,7 @@
                                                             </v-row>
                                                             <v-row>
                                                                 <v-autocomplete
-                                                                        v-model="editedItem.position"
+                                                                        v-model="editedItem.rank"
                                                                         :items="positions_list"
                                                                         item-text="name"
                                                                         item-value="id"
@@ -87,9 +87,9 @@
                                                             </v-row>
                                                             <v-row>
                                                                 <v-autocomplete
-                                                                        v-model="editedItem.rating"
-                                                                        v-if="editedItem.position && editedItem.position['designation'].length > 0"
-                                                                        :items="editedItem.position['designation']"
+                                                                        v-model="editedItem.designation"
+                                                                        v-if="editedItem.rank && editedItem.rank['designation'].length > 0"
+                                                                        :items="editedItem.rank['designation']"
                                                                         item-text="name"
                                                                         item-value="id"
                                                                         label="Rating"
@@ -271,8 +271,8 @@
                     arrival_date: null,
                     voyage_type: null,
                     workday_type: null,
-                    position: null,
-                    rating: null
+                    rank: null,
+                    designation: null
                 },
                 defaultItem: {
                     vessel: null,
@@ -280,8 +280,8 @@
                     arrival_date: null,
                     voyage_type: null,
                     workday_type: null,
-                    position: null,
-                    rating: null
+                    rank: null,
+                    designation: null
                 },
             }
         },
@@ -324,13 +324,13 @@
                 this.displayErrorMessage = false;
                 if (this.editedItem.depart_date !== null &&
                     this.editedItem.arrival_date !== null &&
-                    this.editedItem.position !== null &&
+                    this.editedItem.rank !== null &&
                     this.editedItem.vessel !== null &&
                     this.editedItem.voyage_type !== null &&
                     this.editedItem.workday_type !== null
                 ) {
-                    if (this.editedItem.position.designation.length === 0) {
-                        this.editedItem.rating = null;
+                    if (this.editedItem.rank.designation.length === 0) {
+                        this.editedItem.designation = null;
                     }
                     let seatimeFields = {
                         user: localStorage.getItem('id'),
@@ -339,8 +339,8 @@
                         arrival_date: this.editedItem.arrival_date,
                         voyage_type: this.editedItem.voyage_type,
                         workday_type: this.editedItem.workday_type,
-                        rank: this.editedItem.position.id,
-                        designation: this.editedItem.rating
+                        rank: this.editedItem.rank.id,
+                        designation: this.editedItem.designation
                     };
                     if (!Number.isInteger(seatimeFields.voyage_type)) {
                         seatimeFields.voyage_type = this.editedItem.voyage_type.id;
