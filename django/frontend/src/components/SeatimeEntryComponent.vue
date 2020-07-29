@@ -393,8 +393,9 @@
                         () => {
                             this.snackbarText = 'Trip deleted';
                             this.snackbar = true;
-                            this.loadPage().then(
-                                this.pageLoading = false
+                            this.loadPage().then(() => {
+                                    this.pageLoading = false
+                                }
                             );
                         }
                     ).catch(err => {
