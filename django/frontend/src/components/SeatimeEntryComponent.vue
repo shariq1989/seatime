@@ -332,6 +332,9 @@
                         rank: this.editedItem.rank.id,
                         designation: this.editedItem.designation
                     };
+                    if (this.editedItem.designation && this.editedItem.designation.id) {
+                        seatimeFields.designation = this.editedItem.designation.id;
+                    }
                     if (!Number.isInteger(seatimeFields.voyage_type)) {
                         seatimeFields.voyage_type = this.editedItem.voyage_type.id;
                     }
