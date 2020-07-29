@@ -356,8 +356,9 @@
                             this.snackbarText = 'Trip saved successfully';
                             this.snackbar = true;
                             this.dialog = false
-                            this.loadPage();
-                            this.pageLoading = false;
+                            this.loadPage().then(() => {
+                                this.pageLoading = false;
+                            })
                         }
                     ).catch(err => {
                             console.log(err.response.data);
