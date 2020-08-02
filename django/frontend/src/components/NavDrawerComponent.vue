@@ -1,7 +1,7 @@
 <template>
   <v-navigation-drawer v-model="drawer" expand-on-hover permanent app>
     <v-list>
-      <v-list-item class="px-2" v-on:click.stop="routeToProfile()">
+      <v-list-item class="px-2" v-on:click.stop="routeToHome()">
         <v-list-item-avatar>
           <img src="../assets/seatime.png" alt="">
         </v-list-item-avatar>
@@ -55,8 +55,8 @@ export default {
     onLogoutClick(action) {
       this.$emit('input', action)
     },
-    routeToProfile() {
-      this.$router.push('/profile')
+    routeToHome() {
+      this.$router.push('/')
     }
   }
 }
