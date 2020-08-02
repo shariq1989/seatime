@@ -56,7 +56,7 @@ export default {
       this.$emit('input', action)
     },
     routeToProfile() {
-      router.push('/profile')
+      this.$router.push('/profile')
     }
   }
 }
