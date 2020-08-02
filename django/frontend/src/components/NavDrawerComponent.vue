@@ -1,7 +1,7 @@
 <template>
   <v-navigation-drawer v-model="drawer" expand-on-hover permanent app>
     <v-list>
-      <v-list-item class="px-2" link :to="/profile">
+      <v-list-item class="px-2" link :to='/profile'>
         <v-list-item-avatar>
           <img src="../assets/seatime.png" alt="">
         </v-list-item-avatar>
