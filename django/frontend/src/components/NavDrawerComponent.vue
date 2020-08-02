@@ -6,7 +6,7 @@
                     <img src="../assets/seatime.png" alt="">
                 </v-list-item-avatar>
                 <v-list-item-content>
-                    <v-list-item-title>Seatime</v-list-item-title>
+                    <v-list-item-title :to="/profile">Seatime</v-list-item-title>
                 </v-list-item-content>
             </v-list-item>
 
