@@ -152,8 +152,7 @@
               <div v-if="!tripsLoading && trips">
                 <v-card-text>
                   <p class="text-left subtitle-2 tag-title" style="margin: 0;">
-                    You have logged {{ tripsCt }} trips
-                    {{ trips }}
+                    You have logged {{ trips.length }} trips
                   </p>
                 </v-card-text>
               </div>
@@ -183,7 +182,7 @@ export default {
       tripsLoading: true,
       userProfile: {},
       documents: {},
-      trips: {},
+      trips: null,
       logoutDialog: {
         displayStatus: false,
         dialogHeader: 'Confirm Logout',
@@ -214,9 +213,7 @@ export default {
       getSeatimeEntries().then((resp) => {
         console.log(resp.data);
         this.tripsLoading = false;
-        this.trips = resp.data[0];
-        const tripsCt = Object.keys(this.trips).length;
-        console.log(tripsCt);
+        this.trips(resp.data.length);
       }).catch((error) => {
         console.log(error)
         this.tripsLoading = false;
