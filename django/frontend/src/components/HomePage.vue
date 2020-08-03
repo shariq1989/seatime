@@ -132,10 +132,10 @@
           </v-col>
           <v-col>
             <v-card class="pa-2">
+              <h1 style="font-family: serif" class="primary--text">
+                Trips
+              </h1>
               <div v-if="tripsLoading">
-                <h1 style="font-family: serif" class="primary--text">
-                  Trips
-                </h1>
                 <v-progress-circular
                     indeterminate
                     color="primary"
@@ -153,6 +153,7 @@
                 <v-card-text>
                   <p class="text-left subtitle-2 tag-title" style="margin: 0;">
                     You have logged {{ trips.length }} trips
+                    {{trips}}
                   </p>
                 </v-card-text>
               </div>
