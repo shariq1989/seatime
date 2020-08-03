@@ -182,7 +182,7 @@ export default {
       tripsLoading: true,
       userProfile: {},
       documents: {},
-      trips: null,
+      trips: [],
       logoutDialog: {
         displayStatus: false,
         dialogHeader: 'Confirm Logout',
