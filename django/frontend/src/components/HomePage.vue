@@ -153,8 +153,12 @@
                 <v-card-text>
                   <p class="text-left subtitle-2 tag-title" style="margin: 0;">
                     You have logged {{ trips.length }} trips
-                    {{trips}}
+                    {{ trips }}
                   </p>
+                  <p>
+                    {{ trips.length }}
+                  </p>
+
                 </v-card-text>
               </div>
             </v-card>
