@@ -152,7 +152,7 @@
               <div v-if="!tripsLoading && trips">
                 <v-card-text>
                   <p class="text-left subtitle-2 tag-title" style="margin: 0;">
-                    You have logged {{ trips.length }} trips
+                    You have logged {{ tripArr.length }} trips
                     {{ trips }}
                   </p>
                   <p>
@@ -188,6 +188,7 @@ export default {
       userProfile: {},
       documents: {},
       trips: {},
+      tripArr: [],
       logoutDialog: {
         displayStatus: false,
         dialogHeader: 'Confirm Logout',
@@ -217,6 +218,7 @@ export default {
         console.log(resp.data);
         this.tripsLoading = false;
         this.trips = resp.data[0];
+        this.tripArr = JSON.parse(resp.data[0]);
       }).catch(() => {
         this.tripsLoading = false;
         this.trips = {error: 'Error loading trips'};
