@@ -17,7 +17,7 @@
                             <p class="primary--text">A toolkit that allows mariners to manage various aspects of work
                                 life</p>
                             <v-chip class="mb-1" color="primary">
-                                Manage Document and Certs
+                                Manage Documents and Certs
                             </v-chip>
                             <v-chip class="mb-1" color="accent">
                                 Track Voyages
