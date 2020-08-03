@@ -202,7 +202,8 @@ export default {
         console.log(resp.data);
         this.profileLoading = false;
         this.userProfile = resp.data[0];
-      }).catch(() => {
+      }).catch((error) => {
+        console.log(error)
         this.profileLoading = false;
         this.userProfile = {error: 'Error loading profile'};
       });
@@ -210,7 +211,8 @@ export default {
         console.log(resp.data);
         this.documentsLoading = false;
         this.documents = resp.data[0];
-      }).catch(() => {
+      }).catch((error) => {
+        console.log(error)
         this.documentsLoading = false;
         this.documents = {error: 'Error loading documents'};
       });
@@ -219,7 +221,8 @@ export default {
         this.tripsLoading = false;
         this.trips = resp.data[0];
         this.tripArr = JSON.parse(resp.data[0]);
-      }).catch(() => {
+      }).catch((error) => {
+        console.log(error)
         this.tripsLoading = false;
         this.trips = {error: 'Error loading trips'};
       });
