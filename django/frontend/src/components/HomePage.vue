@@ -213,7 +213,7 @@ export default {
       getSeatimeEntries().then((resp) => {
         console.log(resp.data);
         this.tripsLoading = false;
-        this.trips(resp.data.length);
+        this.trips = resp.data;
       }).catch((error) => {
         console.log(error)
         this.tripsLoading = false;
