@@ -245,12 +245,12 @@
                     () => {
                         this.snackbarText = 'Profile updated successfully';
                         this.snackbar = true;
-                        this.loadPage().then(() => {
+                        this.loadProfile().then(() => {
                             this.profileLoading = false;
                         })
                     }
                 ).catch(err => {
-                        console.log(err.response.data);
+                        console.log(err);
                         this.profileLoading = false;
                         this.displayErrorMessage = true;
                         this.errorMessage = 'Error updating profile';
