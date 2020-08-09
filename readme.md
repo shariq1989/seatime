@@ -3,8 +3,12 @@
 	mkdir vue
 	cd vue
 
-	sudo apt install git
+	ssh-keygen (enter through values)
+	copy contents of ~/.ssh/id_rsa.pub to github settings ssh page
+
+	sudo apt install git	
 	git clone git@github.com:shariq1989/seatime.git	
+
 	cd seatime
 	cd bin/ && source activate
 	cd ..
