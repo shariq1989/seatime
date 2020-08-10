@@ -5,6 +5,9 @@
 # sudo apt install git
 # git clone git@github.com:shariq1989/seatime.git
 
+sudo apt update
+sudo apt install python3-pip python3-dev libpq-dev postgresql postgresql-contrib nginx curl
+
 echo "activating python env"
 cd /home/development/seatime/bin/ && source activate
 cd ..
@@ -34,4 +37,3 @@ python3 /home/development/seatime/django/seatime_app/manage.py collectstatic
 # firewall stuff
 sudo apt install ufw
 sudo ufw allow 8000
-

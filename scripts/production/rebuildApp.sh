@@ -15,3 +15,4 @@ python3 /home/development/seatime/django/seatime_app/manage.py migrate
 
 echo "collect static files"
 python3 /home/development/seatime/django/seatime_app/manage.py collectstatic
+
