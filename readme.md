@@ -25,8 +25,8 @@
 	sudo service nginx restart
 
 # Django - Set up remote server
-	// full instructions
-	// https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-debian-10
+	sudo apt update
+    	sudo apt install python3-pip python3-dev libpq-dev postgresql postgresql-contrib nginx curl
 	mkdir ~/../home/development
 	cd ~/../home/development
 	sudo apt-get update && sudo apt-get upgrade
