@@ -13,6 +13,9 @@ sudo apt install python3-pip
 alias python=python3
 alias pip=pip3
 
+echo "pull latest changes"
+git -C /home/development/seatime pull
+
 echo "install requirements"
 pip3 install -r requirements.txt
 
@@ -20,5 +23,7 @@ echo "make migrations"
 python3 /home/development/seatime/django/seatime_app/manage.py makemigrations
 echo "migrate changes"
 python3 /home/development/seatime/django/seatime_app/manage.py migrate
+echo "create super user"
 python3 /home/development/seatime/django/seatime_app/manage.py createsuperuser
+echo "collect static files"
 python3 /home/development/seatime/django/seatime_app/manage.py collectstatic
