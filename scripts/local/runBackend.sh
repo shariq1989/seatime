@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "activating python env"
-cd ~/Documents/Development/SeaTime/bin/ && source activate
+cd ~/Documents/Development/SeaTime/seatime_env/bin/ && source activate
 echo "pulling latest code"
 git pull
 echo "make migrations"
