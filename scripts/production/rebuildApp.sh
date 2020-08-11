@@ -6,7 +6,7 @@ echo "pull latest changes"
 git -C /home/development/seatime pull
 
 echo "install requirements"
-pip3 install -r requirements.txt
+pip3 install -r /home/development/seatime/requirements.txt
 
 echo "make migrations"
 python3 /home/development/seatime/django/seatime_app/manage.py makemigrations
