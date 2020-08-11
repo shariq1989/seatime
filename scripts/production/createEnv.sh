@@ -39,3 +39,5 @@ python3 /home/development/seatime/django/seatime_app/manage.py collectstatic
 # firewall stuff
 sudo apt install ufw
 sudo ufw allow 8000
+
+cp -a /home/development/seatime/scripts/production/gunicorn/. /etc/systemd/system/

@@ -7,7 +7,7 @@ After=network.target
 User=root
 Group=www-data
 WorkingDirectory=/home/development/seatime/django/seatime_app
-ExecStart=/usr/bin/gunicorn \
+ExecStart=/home/development/seatime/seatime_env/bin/gunicorn \
 	  --access-logfile - \
 	  --workers 3 \
 	  --bind unix:/run/gunicorn.sock \
