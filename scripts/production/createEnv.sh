@@ -41,3 +41,7 @@ sudo apt install ufw
 sudo ufw allow 8000
 
 cp -a /home/development/seatime/scripts/production/gunicorn/. /etc/systemd/system/
+
+sudo systemctl start gunicorn.socket
+sudo systemctl enable gunicorn.socket
+sudo systemctl status gunicorn
