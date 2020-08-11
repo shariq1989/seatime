@@ -10,7 +10,7 @@ sudo apt install python3-pip python3-dev libpq-dev postgresql postgresql-contrib
 
 echo "activating python env"
 sudo apt install virtualenv
-cd /home/development/seatime/
+cd /home/development/seatime/ || exit
 virtualenv seatime_env
 source seatime_env/bin/activate
 echo "install pip3"
