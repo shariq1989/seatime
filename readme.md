@@ -25,8 +25,7 @@
 	sudo service nginx restart
 
 # Django - Set up remote server
-	sudo apt update
-    	sudo apt install python3-pip python3-dev libpq-dev postgresql postgresql-contrib nginx curl
+	sudo apt update && sudo apt install python3-pip python3-dev libpq-dev postgresql postgresql-contrib nginx curl
 	mkdir ~/../home/development
 	cd ~/../home/development
 	sudo apt-get update && sudo apt-get upgrade
