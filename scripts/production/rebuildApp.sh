@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "activating python env"
-cd /home/development/seatime/bin/ && source activate
+source /home/development/seatime/bin/activate
 
 echo "pull latest changes"
 git -C /home/development/seatime pull
@@ -16,3 +16,4 @@ python3 /home/development/seatime/django/seatime_app/manage.py migrate
 echo "collect static files"
 python3 /home/development/seatime/django/seatime_app/manage.py collectstatic
 
+sudo systemctl restart gunicorn
