@@ -1,0 +1,476 @@
+[
+  {
+    "model": "seatime.vessel",
+    "pk": 1,
+    "fields": {
+      "name": "APL China",
+      "official_number": "9074389"
+    }
+  },
+  {
+    "model": "seatime.vessel",
+    "pk": 2,
+    "fields": {
+      "name": "Golden Bear",
+      "official_number": "8834407"
+    }
+  },
+  {
+    "model": "seatime.workdaytype",
+    "pk": 1,
+    "fields": {
+      "type": "8 Hour Workday (Straight Time)"
+    }
+  },
+  {
+    "model": "seatime.workdaytype",
+    "pk": 2,
+    "fields": {
+      "type": "12 Hour Workday (Time and One Half)"
+    }
+  },
+  {
+    "model": "seatime.voyagetype",
+    "pk": 1,
+    "fields": {
+      "type": "Inland Waterways"
+    }
+  },
+  {
+    "model": "seatime.voyagetype",
+    "pk": 2,
+    "fields": {
+      "type": "Coastal"
+    }
+  },
+  {
+    "model": "seatime.voyagetype",
+    "pk": 3,
+    "fields": {
+      "type": "Open Ocean"
+    }
+  },
+  {
+    "model": "seatime.voyagetype",
+    "pk": 4,
+    "fields": {
+      "type": "Near Coastal"
+    }
+  },
+  {
+    "model": "seatime.voyagetype",
+    "pk": 5,
+    "fields": {
+      "type": "Other/Unknown"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 1,
+    "fields": {
+      "name": "Unlimited"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 2,
+    "fields": {
+      "name": "Limited"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 3,
+    "fields": {
+      "name": "OSV"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 4,
+    "fields": {
+      "name": "MODU"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 5,
+    "fields": {
+      "name": "UFIV"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 6,
+    "fields": {
+      "name": "OSV Unlimited"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 7,
+    "fields": {
+      "name": "OSV 4000"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 8,
+    "fields": {
+      "name": "OSV 1000"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 9,
+    "fields": {
+      "name": "UFIV Unlimited"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 10,
+    "fields": {
+      "name": "UFIV Limited"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 11,
+    "fields": {
+      "name": "4000 hp"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 12,
+    "fields": {
+      "name": "1000 hp"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 13,
+    "fields": {
+      "name": "Any Rating"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 14,
+    "fields": {
+      "name": "Electrician/Refrigeration Engineer"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 15,
+    "fields": {
+      "name": "Oiler"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 16,
+    "fields": {
+      "name": "Fireman/Watertender"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 17,
+    "fields": {
+      "name": "Junior Engineer"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 18,
+    "fields": {
+      "name": "Pumpman/Machinist"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 19,
+    "fields": {
+      "name": "Oceans 1600 GRT"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 20,
+    "fields": {
+      "name": "Oceans 500 GRT"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 21,
+    "fields": {
+      "name": "Near Coastal 1600 GRT"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 22,
+    "fields": {
+      "name": "Near Coastal 500 GRT"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 23,
+    "fields": {
+      "name": "Near Coastal 200 GRT"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 24,
+    "fields": {
+      "name": "Great Lakes & Inland Waters Unlimited"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 25,
+    "fields": {
+      "name": "Great Lakes & Inland Waters 1600 GRT"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 26,
+    "fields": {
+      "name": "Great Lakes & Inland Waters 500 GRT"
+    }
+  },
+  {
+    "model": "seatime.designation",
+    "pk": 27,
+    "fields": {
+      "name": "Great Lakes & Inland Waters 200 GRT"
+    }
+  },
+  {
+    "model": "seatime.rank",
+    "pk": 1,
+    "fields": {
+      "name": "Chief Engineer",
+      "designation": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  },
+  {
+    "model": "seatime.rank",
+    "pk": 2,
+    "fields": {
+      "name": "First Engineer",
+      "designation": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    }
+  },
+  {
+    "model": "seatime.rank",
+    "pk": 3,
+    "fields": {
+      "name": "Second Engineer",
+      "designation": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    }
+  },
+  {
+    "model": "seatime.rank",
+    "pk": 4,
+    "fields": {
+      "name": "Third Engineer",
+      "designation": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    }
+  },
+  {
+    "model": "seatime.rank",
+    "pk": 5,
+    "fields": {
+      "name": "QMED",
+      "designation": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    }
+  },
+  {
+    "model": "seatime.rank",
+    "pk": 6,
+    "fields": {
+      "name": "Student or Apprentice",
+      "designation": []
+    }
+  },
+  {
+    "model": "seatime.rank",
+    "pk": 7,
+    "fields": {
+      "name": "Master",
+      "designation": [
+        1,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ]
+    }
+  },
+  {
+    "model": "seatime.rank",
+    "pk": 8,
+    "fields": {
+      "name": "Chief Mate",
+      "designation": [
+        1,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ]
+    }
+  },
+  {
+    "model": "seatime.rank",
+    "pk": 9,
+    "fields": {
+      "name": "Second Mate",
+      "designation": [
+        1,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ]
+    }
+  },
+  {
+    "model": "seatime.rank",
+    "pk": 10,
+    "fields": {
+      "name": "Third Mate",
+      "designation": [
+        1,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ]
+    }
+  },
+  {
+    "model": "seatime.rank",
+    "pk": 11,
+    "fields": {
+      "name": "Able Seaman",
+      "designation": []
+    }
+  },
+  {
+    "model": "seatime.rank",
+    "pk": 12,
+    "fields": {
+      "name": "Ordinary Seaman",
+      "designation": []
+    }
+  },
+  {
+    "model": "seatime.rank",
+    "pk": 13,
+    "fields": {
+      "name": "Tankerman",
+      "designation": []
+    }
+  },
+  {
+    "model": "seatime.rank",
+    "pk": 14,
+    "fields": {
+      "name": "Designated Duty Engineer",
+      "designation": [
+        1,
+        7,
+        8
+      ]
+    }
+  },
+  {
+    "model": "seatime.rank",
+    "pk": 15,
+    "fields": {
+      "name": "Wiper",
+      "designation": []
+    }
+  }
+]
