@@ -45,3 +45,8 @@ cp -a /home/development/seatime/scripts/production/gunicorn/. /etc/systemd/syste
 sudo systemctl start gunicorn.socket
 sudo systemctl enable gunicorn.socket
 sudo systemctl status gunicorn
+
+cp -a /home/development/seatime/scripts/production/nginx/seatime /etc/nginx/sites-available/
+sudo ln -s /etc/nginx/sites-available/myproject /etc/nginx/sites-enabled
+sudo systemctl restart nginx
+
