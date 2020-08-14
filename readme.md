@@ -7,7 +7,7 @@
 	vi .ssh/authorized_keys
 	# Paste key here
 	
-	cat .ssh/authorized_keys
+	cat .ssh/id_rsa.pub
 	# Paste in Github->Settings->SSH keys
 	mkdir /home/development
 	sudo apt install git
