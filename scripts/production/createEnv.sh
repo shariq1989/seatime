@@ -1,7 +1,5 @@
 #!/bin/bash
 # TODO
-# cd ~/home || exit
-# mkdir development
 # sudo apt install git
 # git clone git@github.com:shariq1989/seatime.git
 
@@ -9,17 +7,14 @@ sudo apt update
 sudo apt install python3-pip python3-dev libpq-dev postgresql postgresql-contrib nginx curl
 
 echo "activating python env"
-sudo apt install virtualenv
 cd /home/development/seatime/ || exit
+sudo -H pip3 install --upgrade pip
+sudo -H pip3 install virtualenv
 virtualenv seatime_env
 source seatime_env/bin/activate
 echo "install pip3"
-sudo apt install python3-pip
 alias python="python3"
 alias pip="pip3"
-
-echo "pull latest changes"
-git -C /home/development/seatime pull
 
 echo "install requirements"
 pip3 install -r requirements.txt
@@ -52,4 +47,3 @@ sudo systemctl restart nginx
 
 sudo ufw delete allow 8000
 sudo ufw allow 'Nginx Full'
-
