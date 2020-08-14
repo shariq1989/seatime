@@ -25,7 +25,21 @@
 	sudo systemctl status gunicorn
 	curl --unix-socket /run/gunicorn.sock localhost
 	sudo systemctl status gunicorn
-	
+
+# Django - Making Changes
+### If you update your Django application, you can restart the Gunicorn process to pick up the changes by typing:
+
+    sudo systemctl restart gunicorn
+
+### If you change Gunicorn socket or service files, reload the daemon and restart the process by typing:
+
+    sudo systemctl daemon-reload
+    sudo systemctl restart gunicorn.socket gunicorn.service
+
+### If you change the Nginx server block configuration, test the configuration and then Nginx by typing:
+
+    sudo nginx -t && sudo systemctl restart nginx
+
 
 # Vue - Set up remote server
 	cd /var/www/html
