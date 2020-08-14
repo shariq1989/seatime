@@ -1,3 +1,21 @@
+# Building
+	# Remove from known_hosts on local machine
+	# Copy local id_rsa.pub
+	# Log into remote server
+	ssh-keygen
+	# Enter through until key is created
+	vi .ssh/authorized_keys
+	# Paste key here
+	
+	cat .ssh/authorized_keys
+	# Paste in Github->Settings->SSH keys
+	mkdir /home/development
+	sudo apt install git
+	cd /home/development
+	git clone git@github.com:shariq1989/seatime.git
+	
+	bash seatime/scripts/production/createEnv.sh
+	
 # Vue - Set up remote server
 	cd /var/www/html
 	mkdir vue
@@ -139,9 +157,6 @@
 	sudo ufw delete allow 8000
 	sudo ufw allow 'Nginx Full'
 	
-# Dokku
-    ssh dokku@96.126.97.44 config:set seatime_app DJANGO_SETTINGS_MODULE=seatime_app.settings.production DJANGO_SECRET_KEY="1c*3djyuzul-oyp%3*+8z%(n^+(#nk+cs+)d6#9u+74l%#_&ev" DJANGO_SERVER_IP="96.126.97.44"
-
 # Building
 	cd /var/www/html/vue/seatime/django/frontend
 	npm run build
