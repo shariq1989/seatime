@@ -12,9 +12,6 @@ sudo -H pip3 install --upgrade pip
 sudo -H pip3 install virtualenv
 virtualenv seatime_env
 source seatime_env/bin/activate
-echo "install pip3"
-alias python="python3"
-alias pip="pip3"
 
 echo "install requirements"
 pip3 install -r requirements.txt
