@@ -1,5 +1,4 @@
 server {
-
 	# SSL configuration
 	#
 	# listen 443 ssl default_server;
@@ -54,8 +53,8 @@ server {
     ssl_certificate_key /etc/letsencrypt/live/seatime-api.xyz/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
-
 }
+
 server {
     if ($host = seatime-api.xyz) {
         return 301 https://$host$request_uri;
@@ -76,5 +75,19 @@ server {
 		include proxy_params;
 		proxy_pass http://unix:/run/gunicorn.sock;
 	}
+}
 
+server {
+    listen 80;
+    server_name 96.126.97.44;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+	location /staticfiles/ {
+	    root /home/development/seatime/django/seatime_app/seatime_app;
+	}
+
+	location / {
+		include proxy_params;
+		proxy_pass http://unix:/run/gunicorn.sock;
+	}
 }
