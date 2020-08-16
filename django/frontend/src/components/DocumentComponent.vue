@@ -431,14 +431,14 @@ export default {
         user: localStorage.getItem('id'),
       };
       updateDocuments([this.APIMethod, documentFields, this.documents.id]).then(
-          function () {
+          () => {
             this.snackbarText = 'Documents updated successfully';
             this.snackbar = true;
             this.loadPage().then(() => {
               this.pageLoading = false;
             })
           }
-      ).catch(function (err) {
+      ).catch(err => {
             this.pageLoading = false;
             console.log(err);
             this.displayErrorMessage = true;
