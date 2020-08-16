@@ -430,18 +430,17 @@ export default {
         drug_test_compliant: this.documents.drug_test_compliant,
         user: localStorage.getItem('id'),
       };
-      let that = this;
       updateDocuments([this.APIMethod, documentFields, this.documents.id]).then(
-          () => {
+          function () {
             this.snackbarText = 'Documents updated successfully';
             this.snackbar = true;
-            that.loadPage().then(() => {
+            this.loadPage().then(() => {
               this.pageLoading = false;
             })
           }
-      ).catch(err => {
+      ).catch(function (err) {
             this.pageLoading = false;
-            console.log(err.response);
+            console.log(err);
             this.displayErrorMessage = true;
             this.errorMessage = 'Error updating documents';
             if (err.response.data) {
