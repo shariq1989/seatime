@@ -371,9 +371,9 @@ export default {
               })
             }
         ).catch(err => {
-              console.log(err.response.data);
+              console.log(err.response);
               this.displayErrorMessage = true;
-              this.errorMessage = 'Error updating documents';
+              this.errorMessage = 'Error updating trip';
               this.pageLoading = false;
               if (err.response.data) {
                 for (const field in err.response.data) {
