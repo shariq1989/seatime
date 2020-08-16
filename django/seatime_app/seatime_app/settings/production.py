@@ -25,7 +25,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'Optional default value')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['seatime.work', '96.126.97.44']
+ALLOWED_HOSTS = ['seatime.work', '96.126.97.44', 'seatime-api.xyz']
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:8080', 'http://96.126.97.44', 'https://96.126.97.44',
     'https://clever-hoover-e243f0.netlify.app', 'http://clever-hoover-e243f0.netlify.app', 'http://seatime.work',
