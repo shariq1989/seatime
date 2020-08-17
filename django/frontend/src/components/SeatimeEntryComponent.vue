@@ -366,12 +366,11 @@ export default {
               this.snackbarText = 'Trip saved successfully';
               this.snackbar = true;
               this.dialog = false
-              this.loadPage().then(() => {
-                this.pageLoading = false;
-              })
+              this.loadPage();
+              this.pageLoading = false;
             }
         ).catch(err => {
-              console.log(err.response);
+              console.log(err);
               this.displayErrorMessage = true;
               this.errorMessage = 'Error updating trip';
               this.pageLoading = false;
