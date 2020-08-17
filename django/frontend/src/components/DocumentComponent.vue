@@ -375,7 +375,7 @@ export default {
     }
   },
   methods: {
-    loadPage: () => {
+    loadPage() {
       getDocuments().then((resp) => {
         if (resp.data[0]) {
           this.APIMethod = 'PUT';
