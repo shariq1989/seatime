@@ -241,28 +241,31 @@ export default {
         residence_state: this.userProfile.residence_state,
         user: localStorage.getItem('id'),
       };
-      updateProfile([this.profileAPIMethod, profileFields, this.userProfile.id]).then(
-          () => {
-            this.snackbarText = 'Profile updated successfully';
-            this.snackbar = true;
-            this.loadProfile();
-            this.profileLoading = false;
-          }
-      ).catch(err => {
-            console.log(err);
-            this.profileLoading = false;
-            this.displayErrorMessage = true;
-            this.errorMessage = 'Error updating profile';
-            if (err.response.data) {
-              for (const field in err.response.data) {
-                for (const error of err.response.data[field]) {
-                  this.errorMessage += '<br/>';
-                  this.errorMessage += error;
+      if (profileFields.first_name && profileFields.last_name &&
+          profileFields.birth_date && profileFields.citizenship_cntry && profileFields.residence_state) {
+        updateProfile([this.profileAPIMethod, profileFields, this.userProfile.id]).then(
+            () => {
+              this.snackbarText = 'Profile updated successfully';
+              this.snackbar = true;
+              this.loadProfile();
+              this.profileLoading = false;
+            }
+        ).catch(err => {
+              console.log(err);
+              this.profileLoading = false;
+              this.displayErrorMessage = true;
+              this.errorMessage = 'Error updating profile';
+              if (err.response.data) {
+                for (const field in err.response.data) {
+                  for (const error of err.response.data[field]) {
+                    this.errorMessage += '<br/>';
+                    this.errorMessage += error;
+                  }
                 }
               }
             }
-          }
-      )
+        )
+      }
     }
   },
   mounted() {
