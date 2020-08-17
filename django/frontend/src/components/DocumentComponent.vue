@@ -375,7 +375,7 @@ export default {
     }
   },
   methods: {
-    loadPage: function () {
+    loadPage: () => {
       getDocuments().then((resp) => {
         if (resp.data[0]) {
           this.APIMethod = 'PUT';
@@ -434,9 +434,8 @@ export default {
           () => {
             this.snackbarText = 'Documents updated successfully';
             this.snackbar = true;
-            this.loadPage().then(() => {
-              this.pageLoading = false;
-            })
+            this.loadPage();
+            this.pageLoading = false;
           }
       ).catch(err => {
             this.pageLoading = false;
