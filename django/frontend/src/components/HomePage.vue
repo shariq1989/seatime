@@ -159,6 +159,51 @@
             </v-card>
           </v-col>
         </v-row>
+        <v-row class="mb-6">
+          <v-col>
+            <v-card class="pa-2">
+              <h1 style="font-family: serif" class="primary--text">
+                Progress
+              </h1>
+              <div>
+                <v-card-text>
+                  <div>
+                    <v-progress-linear
+                        v-model="power"
+                        color="amber"
+                        height="25"
+                    >
+                      <template v-slot="{ value }">
+                        <strong>{{ Math.ceil(value) }}%</strong>
+                      </template>
+                    </v-progress-linear>
+
+                    <br>
+
+                    <v-progress-linear
+                        v-model="skill"
+                        color="blue-grey"
+                        height="25"
+                    >
+                      <template v-slot="{ value }">
+                        <strong>{{ Math.ceil(value) }}%</strong>
+                      </template>
+                    </v-progress-linear>
+
+                    <br>
+
+                    <v-progress-linear
+                        v-model="knowledge"
+                        height="25"
+                    >
+                      <strong>{{ Math.ceil(knowledge) }}%</strong>
+                    </v-progress-linear>
+                  </div>
+                </v-card-text>
+              </div>
+            </v-card>
+          </v-col>
+        </v-row>
       </v-container>
     </v-content>
   </v-app>
@@ -183,6 +228,9 @@ export default {
       userProfile: {},
       documents: {},
       trips: [],
+      skill: 20,
+      knowledge: 33,
+      power: 78,
       logoutDialog: {
         displayStatus: false,
         dialogHeader: 'Confirm Logout',
