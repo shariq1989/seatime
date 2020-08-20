@@ -13,10 +13,6 @@ router.register(r'voyage-types', views.VoyageTypeViewSet, basename='VoyageTypes'
 router.register(r'ranks', views.RankViewSet, basename='Rank')
 router.register(r'voyages', views.VoyageViewSet, basename='Voyages')
 
-
-def trigger_error(request):
-    division_by_zero = 1 / 0
-
 urlpatterns = [
     path('', include(router.urls)),
     path('rest-auth/', include('rest_auth.urls')),
@@ -25,5 +21,4 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('control/', admin.site.urls),
     url(r'^authenticate/', views.CustomObtainAuthToken.as_view()),
-    path('sentry-debug/', trigger_error),
 ]

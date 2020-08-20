@@ -3,7 +3,7 @@
   <v-app id="inspire" style="background-color: #bbdefb;">
     <NavDrawerComponent v-model="drawer" @input="displayLogoutDialog"/>
     <v-content>
-      <ConfirmModalComponent v-model="logoutDialog.displayStatus" v-bind="logoutDialog"
+      <ConfirmModalComponent persistent v-model="logoutDialog.displayStatus" v-bind="logoutDialog"
                              @input="updateModalStatus"/>
       <v-container fluid class="#bbdefb lighten-4 fill-height">
         <v-row class="mb-6">
