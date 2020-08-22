@@ -15,7 +15,7 @@
               <div>
                 <v-card-text>
                   <div>
-                    <apexchart width="1000" type="bar" :options="options" :series="series"></apexchart>
+                    <apexchart type="bar" :options="options" :series="series"></apexchart>
                   </div>
                 </v-card-text>
               </div>
@@ -39,7 +39,6 @@ export default {
       options: {
         chart: {
           type: 'bar',
-          height: 350,
           stacked: true,
           stackType: '100%'
         },
