@@ -204,7 +204,8 @@ export default {
           height: 350,
           stacked: true,
           stackType: '100%'
-        }, plotOptions: {
+        },
+        plotOptions: {
           bar: {
             horizontal: true,
           },
@@ -214,20 +215,21 @@ export default {
           colors: ['#fff']
         },
         title: {
-          text: 'Seatime Progression'
+          text: '100% Stacked Bar'
         },
         xaxis: {
-          categories: ['2A/E Unlimited', 'DDE Unlimited', 'Chief UFIV', 'Chief OSV'],
+          categories: [2008, 2009, 2010, 2011, 2012, 2013, 2014],
         },
         tooltip: {
           y: {
             formatter: function (val) {
-              return val + " hours"
+              return val + "K"
             }
           }
         },
         fill: {
           opacity: 1
+
         },
         legend: {
           position: 'top',
