@@ -42,6 +42,8 @@ export default {
           stacked: true,
           stackType: '100%'
         },
+        height: 350,
+        width: 1000,
         colors: ['#3f51b5', '#757573'],
         plotOptions: {
           bar: {
