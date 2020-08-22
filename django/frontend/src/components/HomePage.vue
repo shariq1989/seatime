@@ -163,7 +163,7 @@
           <v-col>
             <v-card class="pa-2">
               <h1 style="font-family: serif" class="primary--text">
-                Progress
+                Seatime Progression
               </h1>
               <div>
                 <v-card-text>
@@ -207,16 +207,13 @@ export default {
           width: 1,
           colors: ['#fff']
         },
-        title: {
-          text: '100% Stacked Bar'
-        },
         xaxis: {
-          categories: [2008, 2009, 2010, 2011, 2012, 2013, 2014],
+          categories: ['2A/E Unlimited', 'DDE Unlimited', 'Chief UFIV', 'Chief OSV'],
         },
         tooltip: {
           y: {
             formatter: function (val) {
-              return val + "K"
+              return val + " hours"
             }
           }
         },
