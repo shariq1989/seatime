@@ -196,7 +196,7 @@ export default {
           id: 'seatime-progress'
         },
         xaxis: {
-          categories: ['2A/E Unlimited', 'DDE Unlimited', 'Chief UFIV', 'Chief OSV']
+          type: 'numeric'
         }
       },
       series: [{
