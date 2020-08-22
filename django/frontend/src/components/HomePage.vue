@@ -192,17 +192,49 @@ export default {
   data() {
     return {
       options: {
+        series: [{
+          name: 'Seatime Completed',
+          data: [100, 200, 20, 50]
+        }, {
+          name: 'Seatime Remaining',
+          data: [180, 360, 180, 180]
+        }],
         chart: {
-          id: 'seatime-progress'
+          type: 'bar',
+          height: 350,
+          stacked: true,
+          stackType: '100%'
+        }, plotOptions: {
+          bar: {
+            horizontal: true,
+          },
+        },
+        stroke: {
+          width: 1,
+          colors: ['#fff']
+        },
+        title: {
+          text: 'Seatime Progression'
         },
         xaxis: {
-          type: 'numeric'
+          categories: ['2A/E Unlimited', 'DDE Unlimited', 'Chief UFIV', 'Chief OSV'],
+        },
+        tooltip: {
+          y: {
+            formatter: function (val) {
+              return val + " hours"
+            }
+          }
+        },
+        fill: {
+          opacity: 1
+        },
+        legend: {
+          position: 'top',
+          horizontalAlign: 'left',
+          offsetX: 40
         }
       },
-      series: [{
-        name: 'Seatime Progress',
-        data: [[100, 180], [200, 360], [20, 180], [50, 180]]
-      }],
       drawer: 'true',
       color: 'primary',
       profileLoading: true,
