@@ -168,7 +168,7 @@
               <div>
                 <v-card-text>
                   <div>
-                    <apexchart type="bar" :options="options" :series="series"></apexchart>
+                    <apexchart width="1000" type="bar" :options="options" :series="series"></apexchart>
                   </div>
                 </v-card-text>
               </div>
