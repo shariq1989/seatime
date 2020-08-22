@@ -168,38 +168,6 @@
               <div>
                 <v-card-text>
                   <div>
-                    <v-progress-linear
-                        v-model="power"
-                        color="amber"
-                        height="25"
-                    >
-                      <template v-slot="{ value }">
-                        <strong>{{ Math.ceil(value) }}%</strong>
-                      </template>
-                    </v-progress-linear>
-
-                    <br>
-
-                    <v-progress-linear
-                        v-model="skill"
-                        color="blue-grey"
-                        height="25"
-                    >
-                      <template v-slot="{ value }">
-                        <strong>{{ Math.ceil(value) }}%</strong>
-                      </template>
-                    </v-progress-linear>
-
-                    <br>
-
-                    <v-progress-linear
-                        v-model="knowledge"
-                        height="25"
-                    >
-                      <strong>{{ Math.ceil(knowledge) }}%</strong>
-                    </v-progress-linear>
-                  </div>
-                  <div>
                     <apexchart width="500" type="bar" :options="options" :series="series"></apexchart>
                   </div>
                 </v-card-text>
@@ -225,15 +193,15 @@ export default {
     return {
       options: {
         chart: {
-          id: 'vuechart-example'
+          id: 'seatime-progress'
         },
         xaxis: {
-          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
+          categories: ['2A/E Unlimited', 'DDE Unlimited', 'Chief UFIV', 'Chief OSV']
         }
       },
       series: [{
-        name: 'series-1',
-        data: [30, 40, 45, 50, 49, 60, 70, 91]
+        name: 'Seatime Progress',
+        data: [[100, 180], [200, 360], [20, 180], [50, 180]]
       }],
       drawer: 'true',
       color: 'primary',
