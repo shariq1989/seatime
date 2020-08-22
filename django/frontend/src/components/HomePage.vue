@@ -168,7 +168,7 @@
               <div>
                 <v-card-text>
                   <div>
-                    <apexchart width="500" type="bar" :options="options"></apexchart>
+                    <apexchart width="500" type="bar" :options="options" :series="series"></apexchart>
                   </div>
                 </v-card-text>
               </div>
@@ -192,13 +192,6 @@ export default {
   data() {
     return {
       options: {
-        series: [{
-          name: 'Seatime Completed',
-          data: [100, 200, 20, 50]
-        }, {
-          name: 'Seatime Remaining',
-          data: [180, 360, 180, 180]
-        }],
         chart: {
           type: 'bar',
           height: 350,
@@ -229,7 +222,6 @@ export default {
         },
         fill: {
           opacity: 1
-
         },
         legend: {
           position: 'top',
@@ -237,6 +229,13 @@ export default {
           offsetX: 40
         }
       },
+      series: [{
+        name: 'Seatime Completed',
+        data: [100, 200, 20, 50]
+      }, {
+        name: 'Seatime Remaining',
+        data: [180, 360, 180, 180]
+      }],
       drawer: 'true',
       color: 'primary',
       profileLoading: true,
