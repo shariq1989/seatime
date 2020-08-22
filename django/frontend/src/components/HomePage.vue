@@ -168,7 +168,7 @@
               <div>
                 <v-card-text>
                   <div>
-                    <apexchart width="700" type="bar" :options="options" :series="series"></apexchart>
+                    <apexchart width="1000" type="bar" :options="options" :series="series"></apexchart>
                   </div>
                 </v-card-text>
               </div>
@@ -198,13 +198,14 @@ export default {
           stacked: true,
           stackType: '100%'
         },
+        colors: ['#3f51b5', '#757573'],
         plotOptions: {
           bar: {
             horizontal: true,
           },
         },
         stroke: {
-          width: 1,
+          width: 5,
           colors: ['#fff']
         },
         xaxis: {
