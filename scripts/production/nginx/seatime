@@ -3,7 +3,6 @@ server {
     server_name seatime-api.xyz;
     listen 80;
     return 301 https://seatime-api.xyz$request_uri;
-    return 444;
 }
 
 server {
