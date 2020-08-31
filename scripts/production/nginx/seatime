@@ -3,6 +3,7 @@ server {
     server_name seatime-api.xyz;
     listen 80;
     return 301 https://seatime-api.xyz$request_uri;
+    return 444;
 }
 
 server {
@@ -22,4 +23,6 @@ server {
 	location / {
 		include proxy_params;
 		proxy_pass http://unix:/run/gunicorn.sock;
-	}}
+	}
+    return 444;
+}
