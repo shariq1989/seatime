@@ -22,6 +22,4 @@ server {
 	location / {
 		include proxy_params;
 		proxy_pass http://unix:/run/gunicorn.sock;
-	}
-    return 444;
-}
+	}}
