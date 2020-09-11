@@ -47,7 +47,7 @@ export default {
         {title: 'Profile', icon: 'mdi-account', link: '/profile'},
         {title: 'Documents', icon: 'mdi-file-document', link: '/document'},
         {title: 'Trips', icon: 'mdi-ferry', link: '/seatime_entry'},
-        {title: 'Checklists', icon: 'mdi-fact_check', link: '/checklist'},
+        {title: 'Checklists', icon: 'mdi-file_check', link: '/checklist'},
       ],
       color: 'primary',
     }
