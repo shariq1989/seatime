@@ -29,6 +29,10 @@ const routes = [
         path: '/seatime_entry',
         name: 'SeatimeEntry',
         component: () => import('../views/SeatimeEntry')
+    }, {
+        path: '/checklist',
+        name: 'Checklist',
+        component: () => import('../views/Checklist')
     }
 ];
 
