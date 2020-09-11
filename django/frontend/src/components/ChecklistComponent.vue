@@ -13,7 +13,7 @@
               <h1 style="font-family: serif" class="primary--text">
                 Checklists
               </h1>
-              <div v-if="!pageLoading">
+<!-- TODO              <div v-if="!pageLoading"> -->
                 <v-card-text>
                   <div class="pa-2">
                     <v-alert type="error" v-if="displayErrorMessage">
@@ -48,7 +48,7 @@
                 <v-card-actions>
                   <v-spacer/>
                 </v-card-actions>
-              </div>
+     <!--         </div> -->
             </v-card>
           </v-col>
           <v-col cols="12" sm="2"></v-col>
