@@ -32,11 +32,9 @@
                           <v-divider v-else-if="item.divider" :key="index" :inset="item.inset"></v-divider>
                           <v-list-item v-else :key="item.title">
                             <v-list-item-content>
-                              <template v-slot:activator="{ on, attrs }">
-                                <v-list-item-title v-html="item.title"
-                                                   @click.stop="dialog = true">
-                                </v-list-item-title>
-                              </template>
+                              <v-list-item-title v-html="item.title"
+                                                 @click.stop="dialog = true">
+                              </v-list-item-title>
                             </v-list-item-content>
                           </v-list-item>
                         </template>
