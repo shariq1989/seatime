@@ -32,9 +32,8 @@
                           <v-divider v-else-if="item.divider" :key="index" :inset="item.inset"></v-divider>
                           <v-list-item v-else :key="item.title">
                             <v-list-item-content>
-                              <v-list-item-title v-html="item.title"
-                                                 @click.stop="dialog = true">
-                              </v-list-item-title>
+                              <a v-on:click.stop="dialog = true" v-html="item.title">
+                              </a>
                             </v-list-item-content>
                           </v-list-item>
                         </template>
@@ -104,6 +103,7 @@ export default {
       drawer: 'true',
       color: 'primary',
       pageLoading: true,
+      dialog: false,
       displayErrorMessage: false,
       errorMessage: '',
       snackbar: false,
