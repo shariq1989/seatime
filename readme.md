@@ -14,10 +14,6 @@
 	cd /home/development
 	git clone git@github.com:shariq1989/seatime.git
 		
-	export DJANGO_SECRET_KEY="1c*3djyuzul-oyp%3*+8z%(n^+(#nk+cs+)d6#9u+74l%#_&ev"	
-	export DJANGO_SETTINGS_MODULE="seatime_app.settings.production"
-	export DJANGO_SERVER_IP="96.126.97.44"
-	
 	bash /home/development/seatime/scripts/production/createEnv.sh
 	
 	file /run/gunicorn.sock
